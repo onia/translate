@@ -8,7 +8,7 @@ __all__ = ['accepts', 'returns', 'yields', 'TypeCheckError', 'Length', 'Empty'
 import inspect
 import types
 
-#from types import GeneratorType, FunctionType, MethodType, ClassType, TypeType
+#from types import types.GeneratorType, types.types.FunctionType, types.MethodType, ClassType, TypeType
 import collections
 
 # Controls whether typechecking is on (True) or off (False)
@@ -628,7 +628,7 @@ class TypeVariables(CheckType):
 
     def __typecheck__(self, func, to_check):
         name = self.type
-        if isinstance(func, GeneratorType):
+        if isinstance(func, types.GeneratorType):
             active = self.__class__.__gen_mappings[func]
         else:
             active = self.__class__.__active_mapping
@@ -651,9 +651,9 @@ class TypeVariables(CheckType):
 
     @classmethod
     def __startchecking__(cls, func):
-        if isinstance(func, GeneratorType):
+        if isinstance(func, types.GeneratorType):
             cls.__gen_mappings.setdefault(func, {})
-        elif isinstance(func, FunctionType):
+        elif isinstance(func, types.FunctionType):
             cls.__mapping_stack.append(cls.__active_mapping)
             cls.__active_mapping = {}
         else:
@@ -661,11 +661,11 @@ class TypeVariables(CheckType):
 
     @classmethod
     def __switchchecking__(cls, from_func, to_func):
-        if isinstance(from_func, FunctionType):
-            if isinstance(to_func, GeneratorType):
+        if isinstance(from_func, types.FunctionType):
+            if isinstance(to_func, types.GeneratorType):
                 cls.__gen_mappings[to_func] = cls.__active_mapping
                 cls.__stopchecking__(from_func)
-            elif isinstance(to_func, FunctionType):
+            elif isinstance(to_func, types.FunctionType):
                 cls.__stopchecking__(from_func)
                 cls.__startchecking__(to_func)
             else:
@@ -675,9 +675,9 @@ class TypeVariables(CheckType):
 
     @classmethod
     def __stopchecking__(cls, func):
-        if isinstance(func, GeneratorType):
+        if isinstance(func, types.GeneratorType):
             del cls.__gen_mappings[func]
-        elif isinstance(func, FunctionType):
+        elif isinstance(func, types.FunctionType):
             cls.__active_mapping = cls.__mapping_stack.pop()
         else:
             raise TypeError(func)
@@ -689,7 +689,7 @@ class Function(CheckType):
     
     @classmethod
     def __typesig__(cls, obj):
-        if isinstance(obj, (FunctionType, MethodType)):
+        if isinstance(obj, (types.FunctionType, types.MethodType)):
             return cls(obj)
             
         # Snag callable class instances (that aren't types or classes)
@@ -953,7 +953,7 @@ class YieldSeq(CheckType):
     # reset every time we run through the typechecking sequence
     @classmethod
     def __startchecking__(cls, gen):
-        if isinstance(gen, GeneratorType):
+        if isinstance(gen, types.GeneratorType):
             cls._index_map[gen] = {}
     
     @classmethod    
@@ -1094,7 +1094,7 @@ class Typeclass(CheckType):
             for inst in instance.instances():
                 self._instances.add(inst)
                 self._cache.add(inst)
-        elif isinstance(instance, (ClassType, TypeType)):
+        elif isinstance(instance, (type, type)):
             self._instances.add(instance)
             self._cache.add(instance)
         else:

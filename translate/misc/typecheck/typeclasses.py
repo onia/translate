@@ -22,7 +22,7 @@ String = Typeclass(str, str)
 ### ImSequence -- immutable sequences
 ####################################################
 
-ImSequence = Typeclass(tuple, xrange, String)
+ImSequence = Typeclass(tuple, range, String)
 
 ### MSequence -- mutable sequences
 ####################################################
