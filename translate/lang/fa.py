@@ -34,33 +34,33 @@ def guillemets(text):
         prefix = match.group(1)
         # Let's see that we didn't perhaps match an XML tag property like
         # <a href="something">
-        if prefix == u"=":
+        if prefix == "=":
             return match.group(0)
-        return u"%s«%s»" % (prefix, match.group(2))
+        return "%s«%s»" % (prefix, match.group(2))
 
     # Check that there is an even number of double quotes, otherwise it is
     # probably not safe to convert them.
-    if text.count(u'"') % 2 == 0:
+    if text.count('"') % 2 == 0:
         text = re.sub('(.|^)"([^"]+)"', convertquotation, text)
-    singlecount = text.count(u"'")
+    singlecount = text.count("'")
     if singlecount:
-        if singlecount == text.count(u'`'):
+        if singlecount == text.count('`'):
             text = re.sub("(.|^)`([^']+)'", convertquotation, text)
         elif singlecount % 2 == 0:
             text = re.sub("(.|^)'([^']+)'", convertquotation, text)
-    text = re.sub(u'(.|^)“([^”]+)”', convertquotation, text)
+    text = re.sub('(.|^)“([^”]+)”', convertquotation, text)
     return text
 
 
 class fa(common.Common):
     """This class represents Persian."""
 
-    listseperator = u"، "
+    listseperator = "، "
 
     puncdict = {
-        u",": u"،",
-        u";": u"؛",
-        u"?": u"؟",
+        ",": "،",
+        ";": "؛",
+        "?": "؟",
         #This causes problems with variables, so commented out for now:
         #u"%": u"٪",
     }

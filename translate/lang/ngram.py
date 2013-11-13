@@ -39,7 +39,7 @@ white_space_re = re.compile('\s+')
 class _NGram:
 
     def __init__(self, arg=None):
-        if isinstance(arg, basestring):
+        if isinstance(arg, str):
             self.addText(arg)
             self.normalise()
         elif isinstance(arg, dict):
@@ -57,7 +57,7 @@ class _NGram:
         for word in white_space_re.split(text):
             word = '_%s_' % word
             size = len(word)
-            for i in xrange(size - 1):
+            for i in range(size - 1):
                 for s in (1, 2, 3, 4):
                     end = i + s
                     if end >= size:
@@ -116,14 +116,14 @@ class NGram:
                 lines = f.read().decode('utf-8').splitlines()
                 try:
                     for i, line in enumerate(lines):
-                        ngram, _t, _f = line.partition(u'\t')
+                        ngram, _t, _f = line.partition('\t')
                         ngrams[ngram] = i
-                except AttributeError, e:
+                except AttributeError as e:
                     # Python2.4 doesn't have unicode.partition()
                     for i, line in enumerate(lines):
-                        ngram = line.split(u'\t')[0]
+                        ngram = line.split('\t')[0]
                         ngrams[ngram] = i
-            except UnicodeDecodeError, e:
+            except UnicodeDecodeError as e:
                 continue
 
             if ngrams:
@@ -136,7 +136,7 @@ class NGram:
         ngram = _NGram(text)
         r = 'guess'
 
-        min = sys.maxint
+        min = sys.maxsize
 
         for lang in self.ngrams:
             d = self.ngrams[lang].compare(ngram)
@@ -169,7 +169,7 @@ class Generate:
             self.ngrams[lang] = n
 
     def save(self, folder, ext='.lm'):
-        for lang in self.ngrams.keys():
+        for lang in list(self.ngrams.keys()):
             fname = path.join(folder, lang + ext)
             file = open(fname, 'w')
             for v, k in self.ngrams[lang].sorted_by_score():
@@ -186,4 +186,4 @@ if __name__ == '__main__':
     text = sys.stdin.readline()
     from translate.misc.file_discovery import get_abs_data_filename
     l = NGram(get_abs_data_filename('langmodels'))
-    print l.classify(text)
+    print(l.classify(text))

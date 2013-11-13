@@ -37,7 +37,7 @@ from translate.storage import statsdb
 logger = logging.getLogger(__name__)
 
 # define style constants
-style_full, style_csv, style_short_strings, style_short_words = range(4)
+style_full, style_csv, style_short_strings, style_short_words = list(range(4))
 
 # default output style
 default_style = style_full
@@ -49,17 +49,17 @@ def calcstats_old(filename):
     # ignore totally blank or header units
     try:
         store = factory.getobject(filename)
-    except ValueError, e:
+    except ValueError as e:
         logger.warning(e)
         return {}
-    units = filter(lambda unit: unit.istranslatable(), store.units)
+    units = [unit for unit in store.units if unit.istranslatable()]
     translated = translatedmessages(units)
     fuzzy = fuzzymessages(units)
-    review = filter(lambda unit: unit.isreview(), units)
+    review = [unit for unit in units if unit.isreview()]
     untranslated = untranslatedmessages(units)
-    wordcounts = dict(map(lambda unit: (unit, statsdb.wordsinunit(unit)), units))
-    sourcewords = lambda elementlist: sum(map(lambda unit: wordcounts[unit][0], elementlist))
-    targetwords = lambda elementlist: sum(map(lambda unit: wordcounts[unit][1], elementlist))
+    wordcounts = dict([(unit, statsdb.wordsinunit(unit)) for unit in units])
+    sourcewords = lambda elementlist: sum([wordcounts[unit][0] for unit in elementlist])
+    targetwords = lambda elementlist: sum([wordcounts[unit][1] for unit in elementlist])
     stats = {}
 
     #units
@@ -111,79 +111,79 @@ def summarize(title, stats, style=style_full, indent=8, incomplete_only=False):
         return 1
 
     if (style == style_csv):
-        print "%s, " % title,
-        print "%d, %d, %d," % (stats["translated"],
+        print("%s, " % title, end=' ')
+        print("%d, %d, %d," % (stats["translated"],
                                stats["translatedsourcewords"],
-                               stats["translatedtargetwords"]),
-        print "%d, %d," % (stats["fuzzy"], stats["fuzzysourcewords"]),
-        print "%d, %d," % (stats["untranslated"],
-                           stats["untranslatedsourcewords"]),
-        print "%d, %d" % (stats["total"], stats["totalsourcewords"]),
+                               stats["translatedtargetwords"]), end=' ')
+        print("%d, %d," % (stats["fuzzy"], stats["fuzzysourcewords"]), end=' ')
+        print("%d, %d," % (stats["untranslated"],
+                           stats["untranslatedsourcewords"]), end=' ')
+        print("%d, %d" % (stats["total"], stats["totalsourcewords"]), end=' ')
         if stats["review"] > 0:
-            print ", %d, %d" % (stats["review"], stats["reviewsourdcewords"]),
-        print
+            print(", %d, %d" % (stats["review"], stats["reviewsourdcewords"]), end=' ')
+        print()
     elif (style == style_short_strings):
         spaces = " " * (indent - len(title))
-        print "%s%s strings: total: %d\t| %dt\t%df\t%du\t| %d%%t\t%d%%f\t%d%%u" % (title, spaces, \
+        print("%s%s strings: total: %d\t| %dt\t%df\t%du\t| %d%%t\t%d%%f\t%d%%u" % (title, spaces, \
               stats["total"], stats["translated"], stats["fuzzy"], stats["untranslated"], \
               percent(stats["translated"], stats["total"]), \
               percent(stats["fuzzy"], stats["total"]), \
-              percent(stats["untranslated"], stats["total"]))
+              percent(stats["untranslated"], stats["total"])))
     elif (style == style_short_words):
         spaces = " " * (indent - len(title))
-        print "%s%s source words: total: %d\t| %dt\t%df\t%du\t| %d%%t\t%d%%f\t%d%%u" % (title, spaces, \
+        print("%s%s source words: total: %d\t| %dt\t%df\t%du\t| %d%%t\t%d%%f\t%d%%u" % (title, spaces, \
               stats["totalsourcewords"], stats["translatedsourcewords"], stats["fuzzysourcewords"], stats["untranslatedsourcewords"], \
               percent(stats["translatedsourcewords"], stats["totalsourcewords"]), \
               percent(stats["fuzzysourcewords"], stats["totalsourcewords"]), \
-              percent(stats["untranslatedsourcewords"], stats["totalsourcewords"]))
+              percent(stats["untranslatedsourcewords"], stats["totalsourcewords"])))
     else:  # style == style_full
-        print title
-        print "type              strings      words (source)    words (translation)"
-        print "translated:   %5d (%3d%%) %10d (%3d%%) %15d" % \
+        print(title)
+        print("type              strings      words (source)    words (translation)")
+        print("translated:   %5d (%3d%%) %10d (%3d%%) %15d" % \
                 (stats["translated"], \
                 percent(stats["translated"], stats["total"]), \
                 stats["translatedsourcewords"], \
                 percent(stats["translatedsourcewords"], stats["totalsourcewords"]), \
-                stats["translatedtargetwords"])
-        print "fuzzy:        %5d (%3d%%) %10d (%3d%%)             n/a" % \
+                stats["translatedtargetwords"]))
+        print("fuzzy:        %5d (%3d%%) %10d (%3d%%)             n/a" % \
                 (stats["fuzzy"], \
                 percent(stats["fuzzy"], stats["total"]), \
                 stats["fuzzysourcewords"], \
-                percent(stats["fuzzysourcewords"], stats["totalsourcewords"]))
-        print "untranslated: %5d (%3d%%) %10d (%3d%%)             n/a" % \
+                percent(stats["fuzzysourcewords"], stats["totalsourcewords"])))
+        print("untranslated: %5d (%3d%%) %10d (%3d%%)             n/a" % \
                 (stats["untranslated"], \
                 percent(stats["untranslated"], stats["total"]), \
                 stats["untranslatedsourcewords"], \
-                percent(stats["untranslatedsourcewords"], stats["totalsourcewords"]))
-        print "Total:        %5d %17d %22d" % \
+                percent(stats["untranslatedsourcewords"], stats["totalsourcewords"])))
+        print("Total:        %5d %17d %22d" % \
                 (stats["total"], \
                 stats["totalsourcewords"], \
-                stats["translatedtargetwords"])
+                stats["translatedtargetwords"]))
         if "extended" in stats:
-            print ""
-            for state, e_stats in stats["extended"].iteritems():
-                print "%s:    %5d (%3d%%) %10d (%3d%%) %15d" % (
+            print("")
+            for state, e_stats in stats["extended"].items():
+                print("%s:    %5d (%3d%%) %10d (%3d%%) %15d" % (
                     state, e_stats["units"], percent(e_stats["units"], stats["total"]),
                     e_stats["sourcewords"], percent(e_stats["sourcewords"], stats["totalsourcewords"]),
-                    e_stats["targetwords"])
+                    e_stats["targetwords"]))
 
         if stats["review"] > 0:
-            print "review:       %5d %17d                    n/a" % \
-                    (stats["review"], stats["reviewsourcewords"])
-        print
+            print("review:       %5d %17d                    n/a" % \
+                    (stats["review"], stats["reviewsourcewords"]))
+        print()
     return 0
 
 
 def fuzzymessages(units):
-    return filter(lambda unit: unit.isfuzzy() and unit.target, units)
+    return [unit for unit in units if unit.isfuzzy() and unit.target]
 
 
 def translatedmessages(units):
-    return filter(lambda unit: unit.istranslated(), units)
+    return [unit for unit in units if unit.istranslated()]
 
 
 def untranslatedmessages(units):
-    return filter(lambda unit: not (unit.istranslated() or unit.isfuzzy()) and unit.source, units)
+    return [unit for unit in units if not (unit.istranslated() or unit.isfuzzy()) and unit.source]
 
 
 class summarizer:
@@ -197,10 +197,10 @@ class summarizer:
         self.complete_count = 0
 
         if (self.style == style_csv):
-            print "Filename, Translated Messages, Translated Source Words, Translated \
+            print("Filename, Translated Messages, Translated Source Words, Translated \
 Target Words, Fuzzy Messages, Fuzzy Source Words, Untranslated Messages, \
 Untranslated Source Words, Total Message, Total Source Words, \
-Review Messages, Review Source Words"
+Review Messages, Review Source Words")
         if (self.style == style_short_strings or self.style == style_short_words):
             for filename in filenames:  # find longest filename
                 if (len(filename) > self.longestfilename):
@@ -217,15 +217,15 @@ Review Messages, Review Source Words"
             if self.incomplete_only:
                 summarize("TOTAL (incomplete only):", self.totals,
                 incomplete_only=True)
-                print "File count (incomplete):   %5d" % (self.filecount - self.complete_count)
+                print("File count (incomplete):   %5d" % (self.filecount - self.complete_count))
             else:
                 summarize("TOTAL:", self.totals, incomplete_only=False)
-            print "File count:   %5d" % (self.filecount)
-            print
+            print("File count:   %5d" % (self.filecount))
+            print()
 
     def updatetotals(self, stats):
         """Update self.totals with the statistics in stats."""
-        for key in stats.keys():
+        for key in list(stats.keys()):
             if key == "extended":
                 #FIXME: calculate extended totals
                 continue

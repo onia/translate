@@ -31,16 +31,16 @@ class TestHTML2PO:
         if actual > 0:
             if pofile.units[0].isheader():
                 actual = actual - 1
-        print pofile
+        print(pofile)
         assert actual == expected
 
     def compareunit(self, pofile, unitnumber, expected):
         """helper to validate a PO message"""
         if not pofile.units[0].isheader():
             unitnumber = unitnumber - 1
-        print 'unit source: ' + pofile.units[unitnumber].source.encode('utf-8') + '|'
-        print 'expected: ' + expected.encode('utf-8') + '|'
-        assert unicode(pofile.units[unitnumber].source) == unicode(expected)
+        print('unit source: ' + pofile.units[unitnumber].source.encode('utf-8') + '|')
+        print('expected: ' + expected.encode('utf-8') + '|')
+        assert str(pofile.units[unitnumber].source) == str(expected)
 
     def check_single(self, markup, itemtext):
         """checks that converting this markup produces a single element with value itemtext"""
@@ -323,8 +323,8 @@ years has helped to bridge the digital divide to a limited extent.</p> \r
         pofile = self.html2po(htmlsource)
 
         self.countunits(pofile, 4)
-        self.compareunit(pofile, 3, u'We aim to please \x96 will you aim too, please?')
-        self.compareunit(pofile, 4, u'South Africa\x92s language diversity can be challenging.')
+        self.compareunit(pofile, 3, 'We aim to please \x96 will you aim too, please?')
+        self.compareunit(pofile, 4, 'South Africa\x92s language diversity can be challenging.')
 
     def test_strip_html(self):
         """Ensure that unnecessary html is stripped from the resulting unit."""
@@ -362,8 +362,8 @@ years has helped to bridge the digital divide to a limited extent.</p> \r
 '''
         pofile = self.html2po(htmlsource)
         self.countunits(pofile, 3)
-        self.compareunit(pofile, 2, u'Projects')
-        self.compareunit(pofile, 3, u'Home Page')
+        self.compareunit(pofile, 2, 'Projects')
+        self.compareunit(pofile, 3, 'Home Page')
 
         # Translate and convert back:
         pofile.units[2].target = 'Projekte'
@@ -422,7 +422,7 @@ ghi ?>'''
         pofile = self.html2po('<!-- comment outside block --><p><!-- a comment -->A paragraph<!-- with another comment -->.</p>', keepcomments=True)
         self.compareunit(pofile, 1, 'A paragraph.')
         notes = pofile.getunits()[-1].getnotes()
-        assert unicode(notes) == ' a comment \n with another comment '
+        assert str(notes) == ' a comment \n with another comment '
 
 
 class TestHTML2POCommand(test_convert.TestConvertCommand, TestHTML2PO):

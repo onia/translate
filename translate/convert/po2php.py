@@ -55,7 +55,7 @@ class rephp:
         return outputlines
 
     def convertline(self, line):
-        line = unicode(line, 'utf-8')
+        line = str(line, 'utf-8')
         returnline = ""
         # handle multiline msgid if we're in one
         if self.inmultilinemsgid:
@@ -136,7 +136,7 @@ class rephp:
                 # continue
                 if endpos == -1 or line[endpos-1] == '\\':
                     self.inmultilinemsgid = True
-        if isinstance(returnline, unicode):
+        if isinstance(returnline, str):
             returnline = returnline.encode('utf-8')
         return returnline
 

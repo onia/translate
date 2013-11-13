@@ -25,10 +25,7 @@ import fnmatch
 import logging
 import traceback
 import optparse
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
+from io import StringIO
 
 from translate.misc import progressbar
 from translate import __version__
@@ -228,8 +225,8 @@ class RecursiveOptionParser(optparse.OptionParser, object):
         templateformats = []
         self.outputoptions = {}
         self.usetemplates = usetemplates
-        for formatgroup, outputoptions in formats.iteritems():
-            if isinstance(formatgroup, (str, unicode)) or formatgroup is None:
+        for formatgroup, outputoptions in formats.items():
+            if isinstance(formatgroup, str) or formatgroup is None:
                 formatgroup = (formatgroup, )
             if not isinstance(formatgroup, tuple):
                 raise ValueError("formatgroups must be tuples or None/str/unicode")
@@ -287,7 +284,7 @@ class RecursiveOptionParser(optparse.OptionParser, object):
         }
         progressoption = optparse.Option(None, "--progress", dest="progress",
                 default="bar",
-                choices=self.progresstypes.keys(), metavar="PROGRESS",
+                choices=list(self.progresstypes.keys()), metavar="PROGRESS",
                 help="show progress as: %s" % (", ".join(self.progresstypes)))
         self.define_option(progressoption)
 
@@ -304,7 +301,7 @@ class RecursiveOptionParser(optparse.OptionParser, object):
     def getformathelp(self, formats):
         """Make a nice help string for describing formats..."""
         if None in formats:
-            formats = filter(lambda format: format is not None, formats)
+            formats = [format for format in formats if format is not None]
         if len(formats) == 0:
             return ""
         elif len(formats) == 1:
@@ -468,7 +465,7 @@ class RecursiveOptionParser(optparse.OptionParser, object):
                 try:
                     self.warning("Output directory does not exist. Attempting to create")
                     os.mkdir(options.output)
-                except IOError, e:
+                except IOError as e:
                     self.error(optparse.OptionValueError("Output directory does not exist, attempt to create failed"))
             if isinstance(options.input, list):
                 inputfiles = self.recurseinputfilelist(options)
@@ -504,7 +501,7 @@ class RecursiveOptionParser(optparse.OptionParser, object):
                 fulloutputpath = self.getfulloutputpath(options, outputpath)
                 if options.recursiveoutput and outputpath:
                     self.checkoutputsubdir(options, os.path.dirname(outputpath))
-            except Exception, error:
+            except Exception as error:
                 if isinstance(error, KeyboardInterrupt):
                     raise
                 self.warning("Couldn't handle input file %s" %
@@ -514,7 +511,7 @@ class RecursiveOptionParser(optparse.OptionParser, object):
                 success = self.processfile(fileprocessor, options,
                                            fullinputpath, fulloutputpath,
                                            fulltemplatepath)
-            except Exception, error:
+            except Exception as error:
                 if isinstance(error, KeyboardInterrupt):
                     raise
                 self.warning("Error processing: input %s, output %s, template %s" %
@@ -528,13 +525,13 @@ class RecursiveOptionParser(optparse.OptionParser, object):
         """Opens the input file."""
         if fullinputpath is None:
             return sys.stdin
-        return open(fullinputpath, 'r')
+        return open(fullinputpath, 'r', encoding='utf-8')
 
     def openoutputfile(self, options, fulloutputpath):
         """Opens the output file."""
         if fulloutputpath is None:
             return sys.stdout
-        return open(fulloutputpath, 'w')
+        return open(fulloutputpath, 'w', encoding='utf-8')
 
     def opentempoutputfile(self, options, fulloutputpath):
         """Opens a temporary output file."""

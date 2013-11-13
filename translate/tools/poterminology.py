@@ -38,9 +38,9 @@ def create_termunit(term, unit, targets, locations, sourcenotes, transnotes, fil
     termunit = po.pounit(term)
     if unit is not None:
         termunit.merge(unit, overwrite=False, comments=False)
-    if len(targets.keys()) > 1:
+    if len(list(targets.keys())) > 1:
         txt = '; '.join(["%s {%s}" % (target, ', '.join(files))
-                         for target, files in targets.iteritems()])
+                         for target, files in targets.items()])
         if termunit.target.find('};') < 0:
             termunit.target = txt
             termunit.markfuzzy()
@@ -53,7 +53,7 @@ def create_termunit(term, unit, targets, locations, sourcenotes, transnotes, fil
         termunit.addnote(sourcenote, "developer")
     for transnote in transnotes:
         termunit.addnote(transnote, "translator")
-    for filename, count in filecounts.iteritems():
+    for filename, count in filecounts.items():
         termunit.addnote("(poterminology) %s (%d)\n" % (filename, count), 'translator')
     return termunit
 
@@ -125,7 +125,7 @@ class TerminologyExtractor(object):
                     self.stoprelist.append(re.compile(stopline[1:-1] + '$'))
                 else:
                     self.stopwords[stopline[1:-1]] = actions[stoptype]
-        except KeyError, character:
+        except KeyError as character:
             logger.warning("%s:%d - bad stopword entry starts with '%s'",
                            self.stopfile, line, str(character))
             logger.warning("%s:%d all lines after error ignored",
@@ -240,7 +240,7 @@ class TerminologyExtractor(object):
         terms = {}
         locre = re.compile(r":[0-9]+$")
         logger.info("%d terms from %d units", len(self.glossary), self.units)
-        for term, translations in self.glossary.iteritems():
+        for term, translations in self.glossary.items():
             if len(translations) <= 1:
                 continue
             filecounts = {}
@@ -299,7 +299,7 @@ class TerminologyExtractor(object):
     def filter_terms(self, terms, nonstopmin=1, sortorders=sortorders_default):
         """reduce subphrases from extracted terms"""
         # reduce subphrase
-        termlist = terms.keys()
+        termlist = list(terms.keys())
         logger.info("%d terms after thresholding", len(termlist))
         termlist.sort(lambda x, y: cmp(len(x), len(y)))
         for term in termlist:
@@ -319,8 +319,8 @@ class TerminologyExtractor(object):
                 words.pop(0)
                 if terms[term][0] == terms.get(' '.join(words), [0])[0]:
                     del terms[' '.join(words)]
-        logger.info("%d terms after subphrase reduction", len(terms.keys()))
-        termitems = terms.values()
+        logger.info("%d terms after subphrase reduction", len(list(terms.keys())))
+        termitems = list(terms.values())
         if sortorders is None:
             sortorders = self.sortorders_default
         while len(sortorders) > 0:
@@ -427,7 +427,7 @@ class TerminologyOptionParser(optrecurse.RecursiveOptionParser):
             success = True
             try:
                 self.processfile(None, options, fullinputpath)
-            except Exception, error:
+            except Exception as error:
                 if isinstance(error, KeyboardInterrupt):
                     raise
                 self.warning("Error processing: input %s" % (fullinputpath), options, sys.exc_info())

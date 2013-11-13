@@ -29,7 +29,7 @@ def passes(filterfunction, str1, str2):
     str1, str2, no_message = strprep(str1, str2)
     try:
         filterresult = filterfunction(str1, str2)
-    except checks.FilterFailure, e:
+    except checks.FilterFailure as e:
         filterresult = False
 
     filterresult = filterresult and check_category(filterfunction)
@@ -42,13 +42,13 @@ def fails(filterfunction, str1, str2, message=None):
     str1, str2, message = strprep(str1, str2, message)
     try:
         filterresult = filterfunction(str1, str2)
-    except checks.SeriousFilterFailure, e:
+    except checks.SeriousFilterFailure as e:
         filterresult = True
-    except checks.FilterFailure, e:
+    except checks.FilterFailure as e:
         if message:
             exc_message = e.messages[0]
             filterresult = exc_message != message
-            print exc_message.encode('utf-8')
+            print(exc_message.encode('utf-8'))
         else:
             filterresult = False
 
@@ -62,11 +62,11 @@ def fails_serious(filterfunction, str1, str2, message=None):
     str1, str2, message = strprep(str1, str2, message)
     try:
         filterresult = filterfunction(str1, str2)
-    except checks.SeriousFilterFailure, e:
+    except checks.SeriousFilterFailure as e:
         if message:
             exc_message = e.messages[0]
             filterresult = exc_message != message
-            print exc_message.encode('utf-8')
+            print(exc_message.encode('utf-8'))
         else:
             filterresult = False
 
@@ -123,7 +123,7 @@ def test_accelerators():
     assert fails(stdchecker.accelerators, "File", "&Fayile")
     assert passes(stdchecker.accelerators, "Mail && News", "Pos en Nuus")
     assert fails(stdchecker.accelerators, "Mail &amp; News", "Pos en Nuus")
-    assert passes(stdchecker.accelerators, "&Allow", u'&\ufeb2\ufee3\ufe8e\ufea3')
+    assert passes(stdchecker.accelerators, "&Allow", '&\ufeb2\ufee3\ufe8e\ufea3')
     assert fails(stdchecker.accelerators, "Open &File", "Vula& Ifayile")
     kdechecker = checks.KdeChecker()
     assert passes(kdechecker.accelerators, "&File", "&Fayile")
@@ -242,10 +242,10 @@ def test_doublequoting():
     assert passes(frchecker.doublequoting, "Do \"this\"", "Do « this »")
     assert fails(frchecker.doublequoting, "Do \"this\"", "Do « this » « this »")
     # This used to fail because we strip variables, and was left with an empty quotation that was not converted
-    assert passes(frchecker.doublequoting, u"Copying `%s' to `%s'", u"Copie de « %s » vers « %s »")
+    assert passes(frchecker.doublequoting, "Copying `%s' to `%s'", "Copie de « %s » vers « %s »")
 
     vichecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage="vi"))
-    assert passes(vichecker.doublequoting, 'Save "File"', u"Lưu « Tập tin »")
+    assert passes(vichecker.doublequoting, 'Save "File"', "Lưu « Tập tin »")
 
     # Had a small exception with such a case:
     eschecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage="es"))
@@ -294,22 +294,22 @@ def test_endpunc():
     assert passes(mozillachecker.endpunc, "Upgrades an existing $ProductShortName$ installation.", "Ku antswisiwa ka ku nghenisiwa ka $ProductShortName$.")
     # Real examples
     assert passes(stdchecker.endpunc, "A nickname that identifies this publishing site (e.g.: 'MySite')", "Vito ro duvulela leri tirhisiwaka ku kuma sayiti leri ro kandziyisa (xik.: 'Sayiti ra Mina')")
-    assert fails(stdchecker.endpunc, "Question", u"Wrong\u2026")
+    assert fails(stdchecker.endpunc, "Question", "Wrong\u2026")
     # Making sure singlequotes don't confuse things
     assert passes(stdchecker.endpunc, "Pseudo-elements can't be negated '%1$S'.", "Pseudo-elemente kan nie '%1$S' ontken word nie.")
 
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='km'))
-    assert passes(stdchecker.endpunc, "In this new version, there are some minor conversion improvements on complex style in Openoffice.org Writer.", u"នៅ​ក្នុង​កំណែ​ថ្មីនេះ មាន​ការ​កែសម្រួល​មួយ​ចំនួន​តូច​ទាក់​ទង​នឹង​ការ​បំលែង​ពុម្ពអក្សរ​ខ្មែរ​ ក្នុង​កម្មវិធី​ការិយាល័យ​ ស្លឹករឹត ដែល​មាន​ប្រើ​ប្រាស់​រចនាប័ទ្មស្មុគស្មាញច្រើន\u00a0។")
+    assert passes(stdchecker.endpunc, "In this new version, there are some minor conversion improvements on complex style in Openoffice.org Writer.", "នៅ​ក្នុង​កំណែ​ថ្មីនេះ មាន​ការ​កែសម្រួល​មួយ​ចំនួន​តូច​ទាក់​ទង​នឹង​ការ​បំលែង​ពុម្ពអក្សរ​ខ្មែរ​ ក្នុង​កម្មវិធី​ការិយាល័យ​ ស្លឹករឹត ដែល​មាន​ប្រើ​ប្រាស់​រចនាប័ទ្មស្មុគស្មាញច្រើន\u00a0។")
 
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='zh'))
-    assert passes(stdchecker.endpunc, "To activate your account, follow this link:\n", u"要啟用戶口，請瀏覽這個鏈結：\n")
+    assert passes(stdchecker.endpunc, "To activate your account, follow this link:\n", "要啟用戶口，請瀏覽這個鏈結：\n")
 
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='vi'))
-    assert passes(stdchecker.endpunc, "Do you want to delete the XX dialog?", u"Bạn có muốn xoá hộp thoại XX không?")
+    assert passes(stdchecker.endpunc, "Do you want to delete the XX dialog?", "Bạn có muốn xoá hộp thoại XX không?")
 
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='fr'))
-    assert passes(stdchecker.endpunc, "Header:", u"En-tête :")
-    assert passes(stdchecker.endpunc, "Header:", u"En-tête\u00a0:")
+    assert passes(stdchecker.endpunc, "Header:", "En-tête :")
+    assert passes(stdchecker.endpunc, "Header:", "En-tête\u00a0:")
 
 
 def test_endwhitespace():
@@ -423,7 +423,7 @@ def test_musttranslatewords():
     assert fails(stdchecker.musttranslatewords, "Click 'Mozilla' button", "Kliek 'Mozilla' knoppie")
     assert passes(stdchecker.musttranslatewords, 'Click "Mozilla" button', 'Kliek "Motzille" knoppie')
     assert fails(stdchecker.musttranslatewords, 'Click "Mozilla" button', 'Kliek "Mozilla" knoppie')
-    assert fails(stdchecker.musttranslatewords, 'Click "Mozilla" button', u'Kliek «Mozilla» knoppie')
+    assert fails(stdchecker.musttranslatewords, 'Click "Mozilla" button', 'Kliek «Mozilla» knoppie')
     assert passes(stdchecker.musttranslatewords, "Click (Mozilla) button", "Kliek (Motzille) knoppie")
     assert fails(stdchecker.musttranslatewords, "Click (Mozilla) button", "Kliek (Mozilla) knoppie")
     assert passes(stdchecker.musttranslatewords, "Click Mozilla!", "Kliek Motzille!")
@@ -434,7 +434,7 @@ def test_musttranslatewords():
     stdchecker = checks.StandardChecker(checks.CheckerConfig(varmatches=[("%", None), ], musttranslatewords=["OK"]))
     assert passes(stdchecker.musttranslatewords, "Click %OK to start", "Kliek %OK om te begin")
     # Unicode
-    assert fails(stdchecker.musttranslatewords, "Click OK", u"Kiḽikani OK")
+    assert fails(stdchecker.musttranslatewords, "Click OK", "Kiḽikani OK")
 
 
 def test_notranslatewords():
@@ -449,7 +449,7 @@ def test_notranslatewords():
     # should always pass if there are no stopwords in the original
     assert passes(stdchecker.notranslatewords, "This uses something else. Don't you?", "hierdie gebruik Mozilla soos jy")
     # Cope with commas
-    assert passes(stdchecker.notranslatewords, "using Mozilla Task Manager", u"šomiša Selaola Mošomo sa Mozilla, gomme")
+    assert passes(stdchecker.notranslatewords, "using Mozilla Task Manager", "šomiša Selaola Mošomo sa Mozilla, gomme")
     # Find words even if they are embedded in punctuation
     assert fails(stdchecker.notranslatewords, "Click 'Mozilla' button", "Kliek 'Motzille' knoppie")
     assert passes(stdchecker.notranslatewords, "Click 'Mozilla' button", "Kliek 'Mozilla' knoppie")
@@ -467,8 +467,8 @@ def test_notranslatewords():
     stdchecker = checks.StandardChecker(checks.CheckerConfig(notranslatewords=["Writer"]))
     assert fails(stdchecker.notranslatewords, "&[ProductName] Writer/Web", "&[ProductName] Umbhali/iWebhu")
     # Unicode - different decompositions
-    stdchecker = checks.StandardChecker(checks.CheckerConfig(notranslatewords=[u"\u1e3cike"]))
-    assert passes(stdchecker.notranslatewords, u"You \u1e3cike me", u"Ek \u004c\u032dike jou")
+    stdchecker = checks.StandardChecker(checks.CheckerConfig(notranslatewords=["\u1e3cike"]))
+    assert passes(stdchecker.notranslatewords, "You \u1e3cike me", "Ek \u004c\u032dike jou")
 
 
 def test_numbers():
@@ -560,7 +560,7 @@ def test_puncspacing():
     # Some languages have padded puntuation marks
     frchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage="fr"))
     assert passes(frchecker.puncspacing, "Do \"this\"", "Do « this »")
-    assert passes(frchecker.puncspacing, u"Do \"this\"", u"Do «\u00a0this\u00a0»")
+    assert passes(frchecker.puncspacing, "Do \"this\"", "Do «\u00a0this\u00a0»")
     assert fails(frchecker.puncspacing, "Do \"this\"", "Do «this»")
 
 
@@ -623,8 +623,8 @@ def test_singlequoting():
     assert passes(ooochecker.singlequoting, "~Don't import anything", "~Moenie enigiets invoer nie")
 
     vichecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage="vi"))
-    assert passes(vichecker.singlequoting, "Save 'File'", u"Lưu « Tập tin »")
-    assert passes(vichecker.singlequoting, "Save `File'", u"Lưu « Tập tin »")
+    assert passes(vichecker.singlequoting, "Save 'File'", "Lưu « Tập tin »")
+    assert passes(vichecker.singlequoting, "Save `File'", "Lưu « Tập tin »")
 
 
 def test_simplecaps():
@@ -650,7 +650,7 @@ def test_simplecaps():
     ooochecker = checks.OpenOfficeChecker()
     assert passes(ooochecker.simplecaps, "SOLK (%PRODUCTNAME Link)", "SOLK (%PRODUCTNAME Thumanyo)")
     assert passes(ooochecker.simplecaps, "%STAROFFICE Image", "Tshifanyiso tsha %STAROFFICE")
-    assert passes(stdchecker.simplecaps, "Flies, flies, everywhere! Ack!", u"Vlieë, oral vlieë! Jig!")
+    assert passes(stdchecker.simplecaps, "Flies, flies, everywhere! Ack!", "Vlieë, oral vlieë! Jig!")
 
 
 @mark.xfail(reason="FIXME: spell checking test not working")
@@ -694,13 +694,13 @@ def test_startcaps():
     assert fails(stdchecker.startcaps, "'Find", "'vind")
     assert fails(stdchecker.startcaps, "'find", "'Vind")
     # Unicode
-    assert passes(stdchecker.startcaps, "Find", u"Šind")
-    assert passes(stdchecker.startcaps, "find", u"šind")
-    assert fails(stdchecker.startcaps, "Find", u"šind")
-    assert fails(stdchecker.startcaps, "find", u"Šind")
+    assert passes(stdchecker.startcaps, "Find", "Šind")
+    assert passes(stdchecker.startcaps, "find", "šind")
+    assert fails(stdchecker.startcaps, "Find", "šind")
+    assert fails(stdchecker.startcaps, "find", "Šind")
     # Unicode further down the Unicode tables
-    assert passes(stdchecker.startcaps, "A text enclosed...", u"Ḽiṅwalwa ḽo katelwaho...")
-    assert fails(stdchecker.startcaps, "A text enclosed...", u"ḽiṅwalwa ḽo katelwaho...")
+    assert passes(stdchecker.startcaps, "A text enclosed...", "Ḽiṅwalwa ḽo katelwaho...")
+    assert fails(stdchecker.startcaps, "A text enclosed...", "ḽiṅwalwa ḽo katelwaho...")
     # Accelerators
     stdchecker = checks.StandardChecker(checks.CheckerConfig(accelmarkers="&"))
     assert passes(stdchecker.startcaps, "&Find", "Vi&nd")
@@ -729,17 +729,17 @@ def test_startpunc():
     stdchecker = checks.StandardChecker()
     assert passes(stdchecker.startpunc, "<< Previous", "<< Correct")
     assert fails(stdchecker.startpunc, " << Previous", "Wrong")
-    assert fails(stdchecker.startpunc, "Question", u"\u2026Wrong")
+    assert fails(stdchecker.startpunc, "Question", "\u2026Wrong")
 
     assert passes(stdchecker.startpunc, "<fish>hello</fish> world", "world <fish>hello</fish>")
 
     # The inverted Spanish question mark should be accepted
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='es'))
-    assert passes(stdchecker.startpunc, "Do you want to reload the file?", u"¿Quiere recargar el archivo?")
+    assert passes(stdchecker.startpunc, "Do you want to reload the file?", "¿Quiere recargar el archivo?")
 
     # The Afrikaans indefinite article should be accepted
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='af'))
-    assert passes(stdchecker.startpunc, "A human?", u"'n Mens?")
+    assert passes(stdchecker.startpunc, "A human?", "'n Mens?")
 
 
 def test_startwhitespace():
@@ -803,12 +803,12 @@ def test_validchars():
     stdchecker = checks.StandardChecker(checks.CheckerConfig(validchars='⠁⠂⠃⠄⠅⠆⠇⠈⠉⠊⠋⠌⠍⠎⠏⠐⠑⠒⠓⠔⠕⠖⠗⠘⠙⠚⠛⠜⠝⠞⠟⠠⠡⠢⠣⠤⠥⠦⠧⠨⠩⠪⠫⠬⠭⠮⠯⠰'))
     assert passes(stdchecker.validchars, "Our target language is all non-ascii", "⠁⠂⠃⠄⠆⠇⠈⠉⠜⠝⠞⠟⠠⠡⠢⠣⠤⠥⠦⠧⠨⠩⠪⠫")
     assert fails(stdchecker.validchars, "Our target language is all non-ascii", "Some ascii⠁⠂⠃⠄⠆⠇⠈⠉⠜⠝⠞⠟⠠⠡⠢⠣⠤⠥⠦⠧⠨⠩⠪⠫")
-    stdchecker = checks.StandardChecker(checks.CheckerConfig(validchars=u'\u004c\u032d'))
-    assert passes(stdchecker.validchars, "This sentence contains valid chars", u"\u004c\u032d")
-    assert passes(stdchecker.validchars, "This sentence contains valid chars", u"\u1e3c")
-    stdchecker = checks.StandardChecker(checks.CheckerConfig(validchars=u'\u1e3c'))
-    assert passes(stdchecker.validchars, "This sentence contains valid chars", u"\u1e3c")
-    assert passes(stdchecker.validchars, "This sentence contains valid chars", u"\u004c\u032d")
+    stdchecker = checks.StandardChecker(checks.CheckerConfig(validchars='\u004c\u032d'))
+    assert passes(stdchecker.validchars, "This sentence contains valid chars", "\u004c\u032d")
+    assert passes(stdchecker.validchars, "This sentence contains valid chars", "\u1e3c")
+    stdchecker = checks.StandardChecker(checks.CheckerConfig(validchars='\u1e3c'))
+    assert passes(stdchecker.validchars, "This sentence contains valid chars", "\u1e3c")
+    assert passes(stdchecker.validchars, "This sentence contains valid chars", "\u004c\u032d")
 
 
 def test_variables_kde():
@@ -981,7 +981,7 @@ def test_ooxmltags():
 
     # Reported OOo error
     ## Bug 1910
-    assert fails(ooochecker.xmltags, u"""<variable id="FehlendesElement">In a database file window, click the <emph>Queries</emph> icon, then choose <emph>Edit - Edit</emph>. When referenced fields no longer exist, you see this dialog</variable>""", u"""<variable id="FehlendesElement">Dans  une fenêtre de fichier de base de données, cliquez sur l'icône <emph>Requêtes</emph>, puis choisissez <emph>Éditer - Éditer</emp>. Lorsque les champs de référence n'existent plus, vous voyez cette boîte de dialogue</variable>""")
+    assert fails(ooochecker.xmltags, """<variable id="FehlendesElement">In a database file window, click the <emph>Queries</emph> icon, then choose <emph>Edit - Edit</emph>. When referenced fields no longer exist, you see this dialog</variable>""", """<variable id="FehlendesElement">Dans  une fenêtre de fichier de base de données, cliquez sur l'icône <emph>Requêtes</emph>, puis choisissez <emph>Éditer - Éditer</emp>. Lorsque les champs de référence n'existent plus, vous voyez cette boîte de dialogue</variable>""")
     assert fails(ooochecker.xmltags, "<variable> <emph></emph> <emph></emph> </variable>", "<variable> <emph></emph> <emph></emp> </variable>")
 
 
@@ -1023,8 +1023,8 @@ def test_simpleplurals():
 
     # Test a language that doesn't use plurals
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='vi'))
-    assert passes(stdchecker.simpleplurals, "computer(s)", u"Máy tính")
-    assert fails(stdchecker.simpleplurals, "computer(s)", u"Máy tính(s)")
+    assert passes(stdchecker.simpleplurals, "computer(s)", "Máy tính")
+    assert fails(stdchecker.simpleplurals, "computer(s)", "Máy tính(s)")
 
 
 def test_nplurals():
@@ -1034,7 +1034,7 @@ def test_nplurals():
     unit = po.pounit("")
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d lêer", u"%d lêers"]
+    unit.target = ["%d lêer", "%d lêers"]
     assert checker.nplurals(unit)
 
     checker = checks.StandardUnitChecker(checks.CheckerConfig(targetlanguage='af'))
@@ -1043,15 +1043,15 @@ def test_nplurals():
     assert checker.nplurals(unit)
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d lêer", u"%d lêers"]
+    unit.target = ["%d lêer", "%d lêers"]
     assert checker.nplurals(unit)
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d lêer", u"%d lêers", u"%d lêeeeers"]
+    unit.target = ["%d lêer", "%d lêers", "%d lêeeeers"]
     assert not checker.nplurals(unit)
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d lêer"]
+    unit.target = ["%d lêer"]
     assert not checker.nplurals(unit)
 
     checker = checks.StandardUnitChecker(checks.CheckerConfig(targetlanguage='km'))
@@ -1060,11 +1060,11 @@ def test_nplurals():
     assert checker.nplurals(unit)
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d ឯកសារ"]
+    unit.target = ["%d ឯកសារ"]
     assert checker.nplurals(unit)
 
     unit.source = ["%d file", "%d files"]
-    unit.target = [u"%d ឯកសារ", u"%d lêers"]
+    unit.target = ["%d ឯកសារ", "%d lêers"]
     assert not checker.nplurals(unit)
 
 

@@ -73,24 +73,24 @@ class podebug:
         if not isinstance(string, StringElem):
             string = StringElem(string)
         string.sub.insert(0, prepend)
-        if unicode(string).endswith(u'\n'):
+        if str(string).endswith('\n'):
             # Try and remove the last character from the tree
             try:
                 lastnode = string.flatten()[-1]
-                if isinstance(lastnode.sub[-1], unicode):
-                    lastnode.sub[-1] = lastnode.sub[-1].rstrip(u'\n')
+                if isinstance(lastnode.sub[-1], str):
+                    lastnode.sub[-1] = lastnode.sub[-1].rstrip('\n')
             except IndexError:
                 pass
-            string.sub.append(append + u'\n')
+            string.sub.append(append + '\n')
         else:
             string.sub.append(append)
         return string
 
     def rewrite_xxx(self, string):
-        return self._rewrite_prepend_append(string, u"xxx")
+        return self._rewrite_prepend_append(string, "xxx")
 
     def rewrite_bracket(self, string):
-        return self._rewrite_prepend_append(string, u"[", u"]")
+        return self._rewrite_prepend_append(string, "[", "]")
 
     def rewrite_en(self, string):
         if not isinstance(string, StringElem):
@@ -98,7 +98,7 @@ class podebug:
         return string
 
     def rewrite_blank(self, string):
-        return StringElem(u"")
+        return StringElem("")
 
     def rewrite_chef(self, string):
         """Rewrite using Mock Swedish as made famous by Monty Python"""
@@ -137,7 +137,7 @@ class podebug:
             self.apply_to_translatables(string, lambda s: re.sub(a, b, s))
         return string
 
-    REWRITE_UNICODE_MAP = u"ȦƁƇḒḖƑƓĦĪĴĶĿḾȠǾƤɊŘŞŦŬṼẆẊẎẐ" + u"[\\]^_`" + u"ȧƀƈḓḗƒɠħīĵķŀḿƞǿƥɋřşŧŭṽẇẋẏẑ"
+    REWRITE_UNICODE_MAP = "ȦƁƇḒḖƑƓĦĪĴĶĿḾȠǾƤɊŘŞŦŬṼẆẊẎẐ" + "[\\]^_`" + "ȧƀƈḓḗƒɠħīĵķŀḿƞǿƥɋřşŧŭṽẇẋẏẑ"
 
     def rewrite_unicode(self, string):
         """Convert to Unicode characters that look like the source string"""
@@ -155,9 +155,9 @@ class podebug:
         self.apply_to_translatables(string, transformer)
         return string
 
-    REWRITE_FLIPPED_MAP = u"¡„#$%⅋,()⁎+´-˙/012Ɛᔭ59Ƚ86:;<=>¿@" + \
-            u"∀ԐↃᗡƎℲ⅁HIſӼ⅂WNOԀÒᴚS⊥∩ɅＭX⅄Z" + u"[\\]ᵥ_," + \
-            u"ɐqɔpǝɟƃɥıɾʞʅɯuodbɹsʇnʌʍxʎz"
+    REWRITE_FLIPPED_MAP = "¡„#$%⅋,()⁎+´-˙/012Ɛᔭ59Ƚ86:;<=>¿@" + \
+            "∀ԐↃᗡƎℲ⅁HIſӼ⅂WNOԀÒᴚS⊥∩ɅＭX⅄Z" + "[\\]ᵥ_," + \
+            "ɐqɔpǝɟƃɥıɾʞʅɯuodbɹsʇnʌʍxʎz"
         # Brackets should be swapped if the string will be reversed in memory.
         # If a right-to-left override is used, the brackets should be
         # unchanged.
@@ -180,7 +180,7 @@ class podebug:
             return self.REWRITE_FLIPPED_MAP[loc]
 
         def transformer(s):
-            return u"\u202e" + u''.join([transpose(c) for c in s])
+            return "\u202e" + ''.join([transpose(c) for c in s])
             # To reverse instead of using the RTL override:
             #return u''.join(reversed([transpose(c) for c in s]))
         self.apply_to_translatables(string, transformer)
@@ -266,7 +266,7 @@ class podebug:
                 formatted = os.path.dirname(store.filename)
             elif formatstr.endswith("h"):
                 try:
-                    self.hash_len = int(filter(str.isdigit, formatstr[1:-1]))
+                    self.hash_len = int(list(filter(str.isdigit, formatstr[1:-1])))
                 except ValueError:
                     self.hash_len = 4
                 formatted = "@hash_placeholder@"
@@ -275,8 +275,8 @@ class podebug:
             formatoptions = formatstr[1:-1]
             if formatoptions and not formatstr.endswith("h"):
                 if "c" in formatoptions and formatted:
-                    formatted = formatted[0] + filter(lambda x: x.lower() not in "aeiou", formatted[1:])
-                length = filter(str.isdigit, formatoptions)
+                    formatted = formatted[0] + [x for x in formatted[1:] if x.lower() not in "aeiou"]
+                length = list(filter(str.isdigit, formatoptions))
                 if length:
                     formatted = formatted[:int(length)]
             prefix = prefix.replace(formatstr, formatted)

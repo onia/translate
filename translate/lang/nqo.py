@@ -30,20 +30,20 @@ from translate.lang import common
 
 def reverse_quotes(text):
     def convertquotation(match):
-        return u"”%s“" % match.group(1)
-    return re.sub(u'“([^”]+)”', convertquotation, text)
+        return "”%s“" % match.group(1)
+    return re.sub('“([^”]+)”', convertquotation, text)
 
 
 class nqo(common.Common):
     """This class represents N'Ko."""
 
-    listseperator = u"߸ "
+    listseperator = "߸ "
 
     puncdict = {
-        u",": u"߸",
-        u";": u"؛",
-        u"?": u"؟",
-        u"!": u"߹",
+        ",": "߸",
+        ";": "؛",
+        "?": "؟",
+        "!": "߹",
     }
 
     ignoretests = ["startcaps", "simplecaps", "acronyms"]

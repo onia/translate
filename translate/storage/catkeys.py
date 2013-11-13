@@ -71,7 +71,7 @@ FIELDNAMES_HEADER_DEFAULTS = {
 """Default or minimum header entries for a catkeys file"""
 
 _unescape_map = {"\\r": "\r", "\\t": "\t", '\\n': '\n', '\\\\': '\\'}
-_escape_map = dict([(value, key) for (key, value) in _unescape_map.items()])
+_escape_map = dict([(value, key) for (key, value) in list(_unescape_map.items())])
 # We don't yet do escaping correctly, just for lack of time to do it.  The
 # current implementation is just based on something simple that will work with
 # investaged files.  The only escapes found were "\n", "\t", "\\n"
@@ -155,7 +155,7 @@ class CatkeysUnit(base.TranslationUnit):
     def _set_source_or_target(self, key, newvalue):
         if newvalue is None:
             self._dict[key] = None
-        if isinstance(newvalue, unicode):
+        if isinstance(newvalue, str):
             newvalue = newvalue.encode('utf-8')
         newvalue = _escape(newvalue)
         if not key in self._dict or newvalue != self._dict[key]:
@@ -180,7 +180,7 @@ class CatkeysUnit(base.TranslationUnit):
     def getnotes(self, origin=None):
         if not origin or origin in ["programmer", "developer", "source code"]:
             return self._dict["comment"].decode('utf-8')
-        return u""
+        return ""
 
     def getcontext(self):
         return self._dict["context"].decode('utf-8')
@@ -190,14 +190,14 @@ class CatkeysUnit(base.TranslationUnit):
         notes = self.getnotes()
         id = self.source
         if notes:
-            id = u"%s\04%s" % (notes, id)
+            id = "%s\04%s" % (notes, id)
         if context:
-            id = u"%s\04%s" % (context, id)
+            id = "%s\04%s" % (context, id)
         return id
 
     def markfuzzy(self, present=True):
         if present:
-            self.target = u""
+            self.target = ""
 
     def settargetlang(self, newlang):
         self._dict['target-lang'] = newlang

@@ -33,13 +33,13 @@ from translate.storage.workflow import StateEnum as state
 
 # TODO: handle translation types
 
-ID_SEPARATOR = u"\04"
+ID_SEPARATOR = "\04"
 # ID_SEPARATOR is commonly used through toolkit to generate compound
 # unit ids (for instance to concatenate msgctxt and msgid in po), but
 # \04 is an illegal char in XML 1.0, ID_SEPARATOR_SAFE will be used
 # instead when converting between xliff and other toolkit supported
 # formats
-ID_SEPARATOR_SAFE = u"__%04__"
+ID_SEPARATOR_SAFE = "__%04__"
 
 
 class xliffunit(lisa.LISAunit):
@@ -73,7 +73,7 @@ class xliffunit(lisa.LISAunit):
                 "final": S_SIGNED_OFF + 1,
                 }
 
-    statemap_r = dict((i[1], i[0]) for i in statemap.iteritems())
+    statemap_r = dict((i[1], i[0]) for i in statemap.items())
 
     STATE = {
         S_UNTRANSLATED: (state.EMPTY, state.NEEDS_WORK),
@@ -92,7 +92,6 @@ class xliffunit(lisa.LISAunit):
 
     def createlanguageNode(self, lang, text, purpose):
         """Returns an xml Element setup with given parameters."""
-
         # TODO: for now we do source, but we have to test if it is target,
         # perhaps with parameter. Alternatively, we can use lang, if
         # supplied, since an xliff file has to conform to the bilingual
@@ -101,7 +100,6 @@ class xliffunit(lisa.LISAunit):
         langset = etree.Element(self.namespaced(purpose))
         # TODO: check language
         #lisa.setXMLlang(langset, lang)
-
         langset.text = text
         return langset
 
@@ -111,8 +109,8 @@ class xliffunit(lisa.LISAunit):
         target = None
         nodes = []
         try:
-            source = self.xmlelement.iterchildren(self.namespaced(self.languageNode)).next()
-            target = self.xmlelement.iterchildren(self.namespaced('target')).next()
+            source = next(self.xmlelement.iterchildren(self.namespaced(self.languageNode)))
+            target = next(self.xmlelement.iterchildren(self.namespaced('target')))
             nodes = [source, target]
         except StopIteration:
             if source is not None:
@@ -124,7 +122,7 @@ class xliffunit(lisa.LISAunit):
     def set_rich_source(self, value, sourcelang='en'):
         sourcelanguageNode = self.get_source_dom()
         if sourcelanguageNode is None:
-            sourcelanguageNode = self.createlanguageNode(sourcelang, u'', "source")
+            sourcelanguageNode = self.createlanguageNode(sourcelang, '', "source")
             self.set_source_dom(sourcelanguageNode)
 
         # Clear sourcelanguageNode first
@@ -149,12 +147,12 @@ class xliffunit(lisa.LISAunit):
     def set_rich_target(self, value, lang='xx', append=False):
         self._rich_target = None
         if value is None:
-            self.set_target_dom(self.createlanguageNode(lang, u'', "target"))
+            self.set_target_dom(self.createlanguageNode(lang, '', "target"))
             return
 
         languageNode = self.get_target_dom()
         if languageNode is None:
-            languageNode = self.createlanguageNode(lang, u'', "target")
+            languageNode = self.createlanguageNode(lang, '', "target")
             self.set_target_dom(languageNode, append)
 
         # Clear languageNode first
@@ -217,14 +215,14 @@ class xliffunit(lisa.LISAunit):
                 # the source tag is optional
                 sourcenode = node.iterdescendants(self.namespaced("source"))
                 try:
-                    newunit.source = lisa.getText(sourcenode.next(),
+                    newunit.source = lisa.getText(next(sourcenode),
                                                   getXMLspace(node, self._default_xml_space))
                 except StopIteration:
                     pass
 
                 # must have one or more targets
                 targetnode = node.iterdescendants(self.namespaced("target"))
-                newunit.target = lisa.getText(targetnode.next(),
+                newunit.target = lisa.getText(next(targetnode),
                                               getXMLspace(node, self._default_xml_space))
                 #TODO: support multiple targets better
                 #TODO: support notes in alt-trans
@@ -247,7 +245,7 @@ class xliffunit(lisa.LISAunit):
         if not text:
             return
         if isinstance(text, str):
-            text = text.decode("utf-8")
+            text = text.encode("utf-8")
         note = etree.SubElement(self.xmlelement, self.namespaced("note"))
         note.text = text
         if origin:
@@ -414,7 +412,7 @@ class xliffunit(lisa.LISAunit):
         self.xmlelement.set("id", id.replace(ID_SEPARATOR, ID_SEPARATOR_SAFE))
 
     def getid(self):
-        uid = u""
+        uid = ""
         try:
             filename = self.xmlelement.iterancestors(self.namespaced('file')).next().get('original')
             if filename:
@@ -423,14 +421,14 @@ class xliffunit(lisa.LISAunit):
             # unit has no proper file ancestor, probably newly created
             pass
         # hide the fact that we sanitize ID_SEPERATOR
-        uid += unicode(self.xmlelement.get("id") or u"").replace(ID_SEPARATOR_SAFE, ID_SEPARATOR)
+        uid += str(self.xmlelement.get("id") or "").replace(ID_SEPARATOR_SAFE, ID_SEPARATOR)
         return uid
 
     def addlocation(self, location):
         self.setid(location)
 
     def getlocations(self):
-        id_attr = unicode(self.xmlelement.get("id") or u"")
+        id_attr = str(self.xmlelement.get("id") or "")
         # XLIFF files downloaded from PO projects in Pootle
         # might have id equal to .source, so let's avoid
         # that:
@@ -455,7 +453,7 @@ class xliffunit(lisa.LISAunit):
             group.set("purpose", purpose)
         for type, text in contexts:
             if isinstance(text, str):
-                text = text.decode("utf-8")
+                text = text.encode("utf-8")
             context = etree.SubElement(group, self.namespaced("context"))
             context.text = text
             context.set("context-type", type)
@@ -507,7 +505,7 @@ class xliffunit(lisa.LISAunit):
         strings = mstr
         if isinstance(mstr, multistring):
             strings = mstr.strings
-        elif isinstance(mstr, basestring):
+        elif isinstance(mstr, str):
             strings = [mstr]
 
         return [xml_to_strelem(s) for s in strings]
@@ -516,7 +514,7 @@ class xliffunit(lisa.LISAunit):
     def rich_to_multistring(cls, elem_list):
         """Override :meth:`TranslationUnit.rich_to_multistring` which is used
         by the ``rich_source`` and ``rich_target`` properties."""
-        return multistring([unicode(elem) for elem in elem_list])
+        return multistring([str(elem) for elem in elem_list])
     rich_to_multistring = classmethod(rich_to_multistring)
 
 
@@ -548,7 +546,7 @@ class xlifffile(lisa.LISAfile):
 
     def initbody(self):
         # detect the xliff namespace, handle both 1.1 and 1.2
-        for prefix, ns in self.document.getroot().nsmap.items():
+        for prefix, ns in list(self.document.getroot().nsmap.items()):
             if ns and ns.startswith(self.unversioned_namespace):
                 self.namespace = ns
                 break
@@ -560,7 +558,7 @@ class xlifffile(lisa.LISAfile):
         if self._filename:
             filenode = self.getfilenode(self._filename, createifmissing=True)
         else:
-            filenode = self.document.getroot().iterchildren(self.namespaced('file')).next()
+            filenode = next(self.document.getroot().iterchildren(self.namespaced('file')))
         self.body = self.getbodynode(filenode, createifmissing=True)
 
     def addheader(self):
@@ -606,7 +604,7 @@ class xlifffile(lisa.LISAfile):
         """returns all filenames in this XLIFF file"""
         filenodes = self.document.getroot().iterchildren(self.namespaced("file"))
         filenames = [self.getfilename(filenode) for filenode in filenodes]
-        filenames = filter(None, filenames)
+        filenames = [_f for _f in filenames if _f]
         if len(filenames) == 1 and filenames[0] == '':
             filenames = []
         return filenames
@@ -631,27 +629,27 @@ class xlifffile(lisa.LISAfile):
         units = (unit for unit in self.units if unit.getid().startswith(prefix))
         for index, unit in enumerate(units):
             self.id_index[unit.getid()[len(prefix):]] = unit
-        return self.id_index.keys()
+        return list(self.id_index.keys())
 
     def setsourcelanguage(self, language):
         if not language:
             return
-        filenode = self.document.getroot().iterchildren(self.namespaced('file')).next()
+        filenode = next(self.document.getroot().iterchildren(self.namespaced('file')))
         filenode.set("source-language", language)
 
     def getsourcelanguage(self):
-        filenode = self.document.getroot().iterchildren(self.namespaced('file')).next()
+        filenode = next(self.document.getroot().iterchildren(self.namespaced('file')))
         return filenode.get("source-language")
     sourcelanguage = property(getsourcelanguage, setsourcelanguage)
 
     def settargetlanguage(self, language):
         if not language:
             return
-        filenode = self.document.getroot().iterchildren(self.namespaced('file')).next()
+        filenode = next(self.document.getroot().iterchildren(self.namespaced('file')))
         filenode.set("target-language", language)
 
     def gettargetlanguage(self):
-        filenode = self.document.getroot().iterchildren(self.namespaced('file')).next()
+        filenode = next(self.document.getroot().iterchildren(self.namespaced('file')))
         return filenode.get("target-language")
     targetlanguage = property(gettargetlanguage, settargetlanguage)
 
@@ -703,7 +701,7 @@ class xlifffile(lisa.LISAfile):
         # TODO: Deprecated?
         headernode = filenode.iterchildren(self.namespaced("header"))
         try:
-            return headernode.next()
+            return next(headernode)
         except StopIteration:
             pass
         if not createifmissing:
@@ -715,7 +713,7 @@ class xlifffile(lisa.LISAfile):
         """finds the body node for the given filenode"""
         bodynode = filenode.iterchildren(self.namespaced("body"))
         try:
-            return bodynode.next()
+            return next(bodynode)
         except StopIteration:
             pass
         if not createifmissing:

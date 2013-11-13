@@ -35,7 +35,7 @@ def removekdecomments(str1):
     
       "_: comment\n"
     """
-    assert isinstance(str1, unicode)
+    assert isinstance(str1, str)
     iskdecomment = False
     lines = str1.split("\n")
     removelines = []
@@ -151,7 +151,7 @@ def filtervariables(startmarker, endmarker, varfilter):
 wordswithpunctuation = ["'n", "'t",  # Afrikaans
                        ]
 # map all the words to their non-punctified equivalent
-wordswithpunctuation = dict([(word, filter(str.isalnum, word)) for word in wordswithpunctuation])
+wordswithpunctuation = dict([(word, list(filter(str.isalnum, word))) for word in wordswithpunctuation])
 
 word_with_apos_re = re.compile("(?u)\w+'\w+")
 
@@ -160,14 +160,14 @@ def filterwordswithpunctuation(str1):
     """Goes through a list of known words that have punctuation and removes the
     punctuation from them.
     """
-    if u"'" not in str1:
+    if "'" not in str1:
         return str1
     occurrences = []
-    for word, replacement in wordswithpunctuation.iteritems():
+    for word, replacement in wordswithpunctuation.items():
         occurrences.extend([(pos, word, replacement) for pos in quote.find_all(str1, word)])
     for match in word_with_apos_re.finditer(str1):
         word = match.group()
-        replacement = filter(unicode.isalnum, word)
+        replacement = list(filter(str.isalnum, word))
         occurrences.append((match.start(), word, replacement))
     occurrences.sort()
     if occurrences:

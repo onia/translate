@@ -32,7 +32,7 @@ __all__ = ['xml_to_strelem', 'strelem_to_xml']
 def make_empty_replacement_placeable(klass, node, xml_space="preserve"):
     try:
         return klass(
-            id=node.attrib[u'id'],
+            id=node.attrib['id'],
             rid=node.attrib.get('rid', None),
             xid=node.attrib.get('xid', None),
             xml_attrib=node.attrib,
@@ -44,7 +44,7 @@ def make_empty_replacement_placeable(klass, node, xml_space="preserve"):
 
 def make_g_placeable(klass, node, xml_space="default"):
     return klass(
-        id=node.attrib[u'id'],
+        id=node.attrib['id'],
         sub=xml_to_strelem(node, xml_space).sub,
         xml_attrib=node.attrib,
     )
@@ -66,14 +66,14 @@ def make_unknown(klass, node, xml_space="preserve"):
 
 _class_dictionary = {
     #u'bpt': (xliff.Bpt, not_yet_implemented),
-    u'bx': (xliff.Bx, make_empty_replacement_placeable),
+    'bx': (xliff.Bx, make_empty_replacement_placeable),
     #u'ept': (xliff.Ept, not_yet_implemented),
-    u'ex': (xliff.Ex, make_empty_replacement_placeable),
-    u'g': (xliff.G, make_g_placeable),
+    'ex': (xliff.Ex, make_empty_replacement_placeable),
+    'g': (xliff.G, make_g_placeable),
     #u'it': (xliff.It, not_yet_implemented),
     #u'ph': (xliff.Ph, not_yet_implemented),
     #u'sub': (xliff.Sub, not_yet_implemented),
-    u'x': (xliff.X, make_empty_replacement_placeable),
+    'x': (xliff.X, make_empty_replacement_placeable),
 }
 
 
@@ -87,18 +87,18 @@ def make_placeable(node, xml_space):
 
 
 def as_unicode(string):
-    if isinstance(string, unicode):
+    if isinstance(string, str):
         return string
     elif isinstance(string, StringElem):
-        return unicode(string)
+        return str(string)
     else:
-        return unicode(string.decode('utf-8'))
+        return str(string.decode('utf-8'))
 
 
 def xml_to_strelem(dom_node, xml_space="preserve"):
     if dom_node is None:
         return StringElem()
-    if isinstance(dom_node, basestring):
+    if isinstance(dom_node, str):
         dom_node = etree.fromstring(dom_node)
     normalize_xml_space(dom_node, xml_space, remove_start=True)
     result = StringElem()
@@ -108,15 +108,15 @@ def xml_to_strelem(dom_node, xml_space="preserve"):
             continue
         sub.append(make_placeable(child_dom_node, xml_space))
         if child_dom_node.tail:
-            sub.append(StringElem(unicode(child_dom_node.tail)))
+            sub.append(StringElem(str(child_dom_node.tail)))
 
     # This is just a strange way of inserting the first text and avoiding a
     # call to .prune() which is very expensive. We assume the tree is optimal.
     node_text = dom_node.text
     if sub and node_text:
-        sub.insert(0, StringElem(unicode(node_text)))
+        sub.insert(0, StringElem(str(node_text)))
     elif node_text:
-        sub.append(unicode(node_text))
+        sub.append(str(node_text))
     return result
 
 # ==========================================================
@@ -132,7 +132,7 @@ def placeable_as_dom_node(placeable, tagname):
         dom_node.attrib['rid'] = placeable.rid
 
     if hasattr(placeable, 'xml_attrib'):
-        for attrib, value in placeable.xml_attrib.items():
+        for attrib, value in list(placeable.xml_attrib.items()):
             dom_node.set(attrib, value)
 
     return dom_node
@@ -176,19 +176,19 @@ _placeable_dictionary = {
 def xml_append_string(node, string):
     if not len(node):
         if not node.text:
-            node.text = unicode(string)
+            node.text = str(string)
         else:
-            node.text += unicode(string)
+            node.text += str(string)
     else:
         lastchild = node.getchildren()[-1]
         if lastchild.tail is None:
             lastchild.tail = ''
-        lastchild.tail += unicode(string)
+        lastchild.tail += str(string)
     return node
 
 
 def strelem_to_xml(parent_node, elem):
-    if isinstance(elem, unicode):
+    if isinstance(elem, str):
         return xml_append_string(parent_node, elem)
     if not isinstance(elem, StringElem):
         return parent_node
@@ -211,7 +211,7 @@ def strelem_to_xml(parent_node, elem):
 def parse_xliff(pstr):
     try:
         return xml_to_strelem(etree.fromstring('<source>%s</source>' % (pstr)))
-    except Exception, exc:
+    except Exception as exc:
         raise
         return None
 xliff.parsers = [parse_xliff]

@@ -53,7 +53,7 @@ class LRUCachingDict(WeakValueDictionary):
         while len(self) >= self.maxsize <= len(self.queue):
             cullsize = max(int(len(self.queue) / self.cullsize), 2)
             try:
-                for i in xrange(cullsize):
+                for i in range(cullsize):
                     self.queue.popleft()
             except IndexError:
                 # queue is empty, bail out.
@@ -65,7 +65,7 @@ class LRUCachingDict(WeakValueDictionary):
             # collected
             if self.aggressive_gc:
                 rounds = min(max(int(self.aggressive_gc), 5), 50)
-                for i in xrange(rounds):
+                for i in range(rounds):
                     gc.collect()
             else:
                 gc.collect()

@@ -25,9 +25,9 @@ or entire files (csvfile) for use with localisation
 import csv
 import codecs
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except:
-    import StringIO
+    import io
 
 from translate.misc import sparse
 from translate.storage import base
@@ -54,7 +54,7 @@ class SimpleDictReader:
         else:
             return value
 
-    def next(self):
+    def __next__(self):
         lentokens = len(self.tokens)
         while self.tokenpos < lentokens and self.tokens[self.tokenpos] == "\n":
             self.tokenpos += 1
@@ -106,7 +106,7 @@ csv.register_dialect('default', DefaultDialect)
 def from_unicode(text, encoding='utf-8'):
     if encoding == 'auto':
         encoding = 'utf-8'
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text.encode(encoding)
     return text
 
@@ -114,7 +114,7 @@ def from_unicode(text, encoding='utf-8'):
 def to_unicode(text, encoding='utf-8'):
     if encoding == 'auto':
         encoding = 'utf-8'
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text
     return text.decode(encoding)
 
@@ -140,7 +140,7 @@ class csvunit(base.TranslationUnit):
         result = self.source
         context = self.context
         if context:
-            result = u"%s\04%s" % (context, result)
+            result = "%s\04%s" % (context, result)
 
         return result
 
@@ -193,7 +193,7 @@ class csvunit(base.TranslationUnit):
                 self.translator_comments = text
 
     def removenotes(self):
-        self.translator_comments = u''
+        self.translator_comments = ''
 
     def isfuzzy(self):
         if self.fuzzy.lower() in ('1', 'x', 'true', 'yes', 'fuzzy'):
@@ -209,7 +209,7 @@ class csvunit(base.TranslationUnit):
     def match_header(self):
         """see if unit might be a header"""
         some_value = False
-        for key, value in self.todict().iteritems():
+        for key, value in self.todict().items():
             if value:
                 some_value = True
             if key.lower() != 'fuzzy' and value and key.lower() != value.lower():
@@ -235,7 +235,7 @@ class csvunit(base.TranslationUnit):
         return source, target
 
     def fromdict(self, cedict, encoding='utf-8'):
-        for key, value in cedict.iteritems():
+        for key, value in cedict.items():
             rkey = fieldname_map.get(key, key)
             if value is None or key is None or key == EXTRA_KEY:
                 continue
@@ -326,7 +326,7 @@ def valid_fieldnames(fieldnames):
 
 def detect_header(sample, dialect, fieldnames):
     """Test if file has a header or not, also returns number of columns in first row"""
-    inputfile = StringIO.StringIO(sample)
+    inputfile = io.StringIO(sample)
     try:
         reader = csv.reader(inputfile, dialect)
     except csv.Error:
@@ -337,7 +337,7 @@ def detect_header(sample, dialect, fieldnames):
             inputfile.seek(0)
             reader = csv.reader(inputfile, 'excel')
 
-    header = reader.next()
+    header = next(reader)
     columncount = max(len(header), 3)
     if valid_fieldnames(header):
         return header
@@ -359,7 +359,7 @@ class csvfile(base.TranslationStore):
         if not fieldnames:
             self.fieldnames = ['location', 'source', 'target', 'id', 'fuzzy', 'context', 'translator_comments', 'developer_comments']
         else:
-            if isinstance(fieldnames, basestring):
+            if isinstance(fieldnames, str):
                 fieldnames = [fieldname.strip() for fieldname in fieldnames.split(",")]
             self.fieldnames = fieldnames
         self.filename = getattr(inputfile, 'name', '')
@@ -379,7 +379,7 @@ class csvfile(base.TranslationStore):
         sniffer = csv.Sniffer()
         # FIXME: maybe we should sniff a smaller sample
         sample = csvsrc[:1024]
-        if isinstance(sample, unicode):
+        if isinstance(sample, str):
             sample = sample.encode('utf-8')
 
         try:
@@ -414,7 +414,7 @@ class csvfile(base.TranslationStore):
     def __str__(self):
         """convert to a string. double check that unicode is handled somehow here"""
         source = self.getoutput()
-        if not isinstance(source, unicode):
+        if not isinstance(source, str):
             source = source.decode('utf-8')
         if not self.encoding or self.encoding == 'auto':
             encoding = 'utf-8'
@@ -423,7 +423,7 @@ class csvfile(base.TranslationStore):
         return source.encode(encoding)
 
     def getoutput(self):
-        outputfile = StringIO.StringIO()
+        outputfile = io.StringIO()
         writer = csv.DictWriter(outputfile, self.fieldnames, extrasaction='ignore', dialect=self.dialect)
         # write header
         hdict = dict(map(None, self.fieldnames, self.fieldnames))

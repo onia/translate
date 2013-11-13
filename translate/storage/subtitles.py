@@ -28,7 +28,7 @@
 """
 
 import os
-from StringIO import StringIO
+from io import StringIO
 import tempfile
 
 try:
@@ -115,7 +115,7 @@ class SubtitleFile(base.TranslationStore):
                 newunit._start = subtitle.start
                 newunit._end = subtitle.end
                 newunit._duration = subtitle.duration_seconds
-        except Exception, e:
+        except Exception as e:
             raise base.ParseError(e)
 
     def _parsefile(self, storefile):
@@ -125,7 +125,7 @@ class SubtitleFile(base.TranslationStore):
         elif hasattr(storefile, 'filename'):
             self.filename = storefile.filename
             storefile.close()
-        elif isinstance(storefile, basestring):
+        elif isinstance(storefile, str):
             self.filename = storefile
 
         if self.filename and os.path.exists(self.filename):
@@ -141,7 +141,7 @@ class SubtitleFile(base.TranslationStore):
         return newstore
 
     def parse(self, input):
-        if isinstance(input, basestring):
+        if isinstance(input, str):
             # Gaupol does not allow parsing from strings
             if self.filename:
                 tmpfile, tmpfilename = tempfile.mkstemp(suffix=self.filename)

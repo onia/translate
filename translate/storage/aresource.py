@@ -182,13 +182,13 @@ class AndroidResourceUnit(base.TranslationUnit):
                         max_slice = min(i+5, len(text)-1)
                         codepoint_str = "".join(text[i+1 : max_slice])
                         if len(codepoint_str) < 4:
-                            codepoint_str = u"0" * (4-len(codepoint_str)) + codepoint_str
+                            codepoint_str = "0" * (4-len(codepoint_str)) + codepoint_str
                         try:
                             # We can't trust int() to raise a ValueError,
                             # it will ignore leading/trailing whitespace.
                             if not codepoint_str.isalnum():
                                 raise ValueError(codepoint_str)
-                            codepoint = unichr(int(codepoint_str, 16))
+                            codepoint = chr(int(codepoint_str, 16))
                         except ValueError:
                             raise ValueError('bad unicode escape sequence')
 
@@ -270,9 +270,9 @@ class AndroidResourceUnit(base.TranslationUnit):
 
     def gettarget(self, lang=None):
         # Grab inner text
-        target = self.unescape(self.xmlelement.text or u'')
+        target = self.unescape(self.xmlelement.text or '')
         # Include markup as well
-        target += u''.join([data.forceunicode(etree.tostring(child, encoding='utf-8')) for child in self.xmlelement.iterchildren()])
+        target += ''.join([data.forceunicode(etree.tostring(child, encoding='utf-8')) for child in self.xmlelement.iterchildren()])
         return target
 
     target = property(gettarget, settarget)
@@ -297,7 +297,7 @@ class AndroidResourceUnit(base.TranslationUnit):
                     comments.insert(0, prevSibling.text)
                     prevSibling = prevSibling.getprevious()
 
-            return u'\n'.join(comments)
+            return '\n'.join(comments)
         else:
             return super(AndroidResourceUnit, self).getnotes(origin)
 

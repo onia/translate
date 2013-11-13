@@ -29,7 +29,7 @@ from translate.misc import quote
 from translate.storage import po
 from translate.storage import properties
 
-eol = u"\n"
+eol = "\n"
 
 
 class reprop:
@@ -57,7 +57,7 @@ class reprop:
         for line in content.splitlines(True):
             outputstr = self.convertline(line)
             outputlines.append(outputstr)
-        return u"".join(outputlines).encode(self.encoding)
+        return "".join(outputlines).encode(self.encoding)
 
     def _explode_gaia_plurals(self):
         """Explode the gaia plurals."""
@@ -76,7 +76,7 @@ class reprop:
                 if category == 'zero':
                     # [zero] cases are translated as separate units
                     continue
-                new_unit = self.inputstore.addsourceunit(u"fish") # not used
+                new_unit = self.inputstore.addsourceunit("fish") # not used
                 new_location = '%s[%s]' % (location, category)
                 new_unit.addlocation(new_location)
                 new_unit.target = text
@@ -86,7 +86,7 @@ class reprop:
             del self.inputstore.locationindex[location]
 
     def convertline(self, line):
-        returnline = u""
+        returnline = ""
         # handle multiline msgid if we're in one
         if self.inmultilinemsgid:
             msgid = quote.rstripeol(line).strip()
@@ -117,14 +117,14 @@ class reprop:
             if key in self.inputstore.locationindex:
                 unit = self.inputstore.locationindex[key]
                 if not unit.istranslated() and bool(unit.source) and self.remove_untranslated:
-                    returnline = u""
+                    returnline = ""
                 else:
                     if unit.isfuzzy() and not self.includefuzzy or len(unit.target) == 0:
                         value = unit.source
                     else:
                         value = unit.target
                     self.inecho = False
-                    assert isinstance(value, unicode)
+                    assert isinstance(value, str)
                     returnline = "%(key)s%(del)s%(value)s%(term)s%(eol)s" % \
                          {"key": "%s%s%s" % (self.personality.key_wrap_char,
                                              key,
@@ -139,7 +139,7 @@ class reprop:
             else:
                 self.inecho = True
                 returnline = line + eol
-        assert isinstance(returnline, unicode)
+        assert isinstance(returnline, str)
         return returnline
 
 
@@ -194,9 +194,9 @@ def main(argv=None):
                                          description=__doc__)
     parser.add_option("", "--personality", dest="personality",
             default=properties.default_dialect, type="choice",
-            choices=properties.dialects.keys(),
+            choices=list(properties.dialects.keys()),
             help="override the input file format: %s (for .properties files, default: %s)" %
-                 (", ".join(properties.dialects.iterkeys()),
+                 (", ".join(iter(properties.dialects.keys())),
                   properties.default_dialect),
             metavar="TYPE")
     parser.add_option("", "--encoding", dest="encoding", default=None,

@@ -44,7 +44,7 @@ def writexml_helper(self, writer, indent="", addindent="", newl=""):
     writer.write(indent + "<" + self.tagName)
 
     attrs = self._get_attributes()
-    a_names = attrs.keys()
+    a_names = list(attrs.keys())
     a_names.sort()
 
     for a_name in a_names:
@@ -114,7 +114,7 @@ def getFirstElementByTagName(node, name):
 #    else:
 #      return results[0]
     try:
-        result = results.next()
+        result = next(results)
         return result
     except StopIteration:
         return None
@@ -267,7 +267,7 @@ class ExpatBuilderNS(expatbuilder.ExpatBuilderNS):
 def parse(file, parser=None, bufsize=None):
     """Parse a file into a DOM by filename or file object."""
     builder = ExpatBuilderNS()
-    if isinstance(file, basestring):
+    if isinstance(file, str):
         fp = open(file, 'rb')
         try:
             result = builder.parseFile(fp)

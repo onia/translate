@@ -45,9 +45,9 @@ def getText(node, xml_space="preserve"):
     an optional default to use in case nothing is specified in this node."""
     xml_space = getXMLspace(node, xml_space)
     if xml_space == "default":
-        return unicode(string_xpath_normalized(node))  # specific to lxml.etree
+        return str(string_xpath_normalized(node))  # specific to lxml.etree
     else:
-        return unicode(string_xpath(node))  # specific to lxml.etree
+        return str(string_xpath(node))  # specific to lxml.etree
 
     # If we want to normalise space and only preserve it when the directive
     # xml:space="preserve" is given in node or in parents, consider this code:
@@ -104,7 +104,7 @@ MULTIWHITESPACE_RE = re.compile(MULTIWHITESPACE_PATTERN, re.MULTILINE)
 def normalize_space(text):
     """Normalize the given text for implementation of
     ``xml:space="default"``."""
-    text = MULTIWHITESPACE_RE.sub(u" ", text)
+    text = MULTIWHITESPACE_RE.sub(" ", text)
     return text
 
 
@@ -116,10 +116,10 @@ def normalize_xml_space(node, xml_space, remove_start=False):
         return
     if node.text:
         node.text = normalize_space(node.text)
-        if remove_start and node.text[0] == u" ":
+        if remove_start and node.text[0] == " ":
             node.text = node.text.lstrip()
             remove_start = False
-        if len(node.text) > 0 and node.text.endswith(u" "):
+        if len(node.text) > 0 and node.text.endswith(" "):
             remove_start = True
         if len(node) == 0:
             node.text = node.text.rstrip()

@@ -138,7 +138,7 @@ class GrepFilter:
             invertmatch=False, keeptranslations=False, accelchar=None, encoding='utf-8',
             max_matches=0):
         """builds a checkfilter using the given checker"""
-        if isinstance(searchstring, unicode):
+        if isinstance(searchstring, str):
             self.searchstring = searchstring
         else:
             self.searchstring = searchstring.decode(encoding)
@@ -213,7 +213,7 @@ class GrepFilter:
             if self.matches(unit.getnotes()):
                 return True
         if self.search_locations:
-            if self.matches(u" ".join(unit.getlocations())):
+            if self.matches(" ".join(unit.getlocations())):
                 return True
         return False
 
@@ -241,7 +241,7 @@ class GrepFilter:
             flags |= re.IGNORECASE
         if not self.useregexp:
             searchstring = re.escape(searchstring)
-        self.re_search = re.compile(u'(%s)' % (searchstring), flags)
+        self.re_search = re.compile('(%s)' % (searchstring), flags)
 
         matches = []
         indexes = []

@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-import urlparse
+import urllib.parse
 try:
-    from urlparse import parse_qs
+    from urllib.parse import parse_qs
 except ImportError:
     from cgi import parse_qs
 
@@ -59,7 +59,7 @@ class TestOO2PO:
         oooutputfile = wStringIO.StringIO()
         po2oo.convertoo(poinputfile, oooutputfile, ootemplatefile, targetlanguage="en-US")
         ooresult = oooutputfile.getvalue()
-        print "original oo:\n", oosource, "po version:\n", posource, "output oo:\n", ooresult
+        print("original oo:\n", oosource, "po version:\n", posource, "output oo:\n", ooresult)
         return ooresult.split('\t')[10]
 
     def check_roundtrip(self, filename, text):
@@ -80,7 +80,7 @@ class TestOO2PO:
         pofile = self.convert(oosource)
         pounit = self.singleelement(pofile)
         poelementsrc = str(pounit)
-        print poelementsrc
+        print(poelementsrc)
         assert "Newline \n Newline" in pounit.source
         assert "Tab \t Tab" in pounit.source
         assert "CR \r CR" in pounit.source
@@ -106,7 +106,7 @@ class TestOO2PO:
         pofile = self.convert(oosource)
         pounit = self.singleelement(pofile)
         poelementsrc = str(pounit)
-        print poelementsrc
+        print(poelementsrc)
         assert pounit.source == r"\<"
 
     def test_escapes_helpcontent2(self):
@@ -115,7 +115,7 @@ class TestOO2PO:
         pofile = self.convert(oosource)
         pounit = self.singleelement(pofile)
         poelementsrc = str(pounit)
-        print poelementsrc
+        print(poelementsrc)
         assert pounit.source == r'size *2 \langle x \rangle'
 
     def test_msgid_bug_error_address(self):
@@ -124,14 +124,14 @@ class TestOO2PO:
         pofile = self.convert(oosource)
         assert pofile.units[0].isheader()
         assert pofile.parseheader()["Report-Msgid-Bugs-To"]
-        bug_url = urlparse.urlparse(pofile.parseheader()["Report-Msgid-Bugs-To"])
-        print bug_url
+        bug_url = urllib.parse.urlparse(pofile.parseheader()["Report-Msgid-Bugs-To"])
+        print(bug_url)
         assert bug_url[:3] == ("http", "qa.openoffice.org", "/issues/enter_bug.cgi")
-        assert parse_qs(bug_url[4], True) == {u'comment': [u''],
-                                                       u'component': [u'l10n'],
-                                                       u'form_name': [u'enter_issue'],
-                                                       u'short_desc': [u'Localization issue in file: '],
-                                                       u'subcomponent': [u'ui'],
+        assert parse_qs(bug_url[4], True) == {'comment': [''],
+                                                       'component': ['l10n'],
+                                                       'form_name': ['enter_issue'],
+                                                       'short_desc': ['Localization issue in file: '],
+                                                       'subcomponent': ['ui'],
                                                       }
 
     def test_x_comment_inclusion(self):
@@ -239,4 +239,4 @@ sd	source\ui\animations\CustomAnimationSchemesPane.src	0	checkbox	DLG_CUSTOMANIM
         self.run_command("simple.oo", "simple.po", language="fr", multifile="onefile", error="traceback", duplicates="merge")
         pofile = self.target_filetype(self.open_testfile("simple.po"))
         assert len(pofile.units) == 2
-        assert pofile.units[1].target == u"Aperçu automatique"
+        assert pofile.units[1].target == "Aperçu automatique"

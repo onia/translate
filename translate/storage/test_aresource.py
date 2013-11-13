@@ -14,8 +14,8 @@ class TestAndroidResourceUnit(test_monolingual.TestMonolingualUnit):
         unit = self.UnitClass("Test String")
         unit.target = string
 
-        print("unit.target:", repr(unit.target))
-        print("xml:", repr(xml))
+        print(("unit.target:", repr(unit.target)))
+        print(("xml:", repr(xml)))
 
         assert str(unit) == xml
 
@@ -32,9 +32,9 @@ class TestAndroidResourceUnit(test_monolingual.TestMonolingualUnit):
         et = etree.fromstring(xml, parser)
         unit = self.UnitClass.createfromxmlElement(et)
 
-        print("unit.target:", repr(unit.target))
-        print("string:", string)
-        print("translatable:", repr(unit.istranslatable()))
+        print(("unit.target:", repr(unit.target)))
+        print(("string:", string))
+        print(("translatable:", repr(unit.istranslatable())))
 
         assert unit.target == string
         assert unit.istranslatable() == translatable

@@ -35,6 +35,7 @@ state values correspond to similar states. For example state 0 should be
 "translated" in PO and "final" in XLIFF. This allows formats to implicitly
 define similar states.
 """
+import collections
 
 
 class StateEnum:
@@ -64,12 +65,12 @@ class State(object):
         return '<State "%s">' % (self.name)
 
     def enter(self, obj):
-        if not self.enter_action or not callable(self.enter_action):
+        if not self.enter_action or not isinstance(self.enter_action, collections.Callable):
             return
         self.enter_action(obj)
 
     def leave(self, obj):
-        if not self.leave_action or not callable(self.leave_action):
+        if not self.leave_action or not isinstance(self.leave_action, collections.Callable):
             return
         self.leave_action(obj)
 
@@ -133,9 +134,9 @@ class Workflow(object):
 
     # METHODS #
     def add_edge(self, from_state, to_state):
-        if isinstance(from_state, basestring):
+        if isinstance(from_state, str):
             from_state = self.get_state_by_name(from_state)
-        if isinstance(to_state, basestring):
+        if isinstance(to_state, str):
             to_state = self.get_state_by_name(to_state)
         for s in (from_state, to_state):
             if s not in self.states:
@@ -177,7 +178,7 @@ class Workflow(object):
             constraints. The current state's ``leave`` and the new state's
             ``enter`` method is still called. For edge transitions, see the
             ``trans`` method."""
-        if isinstance(state, basestring):
+        if isinstance(state, str):
             state = self.get_state_by_name(state)
         if state not in self.states:
             raise StateNotInWorkflowError(state)
@@ -189,7 +190,7 @@ class Workflow(object):
 
     def set_initial_state(self, state):
         """Sets the initial state, used by the :meth:`.reset` method."""
-        if isinstance(state, basestring):
+        if isinstance(state, str):
             state = self.get_state_by_name(state)
         if not isinstance(state, State):
             raise InvalidStateObjectError(state)
@@ -201,7 +202,7 @@ class Workflow(object):
         """Reset the work flow to the initial state using the given object."""
         self._workflow_obj = wf_obj
         if init_state is not None:
-            if isinstance(init_state, basestring):
+            if isinstance(init_state, str):
                 init_state = self.get_state_by_name(init_state)
             if init_state not in self.states:
                 raise StateNotInWorkflowError()
@@ -218,7 +219,7 @@ class Workflow(object):
             returned by ``get_to_states`` is used."""
         if self._current_state is None:
             raise ValueError('No current state set')
-        if isinstance(to_state, basestring):
+        if isinstance(to_state, str):
             to_state = self.get_state_by_name(to_state)
         if to_state is None:
             to_state = self.get_to_states()
@@ -237,7 +238,7 @@ class Workflow(object):
 def create_unit_workflow(unit, state_names):
     wf = Workflow(unit)
 
-    state_info = unit.STATE.items()
+    state_info = list(unit.STATE.items())
     state_info.sort(key=lambda x: x[0])
 
     init_state, prev_state = None, None

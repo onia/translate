@@ -23,7 +23,7 @@ class TestPOGrep:
         options, args = pogrep.cmdlineparser().parse_args(["xxx.po"] + cmdlineoptions)
         grepfilter = pogrep.GrepFilter(searchstring, options.searchparts, options.ignorecase, options.useregexp, options.invertmatch, options.keeptranslations, options.accelchar)
         tofile = grepfilter.filterfile(self.poparse(posource))
-        print str(tofile)
+        print(str(tofile))
         return str(tofile)
 
     def test_simplegrep_msgid(self):
@@ -78,7 +78,7 @@ class TestPOGrep:
                                          (poascii, queryunicode, ''),
                                          (pounicode, queryascii, ''),
                                          (pounicode, queryunicode, pounicode)]:
-            print "Source:\n%s\nSearch: %s\n" % (source, search)
+            print("Source:\n%s\nSearch: %s\n" % (source, search))
             poresult = self.pogrep(source, search)
             assert poresult.index(expected) >= 0
 
@@ -92,7 +92,7 @@ class TestPOGrep:
                                          (poascii, queryunicode, ''),
                                          (pounicode, queryascii, ''),
                                          (pounicode, queryunicode, pounicode)]:
-            print "Source:\n%s\nSearch: %s\n" % (source, search)
+            print("Source:\n%s\nSearch: %s\n" % (source, search))
             poresult = self.pogrep(source, search, ["--regexp"])
             assert poresult.index(expected) >= 0
 
@@ -106,18 +106,18 @@ class TestPOGrep:
 
     def test_unicode_normalise(self):
         """check that we normlise unicode strings before comparing"""
-        source_template = u'# comment\n#: test.c\nmsgid "test"\nmsgstr "t%sst"\n'
+        source_template = '# comment\n#: test.c\nmsgid "test"\nmsgstr "t%sst"\n'
         # é, e + '
         # Ḽ, L + ^
         # Ṏ
-        groups = [(u"\u00e9", u"\u0065\u0301"), \
-                  (u"\u1e3c", u"\u004c\u032d"), \
-                  (u"\u1e4e", u"\u004f\u0303\u0308", u"\u00d5\u0308")]
+        groups = [("\u00e9", "\u0065\u0301"), \
+                  ("\u1e3c", "\u004c\u032d"), \
+                  ("\u1e4e", "\u004f\u0303\u0308", "\u00d5\u0308")]
         for letters in groups:
             for source_letter in letters:
                 source = source_template % source_letter
                 for search_letter in letters:
-                    print search_letter.encode('utf-8')
+                    print(search_letter.encode('utf-8'))
                     poresult = self.pogrep(source, search_letter)
                     assert poresult.index(source.encode('utf-8')) >= 0
 
@@ -157,8 +157,8 @@ class TestXLiffGrep:
         xliff_text = self.xliff_text
         xliff_file = self.xliff_parse(xliff_text)
         xliff_result = self.xliff_parse(self.xliff_grep(xliff_text, "rêd"))
-        assert first_translatable(xliff_result).getsource() == u"rêd"
-        assert first_translatable(xliff_result).gettarget() == u"rooi"
+        assert first_translatable(xliff_result).getsource() == "rêd"
+        assert first_translatable(xliff_result).gettarget() == "rooi"
 
         xliff_result = self.xliff_parse(self.xliff_grep(xliff_text, "unavailable string"))
         assert xliff_result.isempty()

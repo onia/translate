@@ -9,14 +9,14 @@ from translate.storage import trados
 
 def test_unescape():
     # NBSP
-    assert trados.unescape(ur"Ordre du jour\~:") == u"Ordre du jour\u00a0:"
-    assert trados.unescape(ur"Association for Road Safety \endash  Conference") == u"Association for Road Safety –  Conference"
+    assert trados.unescape(r"Ordre du jour\~:") == "Ordre du jour\u00a0:"
+    assert trados.unescape(r"Association for Road Safety \endash  Conference") == "Association for Road Safety –  Conference"
 
 
 def test_escape():
     # NBSP
-    assert trados.escape(u"Ordre du jour\u00a0:") == ur"Ordre du jour\~:"
-    assert trados.escape(u"Association for Road Safety –  Conference") == ur"Association for Road Safety \endash  Conference"
+    assert trados.escape("Ordre du jour\u00a0:") == r"Ordre du jour\~:"
+    assert trados.escape("Association for Road Safety –  Conference") == r"Association for Road Safety \endash  Conference"
 
 #@mark.xfail(reason="Lots to implement")
 #class TestTradosTxtTmUnit(test_base.TestTranslationUnit):

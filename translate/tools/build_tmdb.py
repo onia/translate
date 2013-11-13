@@ -51,15 +51,15 @@ class Builder:
     def handlefile(self, filename):
         try:
             store = factory.getobject(filename)
-        except Exception, e:
+        except Exception as e:
             logger.error(str(e))
             return
         # do something useful with the store and db
         try:
             self.tmdb.add_store(store, self.source_lang, self.target_lang, commit=False)
-        except Exception, e:
-            print e
-        print "File added:", filename
+        except Exception as e:
+            print(e)
+        print("File added:", filename)
 
     def handlefiles(self, dirname, filenames):
         for filename in filenames:

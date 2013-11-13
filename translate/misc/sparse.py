@@ -174,7 +174,7 @@ class SimpleParser:
         """apply a tokenizer to a set of text, flattening the result"""
         tokenizedlists = [tokenizer(text) for text in inputlist]
         joined = []
-        map(joined.extend, tokenizedlists)
+        list(map(joined.extend, tokenizedlists))
         return joined
 
     def applytokenizers(self, inputlist, tokenizers):

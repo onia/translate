@@ -39,21 +39,21 @@ class XPathTree(object):
             self.children == other.children
 
 
-@accepts(unicode)
+@accepts(str)
 def _split_xpath_component(xpath_component):
     """Split an xpath component into a tag-index tuple.
 
     >>> split_xpath_component('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content[0]')
     ('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content', 0).
     """
-    lbrac = xpath_component.rfind(u'[')
-    rbrac = xpath_component.rfind(u']')
+    lbrac = xpath_component.rfind('[')
+    rbrac = xpath_component.rfind(']')
     tag = xpath_component[:lbrac]
     index = int(xpath_component[lbrac+1:rbrac])
     return tag, index
 
 
-@accepts(unicode)
+@accepts(str)
 def _split_xpath(xpath):
     """Split an 'xpath' string separated by / into a reversed list of its components. Thus:
 
@@ -65,12 +65,12 @@ def _split_xpath(xpath):
     """
     if xliff.ID_SEPARATOR in xpath:
         xpath = xpath.split(xliff.ID_SEPARATOR)[-1]
-    components = xpath.split(u'/')
+    components = xpath.split('/')
     components = [_split_xpath_component(component) for component in components]
     return list(reversed(components))
 
 
-@accepts(IsOneOf(etree._Element, XPathTree), [(unicode, Number)], base.TranslationUnit)
+@accepts(IsOneOf(etree._Element, XPathTree), [(str, Number)], base.TranslationUnit)
 def _add_unit_to_tree(node, xpath_components, unit):
     """Walk down the tree rooted a node, and follow nodes which correspond to the
     components of xpath_components. When reaching the end of xpath_components,

@@ -203,7 +203,7 @@ def _do_poheaders(input_store, output_store, template_store):
 
     if template_store is not None and isinstance(template_store, poheader.poheader):
         templateheadervalues = template_store.parseheader()
-        for key, value in templateheadervalues.iteritems():
+        for key, value in templateheadervalues.items():
             if key == "Project-Id-Version":
                 project_id_version = value
             elif key == "Last-Translator":
@@ -225,7 +225,7 @@ def _do_poheaders(input_store, output_store, template_store):
                 kwargs[key] = value
 
     inputheadervalues = input_store.parseheader()
-    for key, value in inputheadervalues.iteritems():
+    for key, value in inputheadervalues.items():
         if key in ("Project-Id-Version", "Last-Translator", "Language-Team", \
                    "PO-Revision-Date", "Content-Type", \
                    "Content-Transfer-Encoding", "Plural-Forms"):

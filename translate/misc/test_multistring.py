@@ -33,22 +33,22 @@ class TestMultistring(test_autoencode.TestAutoencode):
         result = s1.replace("e", "xx")
         assert result == t(["abcdxxf", "dxxf"])
 
-        result = s1.replace("e", u"\xe9")
-        assert result == t([u"abcd\xe9f", u"d\xe9f"])
+        result = s1.replace("e", "\xe9")
+        assert result == t(["abcd\xe9f", "d\xe9f"])
 
         result = s1.replace("e", "\n")
-        assert result == t([u"abcd\nf", u"d\nf"])
+        assert result == t(["abcd\nf", "d\nf"])
 
         result = result.replace("\n", "\\n")
-        assert result == t([u"abcd\\nf", u"d\\nf"])
+        assert result == t(["abcd\\nf", "d\\nf"])
 
         result = result.replace("\\n", "\n")
-        assert result == t([u"abcd\nf", u"d\nf"])
+        assert result == t(["abcd\nf", "d\nf"])
 
         s2 = t(["abcdeef", "deef"])
 
         result = s2.replace("e", "g")
-        assert result == t([u"abcdggf", u"dggf"])
+        assert result == t(["abcdggf", "dggf"])
 
         result = s2.replace("e", "g", 1)
-        assert result == t([u"abcdgef", u"dgef"])
+        assert result == t(["abcdgef", "dgef"])

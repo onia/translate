@@ -25,7 +25,8 @@ import os
 import shutil
 import logging
 
-import CommonIndexer
+from . import CommonIndexer
+import collections
 
 """ TODO for indexing engines:
     * get rid of jToolkit.glock dependency
@@ -67,7 +68,7 @@ def _get_available_indexers():
             continue
         # the module function "is_available" must return "True"
         if not (hasattr(module, "is_available") and \
-                callable(module.is_available) and \
+                isinstance(module.is_available, collections.Callable) and \
                 module.is_available()):
             continue
         for item in dir(module):
@@ -179,4 +180,4 @@ def get_indexer(basedir, preference=None):
 if __name__ == "__main__":
     # show all supported indexing engines (with fulfilled requirements)
     for ONE_INDEX in _AVAILABLE_INDEXERS:
-        print ONE_INDEX
+        print(ONE_INDEX)

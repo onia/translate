@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="Translate Toolkit - po2tmx" creationtoolversion="1.10.0" segtype="sentence" o-tmf="UTF-8" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Weather forecast from wunderground.com</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Weather forecast from wunderground.com</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Weather forecast provided by Weather Underground (http://www.wunderground.com/)</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Weather forecast provided by Weather Underground (http://www.wunderground.com/)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Use of this add-on implies that you have agreed to the Terms of Service located at http://www.wunderground.com/weather/api/d/terms.html</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Use of this add-on implies that you have agreed to the Terms of Service located at http://www.wunderground.com/weather/api/d/terms.html</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location setup</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location setup</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Advanced options</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Advanced options</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Enabled</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Enabled</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 1</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 1</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 2</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 2</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 3</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 3</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 1 display name</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 1 display name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 2 display name</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 2 display name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 3 display name</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 3 display name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 1 id</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 1 id</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 2 id</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 2 id</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 3 id</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 3 id</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Enable logging</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Enable logging</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Weekend</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Weekend</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Saturday/Sunday</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Saturday/Sunday</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Friday/Saturday</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Friday/Saturday</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Thursday/Friday</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Thursday/Friday</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Map zoom level</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Map zoom level</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Animated map</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Animated map</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 4</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 4</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 5</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 5</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 4 display name</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 4 display name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 5 display name</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 5 display name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 4 id</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 4 id</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Location 5 id</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Location 5 id</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>New Moon</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>New Moon</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Waxing Crescent</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Waxing Crescent</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>First Quarter</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>First Quarter</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Waxing Gibbous</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Waxing Gibbous</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Full Moon</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Full Moon</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Waning Gibbous</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Waning Gibbous</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Last Quarter</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Last Quarter</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Waning Crescent</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Waning Crescent</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Warning</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Warning</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Watch</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Watch</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Advisory</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Advisory</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Statement</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Statement</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Outlook</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Outlook</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Forecast</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Forecast</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Synopsis</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg>Synopsis</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

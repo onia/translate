@@ -92,7 +92,7 @@ class tsunit(lisa.LISAunit):
         S_TRANSLATED: (state.UNREVIEWED, state.MAX),
     }
 
-    statemap_r = dict((i[1], i[0]) for i in statemap.iteritems())
+    statemap_r = dict((i[1], i[0]) for i in statemap.items())
 
     def createlanguageNode(self, lang, text, purpose):
         """Returns an xml Element setup with given parameters."""
@@ -118,7 +118,7 @@ class tsunit(lisa.LISAunit):
 
         def not_none(node):
             return not node is None
-        return filter(not_none, [self._getsourcenode(), self._gettargetnode()])
+        return list(filter(not_none, [self._getsourcenode(), self._gettargetnode()]))
 
     def getsource(self):
         # TODO: support <byte>. See bug 528.
@@ -156,12 +156,12 @@ class tsunit(lisa.LISAunit):
             self.xmlelement.set("numerus", "yes")
             for string in strings:
                 numerus = etree.SubElement(targetnode, self.namespaced("numerusform"))
-                numerus.text = data.forceunicode(string) or u""
+                numerus.text = data.forceunicode(string) or ""
                 # manual, nasty pretty printing. See bug 1420.
-                numerus.tail = u"\n        "
+                numerus.tail = "\n        "
         else:
-            targetnode.text = data.forceunicode(text) or u""
-            targetnode.tail = u"\n    "
+            targetnode.text = data.forceunicode(text) or ""
+            targetnode.tail = "\n    "
 
     def gettarget(self):
         targetnode = self._gettargetnode()
@@ -170,9 +170,9 @@ class tsunit(lisa.LISAunit):
             return None
         if self.hasplural():
             numerus_nodes = targetnode.findall(self.namespaced("numerusform"))
-            return multistring([node.text or u"" for node in numerus_nodes])
+            return multistring([node.text or "" for node in numerus_nodes])
         else:
-            return data.forceunicode(targetnode.text) or u""
+            return data.forceunicode(targetnode.text) or ""
     target = property(gettarget, settarget)
     rich_target = property(base.TranslationUnit._get_rich_target, base.TranslationUnit._set_rich_target)
 
@@ -190,7 +190,7 @@ class tsunit(lisa.LISAunit):
         else:
             note = etree.SubElement(self.xmlelement, self.namespaced("translatorcomment"))
         if position == "append":
-            note.text = "\n".join(filter(None, [current_notes, text.strip()]))
+            note.text = "\n".join([_f for _f in [current_notes, text.strip()] if _f])
         else:
             note.text = text.strip()
 
@@ -280,7 +280,7 @@ class tsunit(lisa.LISAunit):
         commentnode = self.xmlelement.find(self.namespaced("comment"))
         if commentnode is not None and commentnode.text is not None:
             contexts.append(commentnode.text)
-        contexts = filter(None, contexts)
+        contexts = [_f for _f in contexts if _f]
         return '\n'.join(contexts)
 
     def addlocation(self, location):

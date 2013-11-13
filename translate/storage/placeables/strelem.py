@@ -25,6 +25,7 @@ parsed rich-string tree. It is the base class of all placeables.
 
 import logging
 import sys
+import collections
 
 
 class ElementNotFoundError(ValueError):
@@ -60,11 +61,11 @@ class StringElem(object):
     def __init__(self, sub=None, id=None, rid=None, xid=None, **kwargs):
         if sub is None:
             self.sub = []
-        elif isinstance(sub, (unicode, StringElem)):
+        elif isinstance(sub, (str, StringElem)):
             self.sub = [sub]
         else:
             for elem in sub:
-                if not isinstance(elem, (unicode, StringElem)):
+                if not isinstance(elem, (str, StringElem)):
                     raise ValueError(elem)
             self.sub = sub
             self.prune()
@@ -73,7 +74,7 @@ class StringElem(object):
         self.rid = rid
         self.xid = xid
 
-        for key, value in kwargs.items():
+        for key, value in list(kwargs.items()):
             if hasattr(self, key):
                 raise ValueError('attribute already exists: %s' % (key))
             setattr(self, key, value)
@@ -81,11 +82,11 @@ class StringElem(object):
     # SPECIAL METHODS #
     def __add__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) + rhs
+        return str(self) + rhs
 
     def __contains__(self, item):
         """Emulate the ``unicode`` class."""
-        return item in unicode(self)
+        return item in str(self)
 
     def __eq__(self, rhs):
         """:returns: ``True`` if (and only if) all members as well as sub-trees
@@ -104,19 +105,19 @@ class StringElem(object):
 
     def __ge__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) >= rhs
+        return str(self) >= rhs
 
     def __getitem__(self, i):
         """Emulate the ``unicode`` class."""
-        return unicode(self)[i]
+        return str(self)[i]
 
     def __getslice__(self, i, j):
         """Emulate the ``unicode`` class."""
-        return unicode(self)[i:j]
+        return str(self)[i:j]
 
     def __gt__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) > rhs
+        return str(self) > rhs
 
     def __iter__(self):
         """Create an iterator of this element's sub-elements."""
@@ -125,19 +126,19 @@ class StringElem(object):
 
     def __le__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) <= rhs
+        return str(self) <= rhs
 
     def __len__(self):
         """Emulate the ``unicode`` class."""
-        return len(unicode(self))
+        return len(str(self))
 
     def __lt__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) < rhs
+        return str(self) < rhs
 
     def __mul__(self, rhs):
         """Emulate the ``unicode`` class."""
-        return unicode(self) * rhs
+        return str(self) * rhs
 
     def __ne__(self, rhs):
         return not self.__eq__(rhs)
@@ -163,14 +164,14 @@ class StringElem(object):
     def __str__(self):
         if not self.isvisible:
             return ''
-        return ''.join([unicode(elem).encode('utf-8') for elem in self.sub])
+        return ''.join([str(elem).encode('utf-8') for elem in self.sub])
 
     def __unicode__(self):
-        if callable(self.renderer):
+        if isinstance(self.renderer, collections.Callable):
             return self.renderer(self)
         if not self.isvisible:
-            return u''
-        return u''.join([unicode(elem) for elem in self.sub])
+            return ''
+        return ''.join([str(elem) for elem in self.sub])
 
     # METHODS #
     def apply_to_strings(self, f):
@@ -181,15 +182,13 @@ class StringElem(object):
         """
         for elem in self.flatten():
             for i in range(len(elem.sub)):
-                if isinstance(elem.sub[i], basestring):
+                if isinstance(elem.sub[i], str):
                     elem.sub[i] = f(elem.sub[i])
 
     def copy(self):
-	"""Returns a copy of the sub-tree.  This should be overridden in
-	sub-classes with more data.
-
-	.. note:: ``self.renderer`` is **not** copied."""
-        #logging.debug('Copying instance of class %s' % (self.__class__.__name__))
+	# Returns a copy of the sub-tree.  This should be overridden in
+        # sub-classes with more data... note:: self.renderer is **not** copied.
+	# logging.debug('Copying instance of class %s' % (self.__class__.__name__))
         cp = self.__class__(id=self.id, xid=self.xid, rid=self.rid)
         for sub in self.sub:
             if isinstance(sub, StringElem):
@@ -311,7 +310,7 @@ class StringElem(object):
 
             # XXX: This might not have the expected result if start['elem']
             # is a StringElem sub-class instance.
-            newstr = u''.join(start['elem'].sub)
+            newstr = ''.join(start['elem'].sub)
             removed = StringElem(newstr[start['offset']:end['offset']])
             newstr = newstr[:start['offset']] + newstr[end['offset']:]
             parent = self.get_parent_elem(start['elem'])
@@ -366,7 +365,7 @@ class StringElem(object):
         for node in marked_nodes:
             try:
                 self.delete_elem(node)
-            except ElementNotFoundError, e:
+            except ElementNotFoundError as e:
                 pass
 
         if start['elem'] is not end['elem']:
@@ -374,29 +373,29 @@ class StringElem(object):
                 (not start['elem'].iseditable and start['elem'].isfragile)):
                 self.delete_elem(start['elem'])
             elif start['elem'].iseditable:
-                start['elem'].sub = [u''.join(start['elem'].sub)[:start['offset']]]
+                start['elem'].sub = [''.join(start['elem'].sub)[:start['offset']]]
 
             if (end_offset + len(end['elem']) == end['index'] or
                 (not end['elem'].iseditable and end['elem'].isfragile)):
                 self.delete_elem(end['elem'])
             elif end['elem'].iseditable:
-                end['elem'].sub = [u''.join(end['elem'].sub)[end['offset']:]]
+                end['elem'].sub = [''.join(end['elem'].sub)[end['offset']:]]
 
         self.prune()
         return removed, None, None
 
     def depth_first(self, filter=None):
         """Returns a list of the nodes in the tree in depth-first order."""
-        if filter is None or not callable(filter):
+        if filter is None or not isinstance(filter, collections.Callable):
             filter = lambda e: True
         elems = []
-        if filter(self):
+        if list(filter(self)):
             elems.append(self)
 
         for sub in self.sub:
             if not isinstance(sub, StringElem):
                 continue
-            if sub.isleaf() and filter(sub):
+            if sub.isleaf() and list(filter(sub)):
                 elems.append(sub)
             else:
                 elems.extend(sub.depth_first())
@@ -404,7 +403,7 @@ class StringElem(object):
 
     def encode(self, encoding=sys.getdefaultencoding()):
         """More ``unicode`` class emulation."""
-        return unicode(self).encode(encoding)
+        return str(self).encode(encoding)
 
     def elem_offset(self, elem):
         """Find the offset of ``elem`` in the current tree.
@@ -430,10 +429,10 @@ class StringElem(object):
             if e.isleaf():
                 leafoffset = 0
                 for s in e.sub:
-                    if unicode(s) == unicode(elem):
+                    if str(s) == str(elem):
                         return offset + leafoffset
                     else:
-                        leafoffset += len(unicode(s))
+                        leafoffset += len(str(s))
                 offset += len(e)
         return -1
 
@@ -455,22 +454,22 @@ class StringElem(object):
     def find(self, x):
         """Find sub-string ``x`` in this string tree and return the position
             at which it starts."""
-        if isinstance(x, basestring):
-            return unicode(self).find(x)
+        if isinstance(x, str):
+            return str(self).find(x)
         if isinstance(x, StringElem):
-            return unicode(self).find(unicode(x))
+            return str(self).find(str(x))
         return None
 
     def find_elems_with(self, x):
         """Find all elements in the current sub-tree containing ``x``."""
-        return [elem for elem in self.flatten() if x in unicode(elem)]
+        return [elem for elem in self.flatten() if x in str(elem)]
 
     def flatten(self, filter=None):
         """Flatten the tree by returning a depth-first search over the
         tree's leaves."""
-        if filter is None or not callable(filter):
+        if filter is None or not isinstance(filter, collections.Callable):
             filter = lambda e: True
-        return [elem for elem in self.iter_depth_first(lambda e: e.isleaf() and filter(e))]
+        return [elem for elem in self.iter_depth_first(lambda e: e.isleaf() and list(filter(e)))]
 
     def get_ancestor_where(self, child, criteria):
         parent = self.get_parent_elem(child)
@@ -517,14 +516,14 @@ class StringElem(object):
             string (Unicode) representation."""
         if offset < 0 or offset > len(self) + 1:
             raise IndexError('Index out of range: %d' % (offset))
-        if isinstance(text, (str, unicode)):
+        if isinstance(text, str):
             text = StringElem(text)
         if not isinstance(text, StringElem):
             raise ValueError('text must be of type StringElem')
 
         def checkleaf(elem, text):
             if elem.isleaf() and type(text) is StringElem and text.isleaf():
-                return unicode(text)
+                return str(text)
             return text
 
         # There are 4 general cases (including specific cases) where text can
@@ -580,11 +579,11 @@ class StringElem(object):
                 #logging.debug('Case 3')
                 eoffset = offset - self.elem_offset(oelem)
                 if oelem.isleaf():
-                    s = unicode(oelem)  # Collapse all sibling strings into one
+                    s = str(oelem)  # Collapse all sibling strings into one
                     head = s[:eoffset]
                     tail = s[eoffset:]
                     if type(text) is StringElem and text.isleaf():
-                        oelem.sub = [head + unicode(text) + tail]
+                        oelem.sub = [head + str(text) + tail]
                     else:
                         oelem.sub = [StringElem(head), text, StringElem(tail)]
                     return True
@@ -657,7 +656,7 @@ class StringElem(object):
                 raise ValueError('"left" and "right" refer to the same element and is not empty.')
             if not left.iseditable:
                 return False
-        if isinstance(text, unicode):
+        if isinstance(text, str):
             text = StringElem(text)
 
         if left is right:
@@ -759,20 +758,20 @@ class StringElem(object):
         :rtype: bool
         """
         for e in self.sub:
-            if not isinstance(e, (str, unicode)):
+            if not isinstance(e, str):
                 return False
         return True
 
     def iter_depth_first(self, filter=None):
         """Iterate through the nodes in the tree in dept-first order."""
-        if filter is None or not callable(filter):
+        if filter is None or not isinstance(filter, collections.Callable):
             filter = lambda e: True
-        if filter(self):
+        if list(filter(self)):
             yield self
         for sub in self.sub:
             if not isinstance(sub, StringElem):
                 continue
-            if sub.isleaf() and filter(sub):
+            if sub.isleaf() and list(filter(sub)):
                 yield sub
             else:
                 for node in sub.iter_depth_first(filter):
@@ -781,13 +780,13 @@ class StringElem(object):
     def map(self, f, filter=None):
         """Apply ``f`` to all nodes for which ``filter`` returned ``True``
         (optional)."""
-        if filter is not None and not callable(filter):
+        if filter is not None and not isinstance(filter, collections.Callable):
             raise ValueError('filter is not callable or None')
         if filter is None:
             filter = lambda e: True
 
         for elem in self.depth_first():
-            if filter(elem):
+            if list(filter(elem)):
                 f(elem)
 
     @classmethod
@@ -806,19 +805,19 @@ class StringElem(object):
         """Print the tree from the current instance's point in an indented
             manner."""
         indent_prefix = " " * indent * 2
-        out = (u"%s%s [%s]" % (indent_prefix, self.__class__.__name__,
-                               unicode(self))).encode('utf-8')
+        out = ("%s%s [%s]" % (indent_prefix, self.__class__.__name__,
+                               str(self))).encode('utf-8')
         if verbose:
-            out += u' ' + repr(self)
+            out += ' ' + repr(self)
 
-        print out
+        print(out)
 
         for elem in self.sub:
             if isinstance(elem, StringElem):
                 elem.print_tree(indent + 1, verbose=verbose)
             else:
-                print (u'%s%s[%s]' % (indent_prefix, indent_prefix,
-                                      elem)).encode('utf-8')
+                print(('%s%s[%s]' % (indent_prefix, indent_prefix,
+                                      elem)).encode('utf-8'))
 
     def prune(self):
         """Remove unnecessary nodes to make the tree optimal."""
@@ -851,18 +850,18 @@ class StringElem(object):
 
             if type(elem) is StringElem and elem.isleaf():
                 # Collapse all strings in this leaf into one string.
-                elem.sub = [u''.join(elem.sub)]
+                elem.sub = [''.join(elem.sub)]
 
-            for i in reversed(range(len(elem.sub))):
+            for i in reversed(list(range(len(elem.sub)))):
                 # Remove empty strings or StringElem nodes
                 # (but not StringElem sub-class instances, because they
                 # might contain important (non-rendered) data.
-                if (type(elem.sub[i]) in (StringElem, str, unicode) and
+                if (type(elem.sub[i]) in (StringElem, str, str) and
                     len(elem.sub[i]) == 0):
                     del elem.sub[i]
                     continue
 
-                if type(elem.sub[i]) in (str, unicode) and not elem.isleaf():
+                if type(elem.sub[i]) in (str, str) and not elem.isleaf():
                     elem.sub[i] = StringElem(elem.sub[i])
                     changed = True
 

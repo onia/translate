@@ -25,8 +25,8 @@ from translate.filters import decoration
 from translate.misc.typecheck import accepts, returns, IsOneOf
 
 
-@accepts(unicode, unicode)
-@returns(IsOneOf(unicode, type(None)))
+@accepts(str, str)
+@returns(IsOneOf(str, type(None)))
 def correct(source, target):
     """Runs a set of easy and automatic corrections
 
@@ -38,10 +38,10 @@ def correct(source, target):
     old_target = target
     if target == "":
         return None
-    if u"…" in source and "..." in target:
-        target = target.replace("...", u"…")
-    elif "..." in source and u"…" in target:
-        target = target.replace(u"…", "...")
+    if "…" in source and "..." in target:
+        target = target.replace("...", "…")
+    elif "..." in source and "…" in target:
+        target = target.replace("…", "...")
     if decoration.spacestart(source) != decoration.spacestart(target) or decoration.spaceend(source) != decoration.spaceend(target):
         target = decoration.spacestart(source) + target.strip() + decoration.spaceend(source)
     punctuation = (".", ":", ". ", ": ", "?")

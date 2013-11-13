@@ -51,7 +51,7 @@ except Exception:
     from sets import Set as set
 
 from iniparse import config
-from ConfigParser import DEFAULTSECT, ParsingError, MissingSectionHeaderError
+from configparser import DEFAULTSECT, ParsingError, MissingSectionHeaderError
 
 class LineType(object):
     line = None
@@ -422,7 +422,7 @@ class INIConfig(config.ConfigNamespace):
         self._sections = {}
         if defaults is None: defaults = {}
         self._defaults = INISection(LineContainer(), optionxformsource=self)
-        for name, value in defaults.iteritems():
+        for name, value in defaults.items():
             self._defaults[name] = value
         if fp is not None:
             self.readfp(fp)

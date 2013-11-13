@@ -161,7 +161,7 @@ class PoXliffUnit(xliff.xliffunit):
     def addnote(self, text, origin=None, position="append"):
         """Add a note specifically in a "note" tag"""
         if isinstance(text, str):
-            text = text.decode("utf-8")
+            text = text.encode("utf-8")
         note = etree.SubElement(self.xmlelement, self.namespaced("note"))
         note.text = text
         if origin:
@@ -231,12 +231,13 @@ class PoXliffUnit(xliff.xliffunit):
         """Returns the automatic comments (x-po-autocomment), which corresponds
         to the #. style po comments."""
 
-        def hasautocomment((type, text)):
+        def hasautocomment(xxx_todo_changeme):
+            (type, text) = xxx_todo_changeme
             return type == "x-po-autocomment"
         groups = self.getcontextgroups("po-entry")
         comments = []
         for group in groups:
-            commentpairs = filter(hasautocomment, group)
+            commentpairs = list(filter(hasautocomment, group))
             for (type, text) in commentpairs:
                 comments.append(text)
         return "\n".join(comments)
@@ -245,12 +246,13 @@ class PoXliffUnit(xliff.xliffunit):
         """Returns the translator comments (x-po-trancomment), which corresponds
         to the # style po comments."""
 
-        def hastrancomment((type, text)):
+        def hastrancomment(xxx_todo_changeme1):
+            (type, text) = xxx_todo_changeme1
             return type == "x-po-trancomment"
         groups = self.getcontextgroups("po-entry")
         comments = []
         for group in groups:
-            commentpairs = filter(hastrancomment, group)
+            commentpairs = list(filter(hastrancomment, group))
             for (type, text) in commentpairs:
                 comments.append(text)
         return "\n".join(comments)
@@ -376,25 +378,25 @@ class PoXliffFile(xliff.xlifffile, poheader.poheader):
         root_node = self.document.getroot()
         assert root_node.tag == self.namespaced(self.rootNode)
         groups = root_node.iterdescendants(self.namespaced("group"))
-        pluralgroups = filter(ispluralgroup, groups)
+        pluralgroups = list(filter(ispluralgroup, groups))
         termEntries = root_node.iterdescendants(self.namespaced(self.UnitClass.rootNode))
 
-        singularunits = filter(isnonpluralunit, termEntries)
+        singularunits = list(filter(isnonpluralunit, termEntries))
         if len(singularunits) == 0:
             return
         pluralunit_iter = pluralunits(pluralgroups)
         try:
-            nextplural = pluralunit_iter.next()
+            nextplural = next(pluralunit_iter)
         except StopIteration:
             nextplural = None
 
         for entry in singularunits:
             term = self.UnitClass.createfromxmlElement(entry, namespace=self.namespace)
-            if nextplural and unicode(term.getid()) == ("%s[0]" % nextplural.getid()):
+            if nextplural and str(term.getid()) == ("%s[0]" % nextplural.getid()):
                 self.addunit(nextplural, new=False)
                 try:
-                    nextplural = pluralunit_iter.next()
-                except StopIteration, i:
+                    nextplural = next(pluralunit_iter)
+                except StopIteration as i:
                     nextplural = None
             else:
                 self.addunit(term, new=False)

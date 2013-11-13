@@ -47,7 +47,7 @@ def parse(tree, parse_funcs):
                         form the original string. If nothing could be
                         parsed, it should return ``None``.
     """
-    if isinstance(tree, unicode):
+    if isinstance(tree, str):
         tree = StringElem(tree)
     if not parse_funcs:
         return tree
@@ -60,7 +60,7 @@ def parse(tree, parse_funcs):
         if not leaf.istranslatable:
             continue
 
-        unileaf = unicode(leaf)
+        unileaf = str(leaf)
         if not unileaf:
             continue
 
@@ -69,7 +69,7 @@ def parse(tree, parse_funcs):
             if (len(subleaves) == 1 and type(leaf) is type(subleaves[0]) and
                 leaf == subleaves[0]):
                 pass
-            elif isinstance(leaf, unicode):
+            elif isinstance(leaf, str):
                 parent = tree.get_parent_elem(leaf)
                 if parent is not None:
                     if len(parent.sub) == 1:

@@ -113,7 +113,7 @@ class DirDiffer:
         """writes the actual diff to the given file"""
         fromfiles = os.listdir(self.fromdir)
         tofiles = os.listdir(self.todir)
-        difffiles = dict.fromkeys(fromfiles + tofiles).keys()
+        difffiles = list(dict.fromkeys(fromfiles + tofiles).keys())
         difffiles.sort()
         for difffile in difffiles:
             if self.isexcluded(difffile):

@@ -1,0 +1,3 @@
+﻿py C:\Python33\Lib\site-packages\translate\convert\po2xliff.py --errorlevel=traceback po2xliff.po po2xliff.xlf
+py C:\Python33\Lib\site-packages\translate\convert\xliff2po.py --errorlevel=traceback xliff2po.xlf xliff2po.po
+py C:\Python33\Lib\site-packages\translate\convert\po2tmx.py --errorlevel=traceback content.po content.tmx

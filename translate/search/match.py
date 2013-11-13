@@ -107,7 +107,7 @@ class matcher(object):
         """
         if isinstance(units, base.TranslationUnit):
             units = [units]
-        for candidate in itertools.ifilter(self.usable, units):
+        for candidate in filter(self.usable, units):
             simpleunit = base.TranslationUnit("")
             # We need to ensure that we don't pass multistrings futher, since
             # some modules (like the native Levenshtein) can't use it.
@@ -115,8 +115,8 @@ class matcher(object):
                 if len(candidate.source.strings) > 1:
                     simpleunit.orig_source = candidate.source
                     simpleunit.orig_target = candidate.target
-                simpleunit.source = unicode(candidate.source)
-                simpleunit.target = unicode(candidate.target)
+                simpleunit.source = str(candidate.source)
+                simpleunit.target = str(candidate.target)
             else:
                 simpleunit.source = candidate.source
                 simpleunit.target = candidate.target
@@ -203,7 +203,7 @@ class matcher(object):
         def notzero(item):
             score = item[0]
             return score != 0
-        bestcandidates = filter(notzero, bestcandidates)
+        bestcandidates = list(filter(notzero, bestcandidates))
         #Sort for use as a general list, and reverse so the best one is at index 0
         bestcandidates.sort(reverse=True)
         return self.buildunits(bestcandidates)

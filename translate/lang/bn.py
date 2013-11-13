@@ -31,7 +31,7 @@ from translate.lang import common
 class bn(common.Common):
     """This class represents Bengali."""
 
-    sentenceend = u"।!?…"
+    sentenceend = "।!?…"
 
     sentencere = re.compile(r"""(?s)    #make . also match newlines
                             .*?         #anything, but match non-greedy
@@ -41,8 +41,8 @@ class bn(common.Common):
                             """ % sentenceend, re.VERBOSE)
 
     puncdict = {
-        u". ": u"। ",
-        u".\n": u"।\n",
+        ". ": "। ",
+        ".\n": "।\n",
     }
 
     ignoretests = ["startcaps", "simplecaps"]

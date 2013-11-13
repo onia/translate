@@ -27,6 +27,6 @@ from translate.lang import common
 class fi(common.Common):
     """This class represents Finnish."""
 
-    validaccel = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + \
-                 u"1234567890" + \
-                 u"äöÄÖ"
+    validaccel = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + \
+                 "1234567890" + \
+                 "äöÄÖ"

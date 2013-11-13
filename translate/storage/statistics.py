@@ -138,12 +138,12 @@ class Statistics(object):
         #TODO: we don't handle checking plurals at all yet, as this is tricky...
         source = unit.source
         target = unit.target
-        if isinstance(source, str) and isinstance(target, unicode):
+        if isinstance(source, str) and isinstance(target, str):
             source = source.decode(getattr(unit, "encoding", "utf-8"))
         #TODO: decoding should not be done here
 #        checkresult = self.checker.run_filters(unit, source, target)
         checkresult = {}
-        for checkname, checkmessage in checkresult.iteritems():
+        for checkname, checkmessage in checkresult.items():
             classes.append("check-" + checkname)
         return classes
 
@@ -190,7 +190,7 @@ class Statistics(object):
         classes = self.classifyunit(unit)
 #        if self.basefile.getsuggestions(item):
 #            classes.append("has-suggestion")
-        for classname, matchingitems in self.classification.items():
+        for classname, matchingitems in list(self.classification.items()):
             if (classname in classes) != (item in matchingitems):
                 if classname in classes:
                     self.classification[classname].append(item)

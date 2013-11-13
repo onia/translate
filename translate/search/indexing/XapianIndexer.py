@@ -53,7 +53,7 @@ if 'apache' in sys.modules or '_apache' in sys.modules or 'mod_wsgi' in sys.modu
         #FIXME: report is xapian-check command is missing?
         raise ImportError("Running under apache, can't load xapian")
 
-import CommonIndexer
+from . import CommonIndexer
 import xapian
 import os
 import time
@@ -104,7 +104,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
             # try to open an existing database
             try:
                 self.reader = xapian.Database(self.location)
-            except xapian.DatabaseOpeningError, err_msg:
+            except xapian.DatabaseOpeningError as err_msg:
                 raise ValueError("Indexer: failed to open xapian database " \
                         + "(%s) - maybe it is not a xapian database: %s" \
                         % (self.location, str(err_msg)))
@@ -118,7 +118,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
                 if not os.path.isdir(parent_path):
                     # recursively create all directories up to parent_path
                     os.makedirs(parent_path)
-            except IOError, err_msg:
+            except IOError as err_msg:
                 raise OSError("Indexer: failed to create the parent " \
                         + "directory (%s) of the indexing database: %s" \
                         % (parent_path, str(err_msg)))
@@ -126,7 +126,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
                 self.writer = xapian.WritableDatabase(self.location,
                         xapian.DB_CREATE_OR_OPEN)
                 self.flush()
-            except xapian.DatabaseOpeningError, err_msg:
+            except xapian.DatabaseOpeningError as err_msg:
                 raise OSError("Indexer: failed to open or create a xapian " \
                         + "database (%s): %s" % (self.location, str(err_msg)))
 
@@ -384,7 +384,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
         :rtype: list of dicts
         """
         result = []
-        if isinstance(fieldnames, basestring):
+        if isinstance(fieldnames, str):
             fieldnames = [fieldnames]
         try:
             self._walk_matches(query, _extract_fieldvalues,
@@ -412,7 +412,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
             self._delete_stale_lock()
             try:
                 self.writer = xapian.WritableDatabase(self.location, xapian.DB_OPEN)
-            except xapian.DatabaseOpeningError, err_msg:
+            except xapian.DatabaseOpeningError as err_msg:
 
                 raise ValueError("Indexer: failed to open xapian database " \
                                  + "(%s) - maybe it is not a xapian database: %s" \
@@ -435,7 +435,7 @@ class XapianDatabase(CommonIndexer.CommonDatabase):
                 self.reader = xapian.Database(self.location)
             else:
                 self.reader.reopen()
-        except xapian.DatabaseOpeningError, err_msg:
+        except xapian.DatabaseOpeningError as err_msg:
             raise ValueError("Indexer: failed to open xapian database " \
                              + "(%s) - maybe it is not a xapian database: %s" \
                              % (self.location, str(err_msg)))
@@ -489,7 +489,7 @@ def _truncate_term_length(term, taken=0):
         return term
 
 
-def _extract_fieldvalues(match, (result, fieldnames)):
+def _extract_fieldvalues(match, xxx_todo_changeme):
     """Add a dict of field values to a list.
 
     Usually this function should be used together with :func:`_walk_matches`
@@ -502,7 +502,7 @@ def _extract_fieldvalues(match, (result, fieldnames)):
     :param fieldnames: the names of the fields to be added to the dict
     :type fieldnames: list of str
     """
-    # prepare empty dict
+    (result, fieldnames) = xxx_todo_changeme
     item_fields = {}
     # fill the dict
     for term in match["document"].termlist():

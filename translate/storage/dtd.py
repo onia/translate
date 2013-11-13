@@ -91,7 +91,7 @@ import re
 import warnings
 try:
     from lxml import etree
-    import StringIO
+    import io
 except ImportError:
     etree = None
 
@@ -107,8 +107,8 @@ def quoteforandroid(source):
     """Escapes a line for Android DTD files. """
     # Replace "'" character with the \u0027 escape. Other possible replaces are
     # "\\&apos;" or "\\'".
-    source = source.replace(u"'", u"\\u0027")
-    source = source.replace(u"\"", u"\\&quot;")
+    source = source.replace("'", "\\u0027")
+    source = source.replace("\"", "\\&quot;")
     value = quotefordtd(source)  # value is an UTF-8 encoded string.
     return value
 
@@ -116,9 +116,9 @@ def quoteforandroid(source):
 def unquotefromandroid(source):
     """Unquotes a quoted Android DTD definition."""
     value = unquotefromdtd(source)  # value is an UTF-8 encoded string.
-    value = value.replace(u"\\&apos;", u"'")
-    value = value.replace(u"\\'", u"'")
-    value = value.replace(u"\\u0027", u"'")
+    value = value.replace("\\&apos;", "'")
+    value = value.replace("\\'", "'")
+    value = value.replace("\\u0027", "'")
     value = value.replace("\\\"", "\"")  # This converts \&quot; to ".
     return value
 
@@ -155,7 +155,7 @@ def unquotefromdtd(source):
     extracted = extracted.replace("&quot;", "\"")
     extracted = extracted.replace("&#x0022;", "\"")
     # FIXME these should probably be handled with a lookup
-    extracted = extracted.replace("&#187;", u"»")
+    extracted = extracted.replace("&#187;", "»")
     extracted = extracted.replace("&#037;", "%")
     extracted = extracted.replace("&#37;", "%")
     extracted = extracted.replace("&#x25;", "%")
@@ -482,7 +482,7 @@ class dtdunit(base.TranslationUnit):
     def __str__(self):
         """convert to a string. double check that unicode is handled somehow here"""
         source = self.getoutput()
-        if isinstance(source, unicode):
+        if isinstance(source, str):
             return source.encode(getattr(self, "encoding", "UTF-8"))
         return source
 
@@ -505,7 +505,7 @@ class dtdunit(base.TranslationUnit):
                 entityline = '<!ENTITY' + self.space_pre_entity + self.entity + self.space_pre_definition + self.definition + self.closing
             if getattr(self, 'hashprefix', None):
                 entityline = self.hashprefix + " " + entityline
-            if isinstance(entityline, unicode):
+            if isinstance(entityline, str):
                 entityline = entityline.encode('UTF-8')
             lines.append(entityline + '\n')
         return "".join(lines)
@@ -552,7 +552,7 @@ class dtdfile(base.TranslationStore):
                     linesprocessed = newdtd.parse("\n".join(lines[start:end]))
                     if linesprocessed >= 1 and (not newdtd.isnull() or newdtd.unparsedlines):
                         self.units.append(newdtd)
-                except Exception, e:
+                except Exception as e:
                     warnings.warn("%s\nError occured between lines %d and %d:\n%s" % (e, start + 1, end, "\n".join(lines[start:end])))
                 start += linesprocessed
 
@@ -562,7 +562,7 @@ class dtdfile(base.TranslationStore):
         if not self._valid_store():
             warnings.warn("DTD file '%s' does not validate" % self.filename)
             return None
-        if isinstance(source, unicode):
+        if isinstance(source, str):
             return source.encode(getattr(self, "encoding", "UTF-8"))
         return source
 
@@ -590,8 +590,8 @@ class dtdfile(base.TranslationStore):
         if etree is not None and not self.android:
             try:
                 # #expand is a Mozilla hack and are removed as they are not valid in DTDs
-                dtd = etree.DTD(StringIO.StringIO(re.sub("#expand", "", self.getoutput())))
-            except etree.DTDParseError, e:
+                dtd = etree.DTD(io.StringIO(re.sub("#expand", "", self.getoutput())))
+            except etree.DTDParseError as e:
                 warnings.warn("DTD parse error: %s" % e.error_log)
                 return False
         return True

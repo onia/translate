@@ -28,7 +28,7 @@ from translate.lang import data
 
 def spacestart(str1):
     """returns all the whitespace from the start of the string"""
-    newstring = u""
+    newstring = ""
     for c in str1:
         if c.isspace():
             newstring += c
@@ -39,7 +39,7 @@ def spacestart(str1):
 
 def spaceend(str1):
     """returns all the whitespace from the end of the string"""
-    newstring = u""
+    newstring = ""
     for n in range(len(str1)):
         c = str1[-1-n]
         if c.isspace():
@@ -51,7 +51,7 @@ def spaceend(str1):
 
 def puncstart(str1, punctuation):
     """returns all the punctuation from the start of the string"""
-    newstring = u""
+    newstring = ""
     for c in str1:
         if c in punctuation or c.isspace():
             newstring += c
@@ -64,14 +64,14 @@ def puncend(str1, punctuation):
     """returns all the punctuation from the end of the string"""
     # An implementation with regular expressions was slightly slower.
 
-    newstring = u""
+    newstring = ""
     for n in range(len(str1)):
         c = str1[-1-n]
         if c in punctuation or c.isspace():
             newstring = c + newstring
         else:
             break
-    return newstring.replace(u"\u00a0", u" ")
+    return newstring.replace("\u00a0", " ")
 
 
 def ispurepunctuation(str1):
@@ -93,8 +93,8 @@ def isvalidaccelerator(accelerator, acceptlist=None):
     :rtype: Boolean
     :return: True if the supplied character is an acceptable accelerator
     """
-    assert isinstance(accelerator, unicode)
-    assert isinstance(acceptlist, unicode) or acceptlist is None
+    assert isinstance(accelerator, str)
+    assert isinstance(acceptlist, str) or acceptlist is None
     if len(accelerator) == 0:
         return False
     if acceptlist is not None:
@@ -106,7 +106,7 @@ def isvalidaccelerator(accelerator, acceptlist=None):
         # Old code path - ensures that we don't get a large number of
         # regressions
         accelerator = accelerator.replace("_", "")
-        if accelerator in u"-?":
+        if accelerator in "-?":
             return True
         if not accelerator.isalnum():
             return False
@@ -225,10 +225,10 @@ def getvariables(startmarker, endmarker):
 def getnumbers(str1):
     """returns any numbers that are in the string"""
     # TODO: handle locale-based periods e.g. 2,5 for Afrikaans
-    assert isinstance(str1, unicode)
+    assert isinstance(str1, str)
     numbers = []
     innumber = False
-    degreesign = u'\xb0'
+    degreesign = '\xb0'
     lastnumber = ""
     carryperiod = ""
     for chr1 in str1:
@@ -270,7 +270,7 @@ _function_re = re.compile(r'''((?:
 def getfunctions(str1):
     """returns the functions() that are in a string, while ignoring the
     trailing punctuation in the given parameter"""
-    if u"()" in str1:
+    if "()" in str1:
         return _function_re.findall(str1)
     else:
         return []

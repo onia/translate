@@ -22,11 +22,7 @@
 :mod:`translate.convert` tools)."""
 
 import os.path
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
-
+from io import StringIO
 from translate.misc import optrecurse
 # don't import optparse ourselves, get the version from optrecurse
 optparse = optrecurse.optparse
@@ -124,7 +120,7 @@ class ConvertOptionParser(optrecurse.RecursiveOptionParser, object):
         """Filters output options, processing relevant switches in options."""
         if self.usepots and options.pot:
             outputoptions = {}
-            for (inputformat, templateformat), (outputformat, convertor) in self.outputoptions.iteritems():
+            for (inputformat, templateformat), (outputformat, convertor) in self.outputoptions.items():
                 inputformat = self.potifyformat(inputformat)
                 templateformat = self.potifyformat(templateformat)
                 outputformat = self.potifyformat(outputformat)
@@ -165,7 +161,7 @@ class ConvertOptionParser(optrecurse.RecursiveOptionParser, object):
         options.outputoptions = self.filteroutputoptions(options)
         try:
             self.verifyoptions(options)
-        except Exception, e:
+        except Exception as e:
             self.error(str(e))
         self.recursiveprocess(options)
 
@@ -266,7 +262,7 @@ class ArchiveConvertOptionParser(ConvertOptionParser):
 
     def isarchive(self, fileoption, filepurpose='input'):
         """Returns whether the file option is an archive file."""
-        if not isinstance(fileoption, (str, unicode)):
+        if not isinstance(fileoption, str):
             return False
         mustexist = (filepurpose != 'output')
         if mustexist and not os.path.isfile(fileoption):
@@ -477,10 +473,10 @@ def should_output_store(store, threshold):
 
     from translate.storage import statsdb
 
-    units = filter(lambda unit: unit.istranslatable(), store.units)
-    translated = filter(lambda unit: unit.istranslated(), units)
-    wordcounts = dict(map(lambda unit: (unit, statsdb.wordsinunit(unit)), units))
-    sourcewords = lambda elementlist: sum(map(lambda unit: wordcounts[unit][0], elementlist))
+    units = [unit for unit in store.units if unit.istranslatable()]
+    translated = [unit for unit in units if unit.istranslated()]
+    wordcounts = dict([(unit, statsdb.wordsinunit(unit)) for unit in units])
+    sourcewords = lambda elementlist: sum([wordcounts[unit][0] for unit in elementlist])
     tranlated_count = sourcewords(translated)
     total_count = sourcewords(units)
     percent = tranlated_count * 100 / total_count

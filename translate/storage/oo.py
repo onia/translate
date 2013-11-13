@@ -43,7 +43,7 @@ from translate.misc import wStringIO
 
 normalfilenamechars = "/#.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 normalizetable = ""
-for i in map(chr, range(256)):
+for i in map(chr, list(range(256))):
     if i in normalfilenamechars:
         normalizetable += i
     else:
@@ -58,7 +58,7 @@ class unormalizechar(dict):
             self.normalchars[ord(char)] = char
 
     def __getitem__(self, key):
-        return self.normalchars.get(key, u"_")
+        return self.normalchars.get(key, "_")
 
 unormalizetable = unormalizechar(normalfilenamechars.decode("ascii"))
 
@@ -161,7 +161,7 @@ def unescape_help_text(text):
 
 def encode_if_needed_utf8(text):
     """Encode a Unicode string the the specified encoding"""
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text.encode('UTF-8')
     return text
 
@@ -371,7 +371,7 @@ class oomultifile:
 
     def listsubfiles(self):
         """returns a list of subfiles in the file"""
-        return self.subfilelines.keys()
+        return list(self.subfilelines.keys())
 
     def __iter__(self):
         """iterates through the subfile names"""

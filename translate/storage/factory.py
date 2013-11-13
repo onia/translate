@@ -61,7 +61,7 @@ _ext is a pseudo extension, that is their is no real extension by that name.
 
 def _examine_txt(storefile):
     """Determine the true filetype for a .txt file"""
-    if isinstance(storefile, basestring) and os.path.exists(storefile):
+    if isinstance(storefile, str) and os.path.exists(storefile):
         storefile = open(storefile)
     try:
         start = storefile.read(600).strip()
@@ -117,7 +117,7 @@ def _getname(storefile):
     """returns the filename"""
     if storefile is None:
         raise ValueError("This method cannot magically produce a filename when given None as input.")
-    if not isinstance(storefile, basestring):
+    if not isinstance(storefile, str):
         if not hasattr(storefile, "name"):
             storefilename = _getdummyname(storefile)
         else:
@@ -171,7 +171,7 @@ def getobject(storefile, ignore=None, classes=None, classes_str=classes_str, hid
     Specify ignore to ignore some part at the back of the name (like .gz).
     """
 
-    if isinstance(storefile, basestring):
+    if isinstance(storefile, str):
         if os.path.isdir(storefile) or storefile.endswith(os.path.sep):
             from translate.storage import directory
             return directory.Directory(storefile)

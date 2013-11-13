@@ -41,7 +41,7 @@ class TMServer(object):
 
     def __init__(self, tmdbfile, tmfiles, max_candidates=3, min_similarity=75,
             max_length=1000, prefix="", source_lang=None, target_lang=None):
-        if not isinstance(tmdbfile, unicode):
+        if not isinstance(tmdbfile, str):
             import sys
             tmdbfile = tmdbfile.decode(sys.getfilesystemencoding())
 
@@ -79,7 +79,7 @@ class TMServer(object):
     def translate_unit(self, environ, start_response, uid, slang, tlang):
         start_response("200 OK", [('Content-type', 'text/plain')])
         candidates = self.tmdb.translate_unit(uid, slang, tlang)
-        logging.debug("candidates: %s", unicode(candidates))
+        logging.debug("candidates: %s", str(candidates))
         response = json.dumps(candidates, indent=4)
         params = parse_qs(environ.get('QUERY_STRING', ''))
         try:
@@ -128,10 +128,10 @@ class TMServer(object):
     @selector.opliant
     def upload_store(self, environ, start_response, sid, slang, tlang):
         """add units from uploaded file to tmdb"""
-        import StringIO
+        import io
         from translate.storage import factory
         start_response("200 OK", [('Content-type', 'text/plain')])
-        data = StringIO.StringIO(environ['wsgi.input'].read(int(environ['CONTENT_LENGTH'])))
+        data = io.StringIO(environ['wsgi.input'].read(int(environ['CONTENT_LENGTH'])))
         data.name = sid
         store = factory.getobject(data)
         count = self.tmdb.add_store(store, slang, tlang)

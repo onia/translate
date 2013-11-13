@@ -52,21 +52,21 @@ TRADOS_TIMEFORMAT = "%d%m%Y, %H:%M:%S"
 """Time format used by Trados .txt"""
 
 RTF_ESCAPES = {
-ur"\emdash": u"—",
-ur"\endash": u"–",
+r"\emdash": "—",
+r"\endash": "–",
 # Nonbreaking space equal to width of character "m" in current font.
-ur"\emspace": u"\u2003",
+r"\emspace": "\u2003",
 # Nonbreaking space equal to width of character "n" in current font.
-ur"\enspace": u"\u2002",
+r"\enspace": "\u2002",
 #ur"\qmspace": "",    # One-quarter em space.
-ur"\bullet": u"•",     # Bullet character.
-ur"\lquote": u"‘",     # Left single quotation mark. \u2018
-ur"\rquote": u"’",     # Right single quotation mark. \u2019
-ur"\ldblquote": u"“",  # Left double quotation mark. \u201C
-ur"\rdblquote": u"”",  # Right double quotation mark. \u201D
-ur"\~": u"\u00a0",  # Nonbreaking space
-ur"\-": u"\u00ad",  # Optional hyphen.
-ur"\_": u"‑",  # Nonbreaking hyphen \U2011
+r"\bullet": "•",     # Bullet character.
+r"\lquote": "‘",     # Left single quotation mark. \u2018
+r"\rquote": "’",     # Right single quotation mark. \u2019
+r"\ldblquote": "“",  # Left double quotation mark. \u201C
+r"\rdblquote": "”",  # Right double quotation mark. \u201D
+r"\~": "\u00a0",  # Nonbreaking space
+r"\-": "\u00ad",  # Optional hyphen.
+r"\_": "‑",  # Nonbreaking hyphen \U2011
 # A hexadecimal value, based on the specified character set (may be used to
 # identify 8-bit values).
 #ur"\'hh": "",
@@ -78,14 +78,14 @@ http://msdn.microsoft.com/en-us/library/aa140283(v=office.10).aspx
 
 def unescape(text):
     """Convert Trados text to normal Unicode string"""
-    for trados_escape, char in RTF_ESCAPES.iteritems():
+    for trados_escape, char in RTF_ESCAPES.items():
         text = text.replace(trados_escape, char)
     return text
 
 
 def escape(text):
     """Convert Unicode string to Trodas escapes"""
-    for trados_escape, char in RTF_ESCAPES.iteritems():
+    for trados_escape, char in RTF_ESCAPES.items():
         text = text.replace(char, trados_escape)
     return text
 
@@ -96,7 +96,7 @@ class TradosTxtDate(object):
     def __init__(self, newtime=None):
         self._time = None
         if newtime:
-            if isinstance(newtime, basestring):
+            if isinstance(newtime, str):
                 self.timestring = newtime
             elif isinstance(newtime, time.struct_time):
                 self.time = newtime

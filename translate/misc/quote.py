@@ -22,14 +22,16 @@
 of delimiters"""
 
 import logging
-import htmlentitydefs
+import html.entities
 
 from translate.misc.typecheck import accepts, returns
+import collections
 
 
 def find_all(searchin, substr):
     """Returns a list of locations where substr occurs in searchin
     locations are not allowed to overlap"""
+    #print(searchin, substr)
     location = 0
     locations = []
     substr_len = len(substr)
@@ -137,7 +139,7 @@ def extractwithoutquotes(source, startdelim, enddelim, escape=None,
     significant_places.sort()
     extracted = ""
     lastpos = 0
-    callable_includeescapes = callable(includeescapes)
+    callable_includeescapes = isinstance(includeescapes, collections.Callable)
     checkescapes = callable_includeescapes or not includeescapes
     for pos in significant_places:
         if instring and pos in enddelim_places and lastpos != pos - lenstart:
@@ -153,7 +155,7 @@ def extractwithoutquotes(source, startdelim, enddelim, escape=None,
                         replace_escape = includeescapes(section[epos:epos + lenescape + 1])
                         # TODO: deprecate old method of returning boolean from
                         # includeescape, by removing this if block
-                        if not isinstance(replace_escape, basestring):
+                        if not isinstance(replace_escape, str):
                             if replace_escape:
                                 replace_escape = section[epos:epos + lenescape + 1]
                             else:
@@ -190,25 +192,25 @@ def extractwithoutquotes(source, startdelim, enddelim, escape=None,
     return (extracted, instring)
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def htmlentityencode(source):
     """encodes source using HTML entities e.g. © -> &copy;"""
-    output = u""
+    output = ""
     for char in source:
         charnum = ord(char)
-        if charnum in htmlentitydefs.codepoint2name:
-            output += u"&%s;" % htmlentitydefs.codepoint2name[charnum]
+        if charnum in html.entities.codepoint2name:
+            output += "&%s;" % html.entities.codepoint2name[charnum]
         else:
             output += str(char)
     return output
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def htmlentitydecode(source):
     """decodes source using HTML entities e.g. &copy; -> ©"""
-    output = u""
+    output = ""
     inentity = False
     for char in source:
         if char == "&":
@@ -218,8 +220,8 @@ def htmlentitydecode(source):
         if inentity:
             if char == ";":
                 if (len(possibleentity) > 0 and
-                    possibleentity in htmlentitydefs.name2codepoint):
-                    output += unichr(htmlentitydefs.name2codepoint[possibleentity])
+                    possibleentity in html.entities.name2codepoint):
+                    output += chr(html.entities.name2codepoint[possibleentity])
                     inentity = False
                 else:
                     output += "&" + possibleentity + ";"
@@ -234,15 +236,15 @@ def htmlentitydecode(source):
     return output
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def javapropertiesencode(source):
     """Encodes source in the escaped-unicode encoding used by Java
     .properties files
     """
-    output = u""
-    if source and source[0] == u" ":
-        output = u"\\"
+    output = ""
+    if source and source[0] == " ":
+        output = "\\"
     for char in source:
         charnum = ord(char)
         if char in controlchars:
@@ -250,17 +252,17 @@ def javapropertiesencode(source):
         elif 0 <= charnum < 128:
             output += str(char)
         else:
-            output += u"\\u%04X" % charnum
+            output += "\\u%04X" % charnum
     return output
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def mozillapropertiesencode(source):
     """Encodes source in the escaped-unicode encoding used by Mozilla
     .properties files.
     """
-    output = u""
+    output = ""
     for char in source:
         if char in controlchars:
             output += controlchars[char]
@@ -284,13 +286,13 @@ controlchars = {
 
 def escapecontrols(source):
     """escape control characters in the given string"""
-    for key, value in controlchars.iteritems():
+    for key, value in controlchars.items():
         source = source.replace(key, value)
     return source
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def propertiesdecode(source):
     """Decodes source from the escaped-unicode encoding used by .properties
     files.
@@ -301,7 +303,7 @@ def propertiesdecode(source):
     don't want to we reimplemented the algorithm from Python Objects/unicode.c
     in Python and modify it to retain escaped control characters.
     """
-    output = u""
+    output = ""
     s = 0
 
     def unichr2(i):
@@ -309,11 +311,11 @@ def propertiesdecode(source):
         otherwise an escaped control character.
         """
         if 32 <= i:
-            return unichr(i)
-        elif unichr(i) in controlchars:
+            return chr(i)
+        elif chr(i) in controlchars:
             # we just return the character, unescaped
             # if people want to escape them they can use escapecontrols
-            return unichr(i)
+            return chr(i)
         else:
             return "\\u%04x" % i
 

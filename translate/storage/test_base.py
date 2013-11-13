@@ -32,7 +32,7 @@ from translate.storage.placeables import general, parse as rich_parse
 
 def headerless_len(units):
     """return count of translatable (non header) units"""
-    return len(filter(lambda x: not x.isheader(), units))
+    return len([x for x in units if not x.isheader()])
 
 
 def first_translatable(store):
@@ -86,7 +86,7 @@ class TestTranslationUnit:
     def test_create(self):
         """tests a simple creation with a source string"""
         unit = self.unit
-        print 'unit.source:', unit.source
+        print('unit.source:', unit.source)
         assert unit.source == "Test String"
 
     def test_eq(self):
@@ -125,12 +125,12 @@ class TestTranslationUnit:
         unit = self.unit
         specials = ['Fish & chips', 'five < six', 'six > five', 'five &lt; six',
                     'Use &nbsp;', 'Use &amp;nbsp;', 'Use &amp;amp;nbsp;',
-                    'A "solution"', "skop 'n bal", '"""', "'''", u'µ',
+                    'A "solution"', "skop 'n bal", '"""', "'''", 'µ',
                     '\n', '\t', '\r', '\r\n', '\\r', '\\', '\\\r']
         for special in specials:
             unit.source = special
-            print "unit.source:", repr(unit.source)
-            print "special:", repr(special)
+            print("unit.source:", repr(unit.source))
+            print("special:", repr(special))
             assert unit.source == special
 
     def test_difficult_escapes(self):
@@ -143,35 +143,35 @@ class TestTranslationUnit:
                     '\\r\\n', '\\\\r\\n', '\\r\\\\n', '\\\\n\\\\r']
         for special in specials:
             unit.source = special
-            print "unit.source:", repr(unit.source) + '|'
-            print "special:", repr(special) + '|'
+            print("unit.source:", repr(unit.source) + '|')
+            print("special:", repr(special) + '|')
             assert unit.source == special
 
     def test_note_sanity(self):
         """Tests that all subclasses of the base behaves consistently with regards to notes."""
         unit = self.unit
 
-        unit.addnote(u"Test note 1", origin="translator")
-        unit.addnote(u"Test note 2", origin="translator")
-        unit.addnote(u"Test note 3", origin="translator")
-        expected_notes = u"Test note 1\nTest note 2\nTest note 3"
+        unit.addnote("Test note 1", origin="translator")
+        unit.addnote("Test note 2", origin="translator")
+        unit.addnote("Test note 3", origin="translator")
+        expected_notes = "Test note 1\nTest note 2\nTest note 3"
         actual_notes = unit.getnotes(origin="translator")
         assert actual_notes == expected_notes
 
         # Test with no origin.
         unit.removenotes()
         assert not unit.getnotes()
-        unit.addnote(u"Test note 1")
-        unit.addnote(u"Test note 2")
-        unit.addnote(u"Test note 3")
-        expected_notes = u"Test note 1\nTest note 2\nTest note 3"
+        unit.addnote("Test note 1")
+        unit.addnote("Test note 2")
+        unit.addnote("Test note 3")
+        expected_notes = "Test note 1\nTest note 2\nTest note 3"
         actual_notes = unit.getnotes()
         assert actual_notes == expected_notes
 
     def test_rich_get(self):
         """Basic test for converting from multistrings to StringElem trees."""
-        target_mstr = multistring([u'tėst', u'<b>string</b>'])
-        unit = self.UnitClass(multistring([u'a', u'b']))
+        target_mstr = multistring(['tėst', '<b>string</b>'])
+        unit = self.UnitClass(multistring(['a', 'b']))
         unit.rich_parsers = general.parsers
         unit.target = target_mstr
         elems = unit.rich_target
@@ -181,30 +181,30 @@ class TestTranslationUnit:
             assert len(elems[0].sub) == 1
             assert len(elems[1].sub) == 3
 
-            assert unicode(elems[0]) == target_mstr.strings[0]
-            assert unicode(elems[1]) == target_mstr.strings[1]
+            assert str(elems[0]) == target_mstr.strings[0]
+            assert str(elems[1]) == target_mstr.strings[1]
 
-            assert unicode(elems[1].sub[0]) == u'<b>'
-            assert unicode(elems[1].sub[1]) == u'string'
-            assert unicode(elems[1].sub[2]) == u'</b>'
+            assert str(elems[1].sub[0]) == '<b>'
+            assert str(elems[1].sub[1]) == 'string'
+            assert str(elems[1].sub[2]) == '</b>'
         else:
             assert len(elems[0].sub) == 1
-            assert unicode(elems[0]) == target_mstr.strings[0]
+            assert str(elems[0]) == target_mstr.strings[0]
 
     def test_rich_set(self):
         """Basic test for converting from multistrings to StringElem trees."""
         elems = [
-            rich_parse(u'Tëst <x>string</x>', general.parsers),
-            rich_parse(u'Another test string.', general.parsers),
+            rich_parse('Tëst <x>string</x>', general.parsers),
+            rich_parse('Another test string.', general.parsers),
         ]
-        unit = self.UnitClass(multistring([u'a', u'b']))
+        unit = self.UnitClass(multistring(['a', 'b']))
         unit.rich_target = elems
 
         if unit.hasplural():
-            assert unit.target.strings[0] == u'Tëst <x>string</x>'
-            assert unit.target.strings[1] == u'Another test string.'
+            assert unit.target.strings[0] == 'Tëst <x>string</x>'
+            assert unit.target.strings[1] == 'Another test string.'
         else:
-            assert unit.target == u'Tëst <x>string</x>'
+            assert unit.target == 'Tëst <x>string</x>'
 
 
 class TestTranslationStore(object):
@@ -234,8 +234,8 @@ class TestTranslationStore(object):
         """Tests adding a new unit with a source string"""
         store = self.StoreClass()
         unit = store.addsourceunit("Test String")
-        print str(unit)
-        print str(store)
+        print(str(unit))
+        print(str(store))
         assert headerless_len(store.units) == 1
         assert unit.source == "Test String"
 
@@ -252,11 +252,11 @@ class TestTranslationStore(object):
         """Tests the translate method and non-ascii characters."""
         store = self.StoreClass()
         unit = store.addsourceunit("scissor")
-        unit.target = u"skêr"
-        unit = store.addsourceunit(u"Beziér curve")
-        unit.target = u"Beziér-kurwe"
-        assert store.translate("scissor") == u"skêr"
-        assert store.translate(u"Beziér curve") == u"Beziér-kurwe"
+        unit.target = "skêr"
+        unit = store.addsourceunit("Beziér curve")
+        unit.target = "Beziér-kurwe"
+        assert store.translate("scissor") == "skêr"
+        assert store.translate("Beziér curve") == "Beziér-kurwe"
 
     def reparse(self, store):
         """converts the store to a string and back to a store again"""
@@ -271,13 +271,13 @@ class TestTranslationStore(object):
             store2unit = store2.units[n]
             match = store1unit == store2unit
             if not match:
-                print "match failed between elements %d of %d" % ((n + 1), headerless_len(store1.units))
-                print "store1:"
-                print str(store1)
-                print "store2:"
-                print str(store2)
-                print "store1.units[%d].__dict__:" % n, store1unit.__dict__
-                print "store2.units[%d].__dict__:" % n, store2unit.__dict__
+                print("match failed between elements %d of %d" % ((n + 1), headerless_len(store1.units)))
+                print("store1:")
+                print(str(store1))
+                print("store2:")
+                print(str(store2))
+                print("store1.units[%d].__dict__:" % n, store1unit.__dict__)
+                print("store2.units[%d].__dict__:" % n, store2unit.__dict__)
                 assert store1unit == store2unit
 
     def test_parse(self):
@@ -323,13 +323,13 @@ class TestTranslationStore(object):
 
     def test_nonascii(self):
         store = self.StoreClass()
-        unit = store.addsourceunit(u"Beziér curve")
-        string = u"Beziér-kurwe"
+        unit = store.addsourceunit("Beziér curve")
+        string = "Beziér-kurwe"
         unit.target = string.encode("utf-8")
-        answer = store.translate(u"Beziér curve")
+        answer = store.translate("Beziér curve")
         if isinstance(answer, str):
             answer = answer.decode("utf-8")
-        assert answer == u"Beziér-kurwe"
+        assert answer == "Beziér-kurwe"
         #Just test that __str__ doesn't raise exception:
         src = str(store)
 
@@ -340,8 +340,8 @@ class TestTranslationStore(object):
         if not (self.StoreClass.Name and self.StoreClass.Name in supported_dict):
             return
         detail = supported_dict[self.StoreClass.Name]  # will start to get problematic once translated
-        print "Factory:", detail[0]
-        print "StoreClass:", self.StoreClass.Extensions
+        print("Factory:", detail[0])
+        print("StoreClass:", self.StoreClass.Extensions)
         for ext in detail[0]:
             assert ext in self.StoreClass.Extensions
         for ext in self.StoreClass.Extensions:
@@ -354,8 +354,8 @@ class TestTranslationStore(object):
         if not (self.StoreClass.Name and self.StoreClass.Name in supported_dict):
             return
         detail = supported_dict[self.StoreClass.Name]  # will start to get problematic once translated
-        print "Factory:", detail[1]
-        print "StoreClass:", self.StoreClass.Mimetypes
+        print("Factory:", detail[1])
+        print("StoreClass:", self.StoreClass.Mimetypes)
         for ext in detail[1]:
             assert ext in self.StoreClass.Mimetypes
         for ext in self.StoreClass.Mimetypes:

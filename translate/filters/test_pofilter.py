@@ -46,8 +46,8 @@ class BaseTestFilter(object):
         """checks that an obviously wrong string fails"""
         self.unit.target = "REST"
         filter_result = self.filter(self.translationstore)
-        print filter_result
-        print filter_result.units
+        print(filter_result)
+        print(filter_result.units)
         assert 'startcaps' in first_translatable(filter_result).geterrors()
 
     def test_variables_across_lines(self):
@@ -163,7 +163,7 @@ class BaseTestFilter(object):
     def test_notes(self):
         """tests the optional adding of notes"""
         # let's make sure we trigger the 'long' and/or 'doubleword' test
-        self.unit.target = u"asdf asdf asdf asdf asdf asdf asdf"
+        self.unit.target = "asdf asdf asdf asdf asdf asdf asdf"
         filter_result = self.filter(self.translationstore)
         assert headerless_len(filter_result.units) == 1
         assert first_translatable(filter_result).geterrors()
@@ -182,8 +182,8 @@ class BaseTestFilter(object):
     def test_unicode(self):
         """tests that we can handle UTF-8 encoded characters when there is no
         known header specified encoding"""
-        self.unit.source = u'Bézier curve'
-        self.unit.target = u'Bézier-kurwe'
+        self.unit.source = 'Bézier curve'
+        self.unit.target = 'Bézier-kurwe'
         filter_result = self.filter(self.translationstore)
         assert headerless_len(filter_result.units) == 0
 
@@ -217,7 +217,7 @@ msgstr "koei"
         pofile = self.parse_text(posource)
         filter_result = self.filter(pofile)
         if headerless_len(filter_result.units):
-            print first_translatable(filter_result)
+            print(first_translatable(filter_result))
         assert headerless_len(filter_result.units) == 0
 
 

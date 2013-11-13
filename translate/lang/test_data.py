@@ -37,7 +37,7 @@ def test_simplify_to_common():
 
 def test_language_names():
     _ = data.tr_lang('en_US')
-    assert _(u"Bokmål, Norwegian; Norwegian Bokmål") == u"Norwegian Bokmål"
-    assert _(u"Spanish; Castillian") == u"Spanish"
-    assert _(u"Mapudungun; Mapuche") == u"Mapudungun"
-    assert _(u"Interlingua (International Auxiliary Language Association)") == u"Interlingua"
+    assert _("Bokmål, Norwegian; Norwegian Bokmål") == "Norwegian Bokmål"
+    assert _("Spanish; Castillian") == "Spanish"
+    assert _("Mapudungun; Mapuche") == "Mapudungun"
+    assert _("Interlingua (International Auxiliary Language Association)") == "Interlingua"

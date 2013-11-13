@@ -18,12 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-from StringIO import StringIO
+from io import StringIO
 
 from translate.search.match import terminologymatcher
 from translate.storage.placeables import base, general, parse, StringElem
 from translate.storage.placeables.terminology import parsers as term_parsers, TerminologyPlaceable
 from translate.storage.pypo import pofile
+import collections
 
 
 class TestTerminologyPlaceable:
@@ -44,7 +45,7 @@ msgstr "lêernaam"
     def setup_method(self, method):
         self.term_po = pofile(StringIO(self.TERMINOLOGY))
         self.matcher = terminologymatcher(self.term_po)
-        self.test_string = u'<b>Inpüt</b> file name thingy.'
+        self.test_string = '<b>Inpüt</b> file name thingy.'
 
     def test_simple_terminology(self):
         TerminologyPlaceable.matchers = [self.matcher]
@@ -57,14 +58,14 @@ msgstr "lêernaam"
         term = tree.sub[3].sub[1]
 
         assert isinstance(term, TerminologyPlaceable)
-        assert unicode(term) == self.term_po.getunits()[2].source
-        assert term.translate() == unicode(self.term_po.getunits()[2].target)
+        assert str(term) == self.term_po.getunits()[2].source
+        assert term.translate() == str(self.term_po.getunits()[2].target)
 
 
 if __name__ == '__main__':
     for test in [TestTerminologyPlaceable()]:
         for method in dir(test):
-            if method.startswith('test_') and callable(getattr(test, method)):
+            if method.startswith('test_') and isinstance(getattr(test, method), collections.Callable):
                 if hasattr(test, 'setup_method'):
                     getattr(test, 'setup_method')(getattr(test, method))
                 getattr(test, method)()

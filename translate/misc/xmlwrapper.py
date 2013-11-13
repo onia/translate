@@ -78,7 +78,7 @@ class XMLWrapper:
         self.obj = obj
         self.namespace, self.tag = splitnamespace(self.obj.tag)
         self.attrib = {}
-        for fullkey, value in self.obj.attrib.iteritems():
+        for fullkey, value in self.obj.attrib.items():
             namespace, key = splitnamespace(fullkey)
             self.attrib[key] = value
 

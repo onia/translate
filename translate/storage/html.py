@@ -22,15 +22,15 @@
 """module for parsing html files for translation"""
 
 import re
-from htmlentitydefs import name2codepoint
-import HTMLParser
+from html.entities import name2codepoint
+import html.parser
 
 from translate.storage import base
 from translate.storage.base import ParseError
 
 # Override the piclose tag from simple > to ?> otherwise we consume HTML
 # within the processing instructions
-HTMLParser.piclose = re.compile('\?>')
+html.parser.piclose = re.compile('\?>')
 
 
 strip_html_re = re.compile(r'''
@@ -116,7 +116,7 @@ class htmlunit(base.TranslationUnit):
         return self.locations
 
 
-class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
+class htmlfile(html.parser.HTMLParser, base.TranslationStore):
     UnitClass = htmlunit
 
     MARKINGTAGS = ["p", "title", "h1", "h2", "h3", "h4", "h5", "h6", "th",
@@ -130,9 +130,9 @@ class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
     INCLUDEATTRS = ["alt", "summary", "standby", "abbr", "content"]
     """Text from these attributes are extracted"""
 
-    SELF_CLOSING_TAGS = [u"area", u"base", u"basefont", u"br", u"col",
-                         u"frame", u"hr", u"img", u"input", u"link", u"meta",
-                         u"param"]
+    SELF_CLOSING_TAGS = ["area", "base", "basefont", "br", "col",
+                         "frame", "hr", "img", "input", "link", "meta",
+                         "param"]
     """HTML self-closing tags.  Tags that should be specified as <img /> but
     might be <img>.
     `Reference <http://learnwebsitemaking.com/htmlselfclosingtags.html>`_"""
@@ -141,20 +141,20 @@ class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
                  callback=None):
         self.units = []
         self.filename = getattr(inputfile, 'name', None)
-        self.currentblock = u""
-        self.currentcomment = u""
+        self.currentblock = ""
+        self.currentcomment = ""
         self.currenttag = None
         self.currentpos = -1
         self.tag_path = []
-        self.filesrc = u""
-        self.currentsrc = u""
+        self.filesrc = ""
+        self.currentsrc = ""
         self.pidict = {}
         if callback is None:
             self.callback = self._simple_callback
         else:
             self.callback = callback
         self.includeuntaggeddata = includeuntaggeddata
-        HTMLParser.HTMLParser.__init__(self)
+        html.parser.HTMLParser.__init__(self)
 
         if inputfile is not None:
             htmlsrc = inputfile.read()
@@ -216,7 +216,7 @@ class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
 
     def pi_unescape(self, text):
         """Replaces the PHP placeholders in text with the real code"""
-        for pi_escaped, pi in self.pidict.items():
+        for pi_escaped, pi in list(self.pidict.items()):
             text = text.replace(pi_escaped, pi)
         return text
 
@@ -260,16 +260,16 @@ class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
 
     def buildtag(self, tag, attrs=None, startend=False):
         """Create an HTML tag"""
-        selfclosing = u""
+        selfclosing = ""
         if startend:
-            selfclosing = u" /"
+            selfclosing = " /"
         if attrs != [] and attrs is not None:
-            return u"<%(tag)s %(attrs)s%(selfclosing)s>" % \
+            return "<%(tag)s %(attrs)s%(selfclosing)s>" % \
                     {"tag": tag,
                      "attrs": " ".join(['%s="%s"' % pair for pair in attrs]),
                      "selfclosing": selfclosing}
         else:
-            return u"<%(tag)s%(selfclosing)s>" % {"tag": tag,
+            return "<%(tag)s%(selfclosing)s>" % {"tag": tag,
                                                   "selfclosing": selfclosing}
 
 #From here on below, follows the methods of the HTMLParser
@@ -372,21 +372,21 @@ class htmlfile(HTMLParser.HTMLParser, base.TranslationStore):
 
     def handle_charref(self, name):
         """Handle entries in the form &#NNNN; e.g. &#8417;"""
-        self.handle_data(unichr(int(name)))
+        self.handle_data(chr(int(name)))
 
     def handle_entityref(self, name):
         """Handle named entities of the form &aaaa; e.g. &rsquo;"""
         if name in ['gt', 'lt', 'amp']:
             self.handle_data("&%s;" % name)
         else:
-            self.handle_data(unichr(name2codepoint.get(name, u"&%s;" % name)))
+            self.handle_data(chr(name2codepoint.get(name, "&%s;" % name)))
 
     def handle_comment(self, data):
         # we can place comments above the msgid as translator comments!
         if self.currentcomment == "":
             self.currentcomment = data
         else:
-            self.currentcomment += u'\n' + data
+            self.currentcomment += '\n' + data
         self.filesrc += "<!--%s-->" % data
 
     def handle_pi(self, data):

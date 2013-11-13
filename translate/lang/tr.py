@@ -26,4 +26,4 @@ from translate.lang import common
 class tr(common.Common):
     """This class represents Turkish."""
 
-    validaccel = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" + u"ığüşöçĞÜŞİÖÇ"
+    validaccel = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" + "ığüşöçĞÜŞİÖÇ"

@@ -79,7 +79,7 @@ class BundleProjectStore(ProjectStore):
             """
         if fname and fname in self.zip.namelist():
             raise ValueError("File already in bundle archive: %s" % (fname))
-        if not fname and isinstance(afile, basestring) and afile in self.zip.namelist():
+        if not fname and isinstance(afile, str) and afile in self.zip.namelist():
             raise ValueError("File already in bundle archive: %s" % (afile))
 
         afile, fname = super(BundleProjectStore, self).append_file(afile, fname, ftype)
@@ -97,7 +97,7 @@ class BundleProjectStore(ProjectStore):
         """Remove the file with the given project name from the project."""
         super(BundleProjectStore, self).remove_file(fname, ftype)
         self._zip_delete([fname])
-        tempfiles = [tmpf for tmpf, prjf in self._tempfiles.iteritems() if prjf == fname]
+        tempfiles = [tmpf for tmpf, prjf in self._tempfiles.items() if prjf == fname]
         if tempfiles:
             for tmpf in tempfiles:
                 try:
@@ -147,7 +147,7 @@ class BundleProjectStore(ProjectStore):
         """Try and find a project file name for the given real file name."""
         try:
             fname = super(BundleProjectStore, self).get_proj_filename(realfname)
-        except ValueError, ve:
+        except ValueError as ve:
             fname = None
         if fname:
             return fname

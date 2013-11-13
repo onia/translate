@@ -37,17 +37,17 @@ def convertodf(inputfile, outputfile, templates, engine='toolkit'):
     """
 
     def translate_toolkit_implementation(store):
-        import cStringIO
+        import io
         import zipfile
 
         from translate.storage.xml_extract import extract
         from translate.storage import odf_shared
 
         contents = odf_io.open_odf(inputfile)
-        for data in contents.values():
+        for data in list(contents.values()):
             parse_state = extract.ParseState(odf_shared.no_translate_content_elements,
                                              odf_shared.inline_elements)
-            extract.build_store(cStringIO.StringIO(data), store, parse_state)
+            extract.build_store(io.StringIO(data), store, parse_state)
 
     def itools_implementation(store):
         from itools.handlers import get_handler
@@ -74,7 +74,7 @@ def convertodf(inputfile, outputfile, templates, engine='toolkit'):
         try:
             store.setfilename(store.getfilenode('NoName'), inputfile.name)
         except:
-            print "couldn't set origin filename"
+            print("couldn't set origin filename")
         yield store
         store.save()
 

@@ -26,7 +26,7 @@ from translate.misc import autoencode
 
 class multistring(autoencode.autoencode):
 
-    def __new__(newtype, string=u"", encoding=None, errors=None):
+    def __new__(newtype, string="", encoding=None, errors=None):
         if isinstance(string, list):
             if not string:
                 raise ValueError("multistring must contain at least one string")
@@ -54,8 +54,8 @@ class multistring(autoencode.autoencode):
                 return cmp(self.strings[1:], otherstring.strings[1:])
         elif isinstance(otherstring, autoencode.autoencode):
             return cmp(autoencode.autoencode(self), otherstring)
-        elif isinstance(otherstring, unicode):
-            return cmp(unicode(self), otherstring)
+        elif isinstance(otherstring, str):
+            return cmp(str(self), otherstring)
         elif isinstance(otherstring, str):
             return cmp(str(self), otherstring)
         elif isinstance(otherstring, list) and otherstring:

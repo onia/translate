@@ -55,7 +55,7 @@ def compose_mappings(left, right):
     which have corresponding keys in right will have their keys mapped
     to values in right. """
     result_map = {}
-    for left_key, left_val in left.iteritems():
+    for left_key, left_val in left.items():
         try:
             result_map[left_key] = right[left_val]
         except KeyError:
@@ -72,6 +72,6 @@ def parse_tag(full_tag):
     """
     match = tag_pattern.match(full_tag)
     if match is not None:
-        return unicode(match.groupdict()['namespace']), unicode(match.groupdict()['tag'])
+        return str(match.groupdict()['namespace']), str(match.groupdict()['tag'])
     else:
         raise Exception('Passed an invalid tag')

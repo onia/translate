@@ -39,8 +39,8 @@ def get_abs_data_filename(path_parts, basedirs=None):
         path_parts = [path_parts]
 
     BASE_DIRS = basedirs + [
-        os.path.dirname(unicode(__file__, sys.getfilesystemencoding())),
-        os.path.dirname(unicode(sys.executable, sys.getfilesystemencoding())),
+        os.path.dirname(str(__file__, sys.getfilesystemencoding())),
+        os.path.dirname(str(sys.executable, sys.getfilesystemencoding())),
     ]
 
     # Freedesktop standard

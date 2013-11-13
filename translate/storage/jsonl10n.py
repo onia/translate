@@ -68,7 +68,7 @@ TODO:
 """
 
 import os
-from StringIO import StringIO
+from io import StringIO
 try:
     import json as json  # available since Python 2.6
 except ImportError:
@@ -151,7 +151,7 @@ class JsonFile(base.TranslationStore):
         base.TranslationStore.__init__(self, unitclass=unitclass)
         self._filter = filter
         self.filename = ''
-        self._file = u''
+        self._file = ''
         if inputfile is not None:
             self.parse(inputfile)
 
@@ -171,7 +171,7 @@ class JsonFile(base.TranslationStore):
         :param last_node: the last list or dict
         """
         if isinstance(data, dict):
-            for k, v in data.iteritems():
+            for k, v in data.items():
                 for x in self._extract_translatables(v, stop,
                                                           "%s.%s" % (prev, k),
                                                           k, None, data):
@@ -187,7 +187,7 @@ class JsonFile(base.TranslationStore):
             or (isinstance(last_node, dict) and name_node in stop) \
             or (isinstance(last_node, list) and name_last_node in stop)):
 
-            if isinstance(data, str) or isinstance(data, unicode):
+            if isinstance(data, str) or isinstance(data, str):
                 yield (prev, data, last_node, name_node)
             elif isinstance(data, bool):
                 yield (prev, str(data), last_node, name_node)
@@ -213,7 +213,7 @@ class JsonFile(base.TranslationStore):
             input = StringIO(input)
         try:
             self._file = json.load(input)
-        except ValueError, e:
+        except ValueError as e:
             raise base.ParseError(e.message)
 
         for k, data, ref, item in self._extract_translatables(self._file,

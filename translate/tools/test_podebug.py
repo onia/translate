@@ -35,48 +35,48 @@ class TestPODebug:
 
     def test_keep_target(self):
         """Test that we use the target for rewriting if it exists."""
-        unit = base.TranslationUnit(u"blie")
+        unit = base.TranslationUnit("blie")
 
-        unit.target = u"bla"
+        unit.target = "bla"
         debugger = podebug.podebug(rewritestyle="xxx")
         unit = debugger.convertunit(unit, "")
-        assert unit.target == u"xxxblaxxx"
+        assert unit.target == "xxxblaxxx"
 
-        unit.target = u"d%d"
+        unit.target = "d%d"
         debugger = podebug.podebug(rewritestyle="flipped")
         unit = debugger.convertunit(unit, "")
-        assert unit.target == u"\u202ep%d"
+        assert unit.target == "\u202ep%d"
 
     def test_rewrite_blank(self):
         """Test the blank rewrite function"""
-        assert str(self.debug.rewrite_blank(u"Test")) == u""
+        assert str(self.debug.rewrite_blank("Test")) == ""
 
     def test_rewrite_en(self):
         """Test the en rewrite function"""
-        assert str(self.debug.rewrite_en(u"Test")) == u"Test"
+        assert str(self.debug.rewrite_en("Test")) == "Test"
 
     def test_rewrite_xxx(self):
         """Test the xxx rewrite function"""
-        assert str(self.debug.rewrite_xxx(u"Test")) == u"xxxTestxxx"
-        assert str(self.debug.rewrite_xxx(u"Newline\n")) == u"xxxNewlinexxx\n"
+        assert str(self.debug.rewrite_xxx("Test")) == "xxxTestxxx"
+        assert str(self.debug.rewrite_xxx("Newline\n")) == "xxxNewlinexxx\n"
 
     def test_rewrite_bracket(self):
         """Test the bracket rewrite function"""
-        assert str(self.debug.rewrite_bracket(u"Test")) == u"[Test]"
-        assert str(self.debug.rewrite_bracket(u"Newline\n")) == u"[Newline]\n"
+        assert str(self.debug.rewrite_bracket("Test")) == "[Test]"
+        assert str(self.debug.rewrite_bracket("Newline\n")) == "[Newline]\n"
 
     def test_rewrite_unicode(self):
         """Test the unicode rewrite function"""
-        assert unicode(self.debug.rewrite_unicode(u"Test")) == u"Ŧḗşŧ"
+        assert str(self.debug.rewrite_unicode("Test")) == "Ŧḗşŧ"
 
     def test_rewrite_flipped(self):
         """Test the unicode rewrite function"""
-        assert unicode(self.debug.rewrite_flipped(u"Test")) == u"\u202e⊥ǝsʇ"
+        assert str(self.debug.rewrite_flipped("Test")) == "\u202e⊥ǝsʇ"
         #alternative with reversed string and no RTL override:
         #assert unicode(self.debug.rewrite_flipped("Test")) == u"ʇsǝ⊥"
         # Chars < ! and > z are returned as is
-        assert unicode(self.debug.rewrite_flipped(u" ")) == u"\u202e "
-        assert unicode(self.debug.rewrite_flipped(u"©")) == u"\u202e©"
+        assert str(self.debug.rewrite_flipped(" ")) == "\u202e "
+        assert str(self.debug.rewrite_flipped("©")) == "\u202e©"
 
     def test_rewrite_chef(self):
         """Test the chef rewrite function
@@ -84,7 +84,7 @@ class TestPODebug:
         This is not realy critical to test but a simple tests ensures
         that it stays working.
         """
-        assert str(self.debug.rewrite_chef(u"Mock Swedish test you muppet")) == u"Mock Swedish test yooo mooppet"
+        assert str(self.debug.rewrite_chef("Mock Swedish test you muppet")) == "Mock Swedish test yooo mooppet"
 
     def test_po_variables(self):
         debug = podebug.podebug(rewritestyle='unicode')
@@ -94,10 +94,10 @@ class TestPODebug:
         out_unit = po_out.units[0]
 
         assert in_unit.source == out_unit.source
-        print out_unit.target
-        print str(po_out)
+        print(out_unit.target)
+        print(str(po_out))
         rewrite_func = self.debug.rewrite_unicode
-        assert out_unit.target == u"%s%%s%s" % (rewrite_func(u'This is a '), rewrite_func(u' test, hooray.'))
+        assert out_unit.target == "%s%%s%s" % (rewrite_func('This is a '), rewrite_func(' test, hooray.'))
 
     def test_xliff_rewrite(self):
         debug = podebug.podebug(rewritestyle='xxx')
@@ -107,9 +107,9 @@ class TestPODebug:
         out_unit = xliff_out.units[0]
 
         assert in_unit.source == out_unit.source
-        print out_unit.target
-        print str(xliff_out)
-        assert out_unit.target == u'xxx%sxxx' % (in_unit.source)
+        print(out_unit.target)
+        print(str(xliff_out))
+        assert out_unit.target == 'xxx%sxxx' % (in_unit.source)
 
     def test_hash(self):
         po_docs = ("""

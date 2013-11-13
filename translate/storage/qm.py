@@ -68,14 +68,14 @@ from translate.storage import base
 
 logger = logging.getLogger(__name__)
 
-QM_MAGIC_NUMBER = (0x3CB86418L, 0xCAEF9C95L, 0xCD211CBFL, 0x60A1BDDDL)
+QM_MAGIC_NUMBER = (0x3CB86418, 0xCAEF9C95, 0xCD211CBF, 0x60A1BDDD)
 
 
 def qmunpack(file_='messages.qm'):
     """Helper to unpack Qt .qm files into a Python string"""
     f = open(file_)
     s = f.read()
-    print "\\x%02x" * len(s) % tuple(map(ord, s))
+    print("\\x%02x" * len(s) % tuple(map(ord, s)))
     f.close()
 
 
@@ -125,7 +125,7 @@ class qmfile(base.TranslationStore):
         sectionheader = 5
 
         def section_debug(name, section_type, startsection, length):
-            print "Section: %s (type: %#x, offset: %#x, length: %d)" % (name, section_type, startsection, length)
+            print("Section: %s (type: %#x, offset: %#x, length: %d)" % (name, section_type, startsection, length))
             return
 
         while startsection < len(input):
@@ -181,7 +181,7 @@ class qmfile(base.TranslationStore):
                         target = multistring(string)
                     pos = pos + 4 + length
                 else:
-                    target = u""
+                    target = ""
                     pos = pos + 4
                 #print "Translation: %s" % target.encode('utf-8')
             elif subsection == 0x06:  # SourceText

@@ -44,19 +44,19 @@ class TestPO2Ical:
         #templateprop = properties.propfile(templatefile)
         convertor = po2ical.reical(templatefile, inputpo)
         outputical = convertor.convertstore()
-        print outputical
+        print(outputical)
         return outputical
 
     def test_simple_summary(self):
         """test that we output correctly for Inno files."""
-        posource = ur'''#: [uid1@example.com]SUMMARY
+        posource = r'''#: [uid1@example.com]SUMMARY
 msgid "Value"
 msgstr "Waarde"
 '''
         icaltemplate = icalboiler % "Value"
         icalexpected = icalboiler % "Waarde"
         icalfile = self.merge2ical(icaltemplate, posource)
-        print icalexpected
+        print(icalexpected)
         assert icalfile == icalexpected
 
     # FIXME we should also test for DESCRIPTION, LOCATION and COMMENT

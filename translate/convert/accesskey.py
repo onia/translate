@@ -21,7 +21,7 @@
 
 from translate.storage.placeables.general import XMLEntityPlaceable
 
-DEFAULT_ACCESSKEY_MARKER = u"&"
+DEFAULT_ACCESSKEY_MARKER = "&"
 
 
 class UnitMixer(object):
@@ -116,12 +116,12 @@ def extract(string, accesskey_marker=DEFAULT_ACCESSKEY_MARKER):
     :type accesskey_marker: Char
     :param accesskey_marker: The character that is used to prefix an access key
     """
-    assert isinstance(string, unicode)
-    assert isinstance(accesskey_marker, unicode)
+    assert isinstance(string, str)
+    assert isinstance(accesskey_marker, str)
     assert len(accesskey_marker) == 1
-    if string == u"":
-        return u"", u""
-    accesskey = u""
+    if string == "":
+        return "", ""
+    accesskey = ""
     label = string
     marker_pos = 0
     while marker_pos >= 0:
@@ -153,8 +153,8 @@ def combine(label, accesskey,
     :rtype: unicode or None
     :return: label+accesskey string or None if uncombineable
     """
-    assert isinstance(label, unicode)
-    assert isinstance(accesskey, unicode)
+    assert isinstance(label, str)
+    assert isinstance(accesskey, str)
     if len(accesskey) == 0:
         return None
     searchpos = 0

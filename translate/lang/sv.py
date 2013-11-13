@@ -29,6 +29,6 @@ from translate.lang import common
 class sv(common.Common):
     """This class represents Swedish."""
 
-    validaccel = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + \
-                 u"1234567890" + \
-                 u"åäöÅÄÖ"
+    validaccel = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + \
+                 "1234567890" + \
+                 "åäöÅÄÖ"

@@ -34,7 +34,7 @@ class tmxunit(lisa.LISAunit):
 
     def createlanguageNode(self, lang, text, purpose):
         """returns a langset xml Element setup with given parameters"""
-        if isinstance(text, str):
+        if isinstance(text, bytes):
             text = text.decode("utf-8")
         langset = etree.Element(self.languageNode)
         lisa.setXMLlang(langset, lang)
@@ -58,7 +58,7 @@ class tmxunit(lisa.LISAunit):
         """Add a note specifically in a "note" tag.
 
         The origin parameter is ignored"""
-        if isinstance(text, str):
+        if isinstance(text, bytes):
             text = text.decode("utf-8")
         note = etree.SubElement(self.xmlelement, self.namespaced("note"))
         note.text = text.strip()
@@ -129,7 +129,7 @@ class tmxfile(lisa.LISAfile):
 </tmx>'''
 
     def addheader(self):
-        headernode = self.document.getroot().iterchildren(self.namespaced("header")).next()
+        headernode = next(self.document.getroot().iterchildren(self.namespaced("header")))
         headernode.set("creationtool", "Translate Toolkit - po2tmx")
         headernode.set("creationtoolversion", __version__.sver)
         headernode.set("segtype", "sentence")
@@ -150,8 +150,8 @@ class tmxfile(lisa.LISAfile):
             unit.addnote(comment)
 
         tuvs = unit.xmlelement.iterdescendants(self.namespaced('tuv'))
-        lisa.setXMLlang(tuvs.next(), srclang)
-        lisa.setXMLlang(tuvs.next(), translang)
+        lisa.setXMLlang(next(tuvs), srclang)
+        lisa.setXMLlang(next(tuvs), translang)
 
     def translate(self, sourcetext, sourcelang=None, targetlang=None):
         """method to test old unit tests"""

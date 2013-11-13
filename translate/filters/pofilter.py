@@ -97,7 +97,7 @@ class pocheckfilter:
     def getfilterdocs(self):
         """Lists the docs for filters available on checker."""
         filterdict = self.checker.getfilters()
-        filterdocs = ["%s\t%s" % (name, filterfunc.__doc__) for (name, filterfunc) in filterdict.iteritems()]
+        filterdocs = ["%s\t%s" % (name, filterfunc.__doc__) for (name, filterfunc) in filterdict.items()]
         filterdocs.sort()
 
         return "\n".join(filterdocs)
@@ -147,7 +147,7 @@ class pocheckfilter:
 
             if filter_result:
                 if filter_result != autocorrect:
-                    for filter_name in filter_result.iterkeys():
+                    for filter_name in filter_result.keys():
                         filter_message = filter_result[filter_name]['message']
 
                         if self.options.addnotes:
@@ -203,7 +203,7 @@ class FilterOptionParser(optrecurse.RecursiveOptionParser):
         options.outputoptions = self.outputoptions
 
         if options.listfilters:
-            print options.checkfilter.getfilterdocs()
+            print(options.checkfilter.getfilterdocs())
         else:
             self.recursiveprocess(options)
 

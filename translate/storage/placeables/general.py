@@ -70,7 +70,7 @@ class NumberPlaceable(Ph):
     """Placeable for numbers."""
 
     istranslatable = False
-    regex = re.compile(ur"[-+]?[0-9]+([\u00a0.,][0-9]+)*")
+    regex = re.compile(r"[-+]?[0-9]+([\u00a0.,][0-9]+)*")
     parse = classmethod(regex_parse)
 
 
@@ -210,7 +210,7 @@ class PunctuationPlaceable(Ph):
     # FIXME this should really be a list created as being the inverse of what
     # is available on the translators keyboard.  Or easily expanded by their
     # configuration.
-    regex = re.compile(ur'''([™©®]|          # Marks
+    regex = re.compile(r'''([™©®]|          # Marks
                              [℃℉°]|          # Degree related
                              [±πθ×÷−√∞∆Σ′″]| # Maths
                              [‘’ʼ‚‛“”„‟]|    # Quote characters
@@ -317,9 +317,9 @@ def to_general_placeables(tree, classmap={
 
     newtree = None
 
-    for baseclass, gclasslist in classmap.items():
+    for baseclass, gclasslist in list(classmap.items()):
         if isinstance(tree, baseclass):
-            gclass = [c for c in gclasslist if c.parse(unicode(tree))]
+            gclass = [c for c in gclasslist if c.parse(str(tree))]
             if gclass:
                 newtree = gclass[0]()
 

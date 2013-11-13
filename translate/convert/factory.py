@@ -47,7 +47,7 @@ class UnknownExtensionError(Exception):
         return 'Unable to find extension for file: %s' % (self.file)
 
     def __unicode__(self):
-        return unicode(str(self))
+        return str(str(self))
 
 
 class UnsupportedConversionError(Exception):
@@ -64,7 +64,7 @@ class UnsupportedConversionError(Exception):
         return msg
 
     def __unicode__(self):
-        return unicode(str(self))
+        return str(str(self))
 
 
 def get_extension(filename):

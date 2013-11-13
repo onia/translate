@@ -22,30 +22,30 @@
 and uses this when converting to a string."""
 
 
-class autoencode(unicode):
+class autoencode(str):
 
-    def __new__(newtype, string=u"", encoding=None, errors=None):
-        if isinstance(string, unicode):
+    def __new__(newtype, string="", encoding=None, errors=None):
+        if isinstance(string, str):
             if errors is None:
-                newstring = unicode.__new__(newtype, string)
+                newstring = str.__new__(newtype, string)
             else:
-                newstring = unicode.__new__(newtype, string, errors=errors)
+                newstring = str.__new__(newtype, string, errors=errors)
             if encoding is None and isinstance(string, autoencode):
                 newstring.encoding = string.encoding
             else:
                 newstring.encoding = encoding
         else:
             if errors is None and encoding is None:
-                newstring = unicode.__new__(newtype, string)
+                newstring = str.__new__(newtype, string)
             elif errors is None:
                 try:
-                    newstring = unicode.__new__(newtype, string, encoding)
-                except LookupError, e:
+                    newstring = str.__new__(newtype, string, encoding)
+                except LookupError as e:
                     raise ValueError(str(e))
             elif encoding is None:
-                newstring = unicode.__new__(newtype, string, errors)
+                newstring = str.__new__(newtype, string, errors)
             else:
-                newstring = unicode.__new__(newtype, string, encoding, errors)
+                newstring = str.__new__(newtype, string, encoding, errors)
             newstring.encoding = encoding
         return newstring
 

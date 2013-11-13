@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="po2xliff.po" source-language="en-US" datatype="plaintext">
+    <body>
+      <trans-unit xml:space="preserve" id="1" approved="no" restype="x-gettext-domain-header">
+        <source>Project-Id-Version: XBMC Main Translation Project (Frodo)
+Report-Msgid-Bugs-To: http://trac.xbmc.org/
+POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE
+PO-Revision-Date: 2013-07-17 08:37+0000
+Last-Translator: TeamXBMC &lt;xbmctranslations@gmail.com&gt;
+Language-Team: English (http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/en/)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Language: en
+Plural-Forms: nplurals=2; plural=(n != 1);
+</source>
+        <target state="translated">Project-Id-Version: XBMC Main Translation Project (Frodo)
+Report-Msgid-Bugs-To: http://trac.xbmc.org/
+POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE
+PO-Revision-Date: 2013-07-17 08:37+0000
+Last-Translator: TeamXBMC &lt;xbmctranslations@gmail.com&gt;
+Language-Team: English (http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/en/)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Language: en
+Plural-Forms: nplurals=2; plural=(n != 1);
+</target>
+        <context-group name="po-entry" purpose="information">
+          <context context-type="x-po-trancomment">XBMC Media Center language file
+Addon Name: Weather Underground
+Addon id: weather.wunderground
+Addon Provider: Team XBMC
+Translators:</context>
+        </context-group>
+        <note from="po-translator">XBMC Media Center language file
+Addon Name: Weather Underground
+Addon id: weather.wunderground
+Addon Provider: Team XBMC
+Translators:</note>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="2" approved="yes">
+        <source>Weather forecast from wunderground.com</source>
+        <target state="translated">Weather forecast from wunderground.com</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="3" approved="yes">
+        <source>Weather forecast provided by Weather Underground (http://www.wunderground.com/)</source>
+        <target state="translated">Weather forecast provided by Weather Underground (http://www.wunderground.com/)</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="4" approved="yes">
+        <source>Use of this add-on implies that you have agreed to the Terms of Service located at http://www.wunderground.com/weather/api/d/terms.html</source>
+        <target state="translated">Use of this add-on implies that you have agreed to the Terms of Service located at http://www.wunderground.com/weather/api/d/terms.html</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="5" approved="yes">
+        <source>Location setup</source>
+        <target state="translated">Location setup</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="6" approved="yes">
+        <source>Advanced options</source>
+        <target state="translated">Advanced options</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="7" approved="yes">
+        <source>Enabled</source>
+        <target state="translated">Enabled</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="8" approved="yes">
+        <source>Location 1</source>
+        <target state="translated">Location 1</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="9" approved="yes">
+        <source>Location 2</source>
+        <target state="translated">Location 2</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="10" approved="yes">
+        <source>Location 3</source>
+        <target state="translated">Location 3</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="11" approved="yes">
+        <source>Location 1 display name</source>
+        <target state="translated">Location 1 display name</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="12" approved="yes">
+        <source>Location 2 display name</source>
+        <target state="translated">Location 2 display name</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="13" approved="yes">
+        <source>Location 3 display name</source>
+        <target state="translated">Location 3 display name</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="14" approved="yes">
+        <source>Location 1 id</source>
+        <target state="translated">Location 1 id</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="15" approved="yes">
+        <source>Location 2 id</source>
+        <target state="translated">Location 2 id</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="16" approved="yes">
+        <source>Location 3 id</source>
+        <target state="translated">Location 3 id</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="17" approved="yes">
+        <source>Enable logging</source>
+        <target state="translated">Enable logging</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="18" approved="yes">
+        <source>Weekend</source>
+        <target state="translated">Weekend</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="19" approved="yes">
+        <source>Saturday/Sunday</source>
+        <target state="translated">Saturday/Sunday</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="20" approved="yes">
+        <source>Friday/Saturday</source>
+        <target state="translated">Friday/Saturday</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="21" approved="yes">
+        <source>Thursday/Friday</source>
+        <target state="translated">Thursday/Friday</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="22" approved="yes">
+        <source>Map zoom level</source>
+        <target state="translated">Map zoom level</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="23" approved="yes">
+        <source>Animated map</source>
+        <target state="translated">Animated map</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="24" approved="yes">
+        <source>Location 4</source>
+        <target state="translated">Location 4</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="25" approved="yes">
+        <source>Location 5</source>
+        <target state="translated">Location 5</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="26" approved="yes">
+        <source>Location 4 display name</source>
+        <target state="translated">Location 4 display name</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="27" approved="yes">
+        <source>Location 5 display name</source>
+        <target state="translated">Location 5 display name</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="28" approved="yes">
+        <source>Location 4 id</source>
+        <target state="translated">Location 4 id</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="29" approved="yes">
+        <source>Location 5 id</source>
+        <target state="translated">Location 5 id</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="30" approved="yes">
+        <source>New Moon</source>
+        <target state="translated">New Moon</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="31" approved="yes">
+        <source>Waxing Crescent</source>
+        <target state="translated">Waxing Crescent</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="32" approved="yes">
+        <source>First Quarter</source>
+        <target state="translated">First Quarter</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="33" approved="yes">
+        <source>Waxing Gibbous</source>
+        <target state="translated">Waxing Gibbous</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="34" approved="yes">
+        <source>Full Moon</source>
+        <target state="translated">Full Moon</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="35" approved="yes">
+        <source>Waning Gibbous</source>
+        <target state="translated">Waning Gibbous</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="36" approved="yes">
+        <source>Last Quarter</source>
+        <target state="translated">Last Quarter</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="37" approved="yes">
+        <source>Waning Crescent</source>
+        <target state="translated">Waning Crescent</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="38" approved="yes">
+        <source>Warning</source>
+        <target state="translated">Warning</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="39" approved="yes">
+        <source>Watch</source>
+        <target state="translated">Watch</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="40" approved="yes">
+        <source>Advisory</source>
+        <target state="translated">Advisory</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="41" approved="yes">
+        <source>Statement</source>
+        <target state="translated">Statement</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="42" approved="yes">
+        <source>Outlook</source>
+        <target state="translated">Outlook</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="43" approved="yes">
+        <source>Forecast</source>
+        <target state="translated">Forecast</target>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="44" approved="yes">
+        <source>Synopsis</source>
+        <target state="translated">Synopsis</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

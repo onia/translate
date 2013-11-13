@@ -23,7 +23,7 @@
 #XXX: This module is now deprecated: Use language specific segmenters in the
 # lang package (character_iter, word_iter, sentence_iter, etc.).
 
-punctuation = u".,;:!?-@#$%^*_()[]{}/\\'\"<>‘’‚‛“”„‟′″‴‵‶‷‹›«»±³¹²°¿©®×£¥"
+punctuation = ".,;:!?-@#$%^*_()[]{}/\\'\"<>‘’‚‛“”„‟′″‴‵‶‷‹›«»±³¹²°¿©®×£¥"
 
 
 def character_iter(text):

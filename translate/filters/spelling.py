@@ -38,8 +38,8 @@ try:
             try:
                 checkers[lang] = checker.SpellChecker(lang)
                 # some versions only report an error when checking something
-                checkers[lang].check(u'bla')
-            except EnchantError, e:
+                checkers[lang].check('bla')
+            except EnchantError as e:
                 # sometimes this is raised instead of DictNotFoundError
                 logger.error(str(e))
                 checkers[lang] = None
@@ -50,7 +50,7 @@ try:
         spellchecker = _get_checker(lang)
         if not spellchecker:
             return
-        spellchecker.set_text(unicode(text))
+        spellchecker.set_text(str(text))
         for err in spellchecker:
             yield err.word, err.wordpos, err.suggest()
 
@@ -58,7 +58,7 @@ try:
         spellchecker = _get_checker(lang)
         if not spellchecker:
             return
-        spellchecker.set_text(unicode(text))
+        spellchecker.set_text(str(text))
         for err in spellchecker:
             yield err.word
 

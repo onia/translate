@@ -27,4 +27,4 @@ from translate.lang import common
 class st(common.Common):
     """This class represents Southern Sotho."""
 
-    validdoublewords = [u"o", u"le", u"ba"]
+    validdoublewords = ["o", "le", "ba"]

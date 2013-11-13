@@ -31,7 +31,7 @@ import os.path
 import re
 import sys
 import stat
-import thread
+import _thread
 import logging
 from UserDict import UserDict
 
@@ -40,6 +40,7 @@ from translate.lang.common import Common
 from translate.misc.multistring import multistring
 from translate.storage import factory
 from translate.storage.workflow import StateEnum
+import collections
 
 logger = logging.getLogger(__name__)
 
@@ -106,7 +107,7 @@ class Record(UserDict):
         if record_values == None:
             record_values = (0 for _i in record_keys)
         self.record_keys = record_keys
-        self.data = dict(zip(record_keys, record_values))
+        self.data = dict(list(zip(record_keys, record_values)))
         self._compute_derived_values = compute_derived_values
         self._compute_derived_values(self)
 
@@ -115,14 +116,14 @@ class Record(UserDict):
 
     def __add__(self, other):
         result = Record(self.record_keys)
-        for key in self.keys():
+        for key in list(self.keys()):
             result[key] = self[key] + other[key]
         self._compute_derived_values(self)
         return result
 
     def __sub__(self, other):
         result = Record(self.record_keys)
-        for key in self.keys():
+        for key in list(self.keys()):
             result[key] = self[key] - other[key]
         self._compute_derived_values(self)
         return result
@@ -286,7 +287,7 @@ class StatsCache(object):
     """The current cursor"""
 
     def __new__(cls, statsfile=None):
-        current_thread = thread.get_ident()
+        current_thread = _thread.get_ident()
 
         def make_database(statsfile):
 
@@ -328,7 +329,7 @@ class StatsCache(object):
                 if not os.path.exists(cachedir):
                     os.mkdir(cachedir)
                 cachedir = cachedir.decode(sys.getfilesystemencoding())
-                cls.defaultfile = os.path.realpath(os.path.join(cachedir, u"stats.db"))
+                cls.defaultfile = os.path.realpath(os.path.join(cachedir, "stats.db"))
             statsfile = cls.defaultfile
         else:
             statsfile = os.path.realpath(statsfile)
@@ -399,7 +400,7 @@ class StatsCache(object):
         store can be a TranslationFile object or a callback that returns one.
         """
         if isinstance(filename, str):
-            filename = unicode(filename, sys.getfilesystemencoding())
+            filename = str(filename, sys.getfilesystemencoding())
         realpath = os.path.realpath(filename)
         self.cur.execute("""SELECT fileid, st_mtime, st_size FROM files
                 WHERE path=?;""", (realpath,))
@@ -417,7 +418,7 @@ class StatsCache(object):
                 return fileid
 
         # file wasn't in db at all, lets recache it
-        if callable(store):
+        if isinstance(store, collections.Callable):
             store = store()
         else:
             store = store or factory.getobject(realpath)
@@ -517,7 +518,7 @@ class StatsCache(object):
                 if unitindex:
                     index = unitindex
                 failures = checker.run_filters(unit)
-                for checkname, checkmessage in failures.iteritems():
+                for checkname, checkmessage in failures.items():
                     unitvalues.append((index, fileid, configid, checkname, checkmessage))
                     errornames.append("check-" + checkname)
         checker.setsuggestionstore(None)
@@ -608,7 +609,7 @@ class StatsCache(object):
 
         # This could happen if we haven't done the checks before, or the
         # file changed, or we are using a different configuration
-        if callable(store):
+        if isinstance(store, collections.Callable):
             store = store()
         else:
             store = store or factory.getobject(filename)

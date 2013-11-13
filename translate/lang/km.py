@@ -31,13 +31,13 @@ from translate.lang import common
 class km(common.Common):
     """This class represents Khmer."""
 
-    khmerpunc = u"។៕៖៘"
+    khmerpunc = "។៕៖៘"
     """These marks are only used for Khmer."""
 
-    punctuation = u"".join([common.Common.commonpunc, common.Common.quotes,
+    punctuation = "".join([common.Common.commonpunc, common.Common.quotes,
                             common.Common.miscpunc, khmerpunc])
 
-    sentenceend = u"!?…។៕៘"
+    sentenceend = "!?…។៕៘"
 
     sentencere = re.compile(r"""(?s)    #make . also match newlines
                             .*?         #anything, but match non-greedy
@@ -47,10 +47,10 @@ class km(common.Common):
                             """ % sentenceend, re.VERBOSE)
     #\u00a0 is non-breaking space
     puncdict = {
-        u".": u"\u00a0។",
-        u":": u"\u00a0៖",
-        u"!": u"\u00a0!",
-        u"?": u"\u00a0?",
+        ".": "\u00a0។",
+        ":": "\u00a0៖",
+        "!": "\u00a0!",
+        "?": "\u00a0?",
     }
 
     ignoretests = ["startcaps", "simplecaps"]

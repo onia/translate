@@ -26,7 +26,7 @@ try:
     from lxml import etree
     from translate.misc.xml_helpers import getText, getXMLlang, setXMLlang, \
                                            getXMLspace, setXMLspace, namespaced
-except ImportError, e:
+except ImportError as e:
     raise ImportError("lxml is not installed. It might be possible to continue without support for XML formats.")
 
 from translate.storage import base
@@ -159,8 +159,8 @@ class LISAunit(base.TranslationUnit):
                 if self.textNode:
                     terms = languageNode.iter(self.namespaced(self.textNode))
                     try:
-                        languageNode = terms.next()
-                    except StopIteration, e:
+                        languageNode = next(terms)
+                    except StopIteration as e:
                         pass
                 languageNode.text = text
         else:
@@ -238,7 +238,7 @@ class LISAunit(base.TranslationUnit):
             if terms is None:
                 return None
             try:
-                return getText(terms.next(), xml_space)
+                return getText(next(terms), xml_space)
             except StopIteration:
                 # didn't have the structure we expected
                 return None
@@ -247,7 +247,7 @@ class LISAunit(base.TranslationUnit):
 
     def __str__(self):
         return etree.tostring(self.xmlelement, pretty_print=True,
-                              encoding='utf-8')
+                              encoding='utf-8').decode('utf-8')
 
     def _set_property(self, name, value):
         self.xmlelement.attrib[name] = value
@@ -329,7 +329,7 @@ class LISAfile(base.TranslationStore):
     def __str__(self):
         """Converts to a string containing the file's XML"""
         return etree.tostring(self.document, pretty_print=True,
-                              xml_declaration=True, encoding='utf-8')
+                              xml_declaration=True, encoding='utf-8').decode('utf-8')
 
     def parse(self, xml):
         """Populates this object from the given xml string"""
@@ -345,7 +345,7 @@ class LISAfile(base.TranslationStore):
             parser = etree.XMLParser(strip_cdata=False)
         else:
             parser = etree.XMLParser()
-        self.document = etree.fromstring(xml, parser).getroottree()
+        self.document = etree.fromstring(xml.encode('utf-8'), parser).getroottree()
         self._encoding = self.document.docinfo.encoding
         self.initbody()
         assert self.document.getroot().tag == self.namespaced(self.rootNode)

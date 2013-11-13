@@ -66,9 +66,9 @@ class TikiUnit(base.TranslationUnit):
 
     def __unicode__(self):
         """Returns a string formatted to be inserted into a tiki language.php file."""
-        ret = u'"%s" => "%s",' % (self.source, self.target)
+        ret = '"%s" => "%s",' % (self.source, self.target)
         if self.location == ["untranslated"]:
-            ret = u'// ' + ret
+            ret = '// ' + ret
         return ret + "\n"
 
     def addlocation(self, location):
@@ -121,29 +121,29 @@ class TikiStore(base.TranslationStore):
 
         output += "// ### Start of unused words\n"
         for unit in _unused:
-            output += unicode(unit)
+            output += str(unit)
         output += "// ### end of unused words\n\n"
         output += "// ### start of untranslated words\n"
         for unit in _untranslated:
-            output += unicode(unit)
+            output += str(unit)
         output += "// ### end of untranslated words\n\n"
         output += "// ### start of possibly untranslated words\n"
         for unit in _possiblyuntranslated:
-            output += unicode(unit)
+            output += str(unit)
         output += "// ### end of possibly untranslated words\n\n"
         for unit in _translated:
-            output += unicode(unit)
+            output += str(unit)
 
         output += self._tiki_footer()
         return output.encode('UTF-8')
 
     def _tiki_header(self):
         """Returns a tiki-file header string."""
-        return u"<?php // -*- coding:utf-8 -*-\n// Generated from po2tiki on %s\n\n$lang=Array(\n" % datetime.datetime.now()
+        return "<?php // -*- coding:utf-8 -*-\n// Generated from po2tiki on %s\n\n$lang=Array(\n" % datetime.datetime.now()
 
     def _tiki_footer(self):
         """Returns a tiki-file footer string."""
-        return u'"###end###"=>"###end###");\n?>'
+        return '"###end###"=>"###end###");\n?>'
 
     def parse(self, input):
         """Parse the given input into source units.

@@ -63,8 +63,8 @@ class TxtUnit(base.TranslationUnit):
 
     def __str__(self):
         """Convert a txt unit to a string"""
-        string = u"".join([self.pretext, self.source, self.posttext])
-        if isinstance(string, unicode):
+        string = "".join([self.pretext, self.source, self.posttext])
+        if isinstance(string, str):
             return string.encode(self.encoding)
         return string
 
@@ -152,7 +152,7 @@ class TxtFile(base.TranslationStore):
 
     def __str__(self):
         source = self.getoutput()
-        if isinstance(source, unicode):
+        if isinstance(source, str):
             return source.encode(getattr(self, "encoding", "UTF-8"))
         return source
 

@@ -29,8 +29,6 @@ to have a look at gettext-tools/libgettextpo/gettext-po.h from the gettext
 package for the public API of the library.
 """
 
-from __future__ import with_statement
-
 from ctypes import c_size_t, c_int, c_uint, c_char_p, c_long, CFUNCTYPE, POINTER
 from ctypes import Structure, cdll
 import ctypes.util
@@ -45,6 +43,7 @@ from translate.misc.multistring import multistring
 from translate.storage import base, pocommon
 from translate.storage import pypo
 from translate.storage.pocommon import encodingToUse
+import collections
 
 logger = logging.getLogger(__name__)
 
@@ -259,7 +258,7 @@ class pounit(pocommon.pounit):
                 if remainder:
                     return remainder.group(1)
                 else:
-                    return u""
+                    return ""
             else:
                 return text
         singular = remove_msgid_comments((gpo.po_message_msgid(self._gpo_message) or "").decode(self.CPO_ENC))
@@ -272,12 +271,12 @@ class pounit(pocommon.pounit):
             else:
                 return singular
         else:
-            return u""
+            return ""
 
     def setsource(self, source):
         if isinstance(source, multistring):
             source = source.strings
-        if isinstance(source, unicode):
+        if isinstance(source, str):
             source = source.encode(self.CPO_ENC)
         if isinstance(source, list):
             gpo.po_message_set_msgid(self._gpo_message, source[0].encode(self.CPO_ENC))
@@ -300,7 +299,7 @@ class pounit(pocommon.pounit):
             if plurals:
                 multi = multistring(plurals, encoding=self.CPO_ENC)
             else:
-                multi = multistring(u"")
+                multi = multistring("")
         else:
             multi = (gpo.po_message_msgstr(self._gpo_message) or "").decode(self.CPO_ENC)
         return multi
@@ -310,7 +309,7 @@ class pounit(pocommon.pounit):
         if self.hasplural():
             if isinstance(target, multistring):
                 target = target.strings
-            elif isinstance(target, basestring):
+            elif isinstance(target, str):
                 target = [target]
         # for non-plurals: check number of items in 'target'
         elif isinstance(target, (dict, list)):
@@ -334,16 +333,16 @@ class pounit(pocommon.pounit):
         if isinstance(target, list):
             for i in range(len(target)):
                 targetstring = target[i]
-                if isinstance(targetstring, unicode):
+                if isinstance(targetstring, str):
                     targetstring = targetstring.encode(self.CPO_ENC)
                 gpo.po_message_set_msgstr_plural(self._gpo_message, i, targetstring)
         # add the values of a dict
         elif isinstance(target, dict):
-            for i, targetstring in enumerate(target.itervalues()):
+            for i, targetstring in enumerate(target.values()):
                 gpo.po_message_set_msgstr_plural(self._gpo_message, i, targetstring)
         # add a single string
         else:
-            if isinstance(target, unicode):
+            if isinstance(target, str):
                 target = target.encode(self.CPO_ENC)
             if target is None:
                 gpo.po_message_set_msgstr(self._gpo_message, "")
@@ -364,7 +363,7 @@ class pounit(pocommon.pounit):
 #            id = '%s\0%s' % (id, plural)
         context = gpo.po_message_msgctxt(self._gpo_message)
         if context:
-            id = u"%s\04%s" % (context.decode(self.CPO_ENC), id)
+            id = "%s\04%s" % (context.decode(self.CPO_ENC), id)
         return id
 
     def getnotes(self, origin=None):
@@ -514,11 +513,11 @@ class pounit(pocommon.pounit):
             text = (gpo.po_message_msgid(self._gpo_message) or "").decode(self.CPO_ENC)
         if text:
             return pocommon.extract_msgid_comment(text)
-        return u""
+        return ""
 
     def setmsgidcomment(self, msgidcomment):
         if msgidcomment:
-            self.source = u"_: %s\n%s" % (msgidcomment, self.source)
+            self.source = "_: %s\n%s" % (msgidcomment, self.source)
     msgidcomment = property(_extract_msgidcomments, setmsgidcomment)
 
     def __str__(self):
@@ -536,7 +535,7 @@ class pounit(pocommon.pounit):
             if locline == -1:
                 locstring = locname
             else:
-                locstring = locname + u":" + unicode(locline)
+                locstring = locname + ":" + str(locline)
             locations.append(pocommon.unquote_plus(locstring))
             i += 1
             location = gpo.po_message_filepos(self._gpo_message, i)
@@ -569,7 +568,7 @@ class pounit(pocommon.pounit):
     def buildfromunit(cls, unit, encoding=None):
         """Build a native unit from a foreign unit, preserving as much
         information as possible."""
-        if type(unit) == cls and hasattr(unit, "copy") and callable(unit.copy):
+        if type(unit) == cls and hasattr(unit, "copy") and isinstance(unit.copy, collections.Callable):
             return unit.copy()
         elif isinstance(unit, pocommon.pounit):
             newunit = cls(unit.source, encoding)

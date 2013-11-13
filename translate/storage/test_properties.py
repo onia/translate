@@ -10,65 +10,65 @@ from translate.storage import test_monolingual
 
 def test_find_delimiter_pos_simple():
     """Simple tests to find the various delimiters"""
-    assert properties._find_delimiter(u"key=value", [u"=", u":", u" "]) == ('=', 3)
-    assert properties._find_delimiter(u"key:value", [u"=", u":", u" "]) == (':', 3)
-    assert properties._find_delimiter(u"key value", [u"=", u":", u" "]) == (' ', 3)
+    assert properties._find_delimiter("key=value", ["=", ":", " "]) == ('=', 3)
+    assert properties._find_delimiter("key:value", ["=", ":", " "]) == (':', 3)
+    assert properties._find_delimiter("key value", ["=", ":", " "]) == (' ', 3)
     # NOTE this is valid in Java properties, the key is then the empty string
-    assert properties._find_delimiter(u"= value", [u"=", u":", u" "]) == ('=', 0)
+    assert properties._find_delimiter("= value", ["=", ":", " "]) == ('=', 0)
 
 
 def test_find_delimiter_pos_multiple():
     """Find delimiters when multiple potential delimiters are involved"""
-    assert properties._find_delimiter(u"key=value:value", [u"=", u":", u" "]) == ('=', 3)
-    assert properties._find_delimiter(u"key:value=value", [u"=", u":", u" "]) == (':', 3)
-    assert properties._find_delimiter(u"key value=value", [u"=", u":", u" "]) == (' ', 3)
+    assert properties._find_delimiter("key=value:value", ["=", ":", " "]) == ('=', 3)
+    assert properties._find_delimiter("key:value=value", ["=", ":", " "]) == (':', 3)
+    assert properties._find_delimiter("key value=value", ["=", ":", " "]) == (' ', 3)
 
 
 def test_find_delimiter_pos_none():
     """Find delimiters when there isn't one"""
-    assert properties._find_delimiter(u"key", [u"=", u":", u" "]) == (None, -1)
-    assert properties._find_delimiter(u"key\=\:\ ", [u"=", u":", u" "]) == (None, -1)
+    assert properties._find_delimiter("key", ["=", ":", " "]) == (None, -1)
+    assert properties._find_delimiter("key\=\:\ ", ["=", ":", " "]) == (None, -1)
 
 
 def test_find_delimiter_pos_whitespace():
     """Find delimiters when whitespace is involved"""
-    assert properties._find_delimiter(u"key = value", [u"=", u":", u" "]) == ('=', 4)
-    assert properties._find_delimiter(u"key : value", [u"=", u":", u" "]) == (':', 4)
-    assert properties._find_delimiter(u"key   value", [u"=", u":", u" "]) == (' ', 3)
-    assert properties._find_delimiter(u"key value = value", [u"=", u":", u" "]) == (' ', 3)
-    assert properties._find_delimiter(u"key value value", [u"=", u":", u" "]) == (' ', 3)
-    assert properties._find_delimiter(u" key = value", [u"=", u":", u" "]) == ('=', 5)
+    assert properties._find_delimiter("key = value", ["=", ":", " "]) == ('=', 4)
+    assert properties._find_delimiter("key : value", ["=", ":", " "]) == (':', 4)
+    assert properties._find_delimiter("key   value", ["=", ":", " "]) == (' ', 3)
+    assert properties._find_delimiter("key value = value", ["=", ":", " "]) == (' ', 3)
+    assert properties._find_delimiter("key value value", ["=", ":", " "]) == (' ', 3)
+    assert properties._find_delimiter(" key = value", ["=", ":", " "]) == ('=', 5)
 
 
 def test_find_delimiter_pos_escapes():
     """Find delimiters when potential earlier delimiters are escaped"""
-    assert properties._find_delimiter(u"key\:=value", [u"=", u":", u" "]) == ('=', 5)
-    assert properties._find_delimiter(u"key\=: value", [u"=", u":", u" "]) == (':', 5)
-    assert properties._find_delimiter(u"key\   value", [u"=", u":", u" "]) == (' ', 5)
-    assert properties._find_delimiter(u"key\ key\ key\: = value", [u"=", u":", u" "]) == ('=', 16)
+    assert properties._find_delimiter("key\:=value", ["=", ":", " "]) == ('=', 5)
+    assert properties._find_delimiter("key\=: value", ["=", ":", " "]) == (':', 5)
+    assert properties._find_delimiter("key\   value", ["=", ":", " "]) == (' ', 5)
+    assert properties._find_delimiter("key\ key\ key\: = value", ["=", ":", " "]) == ('=', 16)
 
 
 def test_find_delimiter_deprecated_fn():
     """Test that the deprecated function still actually works"""
-    assert properties.find_delimeter(u"key=value") == ('=', 3)
-    deprecated_call(properties.find_delimeter, u"key=value")
+    assert properties.find_delimeter("key=value") == ('=', 3)
+    deprecated_call(properties.find_delimeter, "key=value")
 
 
 def test_is_line_continuation():
-    assert properties.is_line_continuation(u"") == False
-    assert properties.is_line_continuation(u"some text") == False
-    assert properties.is_line_continuation(u"""some text\\""") == True
-    assert properties.is_line_continuation(u"""some text\\\\""") == False  # Escaped \
-    assert properties.is_line_continuation(u"""some text\\\\\\""") == True  # Odd num. \ is line continuation
-    assert properties.is_line_continuation(u"""\\\\\\""") == True
+    assert properties.is_line_continuation("") == False
+    assert properties.is_line_continuation("some text") == False
+    assert properties.is_line_continuation("""some text\\""") == True
+    assert properties.is_line_continuation("""some text\\\\""") == False  # Escaped \
+    assert properties.is_line_continuation("""some text\\\\\\""") == True  # Odd num. \ is line continuation
+    assert properties.is_line_continuation("""\\\\\\""") == True
 
 
 def test_key_strip():
-    assert properties._key_strip(u"key") == "key"
-    assert properties._key_strip(u" key") == "key"
-    assert properties._key_strip(u"\ key") == "\ key"
-    assert properties._key_strip(u"key ") == "key"
-    assert properties._key_strip(u"key\ ") == "key\ "
+    assert properties._key_strip("key") == "key"
+    assert properties._key_strip(" key") == "key"
+    assert properties._key_strip("\ key") == "\ key"
+    assert properties._key_strip("key ") == "key"
+    assert properties._key_strip("key\ ") == "key\ "
 
 
 def test_is_comment_one_line():
@@ -132,7 +132,7 @@ class TestProp(test_monolingual.TestMonolingualStore):
     def test_unicode_escaping(self):
         """check that escaped unicode is converted properly"""
         propsource = "unicode=\u0411\u0416\u0419\u0428"
-        messagevalue = u'\u0411\u0416\u0419\u0428'.encode("UTF-8")
+        messagevalue = '\u0411\u0416\u0419\u0428'.encode("UTF-8")
         propfile = self.propparse(propsource, personality="mozilla")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
@@ -158,7 +158,7 @@ class TestProp(test_monolingual.TestMonolingualStore):
         for propsource, key, value in whitespaces:
             propfile = self.propparse(propsource)
             propunit = propfile.units[0]
-            print repr(propsource), repr(propunit.name), repr(propunit.source)
+            print(repr(propsource), repr(propunit.name), repr(propunit.source))
             assert propunit.name == key
             assert propunit.source == value
             # let's reparse the output to ensure good serialisation->parsing roundtrip:
@@ -173,7 +173,7 @@ class TestProp(test_monolingual.TestMonolingualStore):
         delimiters = [":", "=", " "]
         for delimiter in delimiters:
             propsource = "key%svalue" % delimiter
-            print "source: '%s'\ndelimiter: '%s'" % (propsource, delimiter)
+            print("source: '%s'\ndelimiter: '%s'" % (propsource, delimiter))
             propfile = self.propparse(propsource)
             assert len(propfile.units) == 1
             propunit = propfile.units[0]
@@ -188,19 +188,19 @@ class TestProp(test_monolingual.TestMonolingualStore):
 key=value
 ''' % comment_marker
             propfile = self.propparse(propsource)
-            print repr(propsource)
-            print "Comment marker: '%s'" % comment_marker
+            print(repr(propsource))
+            print("Comment marker: '%s'" % comment_marker)
             assert len(propfile.units) == 1
             propunit = propfile.units[0]
             assert propunit.comments == ['%s A comment' % comment_marker]
 
     def test_latin1(self):
         """checks that we handle non-escaped latin1 text"""
-        prop_source = u"key=valú".encode('latin1')
+        prop_source = "key=valú".encode('latin1')
         prop_store = self.propparse(prop_source)
         assert len(prop_store.units) == 1
         unit = prop_store.units[0]
-        assert unit.source == u"valú"
+        assert unit.source == "valú"
 
     def test_fullspec_delimiters(self):
         """test the full definiation as found in Java docs"""
@@ -208,119 +208,119 @@ key=value
         for propsource in proplist:
             propfile = self.propparse(propsource)
             propunit = propfile.units[0]
-            print propunit
+            print(propunit)
             assert propunit.name == "Truth"
             assert propunit.source == "Beauty"
 
     def test_fullspec_escaped_key(self):
         """Escaped delimeters can be in the key"""
-        prop_source = u"\:\="
+        prop_source = "\:\="
         prop_store = self.propparse(prop_source)
         assert len(prop_store.units) == 1
         unit = prop_store.units[0]
-        print unit
-        assert unit.name == u"\:\="
+        print(unit)
+        assert unit.name == "\:\="
 
     def test_fullspec_line_continuation(self):
         """Whitespace delimiter and pre whitespace in line continuation are dropped"""
-        prop_source = ur"""fruits                           apple, banana, pear, \
+        prop_source = r"""fruits                           apple, banana, pear, \
                                   cantaloupe, watermelon, \
                                   kiwi, mango
 """
         prop_store = self.propparse(prop_source)
-        print prop_store
+        print(prop_store)
         assert len(prop_store.units) == 1
         unit = prop_store.units[0]
-        print unit
-        assert properties._find_delimiter(prop_source, [u"=", u":", u" "]) == (' ', 6)
-        assert unit.name == u"fruits"
-        assert unit.source == u"apple, banana, pear, cantaloupe, watermelon, kiwi, mango"
+        print(unit)
+        assert properties._find_delimiter(prop_source, ["=", ":", " "]) == (' ', 6)
+        assert unit.name == "fruits"
+        assert unit.source == "apple, banana, pear, cantaloupe, watermelon, kiwi, mango"
 
     def test_fullspec_key_without_value(self):
         """A key can have no value in which case the value is the empty string"""
-        prop_source = u"cheeses"
+        prop_source = "cheeses"
         prop_store = self.propparse(prop_source)
         assert len(prop_store.units) == 1
         unit = prop_store.units[0]
-        print unit
-        assert unit.name == u"cheeses"
-        assert unit.source == u""
+        print(unit)
+        assert unit.name == "cheeses"
+        assert unit.source == ""
 
     def test_mac_strings(self):
         """test various items used in Mac OS X strings files"""
-        propsource = ur'''"I am a \"key\"" = "I am a \"value\"";'''.encode('utf-16')
+        propsource = r'''"I am a \"key\"" = "I am a \"value\"";'''.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == ur'I am a "key"'
-        assert propunit.source.encode('utf-8') == u'I am a "value"'
+        assert propunit.name == r'I am a "key"'
+        assert propunit.source.encode('utf-8') == 'I am a "value"'
 
     def test_mac_strings_unicode(self):
         """Ensure we can handle Unicode"""
-        propsource = ur'''"I am a “key”" = "I am a “value”";'''.encode('utf-16')
+        propsource = r'''"I am a “key”" = "I am a “value”";'''.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == ur'I am a “key”'
-        assert propfile.personality.encode(propunit.source) == u'I am a “value”'
+        assert propunit.name == r'I am a “key”'
+        assert propfile.personality.encode(propunit.source) == 'I am a “value”'
 
     def test_mac_strings_newlines(self):
         """test newlines \n within a strings files"""
-        propsource = ur'''"key" = "value\nvalue";'''.encode('utf-16')
+        propsource = r'''"key" = "value\nvalue";'''.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == u'key'
-        assert propunit.source.encode('utf-8') == u'value\nvalue'
-        assert propfile.personality.encode(propunit.source) == ur'value\nvalue'
+        assert propunit.name == 'key'
+        assert propunit.source.encode('utf-8') == 'value\nvalue'
+        assert propfile.personality.encode(propunit.source) == r'value\nvalue'
 
     def test_mac_strings_comments(self):
         """test .string comment types"""
-        propsource = ur'''/* Comment */
+        propsource = r'''/* Comment */
 // Comment
 "key" = "value";'''.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == u'key'
-        assert propunit.source.encode('utf-8') == u'value'
-        assert propunit.getnotes() == u"/* Comment */\n// Comment"
+        assert propunit.name == 'key'
+        assert propunit.source.encode('utf-8') == 'value'
+        assert propunit.getnotes() == "/* Comment */\n// Comment"
 
     def test_mac_strings_multilines_comments(self):
         """test .string multiline comments"""
-        propsource = (u'/* Foo\n'
-                      u'Bar\n'
-                      u'Baz */\n'
-                      u'"key" = "value"').encode('utf-16')
+        propsource = ('/* Foo\n'
+                      'Bar\n'
+                      'Baz */\n'
+                      '"key" = "value"').encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == u'key'
-        assert propunit.source.encode('utf-8') == u'value'
-        assert propunit.getnotes() == u"/* Foo\nBar\nBaz */"
+        assert propunit.name == 'key'
+        assert propunit.source.encode('utf-8') == 'value'
+        assert propunit.getnotes() == "/* Foo\nBar\nBaz */"
 
     def test_mac_strings_comments_dropping(self):
         """.string generic (and unuseful) comments should be dropped"""
-        propsource = ur'''/* No comment provided by engineer. */
+        propsource = r'''/* No comment provided by engineer. */
 "key" = "value";'''.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == u'key'
-        assert propunit.source.encode('utf-8') == u'value'
-        assert propunit.getnotes() == u""
+        assert propunit.name == 'key'
+        assert propunit.source.encode('utf-8') == 'value'
+        assert propunit.getnotes() == ""
 
     def test_mac_strings_quotes(self):
         """test that parser unescapes characters used as wrappers"""
-        propsource = ur'"key with \"quotes\"" = "value with \"quotes\"";'.encode('utf-16')
+        propsource = r'"key with \"quotes\"" = "value with \"quotes\"";'.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         propunit = propfile.units[0]
-        assert propunit.name == ur'key with "quotes"'
-        assert propunit.value == ur'value with "quotes"'
+        assert propunit.name == r'key with "quotes"'
+        assert propunit.value == r'value with "quotes"'
 
     def test_mac_strings_serialization(self):
         """test that serializer quotes mac strings properly"""
-        propsource = ur'"key with \"quotes\"" = "value with \"quotes\"";'.encode('utf-16')
+        propsource = r'"key with \"quotes\"" = "value with \"quotes\"";'.encode('utf-16')
         propfile = self.propparse(propsource, personality="strings")
         # we don't care about leading and trailing newlines and zero bytes
         # in the assert, we just want to make sure that
@@ -333,26 +333,26 @@ key=value
 
     def test_override_encoding(self):
         """test that we can override the encoding of a properties file"""
-        propsource = u"key = value".encode("cp1252")
+        propsource = "key = value".encode("cp1252")
         propfile = self.propparse(propsource, personality="strings", encoding="cp1252")
         assert len(propfile.units) == 1
         propunit = propfile.units[0]
-        assert propunit.name == u'key'
-        assert propunit.source == u'value'
+        assert propunit.name == 'key'
+        assert propunit.source == 'value'
 
     def test_trailing_comments(self):
         """test that we handle non-unit data at the end of a file"""
-        propsource = u"key = value\n# END"
+        propsource = "key = value\n# END"
         propfile = self.propparse(propsource)
         assert len(propfile.units) == 2
         propunit = propfile.units[1]
-        assert propunit.name == u''
-        assert propunit.source == u''
-        assert propunit.getnotes() == u"# END"
+        assert propunit.name == ''
+        assert propunit.source == ''
+        assert propunit.getnotes() == "# END"
 
     def test_utf16_byte_order_mark(self):
         """test that BOM appears in the resulting text once only"""
-        propsource = u"key1 = value1\nkey2 = value2\n".encode('utf-16')
+        propsource = "key1 = value1\nkey2 = value2\n".encode('utf-16')
         propfile = self.propparse(propsource, encoding='utf-16')
         result = str(propfile)
         bom = propsource[:2]

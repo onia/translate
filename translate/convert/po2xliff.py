@@ -63,7 +63,7 @@ class po2xliff:
         if comment:
             unit.createcontextgroup("po-entry", [("x-po-trancomment", comment)], purpose="information")
             unit.addnote(comment, origin="po-translator")
-
+        #print(unit.source,unit.target)
         return unit
 
     def contextlist(self, location):
@@ -88,7 +88,7 @@ class po2xliff:
             if inputunit.isblank():
                 continue
             transunitnode = self.convertunit(outputstore, inputunit, filename)
-        return str(outputstore)
+        return outputstore
 
 
 def convertpo(inputfile, outputfile, templatefile):
@@ -98,7 +98,7 @@ def convertpo(inputfile, outputfile, templatefile):
         return 0
     convertor = po2xliff()
     outputstring = convertor.convertstore(inputstore, templatefile)
-    outputfile.write(outputstring)
+    outputfile.write(str(outputstring))
     return 1
 
 

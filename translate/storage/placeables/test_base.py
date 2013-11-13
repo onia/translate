@@ -21,28 +21,29 @@
 from pytest import mark
 
 from translate.storage.placeables import base, general, parse, xliff, StringElem
+import collections
 
 
 class TestStringElem:
-    ORIGSTR = u'Ģët <a href="http://www.example.com" alt="Ģët &brand;!">&brandLong;</a>'
+    ORIGSTR = 'Ģët <a href="http://www.example.com" alt="Ģët &brand;!">&brandLong;</a>'
 
     def setup_method(self, method):
         self.elem = parse(self.ORIGSTR, general.parsers)
 
     def test_parse(self):
-        assert unicode(self.elem) == self.ORIGSTR
+        assert str(self.elem) == self.ORIGSTR
 
     def test_tree(self):
         assert len(self.elem.sub) == 4
-        assert unicode(self.elem.sub[0]) == u'Ģët '
-        assert unicode(self.elem.sub[1]) == u'<a href="http://www.example.com" alt="Ģët &brand;!">'
-        assert unicode(self.elem.sub[2]) == u'&brandLong;'
-        assert unicode(self.elem.sub[3]) == u'</a>'
+        assert str(self.elem.sub[0]) == 'Ģët '
+        assert str(self.elem.sub[1]) == '<a href="http://www.example.com" alt="Ģët &brand;!">'
+        assert str(self.elem.sub[2]) == '&brandLong;'
+        assert str(self.elem.sub[3]) == '</a>'
 
-        assert len(self.elem.sub[0].sub) == 1 and self.elem.sub[0].sub[0] == u'Ģët '
-        assert len(self.elem.sub[1].sub) == 1 and self.elem.sub[1].sub[0] == u'<a href="http://www.example.com" alt="Ģët &brand;!">'
-        assert len(self.elem.sub[2].sub) == 1 and self.elem.sub[2].sub[0] == u'&brandLong;'
-        assert len(self.elem.sub[3].sub) == 1 and self.elem.sub[3].sub[0] == u'</a>'
+        assert len(self.elem.sub[0].sub) == 1 and self.elem.sub[0].sub[0] == 'Ģët '
+        assert len(self.elem.sub[1].sub) == 1 and self.elem.sub[1].sub[0] == '<a href="http://www.example.com" alt="Ģët &brand;!">'
+        assert len(self.elem.sub[2].sub) == 1 and self.elem.sub[2].sub[0] == '&brandLong;'
+        assert len(self.elem.sub[3].sub) == 1 and self.elem.sub[3].sub[0] == '</a>'
 
     def test_add(self):
         assert self.elem + ' ' == self.ORIGSTR + ' '
@@ -51,14 +52,14 @@ class TestStringElem:
 
     def test_contains(self):
         assert 'href' in self.elem
-        assert u'hrȩf' not in self.elem
+        assert 'hrȩf' not in self.elem
 
     def test_getitem(self):
-        assert self.elem[0] == u'Ģ'
+        assert self.elem[0] == 'Ģ'
         assert self.elem[2] == 't'
 
     def test_getslice(self):
-        assert self.elem[0:3] == u'Ģët'
+        assert self.elem[0:3] == 'Ģët'
 
     def test_iter(self):
         for chunk in self.elem:
@@ -82,16 +83,16 @@ class TestStringElem:
 
     def test_find(self):
         assert self.elem.find('example') == 24
-        assert self.elem.find(u'example') == 24
-        searchelem = parse(u'&brand;', general.parsers)
+        assert self.elem.find('example') == 24
+        searchelem = parse('&brand;', general.parsers)
         assert self.elem.find(searchelem) == 46
 
     def test_find_elems_with(self):
-        assert self.elem.find_elems_with(u'Ģët') == [self.elem.sub[0], self.elem.sub[1]]
+        assert self.elem.find_elems_with('Ģët') == [self.elem.sub[0], self.elem.sub[1]]
         assert len(self.elem.find_elems_with('a')) == 3
 
     def test_flatten(self):
-        assert u''.join([unicode(i) for i in self.elem.flatten()]) == self.ORIGSTR
+        assert ''.join([str(i) for i in self.elem.flatten()]) == self.ORIGSTR
 
     def test_delete_range_case1(self):
         # Case 1: Entire string #
@@ -113,7 +114,7 @@ class TestStringElem:
         # Case 3: Within a single element #
         elem = self.elem.copy()
         deleted, parent, offset = elem.delete_range(1, 2)
-        assert deleted == StringElem(u'ë')
+        assert deleted == StringElem('ë')
         assert parent is elem.sub[0]
         assert offset == 1
 
@@ -126,50 +127,50 @@ class TestStringElem:
         assert parent is None
         assert offset is None
         assert len(elem.sub) == 2
-        assert unicode(elem) == u'Ģët <a href="http://www.example.com" alt="Ģët &brand;!">'
+        assert str(elem) == 'Ģët <a href="http://www.example.com" alt="Ģët &brand;!">'
 
         # A separate test case where the delete range include elements between
         # the start- and end elements.
-        origelem = parse(u'foo %s bar', general.parsers)
+        origelem = parse('foo %s bar', general.parsers)
         elem = origelem.copy()
         assert len(elem.sub) == 3
         deleted, parent, offset = elem.delete_range(3, 7)
         assert deleted == origelem
         assert parent is None
         assert offset is None
-        assert unicode(elem) == 'foobar'
+        assert str(elem) == 'foobar'
 
     def test_insert(self):
         # Test inserting at the beginning
         elem = self.elem.copy()
-        elem.insert(0, u'xxx')
-        assert unicode(elem.sub[0]) == u'xxx' + unicode(self.elem.sub[0])
+        elem.insert(0, 'xxx')
+        assert str(elem.sub[0]) == 'xxx' + str(self.elem.sub[0])
 
         # Test inserting at the end
         elem = self.elem.copy()
-        elem.insert(len(elem) + 1, u'xxx')
-        assert elem.flatten()[-1] == StringElem(u'xxx')
+        elem.insert(len(elem) + 1, 'xxx')
+        assert elem.flatten()[-1] == StringElem('xxx')
 
         # Test inserting in the middle of an existing string
         elem = self.elem.copy()
-        elem.insert(2, u'xxx')
-        assert unicode(elem.sub[0]) == u'Ģëxxxt '
+        elem.insert(2, 'xxx')
+        assert str(elem.sub[0]) == 'Ģëxxxt '
 
         # Test inserting between elements
         elem = self.elem.copy()
-        elem.insert(56, u'xxx')
-        assert unicode(elem)[56:59] == u'xxx'
+        elem.insert(56, 'xxx')
+        assert str(elem)[56:59] == 'xxx'
 
     def test_isleaf(self):
         for child in self.elem.sub:
             assert child.isleaf()
 
     def test_prune(self):
-        elem = StringElem(u'foo')
-        child = StringElem(u'bar')
+        elem = StringElem('foo')
+        child = StringElem('bar')
         elem.sub.append(child)
         elem.prune()
-        assert elem == StringElem(u'foobar')
+        assert elem == StringElem('foobar')
 
 
 class TestConverters:
@@ -182,7 +183,7 @@ class TestConverters:
         # The following asserts say that, even though tree and newtree represent the same string
         # (the unicode() results are the same), they are composed of different classes (and so
         # their repr()s are different
-        assert unicode(self.elem) == unicode(basetree)
+        assert str(self.elem) == str(basetree)
         assert repr(self.elem) != repr(basetree)
 
     @mark.xfail(reason="Test needs fixing, disabled for now")
@@ -195,21 +196,21 @@ class TestConverters:
     def test_to_xliff_placeables(self):
         basetree = base.to_base_placeables(self.elem)
         xliff_from_base = xliff.to_xliff_placeables(basetree)
-        assert unicode(xliff_from_base) != unicode(self.elem)
+        assert str(xliff_from_base) != str(self.elem)
         assert repr(xliff_from_base) != repr(self.elem)
 
         xliff_from_gen = xliff.to_xliff_placeables(self.elem)
-        assert unicode(xliff_from_gen) != unicode(self.elem)
+        assert str(xliff_from_gen) != str(self.elem)
         assert repr(xliff_from_gen) != repr(self.elem)
 
-        assert unicode(xliff_from_base) == unicode(xliff_from_gen)
+        assert str(xliff_from_base) == str(xliff_from_gen)
         assert repr(xliff_from_base) == repr(xliff_from_gen)
 
 
 if __name__ == '__main__':
     for test in [TestStringElem(), TestConverters()]:
         for method in dir(test):
-            if method.startswith('test_') and callable(getattr(test, method)):
+            if method.startswith('test_') and isinstance(getattr(test, method), collections.Callable):
                 getattr(test, method)()
 
     test.elem.print_tree()

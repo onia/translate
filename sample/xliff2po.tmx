@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="Translate Toolkit - po2tmx" creationtoolversion="1.10.0" segtype="sentence" o-tmf="UTF-8" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This is a test, hooray.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>1</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A test is a thing which is, well, you know, a test!</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>And blah, , blah, blah.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This is a cell.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>2</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I'm sure that you know by know just how comprehensive my definition of the word “cell” will be.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The table </seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This is a small table.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>is a rather small table.</seg>
+      </tuv>
+      <tuv xml:lang="es-ES">
+        <seg></seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

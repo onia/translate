@@ -38,7 +38,7 @@ def python_distance(a, b, stopvalue=-1):
     l2 = len(b)
     if stopvalue == -1:
         stopvalue = l2
-    current = range(l1 + 1)
+    current = list(range(l1 + 1))
     for i in range(1, l2 + 1):
         previous, current = current, ([i] + [0] * l1)
         least = l2
@@ -159,4 +159,4 @@ class LevenshteinComparer:
 if __name__ == "__main__":
     from sys import argv
     comparer = LevenshteinComparer()
-    print "Similarity:\n%s" % comparer.similarity(argv[1], argv[2], 50)
+    print("Similarity:\n%s" % comparer.similarity(argv[1], argv[2], 50))

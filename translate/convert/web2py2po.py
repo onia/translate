@@ -47,14 +47,14 @@ class web2py2po:
         targetheader = self.mypofile.header()
         targetheader.addnote("extracted from web2py", "developer")
 
-        for source_str in mydict.keys():
+        for source_str in list(mydict.keys()):
             target_str = mydict[source_str]
             if target_str == source_str:
                 # a convention with new (untranslated) web2py files
-                target_str = u''
-            elif target_str.startswith(u'*** '):
+                target_str = ''
+            elif target_str.startswith('*** '):
                 # an older convention
-                target_str = u''
+                target_str = ''
             pounit = self.convertunit(source_str, target_str)
             self.mypofile.addunit(pounit)
 

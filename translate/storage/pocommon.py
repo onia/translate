@@ -19,7 +19,7 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 import re
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 from translate.storage import base
 from translate.storage import poheader
@@ -37,23 +37,23 @@ def extract_msgid_comment(text):
     msgidcomment = msgid_comment_re.match(text)
     if msgidcomment:
         return msgidcomment.group(1)
-    return u""
+    return ""
 
 
 def quote_plus(text):
     """Quote the query fragment of a URL; replacing ' ' with '+'"""
-    return urllib.quote_plus(text.encode("utf-8"))
+    return urllib.parse.quote_plus(text.encode("utf-8"))
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def unquote_plus(text):
     """unquote('%7e/abc+def') -> '~/abc def'"""
     try:
-        if isinstance(text, unicode):
-            text = text.encode('utf-8')
-        return urllib.unquote_plus(text).decode('utf-8')
-    except UnicodeEncodeError, e:
+        #if isinstance(text, str):
+        #    text = text.encode('utf-8')
+        return urllib.parse.unquote_plus(text)
+    except UnicodeEncodeError as e:
         # for some reason there is a non-ascii character here. Let's assume it
         # is already unicode (because of originally decoding the file)
         return text
@@ -76,7 +76,7 @@ class pounit(base.TranslationUnit):
 
     def adderror(self, errorname, errortext):
         """Adds an error message to this unit."""
-        text = u'(pofilter) %s: %s' % (errorname, errortext)
+        text = '(pofilter) %s: %s' % (errorname, errortext)
         # Don't add the same error twice:
         if text not in self.getnotes(origin='translator'):
             self.addnote(text, origin="translator")

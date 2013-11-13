@@ -34,6 +34,7 @@ TODO:
 import os
 import re
 import subprocess
+import collections
 
 DEFAULT_RCS = ["svn", "cvs", "darcs", "git", "bzr", "hg"]
 """the names of all supported revision control systems
@@ -55,7 +56,7 @@ def __get_rcs_class(name):
                     globals(), {}, name)
             # the module function "is_available" must return "True"
             if (hasattr(module, "is_available") and \
-                    callable(module.is_available) and \
+                    isinstance(module.is_available, collections.Callable) and \
                     module.is_available()):
                 # we found an appropriate module
                 rcs_class = getattr(module, name)
@@ -93,7 +94,7 @@ def run_command(command, cwd=None):
         (output, error) = proc.communicate()
         ret = proc.returncode
         return ret, output, error
-    except OSError, err_msg:
+    except OSError as err_msg:
         # failed to run the program (e.g. the executable was not found)
         return -1, "", err_msg
 
@@ -411,4 +412,4 @@ if __name__ == "__main__":
         import translate.storage.versioncontrol
         # print the names of locally available version control systems
         for rcs in get_available_version_control_systems():
-            print rcs
+            print(rcs)

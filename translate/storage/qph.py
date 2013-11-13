@@ -67,15 +67,15 @@ class QphUnit(lisa.LISAunit):
         def not_none(node):
             return not node is None
 
-        return filter(not_none, [self._getsourcenode(), self._gettargetnode()])
+        return list(filter(not_none, [self._getsourcenode(), self._gettargetnode()]))
 
-    @accepts(Self(), unicode, IsOneOf(String, type(None)), String)
+    @accepts(Self(), str, IsOneOf(String, type(None)), String)
     def addnote(self, text, origin=None, position="append"):
         """Add a note specifically in a "definition" tag"""
         current_notes = self.getnotes(origin)
         self.removenotes()
         note = etree.SubElement(self.xmlelement, self.namespaced("definition"))
-        note.text = "\n".join(filter(None, [current_notes, text.strip()]))
+        note.text = "\n".join([_f for _f in [current_notes, text.strip()] if _f])
 
     def getnotes(self, origin=None):
         #TODO: consider only responding when origin has certain values

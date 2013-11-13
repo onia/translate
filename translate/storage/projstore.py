@@ -19,7 +19,7 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 import os
-from StringIO import StringIO
+from io import StringIO
 
 from lxml import etree
 
@@ -112,7 +112,7 @@ class ProjectStore(object):
                 lhs in self._targetfiles or \
                 lhs in self._transfiles or \
                 lhs in self._files or \
-                lhs in self._files.values()
+                lhs in list(self._files.values())
 
     # METHODS #
     def append_file(self, afile, fname, ftype='trans', delete_orig=False):
@@ -128,7 +128,7 @@ class ProjectStore(object):
         if not ftype in self.TYPE_INFO['f_prefix']:
             raise ValueError('Invalid file type: %s' % (ftype))
 
-        if isinstance(afile, basestring) and os.path.isfile(afile) and not fname:
+        if isinstance(afile, str) and os.path.isfile(afile) and not fname:
             # Try and use afile as the file name
             fname, afile = afile, open(afile)
 
@@ -179,7 +179,7 @@ class ProjectStore(object):
             raise FileNotInProjectError(fname)
         if not ftype:
             # Guess file type (source/trans/target)
-            for ft, prefix in self.TYPE_INFO['f_prefix'].items():
+            for ft, prefix in list(self.TYPE_INFO['f_prefix'].items()):
                 if fname.startswith(prefix):
                     ftype = ft
                     break
@@ -218,7 +218,7 @@ class ProjectStore(object):
             raise FileNotInProjectError(fname)
 
         rfile = self._files[fname]
-        if isinstance(rfile, basestring):
+        if isinstance(rfile, str):
             rfile = open(rfile, 'rb')
         # Check that the file is actually open
         if getattr(rfile, 'closed', False):
@@ -300,7 +300,7 @@ class ProjectStore(object):
         # Add conversion mappings
         if self.convert_map:
             conversions_el = etree.Element('conversions')
-            for in_fname, (out_fname, templ_fname) in self.convert_map.iteritems():
+            for in_fname, (out_fname, templ_fname) in self.convert_map.items():
                 if in_fname not in self._files or out_fname not in self._files:
                     continue
                 conv_el = etree.Element('conv')
@@ -324,7 +324,7 @@ class ProjectStore(object):
         # Add options to settings
         if 'options' in self.settings:
             options_el = etree.Element('options')
-            for option, value in self.settings['options'].items():
+            for option, value in list(self.settings['options'].items()):
                 opt_el = etree.Element('option')
                 opt_el.attrib['name'] = option
                 opt_el.text = value

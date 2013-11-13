@@ -45,8 +45,8 @@ class LangUnit(base.TranslationUnit):
             target = self.target
         if self.getnotes():
             notes = ('\n').join(["# %s" % note for note in self.getnotes('developer').split("\n")])
-            return u"%s\n;%s\n%s%s" % (notes, self.source, target, unchanged)
-        return u";%s\n%s%s" % (self.source, target, unchanged)
+            return "%s\n;%s\n%s%s" % (notes, self.source, target, unchanged)
+        return ";%s\n%s%s" % (self.source, target, unchanged)
 
     def getlocations(self):
         return self.locations
@@ -107,6 +107,6 @@ class LangStore(txt.TxtFile):
         ret_string = ""
         if self.is_active or self.mark_active:
             ret_string += "## active ##\n"
-        ret_string += u"\n\n\n".join([unicode(unit) for unit in self.units]).encode('utf-8')
+        ret_string += "\n\n\n".join([str(unit) for unit in self.units]).encode('utf-8')
         ret_string += "\n"
         return ret_string

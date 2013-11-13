@@ -26,5 +26,5 @@
 from translate.lang.zh import zh
 
 class zh_tw(zh):
-    specialchars = u"←→↔×÷©…—‘’“”「」『』【】《》"
+    specialchars = "←→↔×÷©…—‘’“”「」『』【】《》"
 

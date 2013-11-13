@@ -40,7 +40,7 @@ class Translatable(object):
     """A node corresponds to a translatable element. A node may
        have children, which correspond to placeables."""
 
-    @accepts(Self(), unicode, unicode, etree._Element, [IsOneOf(TranslatableClass, unicode)])
+    @accepts(Self(), str, str, etree._Element, [IsOneOf(TranslatableClass, str)])
     def __init__(self, placeable_name, xpath, dom_node, source):
         self.placeable_name = placeable_name
         self.source = source
@@ -68,7 +68,7 @@ class ParseState(object):
         self.inline_elements = inline_elements
         self.is_inline = False
         self.xpath_breadcrumb = xpath_breadcrumb.XPathBreadcrumb()
-        self.placeable_name = u"<top-level>"
+        self.placeable_name = "<top-level>"
         self.nsmap = nsmap
 
 
@@ -80,7 +80,7 @@ def _process_placeable(dom_node, state):
     # no translatable is returned. Make a placeable with the name
     # "placeable"
     if len(placeable) == 0:
-        return Translatable(u"placeable", state.xpath_breadcrumb.xpath, dom_node, [])
+        return Translatable("placeable", state.xpath_breadcrumb.xpath, dom_node, [])
     # The ideal situation: we got exactly one translateable back
     # when processing this tree.
     elif len(placeable) == 1:
@@ -98,13 +98,13 @@ def _process_placeables(dom_node, state):
 
     source = []
     for child in dom_node:
-        source.extend([_process_placeable(child, state), unicode(child.tail or u"")])
+        source.extend([_process_placeable(child, state), str(child.tail or "")])
     return source
 
 
 @accepts(etree._Element, ParseState)
 def _process_translatable(dom_node, state):
-    source = [unicode(dom_node.text or u"")] + _process_placeables(dom_node, state)
+    source = [str(dom_node.text or "")] + _process_placeables(dom_node, state)
     translatable = Translatable(state.placeable_name, state.xpath_breadcrumb.xpath, dom_node, source)
     translatable.is_inline = state.is_inline
     return [translatable]
@@ -125,9 +125,9 @@ def _process_children(dom_node, state):
 
 def compact_tag(nsmap, namespace, tag):
     if namespace in nsmap:
-        return u'%s:%s' % (nsmap[namespace], tag)
+        return '%s:%s' % (nsmap[namespace], tag)
     else:
-        return u'{%s}%s' % (namespace, tag)
+        return '{%s}%s' % (namespace, tag)
 
 
 @accepts(etree._Element, ParseState)
@@ -192,10 +192,10 @@ class IdMaker(object):
 def _to_placeables(parent_translatable, translatable, id_maker):
     result = []
     for chunk in translatable.source:
-        if isinstance(chunk, unicode):
+        if isinstance(chunk, str):
             result.append(chunk)
         else:
-            id = unicode(id_maker.get_id(chunk))
+            id = str(id_maker.get_id(chunk))
             if chunk.is_inline:
                 result.append(xliff.G(sub=_to_placeables(parent_translatable, chunk, id_maker), id=id))
             else:
@@ -208,7 +208,7 @@ def _add_translatable_to_store(store, parent_translatable, translatable, id_make
     """Construct a new translation unit, set its source and location
     information and add it to 'store'.
     """
-    unit = store.UnitClass(u'')
+    unit = store.UnitClass('')
     unit.rich_source = [StringElem(_to_placeables(parent_translatable, translatable, id_maker))]
     unit.addlocation(translatable.xpath)
     store.addunit(unit)
@@ -221,8 +221,8 @@ def _contains_translatable_text(translatable):
 
     If not, then there's nothing to translate."""
     for chunk in translatable.source:
-        if isinstance(chunk, unicode):
-            if chunk.strip() != u"":
+        if isinstance(chunk, str):
+            if chunk.strip() != "":
                 return True
     return False
 
@@ -254,7 +254,7 @@ def _walk_translatable_tree(translatables, f, parent_translatable, rid):
 
 
 def reverse_map(a_map):
-    return dict((value, key) for key, value in a_map.iteritems())
+    return dict((value, key) for key, value in a_map.items())
 
 
 @accepts(lambda obj: hasattr(obj, "read"), base.TranslationStore, ParseState, Nullable(IsCallable()))

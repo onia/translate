@@ -21,6 +21,7 @@
 """a set of helper functions for filters..."""
 
 import operator
+from functools import reduce
 
 
 def countmatch(str1, str2, countstr):
@@ -45,7 +46,7 @@ def funcsmatch(str1, str2, funclist):
 
 def filtercount(str1, func):
     """returns the number of characters in str1 that pass func"""
-    return len(filter(func, str1))
+    return len(list(filter(func, str1)))
 
 
 def filtertestmethod(testmethod, strfilter):

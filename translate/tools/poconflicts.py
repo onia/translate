@@ -97,7 +97,7 @@ class ConflictOptionParser(optrecurse.RecursiveOptionParser):
             fullinputpath = self.getfullinputpath(options, inputpath)
             try:
                 success = self.processfile(None, options, fullinputpath)
-            except Exception, error:
+            except Exception as error:
                 if isinstance(error, KeyboardInterrupt):
                     raise
                 self.warning("Error processing: input %s" % (fullinputpath), options, sys.exc_info())
@@ -146,7 +146,7 @@ class ConflictOptionParser(optrecurse.RecursiveOptionParser):
     def buildconflictmap(self):
         """work out which strings are conflicting"""
         self.conflictmap = {}
-        for source, translations in self.textmap.iteritems():
+        for source, translations in self.textmap.items():
             source = self.flatten(source, " ")
             if len(source) <= 1:
                 continue
@@ -157,13 +157,13 @@ class ConflictOptionParser(optrecurse.RecursiveOptionParser):
 
     def outputconflicts(self, options):
         """saves the result of the conflict match"""
-        print "%d/%d different strings have conflicts" % (len(self.conflictmap), len(self.textmap))
+        print("%d/%d different strings have conflicts" % (len(self.conflictmap), len(self.textmap)))
         reducedmap = {}
 
         def str_len(x):
             return len(x)
 
-        for source, translations in self.conflictmap.iteritems():
+        for source, translations in self.conflictmap.items():
             words = source.split()
             words.sort(key=str_len)
             source = words[-1]
@@ -173,9 +173,9 @@ class ConflictOptionParser(optrecurse.RecursiveOptionParser):
         for word in reducedmap:
             if word + "s" in reducedmap:
                 plurals[word] = word + "s"
-        for word, pluralword in plurals.iteritems():
+        for word, pluralword in plurals.items():
             reducedmap[word].extend(reducedmap.pop(pluralword))
-        for source, translations in reducedmap.iteritems():
+        for source, translations in reducedmap.items():
             flatsource = self.flatten(source, "-")
             fulloutputpath = os.path.join(options.output, flatsource + os.extsep + "po")
             conflictfile = po.pofile()

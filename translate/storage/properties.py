@@ -124,8 +124,8 @@ from translate.storage import base
 eol = "\n"
 
 
-@accepts(unicode, [unicode])
-@returns(IsOneOf(type(None), unicode), int)
+@accepts(str, [str])
+@returns(IsOneOf(type(None), str), int)
 def _find_delimiter(line, delimiters):
     """Find the type and position of the delimiter in a property line.
 
@@ -145,34 +145,34 @@ def _find_delimiter(line, delimiters):
         delimiter_dict[delimiter] = -1
     delimiters = delimiter_dict
     # Find the position of each delimiter type
-    for delimiter, pos in delimiters.iteritems():
+    for delimiter, pos in delimiters.items():
         prewhitespace = len(line) - len(line.lstrip())
         pos = line.find(delimiter, prewhitespace)
         while pos != -1:
-            if delimiters[delimiter] == -1 and line[pos-1] != u"\\":
+            if delimiters[delimiter] == -1 and line[pos-1] != "\\":
                 delimiters[delimiter] = pos
                 break
             pos = line.find(delimiter, pos + 1)
     # Find the first delimiter
     mindelimiter = None
     minpos = -1
-    for delimiter, pos in delimiters.iteritems():
-        if pos == -1 or delimiter == u" ":
+    for delimiter, pos in delimiters.items():
+        if pos == -1 or delimiter == " ":
             continue
         if minpos == -1 or pos < minpos:
             minpos = pos
             mindelimiter = delimiter
-    if mindelimiter is None and delimiters.get(u" ", -1) != -1:
+    if mindelimiter is None and delimiters.get(" ", -1) != -1:
         # Use space delimiter if we found nothing else
-        return (u" ", delimiters[" "])
+        return (" ", delimiters[" "])
     if (mindelimiter is not None and
-        u" " in delimiters and
-        delimiters[u" "] < delimiters[mindelimiter]):
+        " " in delimiters and
+        delimiters[" "] < delimiters[mindelimiter]):
         # If space delimiter occurs earlier than ":" or "=" then it is the
         # delimiter only if there are non-whitespace characters between it and
         # the other detected delimiter.
-        if len(line[delimiters[u" "]:delimiters[mindelimiter]].strip()) > 0:
-            return (u" ", delimiters[u" "])
+        if len(line[delimiters[" "]:delimiters[mindelimiter]].strip()) > 0:
+            return (" ", delimiters[" "])
     return (mindelimiter, minpos)
 
 
@@ -185,7 +185,7 @@ def find_delimeter(line):
     return _find_delimiter(line, DialectJava.delimiters)
 
 
-@accepts(unicode)
+@accepts(str)
 @returns(bool)
 def is_line_continuation(line):
     """Determine whether *line* has a line continuation marker.
@@ -211,7 +211,7 @@ def is_line_continuation(line):
         count += 1
     return (count % 2) == 1  # Odd is a line continuation, even is not
 
-@accepts(unicode)
+@accepts(str)
 @returns(bool)
 def is_comment_one_line(line):
     """Determine whether a *line* is a one-line comment.
@@ -222,16 +222,16 @@ def is_comment_one_line(line):
     :rtype: bool
     """
     stripped = line.strip()
-    line_starters = (u'#', u'!', u'//', )
+    line_starters = ('#', '!', '//', )
     for starter in line_starters:
         if stripped.startswith(starter):
             return True
-    if stripped.startswith(u'/*') and stripped.endswith(u'*/'):
+    if stripped.startswith('/*') and stripped.endswith('*/'):
         return True
     return False
 
 
-@accepts(unicode)
+@accepts(str)
 @returns(bool)
 def is_comment_start(line):
     """Determine whether a *line* starts a new multi-line comment.
@@ -245,7 +245,7 @@ def is_comment_start(line):
     return stripped.startswith('/*') and not stripped.endswith('*/')
 
 
-@accepts(unicode)
+@accepts(str)
 @returns(bool)
 def is_comment_end(line):
     """Determine whether a *line* ends a new multi-line comment.
@@ -259,8 +259,8 @@ def is_comment_end(line):
     return not stripped.startswith('/*') and stripped.endswith('*/')
 
 
-@accepts(unicode)
-@returns(unicode)
+@accepts(str)
+@returns(str)
 def _key_strip(key):
     """Cleanup whitespace found around a key
 
@@ -292,9 +292,9 @@ class Dialect(object):
     name = None
     default_encoding = 'iso-8859-1'
     delimiters = None
-    pair_terminator = u""
-    key_wrap_char = u""
-    value_wrap_char = u""
+    pair_terminator = ""
+    key_wrap_char = ""
+    value_wrap_char = ""
     drop_comments = []
 
     def encode(cls, string, encoding=None):
@@ -302,8 +302,8 @@ class Dialect(object):
         # FIXME: dialects are a bad idea, not possible for subclasses
         # to override key methods
         if encoding != "utf-8":
-            return quote.javapropertiesencode(string or u"")
-        return string or u""
+            return quote.javapropertiesencode(string or "")
+        return string or ""
     encode = classmethod(encode)
 
     def find_delimiter(cls, line):
@@ -325,17 +325,17 @@ class Dialect(object):
 class DialectJava(Dialect):
     name = "java"
     default_encoding = "iso-8859-1"
-    delimiters = [u"=", u":", u" "]
+    delimiters = ["=", ":", " "]
 register_dialect(DialectJava)
 
 
 class DialectJavaUtf8(DialectJava):
     name = "java-utf8"
     default_encoding = "utf-8"
-    delimiters = [u"=", u":", u" "]
+    delimiters = ["=", ":", " "]
 
     def encode(cls, string, encoding=None):
-        return quote.mozillapropertiesencode(string or u"")
+        return quote.mozillapropertiesencode(string or "")
     encode = classmethod(encode)
 register_dialect(DialectJavaUtf8)
 
@@ -348,23 +348,23 @@ register_dialect(DialectFlex)
 
 class DialectMozilla(DialectJavaUtf8):
     name = "mozilla"
-    delimiters = [u"="]
+    delimiters = ["="]
 register_dialect(DialectMozilla)
 
 
 class DialectGaia(DialectMozilla):
     name = "gaia"
-    delimiters = [u"="]
+    delimiters = ["="]
 register_dialect(DialectGaia)
 
 
 class DialectSkype(Dialect):
     name = "skype"
     default_encoding = "utf-16"
-    delimiters = [u"="]
+    delimiters = ["="]
 
     def encode(cls, string, encoding=None):
-        return quote.mozillapropertiesencode(string or u"")
+        return quote.mozillapropertiesencode(string or "")
     encode = classmethod(encode)
 register_dialect(DialectSkype)
 
@@ -372,12 +372,12 @@ register_dialect(DialectSkype)
 class DialectStrings(Dialect):
     name = "strings"
     default_encoding = "utf-16"
-    delimiters = [u"="]
-    pair_terminator = u";"
-    key_wrap_char = u'"'
-    value_wrap_char = u'"'
-    out_ending = u';'
-    out_delimiter_wrappers = u' '
+    delimiters = ["="]
+    pair_terminator = ";"
+    key_wrap_char = '"'
+    value_wrap_char = '"'
+    out_ending = ';'
+    out_delimiter_wrappers = ' '
     drop_comments = ["/* No comment provided by engineer. */"]
 
     def key_strip(cls, key):
@@ -414,19 +414,19 @@ class propunit(base.TranslationUnit):
         """Construct a blank propunit."""
         self.personality = get_dialect(personality)
         super(propunit, self).__init__(source)
-        self.name = u""
-        self.value = u""
-        self.translation = u""
-        self.delimiter = u"="
+        self.name = ""
+        self.value = ""
+        self.translation = ""
+        self.delimiter = "="
         self.comments = []
         self.source = source
         # a pair of symbols to enclose delimiter on the output
         # (a " " can be used for the sake of convenience)
         self.out_delimiter_wrappers = getattr(self.personality,
-                                              'out_delimiter_wrappers', u'')
+                                              'out_delimiter_wrappers', '')
         # symbol that should end every property sentence
         # (e.g. ";" is required for Mac OS X strings)
-        self.out_ending = getattr(self.personality, 'out_ending', u'')
+        self.out_ending = getattr(self.personality, 'out_ending', '')
 
     def getsource(self):
         value = quote.propertiesdecode(self.value)
@@ -435,19 +435,19 @@ class propunit(base.TranslationUnit):
     def setsource(self, source):
         self._rich_source = None
         source = data.forceunicode(source)
-        self.value = self.personality.encode(source or u"", self.encoding)
+        self.value = self.personality.encode(source or "", self.encoding)
 
     source = property(getsource, setsource)
 
     def gettarget(self):
         translation = quote.propertiesdecode(self.translation)
-        translation = re.sub(u"\\\\ ", u" ", translation)
+        translation = re.sub("\\\\ ", " ", translation)
         return translation
 
     def settarget(self, target):
         self._rich_target = None
         target = data.forceunicode(target)
-        self.translation = self.personality.encode(target or u"",
+        self.translation = self.personality.encode(target or "",
                                                    self.encoding)
 
     target = property(gettarget, settarget)
@@ -463,7 +463,7 @@ class propunit(base.TranslationUnit):
         """Convert to a string. Double check that unicode is handled
         somehow here."""
         source = self.getoutput()
-        assert isinstance(source, unicode)
+        assert isinstance(source, str)
         return source.encode(self.encoding)
 
     def getoutput(self):
@@ -471,9 +471,9 @@ class propunit(base.TranslationUnit):
         .properties file"""
         notes = self.getnotes()
         if notes:
-            notes += u"\n"
+            notes += "\n"
         if self.isblank():
-            return notes + u"\n"
+            return notes + "\n"
         else:
             self.value = self.personality.encode(self.source, self.encoding)
             self.translation = self.personality.encode(self.target,
@@ -500,7 +500,7 @@ class propunit(base.TranslationUnit):
                 "value": value,
                 "ending": ending,
             }
-            return u"%(notes)s%(key)s%(del)s%(value)s%(ending)s\n" % out_dict
+            return "%(notes)s%(key)s%(del)s%(value)s%(ending)s\n" % out_dict
 
     def getlocations(self):
         return [self.name]
@@ -515,7 +515,7 @@ class propunit(base.TranslationUnit):
 
     def getnotes(self, origin=None):
         if origin in ['programmer', 'developer', 'source code', None]:
-            return u'\n'.join(self.comments)
+            return '\n'.join(self.comments)
         else:
             return super(propunit, self).getnotes(origin)
 
@@ -565,7 +565,7 @@ class propfile(base.TranslationStore):
         inmultilinevalue = False
         inmultilinecomment = False
 
-        for line in propsrc.split(u"\n"):
+        for line in propsrc.split("\n"):
             # handle multiline value if we're in one
             line = quote.rstripeol(line)
             if inmultilinevalue:
@@ -600,7 +600,7 @@ class propfile(base.TranslationStore):
                 newunit.delimiter, delimiter_pos = self.personality.find_delimiter(line)
                 if delimiter_pos == -1:
                     newunit.name = self.personality.key_strip(line)
-                    newunit.value = u""
+                    newunit.value = ""
                     self.addunit(newunit)
                     newunit = propunit("", self.personality.name)
                 else:
@@ -621,7 +621,7 @@ class propfile(base.TranslationStore):
         lines = []
         for unit in self.units:
             lines.append(unit.getoutput())
-        uret = u"".join(lines)
+        uret = "".join(lines)
         return uret.encode(self.encoding)
 
 

@@ -30,7 +30,7 @@ class th(common.Common):
     """This class represents Thai."""
 
     puncdict = {
-        u". ": u" ",
+        ". ": " ",
         #u"; ": u" ", # Test interaction with XML entities
     }
 

@@ -74,11 +74,11 @@ class TestPYPOUnit(test_po.TestPOUnit):
         assert unit.target.strings == ["Koei", "Koeie"]
         assert unit.target == "Koei"
 
-        unit.target = [u"Sk\u00ear", u"Sk\u00eare"]
+        unit.target = ["Sk\u00ear", "Sk\u00eare"]
         assert isinstance(unit.target, multistring)
-        assert unit.target.strings == [u"Sk\u00ear", u"Sk\u00eare"]
-        assert unit.target.strings == [u"Sk\u00ear", u"Sk\u00eare"]
-        assert unit.target == u"Sk\u00ear"
+        assert unit.target.strings == ["Sk\u00ear", "Sk\u00eare"]
+        assert unit.target.strings == ["Sk\u00ear", "Sk\u00eare"]
+        assert unit.target == "Sk\u00ear"
 
     def test_plural_reduction(self):
         """checks that reducing the number of plurals supplied works"""
@@ -127,13 +127,13 @@ class TestPYPOUnit(test_po.TestPOUnit):
         str_max = "123456789 123456789 123456789 123456789 123456789 123456789 123456789 1"
         unit = self.UnitClass(str_max)
         expected = 'msgid "%s"\nmsgstr ""\n' % str_max
-        print expected, str(unit)
+        print(expected, str(unit))
         assert str(unit) == expected
         # at this length we wrap
         str_wrap = str_max + '2'
         unit = self.UnitClass(str_wrap)
         expected = 'msgid ""\n"%s"\nmsgstr ""\n' % str_wrap
-        print expected, str(unit)
+        print(expected, str(unit))
         assert str(unit) == expected
 
     def test_wrap_on_newlines(self):
@@ -142,7 +142,7 @@ class TestPYPOUnit(test_po.TestPOUnit):
         postring = ('"123456789\\n"\n' * 3)[:-1]
         unit = self.UnitClass(string)
         expected = 'msgid ""\n%s\nmsgstr ""\n' % postring
-        print expected, str(unit)
+        print(expected, str(unit))
         assert str(unit) == expected
 
         # Now check for long newlines segments
@@ -157,7 +157,7 @@ class TestPYPOUnit(test_po.TestPOUnit):
 msgstr ""
 '''
         unit = self.UnitClass(longstring)
-        print expected, str(unit)
+        print(expected, str(unit))
         assert str(unit) == expected
 
     def test_wrap_on_max_line_length(self):
@@ -165,10 +165,10 @@ msgstr ""
         string = "1 3 5 7 N " * 11
         expected = 'msgid ""\n%s\nmsgstr ""\n' % '"1 3 5 7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 "\n"7 N 1 3 5 7 N 1 3 5 7 N 1 3 5 7 N "'
         unit = self.UnitClass(string)
-        print "Expected:"
-        print expected
-        print "Actual:"
-        print str(unit)
+        print("Expected:")
+        print(expected)
+        print("Actual:")
+        print(str(unit))
         assert str(unit) == expected
 
     def test_spacing_max_line(self):
@@ -181,10 +181,10 @@ msgstr ""
 msgstr ""
 '''
         unit = self.UnitClass(idstring)
-        print "Expected:"
-        print expected
-        print "Actual:"
-        print str(unit)
+        print("Expected:")
+        print(expected)
+        print("Actual:")
+        print(str(unit))
         assert str(unit) == expected
 
 
@@ -207,7 +207,7 @@ class TestPYPOFile(test_po.TestPOFile):
         pofile = self.poparse(posource)
         assert len(pofile.units) == 2
         pofile.removeduplicates("msgctxt")
-        print pofile
+        print(pofile)
         assert len(pofile.units) == 2
         assert str(pofile.units[0]).count("source1") == 2
         assert str(pofile.units[1]).count("source2") == 2
@@ -219,21 +219,21 @@ class TestPYPOFile(test_po.TestPOFile):
         assert len(pofile.units) == 2
         pofile.removeduplicates("merge")
         assert len(pofile.units) == 2
-        print pofile.units[0].msgidcomments
-        print pofile.units[1].msgidcomments
+        print(pofile.units[0].msgidcomments)
+        print(pofile.units[1].msgidcomments)
         assert pypo.unquotefrompo(pofile.units[0].msgidcomments) == "_: source1\n"
         assert pypo.unquotefrompo(pofile.units[1].msgidcomments) == "_: source2\n"
 
     def test_output_str_unicode(self):
         """checks that we can str(element) which is in unicode"""
-        posource = u'''#: nb\nmsgid "Norwegian Bokm\xe5l"\nmsgstr ""\n'''
+        posource = '''#: nb\nmsgid "Norwegian Bokm\xe5l"\nmsgstr ""\n'''
         pofile = self.StoreClass(wStringIO.StringIO(posource.encode("UTF-8")), encoding="UTF-8")
         assert len(pofile.units) == 1
-        print str(pofile)
+        print(str(pofile))
         thepo = pofile.units[0]
         assert str(thepo) == posource.encode("UTF-8")
         # extra test: what if we set the msgid to a unicode? this happens in prop2po etc
-        thepo.source = u"Norwegian Bokm\xe5l"
+        thepo.source = "Norwegian Bokm\xe5l"
         assert str(thepo) == posource.encode("UTF-8")
         # Now if we set the msgstr to Unicode
         # this is an escaped half character (1/2)
@@ -247,7 +247,7 @@ class TestPYPOFile(test_po.TestPOFile):
         """checks the content of all the expected sections of a PO message"""
         posource = '# other comment\n#. automatic comment\n#: source comment\n#, fuzzy\nmsgid "One"\nmsgstr "Een"\n'
         pofile = self.poparse(posource)
-        print pofile
+        print(pofile)
         assert len(pofile.units) == 1
         assert str(pofile) == posource
         assert pofile.units[0].othercomments == ["# other comment\n"]
@@ -259,7 +259,7 @@ class TestPYPOFile(test_po.TestPOFile):
         """tests behaviour of unassociated comments."""
         oldsource = '# old lonesome comment\n\nmsgid "one"\nmsgstr "een"\n'
         oldfile = self.poparse(oldsource)
-        print str(oldfile)
+        print(str(oldfile))
         assert len(oldfile.units) == 1
 
     def test_prevmsgid_parse(self):
@@ -302,15 +302,15 @@ msgstr[1] "toetse"
         pofile = self.poparse(posource)
 
         assert pofile.units[1].prev_msgctxt == []
-        assert pofile.units[1].prev_source == multistring([u"trea"])
+        assert pofile.units[1].prev_source == multistring(["trea"])
 
         assert pofile.units[2].prev_msgctxt == []
-        assert pofile.units[2].prev_source == multistring([u"trea", u"treas"])
+        assert pofile.units[2].prev_source == multistring(["trea", "treas"])
 
-        assert pofile.units[3].prev_msgctxt == [u'"context 1"']
-        assert pofile.units[3].prev_source == multistring([u"tast"])
+        assert pofile.units[3].prev_msgctxt == ['"context 1"']
+        assert pofile.units[3].prev_source == multistring(["tast"])
 
-        assert pofile.units[4].prev_msgctxt == [u'"context 2"']
-        assert pofile.units[4].prev_source == multistring([u"tast", u"tasts"])
+        assert pofile.units[4].prev_msgctxt == ['"context 2"']
+        assert pofile.units[4].prev_source == multistring(["tast", "tasts"])
 
         assert str(pofile) == posource

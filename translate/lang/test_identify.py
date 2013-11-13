@@ -147,13 +147,13 @@ bringen, ohne sie dem Diktat versöhnender
 und in den Karnevalvereinen -
 """
 
-TEXT_LIST = [u"""
+TEXT_LIST = ["""
 Ästhetik des "Erhabenen" herangezogen.
 kostete (hinzu kommen über 6 630 tote""",
-u"""O3 steht für Ozon; es wird in der
+"""O3 steht für Ozon; es wird in der
 NO2 sind wesentlich am "sauren Regen"
 Ethik hängt eng mit einer Dauerkrise der""",
-u"""Serumwerk GmbH Dresden, Postfach
+"""Serumwerk GmbH Dresden, Postfach
 ,Hundeschläger' für die Dezimierung der
 Momente ihrer Erfahrung".
 zusammen.

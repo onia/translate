@@ -100,7 +100,7 @@ class Project(object):
             raise ValueError('Cannot convert a target document further: %s' % (input_fname))
 
         templ_fname = None
-        if isinstance(template, basestring):
+        if isinstance(template, str):
             template, templ_fname = self.get_file(template)
 
         if template and not templ_fname:
@@ -116,7 +116,7 @@ class Project(object):
                 # inputfile is a translatable file, so it needed to be converted
                 # from some input document. Let's try and use that document as a
                 # template for this conversion.
-                for in_name, (out_name, tmpl_name) in self.store.convert_map.items():
+                for in_name, (out_name, tmpl_name) in list(self.store.convert_map.items()):
                     if input_fname == out_name:
                         template, templ_fname = self.get_file(in_name), in_name
                         break

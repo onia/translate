@@ -3,7 +3,7 @@ from translate.misc.typecheck import Typeclass
 ### Number
 ####################################################
 
-_numbers = [int, float, complex, long, bool]
+_numbers = [int, float, complex, int, bool]
 try:
     from decimal import Decimal
     _numbers.append(Decimal)
@@ -17,7 +17,7 @@ del _numbers
 ### String -- subinstance of ImSequence
 ####################################################
 
-String = Typeclass(str, unicode)
+String = Typeclass(str, str)
     
 ### ImSequence -- immutable sequences
 ####################################################

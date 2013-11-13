@@ -41,7 +41,7 @@ class TestPO2OO:
         oooutputfile = wStringIO.StringIO()
         po2oo.convertoo(poinputfile, oooutputfile, ootemplatefile, targetlanguage="en-US")
         ooresult = oooutputfile.getvalue()
-        print "original oo:\n", oosource, "po version:\n", posource, "output oo:\n", ooresult
+        print("original oo:\n", oosource, "po version:\n", posource, "output oo:\n", ooresult)
         assert ooresult.startswith(oointro) and ooresult.endswith(oooutro)
         return ooresult[len(oointro):-len(oooutro)]
 
@@ -101,7 +101,7 @@ class TestPO2OO:
         # once we've fixed that.
         """checks that (escaped) quotes in strings make it through a oo->po->oo roundtrip"""
         self.check_roundtrip(" ")
-        self.check_roundtrip(u"\u00a0")
+        self.check_roundtrip("\u00a0")
 
     def test_default_timestamp(self):
         """test to ensure that we revert to the default timestamp"""

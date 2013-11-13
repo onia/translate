@@ -49,14 +49,14 @@ from translate.storage import base
 from translate.storage import po
 from translate.storage import poheader
 
-MO_MAGIC_NUMBER = 0x950412deL
+MO_MAGIC_NUMBER = 0x950412de
 
 
 def mounpack(filename='messages.mo'):
     """Helper to unpack Gettext MO files into a Python string"""
     f = open(filename)
     s = f.read()
-    print "\\x%02x" * len(s) % tuple(map(ord, s))
+    print("\\x%02x" * len(s) % tuple(map(ord, s)))
     f.close()
 
 
@@ -123,7 +123,7 @@ class mounit(base.TranslationUnit):
 
     def isheader(self):
         """Is this a header entry?"""
-        return self.source == u""
+        return self.source == ""
 
     def istranslatable(self):
         """Is this message translateable?"""
@@ -192,7 +192,7 @@ class mofile(poheader.poheader, base.TranslationStore):
                 MESSAGES[source.encode("utf-8")] = target
         # using "I" works for 32- and 64-bit systems, but not for 16-bit!
         hash_table = array.array("I", [0] * hash_size)
-        keys = MESSAGES.keys()
+        keys = list(MESSAGES.keys())
         # the keys are sorted in the .mo file
         keys.sort()
         offsets = []
@@ -203,7 +203,7 @@ class mofile(poheader.poheader, base.TranslationStore):
             # TODO: We don't do any encoding detection from the PO Header
             add_to_hash_table(id, i)
             string = MESSAGES[id]  # id already encoded for use as dictionary key
-            if isinstance(string, unicode):
+            if isinstance(string, str):
                 string = string.encode('utf-8')
             offsets.append((len(ids), len(id), len(strs), len(string)))
             ids = ids + id + '\0'

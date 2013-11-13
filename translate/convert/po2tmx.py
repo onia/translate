@@ -47,18 +47,18 @@ class po2tmx:
         """converts a .po file (possibly many) to TMX file"""
         inputstore = po.pofile(inputfile)
         for inunit in inputstore.units:
-            if inunit.isheader() or inunit.isblank() or not inunit.istranslated() or inunit.isfuzzy():
+            if inunit.isheader() or inunit.isblank():#  or inunit.isfuzzy() or not inunit.istranslated()
                 continue
             source = inunit.source
-            translation = inunit.target
-
+            target = inunit.target
+            #print(source)
             commenttext = {
                 'source': self.cleancomments(inunit.sourcecomments),
                 'type': self.cleancomments(inunit.typecomments),
                 'others': self.cleancomments(inunit.othercomments),
             }.get(comment, None)
-
-            tmxfile.addtranslation(source, sourcelanguage, translation,
+            #print(source, sourcelanguage, target, targetlanguage, commenttext)
+            tmxfile.addtranslation(source, sourcelanguage, target,
                                    targetlanguage, commenttext)
 
 
@@ -104,7 +104,7 @@ class TmxOptionParser(convert.ArchiveConvertOptionParser):
         if not options.targetlanguage:
             raise ValueError("You must specify the target language")
         super(TmxOptionParser, self).recursiveprocess(options)
-        self.output = open(options.output, 'w')
+        self.output = open(options.output, 'w',encoding='utf-8')
         options.outputarchive.tmxfile.setsourcelanguage(options.sourcelanguage)
         self.output.write(str(options.outputarchive.tmxfile))
         self.output.close()

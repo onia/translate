@@ -47,8 +47,8 @@ class es(common.Common):
         if not first:
             return text
         if first[-1] == '?':
-            text = u"¿" + text
+            text = "¿" + text
         elif first[-1] == '!':
-            text = u"¡" + text
+            text = "¡" + text
         return text
     punctranslate = classmethod(punctranslate)

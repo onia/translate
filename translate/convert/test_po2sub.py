@@ -32,12 +32,12 @@ class TestPO2Sub:
         templatefile = wStringIO.StringIO(subsource)
         convertor = po2sub.resub(templatefile, inputpo)
         outputsub = convertor.convertstore()
-        print outputsub
+        print(outputsub)
         return outputsub
 
     def test_subrip(self):
         """test SubRip or .srt files."""
-        posource = u'''#: 00:00:20.000-->00:00:24.400
+        posource = '''#: 00:00:20.000-->00:00:24.400
 msgid "Altocumulus clouds occur between six thousand"
 msgstr "Blah blah blah blah"
 
@@ -62,7 +62,7 @@ Blah blah blah blah
 Koei koei koei koei
 '''
         subfile = self.merge2sub(subtemplate, posource)
-        print subexpected
+        print(subexpected)
         assert subfile == subexpected
 
 

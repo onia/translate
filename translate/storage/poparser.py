@@ -38,12 +38,12 @@ find = str.find
 rfind = str.rfind
 startswith = str.startswith
 append = list.append
-decode = str.decode
+decode = str.encode
 
 
 class ParseState(object):
 
-    def __init__(self, input_iterator, UnitClass, encoding=None):
+    def __init__(self, input_iterator, UnitClass, encoding='utf-8'):
         self._input_iterator = input_iterator
         self.next_line = ''
         self.eof = False
@@ -52,19 +52,24 @@ class ParseState(object):
         self.UnitClass = UnitClass
 
     def decode(self, string):
-        if self.encoding is not None:
+        '''if self.encoding is not None:
             return decode(string, self.encoding)
         else:
             return string
+		'''
+        if isinstance(string, bytes):
+           return string.decode(self.encoding)
+        else:
+           return string
 
     def read_line(self):
         current = self.next_line
         if self.eof:
             return current
         try:
-            self.next_line = self._input_iterator.next()
+            self.next_line = next(self._input_iterator)
             while not self.eof and isspace(self.next_line):
-                self.next_line = self._input_iterator.next()
+                self.next_line = next(self._input_iterator)
         except StopIteration:
             self.next_line = ''
             self.eof = True
@@ -333,7 +338,7 @@ def decode_header(unit, decode):
         if isinstance(element, list):
             setattr(unit, attr, decode_list(element, decode))
         else:
-            setattr(unit, attr, dict([(key, decode_list(value, decode)) for key, value in element.items()]))
+            setattr(unit, attr, dict([(key, decode_list(value, decode)) for key, value in list(element.items())]))
 
 
 def parse_header(parse_state, store):

@@ -65,28 +65,28 @@ def test_stripcomment():
 class TestEncoding:
 
     def test_javepropertiesencode(self):
-        assert quote.javapropertiesencode(u"abc") == u"abc"
-        assert quote.javapropertiesencode(u"abcḓ") == "abc\u1E13"
-        assert quote.javapropertiesencode(u"abc\n") == u"abc\\n"
+        assert quote.javapropertiesencode("abc") == "abc"
+        assert quote.javapropertiesencode("abcḓ") == "abc\u1E13"
+        assert quote.javapropertiesencode("abc\n") == "abc\\n"
 
     def test_mozillapropertiesencode(self):
-        assert quote.mozillapropertiesencode(u"abc") == u"abc"
-        assert quote.mozillapropertiesencode(u"abcḓ") == u"abcḓ"
-        assert quote.mozillapropertiesencode(u"abc\n") == u"abc\\n"
+        assert quote.mozillapropertiesencode("abc") == "abc"
+        assert quote.mozillapropertiesencode("abcḓ") == "abcḓ"
+        assert quote.mozillapropertiesencode("abc\n") == "abc\\n"
 
     def test_mozilla_control_escapes(self):
         """test that we do \uNNNN escapes for certain control characters instead of converting to UTF-8 characters"""
         prefix, suffix = "bling", "blang"
-        for control in (u"\u0005", u"\u0006", u"\u0007", u"\u0011"):
+        for control in ("\u0005", "\u0006", "\u0007", "\u0011"):
             string = prefix + control + suffix
             assert quote.escapecontrols(string) == string
 
     def test_propertiesdecode(self):
-        assert quote.propertiesdecode(u"abc") == u"abc"
-        assert quote.propertiesdecode(u"abc\u1e13") == u"abcḓ"
-        assert quote.propertiesdecode(u"abc\u1E13") == u"abcḓ"
-        assert quote.propertiesdecode(u"abc\N{LEFT CURLY BRACKET}") == u"abc{"
-        assert quote.propertiesdecode(u"abc\\") == u"abc\\"
+        assert quote.propertiesdecode("abc") == "abc"
+        assert quote.propertiesdecode("abc\u1e13") == "abcḓ"
+        assert quote.propertiesdecode("abc\u1E13") == "abcḓ"
+        assert quote.propertiesdecode("abc\N{LEFT CURLY BRACKET}") == "abc{"
+        assert quote.propertiesdecode("abc\\") == "abc\\"
 
     def _html_encoding_helper(self, pairs):
         for from_, to in pairs:
@@ -95,19 +95,19 @@ class TestEncoding:
 
     def test_htmlencoding(self):
         """test that we can encode and decode simple HTML entities"""
-        raw_encoded = [(u"€", u"&euro;"), (u"©", u"&copy;"), (u'"', u"&quot;")]
+        raw_encoded = [("€", "&euro;"), ("©", "&copy;"), ('"', "&quot;")]
         self._html_encoding_helper(raw_encoded)
 
     def test_htmlencoding_passthrough(self):
         """test that we can encode and decode things that look like HTML entities but aren't"""
-        raw_encoded = [(u"copy quot", u"copy quot"),      # Raw text should have nothing done to it.
+        raw_encoded = [("copy quot", "copy quot"),      # Raw text should have nothing done to it.
                       ]
         self._html_encoding_helper(raw_encoded)
 
     def test_htmlencoding_nonentities(self):
         """tests to give us full coverage"""
-        for encoded, real in [(u"Some &; text", u"Some &; text"),
-                              (u"&copy ", u"&copy "),
-                              (u"&rogerrabbit;", u"&rogerrabbit;"),
+        for encoded, real in [("Some &; text", "Some &; text"),
+                              ("&copy ", "&copy "),
+                              ("&rogerrabbit;", "&rogerrabbit;"),
                              ]:
             assert quote.htmlentitydecode(encoded) == real

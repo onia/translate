@@ -22,9 +22,9 @@
 files (pofile).
 """
 
-from __future__ import generators
+
 import copy
-import cStringIO
+import io
 import re
 
 from translate.lang import data
@@ -40,7 +40,7 @@ lsep = "\n#: "
 # general functions for quoting / unquoting po strings
 
 po_unescape_map = {"\\r": "\r", "\\t": "\t", '\\"': '"', '\\n': '\n', '\\\\': '\\'}
-po_escape_map = dict([(value, key) for (key, value) in po_unescape_map.items()])
+po_escape_map = dict([(value, key) for (key, value) in list(po_unescape_map.items())])
 
 
 def escapeforpo(line):
@@ -51,7 +51,7 @@ def escapeforpo(line):
     special_locations = []
     for special_key in po_escape_map:
         special_locations.extend(quote.find_all(line, special_key))
-    special_locations = dict.fromkeys(special_locations).keys()
+    special_locations = list(dict.fromkeys(special_locations).keys())
     special_locations.sort()
     escaped_line = ""
     last_location = 0
@@ -123,7 +123,7 @@ def unescape(line):
 
     Quotes on either side should already have been removed.
     """
-    escape_places = quote.find_all(line, u"\\")
+    escape_places = quote.find_all(line, "\\")
     if not escape_places:
         return line
 
@@ -138,7 +138,7 @@ def unescape(line):
         if true_escape:
             true_escape_places.append(escape_pos)
 
-    extracted = u""
+    extracted = ""
     lastpos = 0
     for pos in true_escape_places:
         # everything leading up to the escape
@@ -152,7 +152,7 @@ def unescape(line):
 
 
 def unquotefrompo(postr):
-    return u"".join([unescape(line[1:-1]) for line in postr])
+    return "".join([unescape(line[1:-1]) for line in postr])
 
 
 def is_null(lst):
@@ -229,7 +229,7 @@ class pounit(pocommon.pounit):
         msgid = None
         msgid_plural = None
         if isinstance(source, str):
-            source = source.decode(self._encoding)
+            source = source.encode(self._encoding)
         if isinstance(source, multistring):
             source = source.strings
         if isinstance(source, list):
@@ -239,6 +239,8 @@ class pounit(pocommon.pounit):
             else:
                 msgid_plural = []
         else:
+            if isinstance(source, bytes):
+                source = source.decode(self._encoding)
             msgid = quoteforpo(source)
             msgid_plural = []
         return msgid, msgid_plural
@@ -271,7 +273,7 @@ class pounit(pocommon.pounit):
     def gettarget(self):
         """Returns the unescaped msgstr"""
         if isinstance(self.msgstr, dict):
-            return multistring(map(unquotefrompo, self.msgstr.values()), self._encoding)
+            return multistring(list(map(unquotefrompo, list(self.msgstr.values()))), self._encoding)
         else:
             return unquotefrompo(self.msgstr)
 
@@ -279,11 +281,11 @@ class pounit(pocommon.pounit):
         """Sets the msgstr to the given (unescaped) value"""
         self._rich_target = None
         if isinstance(target, str):
-            target = target.decode(self._encoding)
+            target = target.encode(self._encoding)
         if self.hasplural():
             if isinstance(target, multistring):
                 target = target.strings
-            elif isinstance(target, basestring):
+            elif isinstance(target, str):
                 target = [target]
         elif isinstance(target, (dict, list)):
             if len(target) == 1:
@@ -296,8 +298,10 @@ class pounit(pocommon.pounit):
         if isinstance(target, list):
             self.msgstr = dict([(i, quoteforpo(target[i])) for i in range(len(target))])
         elif isinstance(target, dict):
-            self.msgstr = dict([(i, quoteforpo(targetstring)) for i, targetstring in target.iteritems()])
+            self.msgstr = dict([(i, quoteforpo(targetstring)) for i, targetstring in target.items()])
         else:
+            if isinstance(target, bytes):
+                target=target.decode(self._encoding)
             self.msgstr = quoteforpo(target)
     target = property(gettarget, settarget)
 
@@ -323,12 +327,12 @@ class pounit(pocommon.pounit):
         :param origin: programmer, developer, source code, translator or None
         """
         if origin == None:
-            comments = u"".join([comment[2:] for comment in self.othercomments])
-            comments += u"".join([comment[3:] for comment in self.automaticcomments])
+            comments = "".join([comment[2:] for comment in self.othercomments])
+            comments += "".join([comment[3:] for comment in self.automaticcomments])
         elif origin == "translator":
-            comments = u"".join([comment[2:] for comment in self.othercomments])
+            comments = "".join([comment[2:] for comment in self.othercomments])
         elif origin in ["programmer", "developer", "source code"]:
-            comments = u"".join([comment[3:] for comment in self.automaticcomments])
+            comments = "".join([comment[3:] for comment in self.automaticcomments])
         else:
             raise ValueError("Comment type not valid")
         # Let's drop the last newline
@@ -373,7 +377,7 @@ class pounit(pocommon.pounit):
         # self.__shallow__
         shallow = set(self.__shallow__)
         # Make deep copies of all members which are not in shallow
-        for key, value in self.__dict__.iteritems():
+        for key, value in self.__dict__.items():
             if key not in shallow:
                 setattr(new_unit, key, copy.deepcopy(value))
         # Make shallow copies of all members which are in shallow
@@ -396,7 +400,7 @@ class pounit(pocommon.pounit):
 
     def _msgstrlen(self):
         if isinstance(self.msgstr, dict):
-            combinedstr = "\n".join(filter(None, [unquotefrompo(msgstr) for msgstr in self.msgstr.itervalues()]))
+            combinedstr = "\n".join([_f for _f in [unquotefrompo(msgstr) for msgstr in self.msgstr.values()] if _f])
             return len(combinedstr)
         else:
             return len(unquotefrompo(self.msgstr))
@@ -410,13 +414,13 @@ class pounit(pocommon.pounit):
 
         def mergelists(list1, list2, split=False):
             #decode where necessary
-            if unicode in [type(item) for item in list2] + [type(item) for item in list1]:
+            if str in [type(item) for item in list2] + [type(item) for item in list1]:
                 for position, item in enumerate(list1):
                     if isinstance(item, str):
-                        list1[position] = item.decode("utf-8")
+                        list1[position] = item.encode("utf-8")
                 for position, item in enumerate(list2):
                     if isinstance(item, str):
-                        list2[position] = item.decode("utf-8")
+                        list2[position] = item.encode("utf-8")
 
             #Determine the newline style of list1
             lineend = ""
@@ -574,11 +578,11 @@ class pounit(pocommon.pounit):
         return len(self.msgid_plural) > 0
 
     def parse(self, src):
-        return poparser.parse_unit(poparser.ParseState(cStringIO.StringIO(src), pounit), self)
+        return poparser.parse_unit(poparser.ParseState(io.StringIO(src), pounit), self)
 
     def _getmsgpartstr(self, partname, partlines, partcomments=""):
         if isinstance(partlines, dict):
-            partkeys = partlines.keys()
+            partkeys = list(partlines.keys())
             partkeys.sort()
             return "".join([self._getmsgpartstr("%s[%d]" % (partname, partkey), partlines[partkey], partcomments) for partkey in partkeys])
         partstr = partname + " "
@@ -621,7 +625,7 @@ class pounit(pocommon.pounit):
 
     def _encodeifneccessary(self, output):
         """Encodes unicode strings and returns other strings unchanged"""
-        if isinstance(output, unicode):
+        if isinstance(output, str):
             encoding = encodingToUse(getattr(self, "_encoding", "UTF-8"))
             return output.encode(encoding)
         return output
@@ -661,24 +665,24 @@ class pounit(pocommon.pounit):
                 # We need to account for a multiline msgid or msgstr here
                 obsoletelines[index] = obsoleteline.replace('\n"', '\n#~ "')
             lines.extend(obsoletelines)
-            return u"".join(lines)
+            return "".join(lines)
         # if there's no msgid don't do msgid and string, unless we're the
         # header this will also discard any comments other than plain
         # othercomments...
         if is_null(self.msgid):
             if not (self.isheader() or self.getcontext() or self.sourcecomments):
-                return u"".join(lines)
+                return "".join(lines)
         lines.extend(self.automaticcomments)
         lines.extend(self.sourcecomments)
         lines.extend(self.typecomments)
         add_prev_msgid_info(lines, prefix="#|")
         if self.msgctxt:
-            lines.append(self._getmsgpartstr(u"msgctxt", self.msgctxt))
-        lines.append(self._getmsgpartstr(u"msgid", self.msgid, self.msgidcomments))
+            lines.append(self._getmsgpartstr("msgctxt", self.msgctxt))
+        lines.append(self._getmsgpartstr("msgid", self.msgid, self.msgidcomments))
         if self.msgid_plural or self.msgid_pluralcomments:
-            lines.append(self._getmsgpartstr(u"msgid_plural", self.msgid_plural, self.msgid_pluralcomments))
-        lines.append(self._getmsgpartstr(u"msgstr", self.msgstr))
-        postr = u"".join(lines)
+            lines.append(self._getmsgpartstr("msgid_plural", self.msgid_plural, self.msgid_pluralcomments))
+        lines.append(self._getmsgpartstr("msgstr", self.msgstr))
+        postr = "".join(lines)
         return postr
 
     def getlocations(self):
@@ -745,9 +749,9 @@ class pounit(pocommon.pounit):
 #        id = '\0'.join(self.source.strings)
         id = self.source
         if self.msgidcomments:
-            id = u"_: %s\n%s" % (context, id)
+            id = "_: %s\n%s" % (context, id)
         elif context:
-            id = u"%s\04%s" % (context, id)
+            id = "%s\04%s" % (context, id)
         return id
 
 
@@ -755,19 +759,19 @@ class pofile(pocommon.pofile):
     """A .po file containing various units"""
     UnitClass = pounit
 
-    def parse(self, input):
+    def parse(self, inputfile):
         """Parses the given file or file source string."""
         if True:
 #        try:
-            if hasattr(input, 'name'):
-                self.filename = input.name
+            if hasattr(inputfile, 'name'):
+                self.filename = inputfile.name
             elif not getattr(self, 'filename', ''):
                 self.filename = ''
-            if isinstance(input, str):
-                input = cStringIO.StringIO(input)
+            if isinstance(inputfile, str):
+                inputfile = io.StringIO(inputfile)
             # clear units to get rid of automatically generated headers before parsing
             self.units = []
-            poparser.parse_units(poparser.ParseState(input, pounit), self)
+            poparser.parse_units(poparser.ParseState(inputfile, pounit), self)
 #        except Exception, e:
 #            raise base.ParseError(e)
 
@@ -819,28 +823,28 @@ class pofile(pocommon.pofile):
         """Convert to a string. Double check that unicode is handled somehow
         here"""
         output = self._getoutput()
-        if isinstance(output, unicode):
+        if isinstance(output, str):
             try:
-                return output.encode(getattr(self, "_encoding", "UTF-8"))
-            except UnicodeEncodeError, e:
+                #print(output.encode('utf-8'))
+                return output
+            except UnicodeEncodeError as e:
                 self.updateheader(add=True, Content_Type="text/plain; charset=UTF-8")
                 self._encoding = "UTF-8"
                 for unit in self.units:
                     unit._encoding = "UTF-8"
                 return self._getoutput().encode("UTF-8")
-
         return output
 
     def _getoutput(self):
         """convert the units back to lines"""
         lines = []
         for unit in self.units:
-            unitsrc = unit._getoutput() + u"\n"
+            unitsrc = unit._getoutput() + "\n"
             lines.append(unitsrc)
-        lines = u"".join(lines).rstrip()
+        lines = "".join(lines).rstrip()
         #After the last pounit we will have \n\n and we only want to end in \n:
         if lines:
-            lines += u"\n"
+            lines += "\n"
         return lines
 
     def encode(self, lines):
@@ -850,7 +854,7 @@ class pofile(pocommon.pofile):
         if encoding is None or encoding.lower() == "charset":
             encoding = 'UTF-8'
         for line in lines:
-            if isinstance(line, unicode):
+            if isinstance(line, str):
                 line = line.encode(encoding)
             newlines.append(line)
         return newlines
@@ -862,8 +866,8 @@ class pofile(pocommon.pofile):
             if (isinstance(line, str) and self._encoding is not None and
                 self._encoding.lower() != "charset"):
                 try:
-                    line = line.decode(self._encoding)
-                except UnicodeError, e:
+                    line = line.encode(self._encoding)
+                except UnicodeError as e:
                     raise UnicodeError("Error decoding line with encoding %r: %s. Line is %r" %
                                        (self._encoding, e, line))
             newlines.append(line)

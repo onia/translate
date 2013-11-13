@@ -35,7 +35,7 @@ class po2pydict:
         return
 
     def convertstore(self, inputstore, includefuzzy):
-        from StringIO import StringIO
+        from io import StringIO
         str_obj = StringIO()
 
         mydict = dict()

@@ -6,4 +6,4 @@ __all__ = ['HTTPRequest', 'HTTPConnection', 'HTTPServer',
            'Gateway', 'WSGIGateway', 'WSGIGateway_10', 'WSGIGateway_u0',
            'WSGIPathInfoDispatcher', 'get_ssl_adapter_class']
 
-from wsgiserver import *
+from .wsgiserver import *

@@ -24,6 +24,7 @@ See: http://docs.translatehouse.org/projects/translate-toolkit/en/latest/command
 for examples and usage instructions.
 """
 
+import io
 from translate.storage import po
 from translate.storage import xliff
 from translate.misc import wStringIO
@@ -71,7 +72,7 @@ class xliff2po:
         # XXX: The inputfile is converted to string because Pootle supplies
         # XXX: a PootleFile object as input which cannot be sent to PoXliffFile
         # XXX: The better way would be to have a consistent conversion API.
-        if not isinstance(inputfile, (file, wStringIO.StringIO)):
+        if not isinstance(inputfile, (io.IOBase, wStringIO.StringIO)):
             inputfile = str(inputfile)
         XliffFile = xliff.xlifffile.parsestring(inputfile)
         thetargetfile = po.pofile()
@@ -103,7 +104,7 @@ def convertxliff(inputfile, outputfile, templates, duplicatestyle="msgctxt"):
     outputstore = convertor.convertstore(inputfile, duplicatestyle)
     if outputstore.isempty():
         return 0
-    outputfile.write(str(outputstore))
+    outputfile.write(str(outputstore).encode('utf-8').decode('utf-8'))
     return 1
 
 
@@ -114,3 +115,7 @@ def main(argv=None):
                                          description=__doc__)
     parser.add_duplicates_option()
     parser.run(argv)
+
+    
+if __name__ == '__main__':
+    main()

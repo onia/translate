@@ -57,7 +57,7 @@ class ts2po:
         tsfile = ts.QtTsParser(inputfile)
         thetargetfile = po.pofile()
 
-        for contextname, messages in tsfile.iteritems():
+        for contextname, messages in tsfile.items():
             messagenum = 0
             for message in messages:
                 messagenum += 1

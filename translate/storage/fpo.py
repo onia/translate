@@ -30,12 +30,13 @@ directly, but can be used once cpo has been established to work."""
 
 import re
 import copy
-import cStringIO
+import io
 
 from translate.lang import data
 from translate.misc.multistring import multistring
 from translate.storage import pocommon, base, cpo, poparser
 from translate.storage.pocommon import encodingToUse
+import collections
 
 lsep = " "
 """Separator for #: entries"""
@@ -68,9 +69,9 @@ class pounit(pocommon.pounit):
         pocommon.pounit.__init__(self, source)
         self._encoding = encodingToUse(encoding)
         self._initallcomments(blankall=True)
-        self._msgctxt = u""
+        self._msgctxt = ""
 
-        self.target = u""
+        self.target = ""
 
     def _initallcomments(self, blankall=False):
         """Initialises allcomments"""
@@ -79,7 +80,7 @@ class pounit(pocommon.pounit):
             self.automaticcomments = []
             self.sourcecomments = []
             self.typecomments = []
-            self.msgidcomment = u""
+            self.msgidcomment = ""
 
     def getsource(self):
         return self._source
@@ -87,11 +88,11 @@ class pounit(pocommon.pounit):
     def setsource(self, source):
         self._rich_source = None
 #        assert isinstance(source, unicode)
-        source = data.forceunicode(source or u"")
-        source = source or u""
+        source = data.forceunicode(source or "")
+        source = source or ""
         if isinstance(source, multistring):
             self._source = source
-        elif isinstance(source, unicode):
+        elif isinstance(source, str):
             self._source = source
         else:
             #unicode, list, dict
@@ -125,12 +126,12 @@ class pounit(pocommon.pounit):
     def getnotes(self, origin=None):
         """Return comments based on origin value (programmer, developer, source code and translator)"""
         if origin == None:
-            comments = u"\n".join(self.othercomments)
-            comments += u"\n".join(self.automaticcomments)
+            comments = "\n".join(self.othercomments)
+            comments += "\n".join(self.automaticcomments)
         elif origin == "translator":
-            comments = u"\n".join(self.othercomments)
+            comments = "\n".join(self.othercomments)
         elif origin in ["programmer", "developer", "source code"]:
-            comments = u"\n".join(self.automaticcomments)
+            comments = "\n".join(self.automaticcomments)
         else:
             raise ValueError("Comment type not valid")
         return comments
@@ -146,9 +147,9 @@ class pounit(pocommon.pounit):
         if origin in ["programmer", "developer", "source code"]:
             autocomments = True
             commentlist = self.automaticcomments
-        if text.endswith(u'\n'):
+        if text.endswith('\n'):
             text = text[:-1]
-        newcomments = text.split(u"\n")
+        newcomments = text.split("\n")
         if position == "append":
             newcomments = commentlist + newcomments
         elif position == "prepend":
@@ -170,7 +171,7 @@ class pounit(pocommon.pounit):
         # self.__shallow__
         shallow = set(self.__shallow__)
         # Make deep copies of all members which are not in shallow
-        for key, value in self.__dict__.iteritems():
+        for key, value in self.__dict__.items():
             if key not in shallow:
                 setattr(new_unit, key, copy.deepcopy(value))
         # Make shallow copies of all members which are in shallow
@@ -206,7 +207,7 @@ class pounit(pocommon.pounit):
 
         def mergelists(list1, list2, split=False):
             #decode where necessary
-            if unicode in [type(item) for item in list2] + [type(item) for item in list1]:
+            if str in [type(item) for item in list2] + [type(item) for item in list1]:
                 for position, item in enumerate(list1):
                     if isinstance(item, str):
                         list1[position] = item.decode("utf-8")
@@ -283,7 +284,7 @@ class pounit(pocommon.pounit):
     def hastypecomment(self, typecomment):
         """Check whether the given type comment is present"""
         # check for word boundaries properly by using a regular expression...
-        return sum(map(lambda tcline: len(re.findall("\\b%s\\b" % typecomment, tcline)), self.typecomments)) != 0
+        return sum([len(re.findall("\\b%s\\b" % typecomment, tcline)) for tcline in self.typecomments]) != 0
 
     def hasmarkedcomment(self, commentmarker):
         """Check whether the given comment marker is present as # (commentmarker) ..."""
@@ -301,8 +302,8 @@ class pounit(pocommon.pounit):
                 self.typecomments.append("#, %s\n" % typecomment)
             else:
                 # this should handle word boundaries properly ...
-                typecomments = map(lambda tcline: re.sub("\\b%s\\b[ \t,]*" % typecomment, "", tcline), self.typecomments)
-                self.typecomments = filter(lambda tcline: tcline.strip() != "#,", typecomments)
+                typecomments = [re.sub("\\b%s\\b[ \t,]*" % typecomment, "", tcline) for tcline in self.typecomments]
+                self.typecomments = [tcline for tcline in typecomments if tcline.strip() != "#,"]
 
     def istranslated(self):
         return super(pounit, self).istranslated() and not self.isobsolete()
@@ -329,7 +330,7 @@ class pounit(pocommon.pounit):
 
     def parse(self, src):
         raise DeprecationWarning("Should not be parsing with a unit")
-        return poparser.parse_unit(poparser.ParseState(cStringIO.StringIO(src), pounit), self)
+        return poparser.parse_unit(poparser.ParseState(io.StringIO(src), pounit), self)
 
     def __str__(self):
         """convert to a string. double check that unicode is handled somehow here"""
@@ -370,7 +371,7 @@ class pounit(pocommon.pounit):
         return self._msgctxt + self.msgidcomment
 
     def setcontext(self, context):
-        context = data.forceunicode(context or u"")
+        context = data.forceunicode(context or "")
         self._msgctxt = context
 
     def getid(self):
@@ -383,15 +384,15 @@ class pounit(pocommon.pounit):
 #        id = '\0'.join(self.source.strings)
         id = self.source
         if self.msgidcomment:
-            id = u"_: %s\n%s" % (context, id)
+            id = "_: %s\n%s" % (context, id)
         elif context:
-            id = u"%s\04%s" % (context, id)
+            id = "%s\04%s" % (context, id)
         return id
 
     def buildfromunit(cls, unit):
         """Build a native unit from a foreign unit, preserving as much
         information as possible."""
-        if type(unit) == cls and hasattr(unit, "copy") and callable(unit.copy):
+        if type(unit) == cls and hasattr(unit, "copy") and isinstance(unit.copy, collections.Callable):
             return unit.copy()
         elif isinstance(unit, pocommon.pounit):
             newunit = cls(unit.source)
@@ -503,7 +504,7 @@ class pofile(pocommon.pofile):
             del self._cpo_store
             if tmp_header_added:
                 self.units = self.units[1:]
-        except Exception, e:
+        except Exception as e:
             raise base.ParseError(e)
 
     def removeduplicates(self, duplicatestyle="merge"):
@@ -544,7 +545,7 @@ class pofile(pocommon.pofile):
                     if duplicatestyle == "merge":
                         addcomment(thepo)
                     else:
-                        thepo._msgctxt += u" ".join(thepo.getlocations())
+                        thepo._msgctxt += " ".join(thepo.getlocations())
                 id_dict[id] = thepo
                 uniqueunits.append(thepo)
         self.units = uniqueunits
@@ -554,7 +555,7 @@ class pofile(pocommon.pofile):
         self._cpo_store = cpo.pofile(encoding=self._encoding, noheader=True)
         try:
             self._build_cpo_from_self()
-        except UnicodeEncodeError, e:
+        except UnicodeEncodeError as e:
             self._encoding = "utf-8"
             self.updateheader(add=True, Content_Type="text/plain; charset=UTF-8")
             self._build_cpo_from_self()

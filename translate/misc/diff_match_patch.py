@@ -262,11 +262,11 @@ class diff_match_patch:
         lineStart = lineEnd + 1
 
         if line in lineHash:
-          chars.append(unichr(lineHash[line]))
+          chars.append(chr(lineHash[line]))
         else:
           lineArray.append(line)
           lineHash[line] = len(lineArray) - 1
-          chars.append(unichr(len(lineArray) - 1))
+          chars.append(chr(len(lineArray) - 1))
       return "".join(chars)
 
     chars1 = diff_linesToCharsMunge(text1)
@@ -280,7 +280,7 @@ class diff_match_patch:
     :param diffs: Array of diff tuples.
     :param lineArray: Array of unique strings.
     """
-    for x in xrange(len(diffs)):
+    for x in range(len(diffs)):
       text = []
       for char in diffs[x][1]:
         text.append(lineArray[ord(char)])
@@ -317,14 +317,14 @@ class diff_match_patch:
     # If the total number of characters is odd, then the front path will
     # collide with the reverse path.
     front = (text1_length + text2_length) % 2
-    for d in xrange(max_d):
+    for d in range(max_d):
       # Bail out if timeout reached.
       if self.Diff_Timeout > 0 and time.time() > s_end:
         return None
 
       # Walk the front path one step.
       v_map1.append({})
-      for k in xrange(-d, d + 1, 2):
+      for k in range(-d, d + 1, 2):
         if k == -d or k != d and v1[k - 1] < v1[k + 1]:
           x = v1[k + 1]
         else:
@@ -363,7 +363,7 @@ class diff_match_patch:
       if doubleEnd:
         # Walk the reverse path one step.
         v_map2.append({})
-        for k in xrange(-d, d + 1, 2):
+        for k in range(-d, d + 1, 2):
           if k == -d or k != d and v2[k - 1] < v2[k + 1]:
             x = v2[k + 1]
           else:
@@ -411,7 +411,7 @@ class diff_match_patch:
     x = len(text1)
     y = len(text2)
     last_op = None
-    for d in xrange(len(v_map) - 2, -1, -1):
+    for d in range(len(v_map) - 2, -1, -1):
       while True:
         if (x - 1 << 32) + y in v_map[d]:
           x -= 1
@@ -454,7 +454,7 @@ class diff_match_patch:
     x = len(text1)
     y = len(text2)
     last_op = None
-    for d in xrange(len(v_map) - 2, -1, -1):
+    for d in range(len(v_map) - 2, -1, -1):
       while True:
         if (x - 1 << 32) + y in v_map[d]:
           x -= 1
@@ -950,7 +950,7 @@ class diff_match_patch:
     chars2 = 0
     last_chars1 = 0
     last_chars2 = 0
-    for x in xrange(len(diffs)):
+    for x in range(len(diffs)):
       (op, text) = diffs[x]
       if op != self.DIFF_INSERT:  # Equality or deletion.
         chars1 += len(text)
@@ -1051,13 +1051,13 @@ class diff_match_patch:
 
     :returns: Delta text.
     """
-    import urllib
+    import urllib.request, urllib.parse, urllib.error
     text = []
     for (op, data) in diffs:
       if op == self.DIFF_INSERT:
         # High ascii will raise UnicodeDecodeError.  Use Unicode instead.
         data = data.encode("utf-8")
-        text.append("+" + urllib.quote(data, "!~*'();/?:@&=+$,# "))
+        text.append("+" + urllib.parse.quote(data, "!~*'();/?:@&=+$,# "))
       elif op == self.DIFF_DELETE:
         text.append("-%d" % len(data))
       elif op == self.DIFF_EQUAL:
@@ -1075,8 +1075,8 @@ class diff_match_patch:
 
     :raise ValueError: If invalid input.
     """
-    import urllib
-    if type(delta) == unicode:
+    import urllib.request, urllib.parse, urllib.error
+    if type(delta) == str:
       # Deltas should be composed of a subset of ascii chars, Unicode not
       # required.  If this encode raises UnicodeEncodeError, delta is invalid.
       delta = delta.encode("ascii")
@@ -1091,7 +1091,7 @@ class diff_match_patch:
       # operation of this token (delete, insert, equality).
       param = token[1:]
       if token[0] == "+":
-        param = urllib.unquote(param).decode("utf-8")
+        param = urllib.parse.unquote(param).decode("utf-8")
         diffs.append((self.DIFF_INSERT, param))
       elif token[0] == "-" or token[0] == "=":
         try:
@@ -1197,7 +1197,7 @@ class diff_match_patch:
     bin_max = len(pattern) + len(text)
     # Empty initialization added to appease pychecker.
     last_rd = None
-    for d in xrange(len(pattern)):
+    for d in range(len(pattern)):
       # Scan for the best match each iteration allows for one more error.
       # Run a binary search to determine how far from 'loc' we can stray at
       # this error level.
@@ -1215,9 +1215,9 @@ class diff_match_patch:
       start = max(1, loc - bin_mid + 1)
       finish = min(loc + bin_mid, len(text)) + len(pattern)
 
-      rd = range(finish + 1)
+      rd = list(range(finish + 1))
       rd.append((1 << d) - 1)
-      for j in xrange(finish, start - 1, -1):
+      for j in range(finish, start - 1, -1):
         if len(text) <= j - 1:
           # Out of range.
           charMatch = 0
@@ -1258,7 +1258,7 @@ class diff_match_patch:
     s = {}
     for char in pattern:
       s[char] = 0
-    for i in xrange(len(pattern)):
+    for i in range(len(pattern)):
       s[pattern[i]] |= 1 << (len(pattern) - i - 1)
     return s
 
@@ -1330,7 +1330,7 @@ class diff_match_patch:
     text1 = None
     diffs = None
     # Note that texts may arrive as 'str' or 'unicode'.
-    if isinstance(a, basestring) and isinstance(b, basestring) and c is None:
+    if isinstance(a, str) and isinstance(b, str) and c is None:
       # Method 1: text1, text2
       # Compute diffs from text1 and text2.
       text1 = a
@@ -1343,11 +1343,11 @@ class diff_match_patch:
       # Compute text1 from diffs.
       diffs = a
       text1 = self.diff_text1(diffs)
-    elif isinstance(a, basestring) and isinstance(b, list) and c is None:
+    elif isinstance(a, str) and isinstance(b, list) and c is None:
       # Method 3: text1, diffs
       text1 = a
       diffs = b
-    elif (isinstance(a, basestring) and isinstance(b, basestring) and
+    elif (isinstance(a, str) and isinstance(b, str) and
           isinstance(c, list)):
       # Method 4: text1, text2, diffs
       # text2 is not used.
@@ -1364,7 +1364,7 @@ class diff_match_patch:
     char_count2 = 0  # Number of characters into the text2 string.
     prepatch_text = text1  # Recreate the patches to determine context info.
     postpatch_text = text1
-    for x in xrange(len(diffs)):
+    for x in range(len(diffs)):
       (diff_type, diff_text) = diffs[x]
       if len(patch.diffs) == 0 and diff_type != self.DIFF_EQUAL:
         # A new patch starts here.
@@ -1532,7 +1532,7 @@ class diff_match_patch:
     """
     paddingLength = self.Patch_Margin
     nullPadding = ""
-    for x in xrange(1, paddingLength + 1):
+    for x in range(1, paddingLength + 1):
       nullPadding += chr(x)
 
     # Bump all the patches forward.
@@ -1586,7 +1586,7 @@ class diff_match_patch:
     """
     if self.Match_MaxBits == 0:
       return
-    for x in xrange(len(patches)):
+    for x in range(len(patches)):
       if patches[x].length1 > self.Match_MaxBits:
         bigpatch = patches[x]
         # Remove the big old patch.
@@ -1683,7 +1683,7 @@ class diff_match_patch:
 
     :raises ValueError: If invalid input.
     """
-    if type(textline) == unicode:
+    if type(textline) == str:
       # Patches should be composed of a subset of ascii chars, Unicode not
       # required.  If this encode raises UnicodeEncodeError, patch is invalid.
       textline = textline.encode("ascii")
@@ -1719,13 +1719,13 @@ class diff_match_patch:
 
       del text[0]
 
-      import urllib
+      import urllib.request, urllib.parse, urllib.error
       while len(text) != 0:
         if text[0]:
           sign = text[0][0]
         else:
           sign = ''
-        line = urllib.unquote(text[0][1:])
+        line = urllib.parse.unquote(text[0][1:])
         line = line.decode("utf-8")
         if sign == '+':
           # Insertion.
@@ -1769,7 +1769,7 @@ class patch_obj:
 
     :returns: The GNU diff string.
     """
-    import urllib
+    import urllib.request, urllib.parse, urllib.error
     if self.length1 == 0:
       coords1 = str(self.start1) + ",0"
     elif self.length1 == 1:
@@ -1793,5 +1793,5 @@ class patch_obj:
         text.append(" ")
       # High ascii will raise UnicodeDecodeError.  Use Unicode instead.
       data = data.encode("utf-8")
-      text.append(urllib.quote(data, "!~*'();/?:@&=+$,# ") + "\n")
+      text.append(urllib.parse.quote(data, "!~*'();/?:@&=+$,# ") + "\n")
     return "".join(text)

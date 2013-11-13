@@ -115,7 +115,7 @@ class UtxUnit(base.TranslationUnit):
         # FIXME update the header date
         if newvalue is None:
             self._dict[key] = None
-        if isinstance(newvalue, unicode):
+        if isinstance(newvalue, str):
             newvalue = newvalue.encode('utf-8')
         if not key in self._dict or newvalue != self._dict[key]:
             self._dict[key] = newvalue
@@ -125,13 +125,13 @@ class UtxUnit(base.TranslationUnit):
 
     def addnote(self, text, origin=None, position="append"):
         currentnote = self._get_field('comment')
-        if position == "append" and currentnote is not None and currentnote != u'':
+        if position == "append" and currentnote is not None and currentnote != '':
             self._set_field('comment', currentnote + '\n' + text)
         else:
             self._set_field('comment', text)
 
     def removenotes(self):
-        self._set_field('comment', u'')
+        self._set_field('comment', '')
 
     def getsource(self):
         return self._get_field('src')
@@ -217,7 +217,7 @@ class UtxFile(base.TranslationStore):
                    "date": self._header["date_created"],
                   }
         items = []
-        for key, value in self._header.iteritems():
+        for key, value in self._header.items():
             if key in ["version", "source_language", "target_language", "date_created"]:
                 continue
             items.append("%s: %s" % (key, value))

@@ -76,7 +76,7 @@ def update(existing, add=False, **kwargs):
     """
     headerargs = dictutils.ordereddict()
     fixedargs = dictutils.cidict()
-    for key, value in kwargs.items():
+    for key, value in list(kwargs.items()):
         key = key.replace("_", "-")
         if key.islower():
             key = key.title()
@@ -91,7 +91,7 @@ def update(existing, add=False, **kwargs):
             removed.append(key)
         elif add and key in fixedargs:
             headerargs[key] = fixedargs.pop(key)
-    for key, value in existing.iteritems():
+    for key, value in existing.items():
         if not key in removed:
             headerargs[key] = value
     if add:
@@ -220,13 +220,13 @@ class poheader(object):
                 self._insert_header(header)
         else:
             headeritems = update(self.parseheader(), add, **kwargs)
-            keys = headeritems.keys()
+            keys = list(headeritems.keys())
             if not "Content-Type" in keys or "charset=CHARSET" in headeritems["Content-Type"]:
                 headeritems["Content-Type"] = "text/plain; charset=UTF-8"
             if not "Content-Transfer-Encoding" in keys or "ENCODING" in headeritems["Content-Transfer-Encoding"]:
                 headeritems["Content-Transfer-Encoding"] = "8bit"
             headerString = ""
-            for key, value in headeritems.items():
+            for key, value in list(headeritems.items()):
                 if value is not None:
                     headerString += "%s: %s\n" % (key, value)
             header.target = headerString
@@ -261,7 +261,7 @@ class poheader(object):
 
     def updateheaderplural(self, nplurals, plural):
         """Update the Plural-Form PO header."""
-        if isinstance(nplurals, basestring):
+        if isinstance(nplurals, str):
             nplurals = int(nplurals)
         self.updateheader(add=True, Plural_Forms="nplurals=%d; plural=%s;" % (nplurals, plural))
 
@@ -301,7 +301,7 @@ class poheader(object):
         :param lang: the new target language code
         :type lang: str
         """
-        if isinstance(lang, basestring) and len(lang) > 1:
+        if isinstance(lang, str) and len(lang) > 1:
             self.updateheader(add=True, Language=lang, X_Poedit_Language=None, X_Poedit_Country=None)
 
     def getprojectstyle(self):
@@ -374,7 +374,7 @@ class poheader(object):
         outcontrib = False
         for line in header.getnotes("translator").split('\n'):
             line = line.strip()
-            if line == u"FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.":
+            if line == "FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.":
                 incontrib = True
                 continue
             if author_re.match(line):
@@ -425,7 +425,7 @@ class poheader(object):
         headerpo.markfuzzy()
         headeritems = self.makeheaderdict(**kwargs)
         headervalue = ""
-        for (key, value) in headeritems.items():
+        for (key, value) in list(headeritems.items()):
             if value is None:
                 continue
             headervalue += "%s: %s\n" % (key, value)

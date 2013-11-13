@@ -85,7 +85,7 @@ class rcunit(base.TranslationUnit):
     def __str__(self):
         """Convert to a string. Double check that unicode is handled somehow here."""
         source = self.getoutput()
-        if isinstance(source, unicode):
+        if isinstance(source, str):
             return source.encode(getattr(self, "encoding", "UTF-8"))
         return source
 

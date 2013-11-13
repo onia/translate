@@ -92,7 +92,7 @@ class OmegaTUnit(base.TranslationUnit):
     def _set_field(self, key, newvalue):
         if newvalue is None:
             self._dict[key] = None
-        if isinstance(newvalue, unicode):
+        if isinstance(newvalue, str):
             newvalue = newvalue.encode('utf-8')
         if not key in self._dict or newvalue != self._dict[key]:
             self._dict[key] = newvalue
@@ -102,13 +102,13 @@ class OmegaTUnit(base.TranslationUnit):
 
     def addnote(self, text, origin=None, position="append"):
         currentnote = self._get_field('comment')
-        if position == "append" and currentnote is not None and currentnote != u'':
+        if position == "append" and currentnote is not None and currentnote != '':
             self._set_field('comment', currentnote + '\n' + text)
         else:
             self._set_field('comment', text)
 
     def removenotes(self):
-        self._set_field('comment', u'')
+        self._set_field('comment', '')
 
     def getsource(self):
         return self._get_field('source')

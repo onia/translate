@@ -118,7 +118,7 @@ class prop2po:
             # handle the header case specially...
             if not appendedheader:
                 if origprop.isblank():
-                    targetheader.addnote(u"".join(waitingcomments).rstrip(),
+                    targetheader.addnote("".join(waitingcomments).rstrip(),
                                          "developer", position="prepend")
                     waitingcomments = []
                     origpo = None
@@ -137,7 +137,7 @@ class prop2po:
             if origpo is not None:
                 if translatedpo is not None and not blankmsgstr:
                     origpo.target = translatedpo.source
-                origpo.addnote(u"".join(waitingcomments).rstrip(),
+                origpo.addnote("".join(waitingcomments).rstrip(),
                                "developer", position="prepend")
                 waitingcomments = []
                 thetargetfile.addunit(origpo)
@@ -153,12 +153,12 @@ class prop2po:
         """Fold the multiple plural units of a gaia file into a gettext plural."""
         new_store = type(postore)()
         plurals = {}
-        current_plural = u""
+        current_plural = ""
         for unit in postore.units:
             if not unit.istranslatable():
                 #TODO: reconsider: we could lose header comments here
                 continue
-            if u"plural(n)" in unit.source:
+            if "plural(n)" in unit.source:
                 # start of a set of plural units
                 location = unit.getlocations()[0]
                 current_plural = location
@@ -177,7 +177,7 @@ class prop2po:
                     new_unit = _collapse(new_store, plurals[current_plural])
                     new_unit.addlocation(current_plural)
                     del plurals[current_plural]
-                    current_plural = u""
+                    current_plural = ""
 
                 new_store.addunit(unit)
 
@@ -186,12 +186,12 @@ class prop2po:
             new_unit = _collapse(new_store, plurals[current_plural])
             new_unit.addlocation(current_plural)
             del plurals[current_plural]
-            current_plural = u""
+            current_plural = ""
 
         # if everything went well, there should be nothing left in plurals
         if len(plurals) != 0:
             logger.warning("Not all plural units converted correctly:" +
-                           "\n".join(plurals.keys()))
+                           "\n".join(list(plurals.keys())))
         return new_store
 
     def convertunit(self, propunit, commenttype):
@@ -205,13 +205,13 @@ class prop2po:
             for comment in propunit.comments:
                 if "DONT_TRANSLATE" in comment:
                     return "discard"
-            pounit.addnote(u"".join(propunit.getnotes()).rstrip(), commenttype)
+            pounit.addnote("".join(propunit.getnotes()).rstrip(), commenttype)
         # TODO: handle multiline msgid
         if propunit.isblank():
             return None
         pounit.addlocation(propunit.name)
         pounit.source = propunit.source
-        pounit.target = u""
+        pounit.target = ""
         return pounit
 
 
@@ -269,9 +269,9 @@ def main(argv=None):
     parser.add_option("", "--personality", dest="personality",
             default=properties.default_dialect,
             type="choice",
-            choices=properties.dialects.keys(),
+            choices=list(properties.dialects.keys()),
             help="override the input file format: %s (for .properties files, default: %s)" %
-                 (", ".join(properties.dialects.iterkeys()),
+                 (", ".join(iter(properties.dialects.keys())),
                   properties.default_dialect),
             metavar="TYPE")
     parser.add_option("", "--encoding", dest="encoding", default=None,

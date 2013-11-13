@@ -22,20 +22,20 @@
 just for the sake of the Windows installer to easily pick up all the stuff
 that we need and ensure they make it into the installer."""
 
-import csvl10n
-import omegat
-import po
-import mo
-import qm
-import utx
-import wordfast
-import catkeys
-import qph
-import tbx
-import tmx
-import ts2
-import xliff
+from . import csvl10n
+from . import omegat
+from . import po
+from . import mo
+from . import qm
+from . import utx
+from . import wordfast
+from . import catkeys
+from . import qph
+from . import tbx
+from . import tmx
+from . import ts2
+from . import xliff
 try:
-    import trados
-except ImportError, e:
+    from . import trados
+except ImportError as e:
     pass

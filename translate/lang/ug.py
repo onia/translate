@@ -29,12 +29,12 @@ from translate.lang import common
 class ug(common.Common):
     """This class represents Uyghur."""
 
-    listseperator = u"، "
+    listseperator = "، "
 
     puncdict = {
-        u",": u"،",
-        u";": u"؛",
-        u"?": u"؟",
+        ",": "،",
+        ";": "؛",
+        "?": "؟",
     }
 
     ignoretests = ["startcaps", "simplecaps"]

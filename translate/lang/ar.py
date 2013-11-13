@@ -30,19 +30,19 @@ from translate.lang import common
 
 def reverse_quotes(text):
     def convertquotation(match):
-        return u"”%s“" % match.group(1)
-    return re.sub(u'“([^”]+)”', convertquotation, text)
+        return "”%s“" % match.group(1)
+    return re.sub('“([^”]+)”', convertquotation, text)
 
 
 class ar(common.Common):
     """This class represents Arabic."""
 
-    listseperator = u"، "
+    listseperator = "، "
 
     puncdict = {
-        u",": u"،",
-        u";": u"؛",
-        u"?": u"؟",
+        ",": "،",
+        ";": "؛",
+        "?": "؟",
         #This causes problems with variables, so commented out for now:
         #u"%": u"٪",
     }

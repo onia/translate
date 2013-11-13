@@ -27,7 +27,7 @@ for examples and usage instructions.
 
 import sys
 import logging
-from urllib import urlencode
+from urllib.parse import urlencode
 
 from translate.storage import po
 from translate.storage import oo

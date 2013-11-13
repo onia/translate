@@ -57,8 +57,8 @@ class TMDB(object):
         self.min_similarity = min_similarity
         self.max_length = max_length
 
-        if not isinstance(db_file, unicode):
-            db_file = unicode(db_file)  # don't know which encoding
+        if not isinstance(db_file, str):
+            db_file = str(db_file)  # don't know which encoding
         self.db_file = db_file
         # share connections to same database file between different instances
         if db_file not in self._tm_dbs:
@@ -170,7 +170,7 @@ END;
             logging.debug("created fulltext triggers")
             self.fulltext = True
 
-        except dbapi2.OperationalError, e:
+        except dbapi2.OperationalError as e:
             self.fulltext = False
             logging.debug("failed to initialize fts3 support: " + str(e))
             script = """
@@ -277,7 +277,7 @@ DROP TRIGGER IF EXISTS sources_delete_trig;
     def translate_unit(self, unit_source, source_langs, target_langs):
         """return TM suggestions for unit_source"""
         if isinstance(unit_source, str):
-            unit_source = unicode(unit_source, "utf-8")
+            unit_source = str(unit_source, "utf-8")
         if isinstance(source_langs, list):
             source_langs = [data.normalize_code(lang) for lang in source_langs]
             source_langs = ','.join(source_langs)
@@ -296,7 +296,7 @@ DROP TRIGGER IF EXISTS sources_delete_trig;
         # split source into words, remove punctuation and special
         # chars, keep words that are at least 3 chars long
         unit_words = STRIP_REGEXP.sub(' ', unit_source).split()
-        unit_words = filter(lambda word: len(word) > 2, unit_words)
+        unit_words = [word for word in unit_words if len(word) > 2]
 
         if self.fulltext and len(unit_words) > 3:
             logging.debug("fulltext matching")
@@ -327,7 +327,7 @@ DROP TRIGGER IF EXISTS sources_delete_trig;
                 })
         results.sort(key=lambda match: match['quality'], reverse=True)
         results = results[:self.max_candidates]
-        logging.debug("results: %s", unicode(results))
+        logging.debug("results: %s", str(results))
         return results
 
 

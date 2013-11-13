@@ -1,0 +1,1831 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-12 16:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.10.0\n"
+
+#: 1
+#, fuzzy
+msgid ""
+"La Zona de aprendizaje para OEM es la ubicación central en la que encontrará "
+"cursos sobre productos y material para impulsar las ventas creados "
+"específicamente para los partners OEM de Microsoft."
+msgstr ""
+"La Zona de aprendizaje para OEM es la ubicación central en la que encontrará "
+"cursos sobre productos y material para impulsar las ventas creados "
+"específicamente para los partners OEM de Microsoft."
+
+#: 2
+#, fuzzy
+msgid "Learn, Sell, and Grow with the OEM Training Zone"
+msgstr ""
+"Aprenda, venda y obtenga mejores resultados con la Zona de aprendizaje para "
+"OEM"
+
+#: 3
+#, fuzzy
+msgid ""
+"If you are a reseller and want to improve your product knowledge and sales "
+"skills, you can find materials in the OEM Training Zone to help you identify "
+"solutions and expand sales opportunities for these products:"
+msgstr ""
+"Si es un revendedor y desea ampliar sus conocimientos sobre los productos y "
+"mejorar sus habilidades de venta, encontrará material en la Zona de "
+"aprendizaje para OEM que le ayudará a identificar soluciones y a ampliar las "
+"oportunidades de venta de estos productos:"
+
+#: 4
+#, fuzzy
+msgid "Windows 7"
+msgstr "Windows 7"
+
+#: 5
+#, fuzzy
+msgid "Microsoft Office 2010"
+msgstr "Microsoft Office 2010"
+
+#: 6
+#, fuzzy
+msgid "Windows Small Business Server 2011"
+msgstr "Windows Small Business Server 2011"
+
+#: 7
+#, fuzzy
+msgid "Windows Server 2008 R2"
+msgstr "Windows Server 2008 R2"
+
+#: 8
+msgid ""
+"You can also find useful information about programs to grow your business:"
+msgstr ""
+
+#: 9
+msgid ""
+"<a href=\"/oem/en/community/mpn/Pages/oem_competency.aspx\">OEM competency</a> "
+"- Earning the OEM competency can help partners take advantage of "
+"significant market opportunities for Windows 7 and Windows Server 2008 R2 "
+"operating systems."
+msgstr ""
+
+#: 10
+#, fuzzy
+msgid ""
+"<a href=\"http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage."
+"aspx\" target=\"_blank\">Windows Embedded</a> – This content helps you "
+"communicate the business and technical value of the Windows Embedded "
+"operating systems to a broad spectrum of customers."
+msgstr ""
+"<a href=\"http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage."
+"aspx\" target=\"_blank\">Windows Embedded</a>: este contenido le ayudará a "
+"transmitir el valor empresarial y técnico de los sistemas operativos Windows "
+"Embedded a un amplio abanico de clientes."
+
+#: 11
+#, fuzzy
+msgid ""
+"<a href=\"http://www.oemtrainingzone.com/\" target=\"_blank\">Distributor "
+"Training Zone</a> – This central location provides SMSP and OEM distributor "
+"readiness materials and courses and also includes Channel Incentives "
+"programs and the latest news."
+msgstr ""
+"<a href=\"http://www.oemtrainingzone.com/\" target=\"_blank\">Zona de "
+"aprendizaje para distribuidores</a>: esta ubicación central contiene cursos "
+"y materiales para impulsar las ventas destinados a los distribuidores SMSP y "
+"OEM. Incluye también los programas de incentivos de canal y las últimas "
+"noticias."
+
+#: 12
+msgctxt "12"
+msgid ""
+msgstr ""
+
+#: 13
+#, fuzzy
+msgid "OEM Training Zone Meets a Variety of Needs"
+msgstr ""
+"La Zona de aprendizaje para OEM da respuesta a un gran número de necesidades"
+
+#: 14
+#, fuzzy
+msgid ""
+"The OEM Training Zone offers many different resources to meet your business "
+"goals:"
+msgstr ""
+"La Zona de aprendizaje para OEM ofrece una gran variedad de recursos que le "
+"permitirán alcanzar sus objetivos empresariales:"
+
+#: 15
+#, fuzzy
+msgid "Goal"
+msgstr "Objetivo"
+
+#: 16
+#, fuzzy
+msgid "OEM Training Zone Resources"
+msgstr "Recursos de la Zona de aprendizaje para OEM"
+
+#: 17
+#, fuzzy
+msgid "<strong>Learn</strong>"
+msgstr "<strong>Aprenda</strong>"
+
+#: 18
+#, fuzzy
+msgid ""
+"Take short courses with assessments, watch videos, and view presentation "
+"decks to understand product value propositions, engage customers, and ignite "
+"sales."
+msgstr ""
+"Realice pequeños cursos con evaluaciones, consulte vídeos y vea "
+"presentaciones para conocer las propuestas de valor de los productos, captar "
+"clientes y ampliar las ventas."
+
+#: 19
+#, fuzzy
+msgid "<strong>Sell</strong>"
+msgstr "<strong>Venda</strong>"
+
+#: 20
+#, fuzzy
+msgid ""
+"Understand how to position Microsoft products and solutions against the "
+"competition and get the strategic speaking points you need to help you close "
+"sales."
+msgstr ""
+"Conozca cómo situar los productos y soluciones de Microsoft respecto a los "
+"de la competencia y descubra los puntos de referencia estratégicos que "
+"necesita para cerrar las ventas."
+
+#: 21
+#, fuzzy
+msgid "<strong>Grow</strong>"
+msgstr "<strong>Obtenga mejores resultados</strong>"
+
+#: 22
+#, fuzzy
+msgid ""
+"Better identify opportunities to drive incremental sales and establish "
+"preference for your hardware and Microsoft software."
+msgstr ""
+"Identifique mejor las oportunidades para incrementar las ventas y establezca "
+"preferencias en su hardware y el software de Microsoft."
+
+#: 23
+#, fuzzy
+msgid ""
+"Many training and readiness resources are available in the OEM Training "
+"Zone, including:"
+msgstr ""
+"Muchos de los recursos de aprendizaje y preparación están disponibles en la "
+"Zona de aprendizaje para OEM, por ejemplo:"
+
+#: 24
+msgctxt "24"
+msgid ""
+msgstr ""
+
+#: 25
+#, fuzzy
+msgid "How to Demo Office 2010 For Your Customers"
+msgstr "Cómo mostrar Office 2010 a sus clientes"
+
+#: 26
+#, fuzzy
+msgid "Why Sell Windows 7"
+msgstr "Por qué vender Windows 7"
+
+#: 27
+#, fuzzy
+msgid "Cloud Services"
+msgstr "Servicios en la nube"
+
+#: 28
+#, fuzzy
+msgid "Windows SBS 2011 Technical Training"
+msgstr "Curso técnico de Windows SBS 2011"
+
+#: 29
+#, fuzzy
+msgid "Tips and Tricks for Windows 7 and Office 2010"
+msgstr "Sugerencias y trucos de Windows 7 y Office 2010"
+
+#: 30
+#, fuzzy
+msgid "Selling Office 2010 with New PCs"
+msgstr "Vender Office 2010 con equipos nuevos"
+
+#: 31
+msgid "Videos that highlight individual features of Office 2010"
+msgstr ""
+
+#: 32
+msgid ""
+"Visit the <a href=\"http://www.oemtrainingzone.com/\" target=\"_blank\">OEM "
+"Training Zone</a>."
+msgstr ""
+
+#: 33
+msgid "OEM Training Zone"
+msgstr ""
+
+#: 34
+msgid ""
+"The OEM Training Zone is the central destination for product training and "
+"readiness materials created specifically for Microsoft OEM partners."
+msgstr ""
+
+#: 35
+msgid ""
+"The OEM Training Zone is the central destination for product training and "
+"readiness materials that have been created specifically for Microsoft OEM "
+"partners."
+msgstr ""
+
+#: 36
+#, fuzzy
+msgctxt "36"
+msgid "Styles"
+msgstr "Estilos"
+
+#: 37
+#, fuzzy
+msgid ""
+"Mantenga actualizado el contenido de marketing de su sitio web con los "
+"servicios de redifusión de marketing digital de Microsoft."
+msgstr ""
+"Mantenga actualizado el contenido de marketing de su sitio web con los "
+"servicios de redifusión de marketing digital de Microsoft."
+
+#: 38
+msgid ""
+"Use Microsoft marketing syndication to place compelling marketing and "
+"product information tied to Microsoft’s global campaigns on your website."
+msgstr ""
+
+#: 39
+msgctxt "39"
+msgid ""
+msgstr ""
+
+#: 40
+msgid ""
+"The content is dynamically served, localized, and updated in real time "
+"across participating partner sites."
+msgstr ""
+
+#: 41
+msgctxt "41"
+msgid ""
+msgstr ""
+
+#: 42
+msgid ""
+"Syndication is an <strong>easy</strong> and <strong>cost effective</strong> "
+"way for you to <strong>generate leads and drive demand and sales</strong>, "
+"while ensuring that you always have the latest content on your website.Once "
+"you’ve subscribed, changes made to the content are automatically updated on "
+"your site, saving you time and effort.In addition, <strong>robust partner "
+"specific reporting</strong> is available to help you measure how the content "
+"is being consumed by your customers."
+msgstr ""
+
+#: 43
+msgid ""
+"This year we are adding <strong>Device Marketing</strong> content to "
+"Microsoft Digital Commerce and Campaign Network (DCCN) to help you drive "
+"demand for the Windows 8 devices you sell."
+msgstr ""
+
+#: 44
+msgctxt "44"
+msgid ""
+msgstr ""
+
+#: 45
+msgid ""
+"Content is now available in English for Acer, ASUS, Dell, HP, Lenovo, "
+"Panasonic, Sony, Samsung, and Toshiba devices, with more coming soon."
+msgstr ""
+
+#: 46
+msgid "<strong>Partner Opportunity</strong>"
+msgstr ""
+
+#: 47
+msgctxt "47"
+msgid ""
+"<strong>Reach and engage customers </strong>with rich marketing content "
+"delivered directly to your website with minimal ongoing maintenance"
+msgstr ""
+
+#: 48
+msgctxt "48"
+msgid ""
+"<strong>Reach and engage customers </strong>with rich marketing content "
+"delivered directly to your website with minimal ongoing maintenance"
+msgstr ""
+
+#: 49
+msgid ""
+"<strong>Educate customers </strong>by providing comprehensive Microsoft "
+"product and solution information"
+msgstr ""
+
+#: 50
+msgid "<strong>Accelerate your sales</strong>"
+msgstr ""
+
+#: 51
+msgid ""
+"Partners who have participated in marketing syndication have shown "
+"<strong>34 percent more revenue</strong> (on average) and grew <strong>five "
+"times faster</strong> than partners who did not participate.<sup>1</sup>"
+msgstr ""
+
+#: 52
+msgctxt "52"
+msgid ""
+msgstr ""
+
+#: 53
+#, fuzzy
+msgid ""
+"Worldwide partners can find ready-to-use banners and microsites through the "
+"<a href=\"http://www.msdccn.com/\" target=\"_blank\">Digital Commerce and "
+"Campaign Network</a> (DCCN), along with the latest co-brandable marketing "
+"materials to download."
+msgstr ""
+"Los partners de todo el mundo pueden encontrar sitios con banners y "
+"micrositios listos para usar a través del servicio de redifusión de "
+"marketing <a href=\"http://www.msdccn.com/\" target=\"_blank\">Red de difusión "
+"de contenidos y campañas online</a> (DCCN), así como descargar el último "
+"material de marketing de marca compartida."
+
+#: 54
+msgctxt "54"
+msgid ""
+msgstr ""
+
+#: 55
+msgid ""
+"U.S. partners can access marketing content, web banners, and other resources "
+"at the <a href=\"http://www.oemsalescenter.com/\" target=\"_blank\">OEM Sales "
+"Center</a>."
+msgstr ""
+
+#: 56
+msgctxt "56"
+msgid ""
+msgstr ""
+
+#: 57
+msgid ""
+"<strong>Register for <a href=\"http://www.msdccn.com/\" "
+"target=\"_blank\">Microsoft DCCN</a> today</strong> and join the community of "
+"worldwide partners who are using Microsoft DCCN to increase awareness and "
+"demand."
+msgstr ""
+
+#: 58
+msgctxt "58"
+msgid ""
+msgstr ""
+
+#: 59
+msgid "New Content Available on Microsoft DCCN"
+msgstr ""
+
+#: 60
+msgctxt "60"
+msgid ""
+msgstr ""
+
+#: 61
+msgid ""
+"<strong>Device Marketing </strong>– Device selling is easy with Microsoft "
+"DCCN."
+msgstr ""
+
+#: 62
+msgctxt "62"
+msgid ""
+msgstr ""
+
+#: 63
+msgid ""
+"Leverage the new Device Marketing content on Microsoft DCCN to drive demand "
+"for the devices you sell."
+msgstr ""
+
+#: 64
+msgctxt "64"
+msgid ""
+msgstr ""
+
+#: 65
+msgid ""
+"Go to DCCN, create a custom rotation for the devices you sell, and syndicate "
+"this content on your website."
+msgstr ""
+
+#: 66
+msgctxt "66"
+msgid ""
+msgstr ""
+
+#: 67
+msgid ""
+"Content is available now in English for Acer, ASUS, Dell, HP, Lenovo, "
+"Panasonic, Sony, Samsung, and Toshiba devices, with more coming in the next "
+"few months."
+msgstr ""
+
+#: 68
+msgid ""
+"<strong>Get2Modern </strong>- The Get2Modern campaign is now available on "
+"DCCN."
+msgstr ""
+
+#: 69
+msgctxt "69"
+msgid ""
+msgstr ""
+
+#: 70
+msgid ""
+"Syndicate this content to encourage customers to switch to Windows 8 Pro and "
+"the new Office."
+msgstr ""
+
+#: 71
+msgctxt "71"
+msgid ""
+msgstr ""
+
+#: 72
+msgid ""
+"Innovation in both Windows 8 Pro PCs and the new Office can help customers "
+"with enhanced security, mobility, productivity, and flexibility for their "
+"business - great reasons to get modern."
+msgstr ""
+
+#: 73
+msgid "Microsoft DCCN 2.0"
+msgstr ""
+
+#: 74
+msgctxt "74"
+msgid ""
+msgstr ""
+
+#: 75
+msgid ""
+"<img class=\"screenshot\" alt=\"DCCN landing page screenshot\" "
+"src=\"/oem/PublishingImages/DCCN_Landing_Page_550x241.jpg\" />"
+msgstr ""
+
+#: 76
+msgctxt "76"
+msgid ""
+msgstr ""
+
+#: 77
+msgid "Microsoft DCCN includes the features you need:"
+msgstr ""
+
+#: 78
+msgctxt "78"
+msgid ""
+msgstr ""
+
+#: 79
+msgid ""
+"<strong>Easy process</strong> to begin syndicating – select the campaigns "
+"you want, pick up the HTML code, and place it on your website."
+msgstr ""
+
+#: 80
+msgctxt "80"
+msgid ""
+msgstr ""
+
+#: 81
+msgid "It’s that easy!"
+msgstr ""
+
+#: 82
+msgid ""
+"Many campaigns have Contact Us or Download Now buttons to <strong>generate "
+"leads</strong> or <strong>drive active selling</strong> on your website"
+msgstr ""
+
+#: 83
+msgid ""
+"Create your own <strong>custom rotation</strong> of banners to drive your "
+"business results"
+msgstr ""
+
+#: 84
+msgid ""
+"<strong>Saved web campaigns</strong> enables you to easily update the "
+"campaign content on your website with a single click (no need to engage the "
+"IT department)"
+msgstr ""
+
+#: 85
+msgid ""
+"Customize the <strong>downloadable marketing materials</strong> to use in "
+"your marketing efforts"
+msgstr ""
+
+#: 86
+msgid ""
+"<strong>Robust web-based reporting</strong> so that you can measure impact "
+"and ROI"
+msgstr ""
+
+#: 87
+msgid ""
+"To begin using Microsoft DCCN, visit <a href=\"http://www.msdccn.com/\" "
+"target=\"_blank\">www.msdccn.com</a> and register today."
+msgstr ""
+
+#: 88
+msgctxt "88"
+msgid ""
+msgstr ""
+
+#: 89
+#, fuzzy
+msgid "Microsoft DCCN resources"
+msgstr "Recursos de Microsoft DCCN"
+
+#: 90
+#, fuzzy
+msgid ""
+"Watch the new Microsoft Digital Commerce and Campaign Network videos to "
+"learn how easy it is to get started with Microsoft DCCN."
+msgstr ""
+"Vea los nuevos vídeos de la Red de difusión de contenido y campañas online "
+"(DCCN) y descubra lo sencillo que es empezar a trabajar con Microsoft DCCN."
+
+#: 91
+msgctxt "91"
+msgid ""
+msgstr ""
+
+#: 92
+#, fuzzy
+msgid "Video"
+msgstr "Vídeo"
+
+#: 93
+msgctxt "93"
+msgid ""
+msgstr ""
+
+#: 94
+#, fuzzy
+msgctxt "94"
+msgid "Description"
+msgstr "Descripción"
+
+#: 95
+msgctxt "95"
+msgid ""
+msgstr ""
+
+#: 96
+#, fuzzy
+msgid ""
+"<a title=\"Microsoft DCCN Overview - .wmv 8.98 MB\" href=\"http://oem.microsoft"
+".com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Vide"
+"o.wmv\" target=\"_blank\">Microsoft DCCN Overview"
+msgstr ""
+"<a title=\"Microsoft DCCN Overview - .wmv 8,98 MB\" href=\"http://oem.microsoft"
+".com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Vide"
+"o.wmv\" target=\"_blank\">Microsoft DCCN Overview"
+
+#: 97
+msgctxt "97"
+msgid ""
+msgstr ""
+
+#: 98
+msgid ""
+"<img src=\"/oem/PublishingImages/Microsoft_DCCN_2.0_Overview_Video.jpg\" "
+"alt=\"\" />"
+msgstr ""
+
+#: 99
+msgctxt "99"
+msgid "</a>"
+msgstr ""
+
+#: 100
+#, fuzzy
+msgid "<span class=\"fileinfo\">.wmv 8.98 MB</span>"
+msgstr "<span class=\"fileinfo\">.wmv 8,98 MB</span>"
+
+#: 101
+msgctxt "101"
+msgid ""
+msgstr ""
+
+#: 102
+#, fuzzy
+msgid ""
+"Watch this video to understand what Microsoft DCCN is and how you can use it "
+"to educate customers and accelerate your sales."
+msgstr ""
+"Vea este vídeo para conocer Microsoft DCCN y cómo se puede usar para "
+"informar a los clientes y acelerar las ventas."
+
+#: 103
+msgctxt "103"
+msgid ""
+msgstr ""
+
+#: 104
+#, fuzzy
+msgid ""
+"<a title=\"Implementing Microsoft DCCN on Your Website - .wmv 7.67 MB\" href=\""
+"http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How"
+"_to_Implement_Syndication_Video.wmv\" target=\"_blank\">Implementing Microsoft "
+"DCCN on Your Website"
+msgstr ""
+"<a title=\"Implementing Microsoft DCCN on Your Website - .wmv 7,67 MB\" href=\""
+"http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How"
+"_to_Implement_Syndication_Video.wmv\" target=\"_blank\">Implementing Microsoft "
+"DCCN on Your Website"
+
+#: 105
+msgctxt "105"
+msgid ""
+msgstr ""
+
+#: 106
+msgid ""
+"<img "
+"src=\"/oem/PublishingImages/DCCN_2.0_How_to_Implement_Syndication_Video.jpg\" "
+"alt=\"\" />"
+msgstr ""
+
+#: 107
+msgctxt "107"
+msgid "</a>"
+msgstr ""
+
+#: 108
+#, fuzzy
+msgid "<span class=\"fileinfo\">.wmv 7.67 MB</span>"
+msgstr "<span class=\"fileinfo\">.wmv 7,67 MB</span>"
+
+#: 109
+msgctxt "109"
+msgid ""
+msgstr ""
+
+#: 110
+#, fuzzy
+msgid ""
+"Watch this video to learn how to select campaigns on Microsoft DCCN, choose "
+"a banner size, generate the HTML code, and make the campaigns live on your "
+"website."
+msgstr ""
+"Vea este vídeo para obtener información sobre cómo seleccionar campañas en "
+"Microsoft DCCN, elegir el tamaño del banner, generar el código HTML y dar "
+"vida a las campañas en su sitio web."
+
+#: 111
+msgctxt "111"
+msgid ""
+msgstr ""
+
+#: 112
+#, fuzzy
+msgid "Use these resources to learn about Microsoft DCCN."
+msgstr "use estos recursos para obtener información sobre Microsoft DCCN."
+
+#: 113
+msgctxt "113"
+msgid ""
+msgstr ""
+
+#: 114
+#, fuzzy
+msgid "Resource"
+msgstr "Recurso"
+
+#: 115
+msgctxt "115"
+msgid ""
+msgstr ""
+
+#: 116
+#, fuzzy
+msgctxt "116"
+msgid "Description"
+msgstr "Descripción"
+
+#: 117
+msgctxt "117"
+msgid ""
+msgstr ""
+
+#: 118
+#, fuzzy
+msgid ""
+"<a title=\"Microsoft DCCN 1 Pager - .pdf 553 KB\" href=\"http://oem.microsoft.c"
+"om/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf\" "
+"target=\"_blank\">Microsoft DCCN 1 Pager"
+msgstr ""
+"<a title=\"Microsoft DCCN 1 Pager - .pdf 553 KB\" href=\"http://oem.microsoft.c"
+"om/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf\" "
+"target=\"_blank\">Microsoft DCCN 1 Pager"
+
+#: 119
+msgctxt "119"
+msgid ""
+msgstr ""
+
+#: 120
+msgid ""
+"<img src=\"/oem/PublishingImages/DCCN_2.0_Syndication_1_Pager.jpg\" alt=\"\" />"
+msgstr ""
+
+#: 121
+msgctxt "121"
+msgid "</a>"
+msgstr ""
+
+#: 122
+#, fuzzy
+msgid "<span class=\"fileinfo\">.pdf 553 KB</span>"
+msgstr "<span class=\"fileinfo\">.pdf 553 KB</span>"
+
+#: 123
+msgctxt "123"
+msgid ""
+msgstr ""
+
+#: 124
+msgid ""
+"View this one-page summary for an overview of what marketing syndication is "
+"and the partner opportunity with Microsoft DCCN."
+msgstr ""
+
+#: 125
+msgctxt "125"
+msgid ""
+msgstr ""
+
+#: 126
+msgid ""
+"<a title=\"Microsoft DCCN Overview and Opportunity - .pptx 5.45 MB\" href=\"htt"
+"p://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndic"
+"ation_Partner_Ready_Deck.pptx\" target=\"_blank\">Microsoft DCCN Overview and "
+"Opportunity"
+msgstr ""
+
+#: 127
+msgctxt "127"
+msgid ""
+msgstr ""
+
+#: 128
+msgid ""
+"<img src=\"/oem/PublishingImages/DCCN_2.0_Syndication_Partner_Ready_Deck.jpg\" "
+"alt=\"\" />"
+msgstr ""
+
+#: 129
+msgctxt "129"
+msgid "</a>"
+msgstr ""
+
+#: 130
+msgid "<span class=\"fileinfo\">.pptx 5.45 MB</span>"
+msgstr ""
+
+#: 131
+msgctxt "131"
+msgid ""
+msgstr ""
+
+#: 132
+msgid ""
+"View this PowerPoint presentation for details on what marketing syndication "
+"is and how you can use Microsoft DCCN to educate customers, increase demand, "
+"and accelerate your sales."
+msgstr ""
+
+#: 133
+msgctxt "133"
+msgid ""
+msgstr ""
+
+#: 134
+msgid ""
+"<a title=\"Microsoft DCCN Technical FAQs - .docx 35.8 KB\" href=\"http://oem.mi"
+"crosoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_Technical_"
+"Partner_FAQs_March_2013.docx\" target=\"_blank\">Microsoft DCCN Technical FAQs"
+msgstr ""
+
+#: 135
+msgctxt "135"
+msgid ""
+msgstr ""
+
+#: 136
+msgid ""
+"<img src=\"/oem/PublishingImages/Microsoft_DCCN_Technical_Partner_FAQs_March_"
+"2013.jpg\" alt=\"\" />"
+msgstr ""
+
+#: 137
+msgctxt "137"
+msgid "</a>"
+msgstr ""
+
+#: 138
+#, fuzzy
+msgid "<span class=\"fileinfo\">.docx 35.8 KB</span>"
+msgstr "<span class=\"fileinfo\">.docx 35,8 KB</span>"
+
+#: 139
+msgctxt "139"
+msgid ""
+msgstr ""
+
+#: 140
+#, fuzzy
+msgid "Read this document for more detailed information on Microsoft DCCN."
+msgstr ""
+"Lea este documento para obtener información más detallada sobre Microsoft "
+"DCCN."
+
+#: 141
+msgctxt "141"
+msgid ""
+msgstr ""
+
+#: 142
+#, fuzzy
+msgid ""
+"<a title=\"Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB\" href=\"http://o"
+"em.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Q"
+"uick_Start_Guide.pdf\" target=\"_blank\">Microsoft DCCN 2.0 Quick Start Guide"
+msgstr ""
+"<a title=\"Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB\" href=\"http://o"
+"em.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Q"
+"uick_Start_Guide.pdf\" target=\"_blank\">Microsoft DCCN 2.0 Quick Start Guide"
+
+#: 143
+msgctxt "143"
+msgid ""
+msgstr ""
+
+#: 144
+msgid ""
+"<img src=\"/oem/PublishingImages/Microsoft_DCCN_2.0_Quick_Start_Guide.jpg\" "
+"alt=\"\" />"
+msgstr ""
+
+#: 145
+msgctxt "145"
+msgid "</a>"
+msgstr ""
+
+#: 146
+#, fuzzy
+msgid "<span class=\"fileinfo\">.pdf 560 KB</span>"
+msgstr "<span class=\"fileinfo\">.pdf 560 KB</span>"
+
+#: 147
+msgctxt "147"
+msgid ""
+msgstr ""
+
+#: 148
+#, fuzzy
+msgid ""
+"Read this document for a quick overview on how to use Microsoft DCCN 2.0."
+msgstr ""
+"Lea este documento para ver una introducción rápida sobre el uso de "
+"Microsoft DCCN 2.0."
+
+#: 149
+msgctxt "149"
+msgid ""
+msgstr ""
+
+#: 150
+#, fuzzy
+msgid "Technical Support"
+msgstr "Soporte técnico"
+
+#: 151
+#, fuzzy
+msgid ""
+"For general questions about the Microsoft DCCN program, please contact <a "
+"href=\"mailto:DCCNHelp@Microsoft.com\">DCCNHelp@Microsoft.com</a>."
+msgstr ""
+"Para resolver preguntas generales sobre el programa DCCN, póngase en "
+"contacto con <a "
+"href=\"mailto:DCCNHelp@Microsoft.com\">DCCNHelp@Microsoft.com</a>."
+
+#: 152
+msgctxt "152"
+msgid ""
+msgstr ""
+
+#: 153
+#, fuzzy
+msgid ""
+"If you have technical questions or need help implementing Microsoft DCCN, "
+"please contact Customer Support at:"
+msgstr ""
+"Si tiene dudas técnicas o necesita ayuda para implementar Microsoft DCCN, "
+"póngase en contacto con el Servicio de soporte técnico en:"
+
+#: 154
+msgctxt "154"
+msgid ""
+msgstr ""
+
+#: 155
+#, fuzzy
+msgid "<strong>Americas/Asia Pacific</strong>"
+msgstr "<strong>America/Asia-Pacífico</strong>"
+
+#: 156
+#, fuzzy
+msgctxt "156"
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#: 157
+msgctxt "157"
+msgid ""
+msgstr ""
+
+#: 158
+msgid "+1.949.399.8788"
+msgstr ""
+
+#: 159
+#, fuzzy
+msgctxt "159"
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#: 160
+msgctxt "160"
+msgid ""
+msgstr ""
+
+#: 161
+#, fuzzy
+msgid "<a href=\"mailto:CCSsupport@CBSi.com\">CCSsupport@CBSi.com</a>"
+msgstr "<a href=\"mailto:CCSsupport@CBSi.com\">CCSsupport@CBSi.com</a>"
+
+#: 162
+msgctxt "162"
+msgid ""
+msgstr ""
+
+#: 163
+#, fuzzy
+msgid "<strong>Europe</strong>"
+msgstr "<strong>Europa</strong>"
+
+#: 164
+#, fuzzy
+msgctxt "164"
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#: 165
+msgctxt "165"
+msgid ""
+msgstr ""
+
+#: 166
+msgid "+41.21.943.03.78"
+msgstr ""
+
+#: 167
+#, fuzzy
+msgctxt "167"
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#: 168
+msgctxt "168"
+msgid ""
+msgstr ""
+
+#: 169
+#, fuzzy
+msgid "<a href=\"mailto:CCSsupportEU@CBSi.com\">CCSsupportEU@CBSi.com</a>"
+msgstr "<a href=\"mailto:CCSsupportEU@CBSi.com\">CCSsupportEU@CBSi.com</a>"
+
+#: 170
+msgctxt "170"
+msgid ""
+msgstr ""
+
+#: 171
+#, fuzzy
+msgid "<sup>1</sup>Source:"
+msgstr "<sup>1</sup>Fuente:"
+
+#: 172
+msgctxt "172"
+msgid ""
+msgstr ""
+
+#: 173
+#, fuzzy
+msgid "Crimson Analysts—Crimson Consulting Group, Los Altos, California."
+msgstr "Crimson Analysts—Crimson Consulting Group, Los Altos, California."
+
+#: 174
+msgctxt "174"
+msgid ""
+msgstr ""
+
+#: 175
+#, fuzzy
+msgid "Syndication Resources from Microsoft"
+msgstr "Recursos de redifusión de Microsoft"
+
+#: 176
+#, fuzzy
+msgid "OEM partners:"
+msgstr "Partners OEM:"
+
+#: 177
+msgctxt "177"
+msgid ""
+msgstr ""
+
+#: 178
+#, fuzzy
+msgid ""
+"Keep marketing content up to date on your website by using automated "
+"syndication services from Microsoft."
+msgstr ""
+"Mantenga actualizado el contenido de marketing de su sitio web con los "
+"servicios automatizados de redifusión de Microsoft."
+
+#: 179
+#, fuzzy
+msgid "Syndication banner"
+msgstr "Banner de retransmisión"
+
+#: 180
+#, fuzzy
+msgctxt "180"
+msgid "Styles"
+msgstr "Estilos"
+
+#: 181
+#, fuzzy
+msgid ""
+"If you have experienced any one of the following, you may be eligible to "
+"receive replacement media:"
+msgstr ""
+"Si ha sufrido alguna de las situaciones siguientes, puede tener derecho a "
+"recibir medios de sustitución:"
+
+#: 182
+#, fuzzy
+msgid "CD(s) received will not properly install"
+msgstr "Los CD-ROM recibidos no se instalan correctamente."
+
+#: 183
+#, fuzzy
+msgid "CD(s) noticeably damaged on receipt"
+msgstr "Los CD-ROM están dañados visiblemente al recibirlos."
+
+#: 184
+#, fuzzy
+msgid "CD(s) damaged during preinstallation process"
+msgstr "Los CD-ROM se han dañado durante el proceso de preinstalación."
+
+#: 185
+#, fuzzy
+msgid "Based on your feedback, this program has been designed to:"
+msgstr ""
+"En función de los comentarios que ustedes nos han aportado, este programa se "
+"ha diseñado para:"
+
+#: 186
+#, fuzzy
+msgid ""
+"Eliminate the need for system builders to contact distributors for "
+"replacement media, and instead enable fulfillment directly from Microsoft."
+msgstr ""
+"Eliminar la necesidad de que los ensambladores de equipos se pongan en "
+"contacto con los distribuidores para obtener medios de sustitución y, en "
+"cambio, puedan realizar el pedido directamente a Microsoft."
+
+#: 187
+#, fuzzy
+msgid ""
+"Simplify and streamline the replacement process and eliminate the cost to "
+"system builders."
+msgstr ""
+"Simplificar y racionalizar el proceso de sustitución y eliminar el coste "
+"para los ensambladores de equipos."
+
+#: 188
+#, fuzzy
+msgid ""
+"Media replacement is available to system builders in all countries "
+"worldwide, with the exception of China."
+msgstr ""
+"La sustitución de medios está a disposición de los ensambladores de equipos "
+"de todos los países del mundo, excepto China."
+
+#: 189
+msgctxt "189"
+msgid ""
+msgstr ""
+
+#: 190
+#, fuzzy
+msgid ""
+"The following OEM software versions are supported for replacement under this "
+"program:"
+msgstr ""
+"Las siguientes versiones de software para OEM se admiten para sustitución al "
+"amparo de este programa:"
+
+#: 191
+#, fuzzy
+msgid "Windows 8 Pro"
+msgstr "Windows 8 Pro"
+
+#: 192
+#, fuzzy
+msgid "Windows 8 Standard"
+msgstr "Windows 8 Standard"
+
+#: 193
+msgid "Windows 7 - Professional, Home Basic, Home Premium, Ultimate"
+msgstr ""
+
+#: 194
+msgid "Windows Home Server"
+msgstr ""
+
+#: 195
+msgid "Windows Server 2008 - Standard, Enterprise, Datacenter"
+msgstr ""
+
+#: 196
+#, fuzzy
+msgid "Windows Small Business Server 2011 Essentials"
+msgstr "Windows Small Business Server 2011 Essentials"
+
+#: 197
+#, fuzzy
+msgid "Windows Small Business Server 2011 Premium Add On"
+msgstr "Windows Small Business Server 2011 Premium Add On"
+
+#: 198
+msgid "Windows Small Business Server 2008 - Standard and Premium"
+msgstr ""
+
+#: 199
+msgid "Windows Server for Windows Essential Server 2008"
+msgstr ""
+
+#: 200
+msgid "Windows HPC Server 2008"
+msgstr ""
+
+#: 201
+msgid "HPC Pack 2008"
+msgstr ""
+
+#: 202
+msgid "Windows SQL Server 2008 for Small Business"
+msgstr ""
+
+#: 203
+msgid ""
+"System Center Data Protection Manager Server 2007 - Standard and Enterprise"
+msgstr ""
+
+#: 204
+msgid "Windows 8 SL (Single language)"
+msgstr ""
+
+#: 205
+msgid "Windows PRO GGK for Win 7 and 8"
+msgstr ""
+
+#: 206
+msgid "<strong>Media Replacement Ordering Instructions</strong>"
+msgstr ""
+
+#: 207
+msgid ""
+"If you are a system builder and would like to request replacement media "
+"listed above, please click on and complete the Media Replacement Form below."
+msgstr ""
+
+#: 208
+msgctxt "208"
+msgid ""
+msgstr ""
+
+#: 209
+#, fuzzy
+msgid ""
+"Once you have provided the required information, including Certificate of "
+"Authenticity (COA) details, a submission confirmation message will be sent "
+"to you via email."
+msgstr ""
+"Cuando haya proporcionado la información necesaria, incluidos los detalles "
+"del Certificado de autenticidad (COA), se le enviará por correo electrónico "
+"un mensaje de confirmación del envío."
+
+#: 210
+#, fuzzy
+msgid ""
+"Please click here to access the <a class=\"lock\" "
+"href=\"/oem/en/pages/dmt.aspx?dmt=mr\">Media Replacement Form</a>."
+msgstr ""
+"Haga clic aquí para tener acceso al <a class=\"lock\" "
+"href=\"/oem/en/pages/dmt.aspx?dmt=mr\">formulario de sustitución de "
+"medios</a>."
+
+#: 211
+msgctxt "211"
+msgid ""
+msgstr ""
+
+#: 212
+#, fuzzy
+msgid "OEM System Builder Media Replacement"
+msgstr "Sustitución de medios para ensambladores de equipos OEM"
+
+#: 213
+#, fuzzy
+msgctxt "213"
+msgid "System builders:"
+msgstr "Ensambladores de equipos:"
+
+#: 214
+msgctxt "214"
+msgid ""
+msgstr ""
+
+#: 215
+#, fuzzy
+msgid ""
+"Media fulfillment for the 2007 Microsoft Office OPK is no longer available."
+msgstr ""
+"Ya no hay medios de sustitución disponibles para el OPK de 2007 Microsoft "
+"Office System."
+
+#: 216
+msgctxt "216"
+msgid ""
+msgstr ""
+
+#: 217
+#, fuzzy
+msgid "Learn which OEM software versions are supported for replacement."
+msgstr ""
+"Infórmese de qué versiones de software para OEM se admiten para sustitución."
+
+#: 218
+#, fuzzy
+msgid "Have you received damaged Microsoft OEM System Builder software media?"
+msgstr ""
+"¿Ha recibido algún medio de software para ensambladores de equipos OEM de "
+"Microsoft deteriorado?"
+
+#: 219
+msgctxt "219"
+msgid ""
+msgstr ""
+
+#: 220
+#, fuzzy
+msgid "Or, have you damaged your media during preinstallation?"
+msgstr "O bien, ¿se ha dañado el medio durante la preinstalación?"
+
+#: 221
+msgctxt "221"
+msgid ""
+msgstr ""
+
+#: 222
+#, fuzzy
+msgid ""
+"If you have, you may request replacement media online, provided you have a "
+"valid Certificate of Authenticity (COA)."
+msgstr ""
+"En caso afirmativo, puede solicitar medios de sustitución en línea, siempre "
+"y cuando disponga de un Certificado de autenticidad (COA) válido."
+
+#: 223
+#, fuzzy
+msgctxt "223"
+msgid "System builders:"
+msgstr "Ensambladores de equipos:"
+
+#: 224
+msgctxt "224"
+msgid ""
+msgstr ""
+
+#: 225
+#, fuzzy
+msgid ""
+"Learn how to download or order the 2007 Microsoft Office OPK Master Kit, "
+"either from Microsoft or from an authorized distributor."
+msgstr ""
+"obtenga información sobre cómo descargar o solicitar el kit maestro del OPK "
+"de 2007 Microsoft Office, ya sea a través de Microsoft o de un distribuidor "
+"autorizado."
+
+#: 226
+msgctxt "226"
+msgid ""
+msgstr ""
+
+#: 227
+#, fuzzy
+msgid ""
+"Also find out how to place an online order for replacements for damaged OEM "
+"System Builder software media."
+msgstr ""
+"Descubra también cómo realizar un pedido en línea a fin de obtener medios de "
+"sustitución de software para ensambladores de equipos OEM."
+
+#: 228
+#, fuzzy
+msgctxt "228"
+msgid "Styles"
+msgstr "Estilos"
+
+#: 229
+#, fuzzy
+msgid "Explore Your Options"
+msgstr "Explore sus opciones"
+
+#: 230
+#, fuzzy
+msgid ""
+"With the ROK software distribution model, you get convenience and "
+"flexibility."
+msgstr ""
+"Con el modelo de distribución de software de ROK, consigue comodidad y "
+"flexibilidad."
+
+#: 231
+msgctxt "231"
+msgid ""
+msgstr ""
+
+#: 232
+#, fuzzy
+msgid "<b>Purchasing Convenience and Flexibility</b>"
+msgstr "<b>Comodidad y flexibilidad de compra</b>"
+
+#: 233
+msgctxt "233"
+msgid ""
+msgstr ""
+
+#: 234
+#, fuzzy
+msgid ""
+"ROK is a fast and easy way to purchase server products—like RAM, hard "
+"drives, or processors—from your OEM distributor."
+msgstr ""
+"ROK es una manera rápida y sencilla de comprar productos de servidores (como "
+"memoria RAM, unidades de disco duro o procesadores) a su distribuidor OEM."
+
+#: 235
+msgctxt "235"
+msgid ""
+msgstr ""
+
+#: 236
+#, fuzzy
+msgid ""
+"You buy the installation-ready software kit as another server option using "
+"one price list."
+msgstr ""
+"El kit de software listo para instalación se adquiere como una opción de "
+"servidor más mediante una sola lista de precios."
+
+#: 237
+msgctxt "237"
+msgid ""
+msgstr ""
+
+#: 238
+#, fuzzy
+msgid "<b>Fast and Easy Deployment</b>"
+msgstr "<b>Implementación rápida y sencilla</b>"
+
+#: 239
+msgctxt "239"
+msgid ""
+msgstr ""
+
+#: 240
+#, fuzzy
+msgid ""
+"You get software that is tested, tuned, and certified with OEM-branded "
+"hardware, and is packaged with the latest drivers and customized "
+"installation tools for fast and easy deployment."
+msgstr ""
+"Conseguirá software probado, puesto a punto y certificado con hardware de la "
+"marca del OEM; además, el paquete incluye los controladores más recientes y "
+"herramientas de instalación personalizadas para realizar una implementación "
+"rápida y sencilla."
+
+#: 241
+msgctxt "241"
+msgid ""
+msgstr ""
+
+#: 242
+#, fuzzy
+msgid "How Are ROKs Sold?"
+msgstr "¿Cómo se venden los ROK?"
+
+#: 243
+#, fuzzy
+msgid ""
+"Resellers purchase the OEM-branded server and Microsoft Windows Server ROK "
+"software through an authorized distributor."
+msgstr ""
+"Los revendedores adquieren el servidor de la marca del OEM y el software del "
+"ROK de Microsoft Windows Server a través de un distribuidor autorizado."
+
+#: 244
+msgctxt "244"
+msgid ""
+msgstr ""
+
+#: 245
+#, fuzzy
+msgid ""
+"The reseller has the flexibility to purchase the server hardware and "
+"software together or separately."
+msgstr ""
+"El revendedor cuenta con flexibilidad para adquirir el hardware y el "
+"software de servidor juntos o por separado."
+
+#: 246
+#, fuzzy
+msgid ""
+"The distributor ships the ROK in the box with the server or separately (the "
+"distributor may also preinstall the software for a fee)."
+msgstr ""
+"El distribuidor envía el ROK en el embalaje del servidor o por separado "
+"(además, el distribuidor puede preinstalar el software cobrando la tarifa "
+"correspondiente)."
+
+#: 247
+#, fuzzy
+msgid ""
+"The reseller installs the operating system and the Windows COA before "
+"delivering the new server to the end user."
+msgstr ""
+"El revendedor instala el sistema operativo y el COA de Windows antes de "
+"entregar el servidor nuevo al usuario final."
+
+#: 248
+msgctxt "248"
+msgid ""
+msgstr ""
+
+#: 249
+msgid "Reseller Option Kits are available for:"
+msgstr ""
+
+#: 250
+msgctxt "250"
+msgid ""
+msgstr ""
+
+#: 251
+msgid "Windows Server 2012 R2 Datacenter"
+msgstr ""
+
+#: 252
+msgctxt "252"
+msgid ""
+msgstr ""
+
+#: 253
+msgid "Windows Server 2012 R2 Standard"
+msgstr ""
+
+#: 254
+msgctxt "254"
+msgid ""
+msgstr ""
+
+#: 255
+msgid "Windows Server 2012 R2 Essentials"
+msgstr ""
+
+#: 256
+msgctxt "256"
+msgid ""
+msgstr ""
+
+#: 257
+msgid "Windows Server 2012 R2 Foundation"
+msgstr ""
+
+#: 258
+msgctxt "258"
+msgid ""
+msgstr ""
+
+#: 259
+msgid "Windows Storage Server 2012 R2 Standard"
+msgstr ""
+
+#: 260
+msgctxt "260"
+msgid ""
+msgstr ""
+
+#: 261
+msgid "Windows Server 2012 Datacenter"
+msgstr ""
+
+#: 262
+msgctxt "262"
+msgid ""
+msgstr ""
+
+#: 263
+msgid "Windows Server 2012 Essentials"
+msgstr ""
+
+#: 264
+msgctxt "264"
+msgid ""
+msgstr ""
+
+#: 265
+#, fuzzy
+msgid ""
+"Windows Server 2012 Foundation (available only through direct OEM partners)"
+msgstr ""
+"Windows Server 2012 Foundation (disponible únicamente a través de partners "
+"OEM directos)"
+
+#: 266
+msgctxt "266"
+msgid ""
+msgstr ""
+
+#: 267
+#, fuzzy
+msgid "Windows Server 2012 Standard"
+msgstr "Windows Server 2012 Standard"
+
+#: 268
+msgctxt "268"
+msgid ""
+msgstr ""
+
+#: 269
+#, fuzzy
+msgid "Windows Storage Server 2012 Standard"
+msgstr "Windows Storage Server 2012 Standard"
+
+#: 270
+msgctxt "270"
+msgid ""
+msgstr ""
+
+#: 271
+#, fuzzy
+msgid "Windows Server 2008 R2 Datacenter"
+msgstr "Windows Server 2008 R2 Datacenter"
+
+#: 272
+msgctxt "272"
+msgid ""
+msgstr ""
+
+#: 273
+#, fuzzy
+msgid "Windows Server 2008 R2 Enterprise"
+msgstr "Windows Server 2008 R2 Enterprise"
+
+#: 274
+msgctxt "274"
+msgid ""
+msgstr ""
+
+#: 275
+#, fuzzy
+msgid ""
+"Windows Server 2008 R2 Foundation (available only through direct OEM "
+"partners)"
+msgstr ""
+"Windows Server 2008 R2 Foundation (disponible únicamente a través de "
+"partners OEM directos)"
+
+#: 276
+msgctxt "276"
+msgid ""
+msgstr ""
+
+#: 277
+msgid "Windows Server 2008 R2 Standard"
+msgstr ""
+
+#: 278
+msgctxt "278"
+msgid ""
+msgstr ""
+
+#: 279
+msgid "Windows Small Business Server 2011 Standard"
+msgstr ""
+
+#: 280
+msgctxt "280"
+msgid ""
+msgstr ""
+
+#: 281
+msgid "Microsoft Windows HPC Server 2008 R2"
+msgstr ""
+
+#: 282
+msgctxt "282"
+msgid ""
+msgstr ""
+
+#: 283
+msgid ""
+"Contact your authorized <a href=\"/oem/en/Pages/distributors.aspx\">Microsoft "
+"Distributor</a> for details."
+msgstr ""
+
+#: 284
+msgctxt "284"
+msgid ""
+msgstr ""
+
+#: 285
+#, fuzzy
+msgid "Contact a direct OEM partner:"
+msgstr "Póngase en contacto con un partner OEM directo:"
+
+#: 286
+msgctxt "286"
+msgid ""
+msgstr ""
+
+#: 287
+#, fuzzy
+msgid ""
+"<a href=\"http://www.acer.com/\" target=\"_blank\">Acer</a>, <a "
+"href=\"http://www.dell.com/WindowsServer2012\" target=\"_blank\">Dell</a>, <a "
+"href=\"http://www.fujitsu.com/\" target=\"_blank\">Fujitsu</a>, <a "
+"href=\"http://www.hds.com/go/microsoft\" target=\"_blank\">Hitachi</a>, <a "
+"href=\"http://www.hp.com/learn/ws2012\" target=\"_blank\">HP</a>, <a "
+"href=\"http://www-03.ibm.com/systems/in/x/how_to_buy.html\" "
+"target=\"_blank\">IBM</a>, <a href=\"http://www.nec.com/\" "
+"target=\"_blank\">NEC</a> for Windows Server Foundation."
+msgstr ""
+"<a href=\"http://www.acer.com/\" target=\"_blank\">Acer</a>, <a "
+"href=\"http://www.dell.com/WindowsServer2012\" target=\"_blank\">Dell</a>, <a "
+"href=\"http://www.fujitsu.com/\" target=\"_blank\">Fujitsu</a>, <a "
+"href=\"http://www.hds.com/go/microsoft\" target=\"_blank\">Hitachi</a>, <a "
+"href=\"http://www.hp.com/learn/ws2012\" target=\"_blank\">HP</a>, <a "
+"href=\"http://www-03.ibm.com/systems/in/x/how_to_buy.html\" "
+"target=\"_blank\">IBM</a>, <a href=\"http://www.nec.com/\" "
+"target=\"_blank\">NEC</a> para Windows Server Foundation."
+
+#: 288
+msgctxt "288"
+msgid ""
+msgstr ""
+
+#: 289
+#, fuzzy
+msgid "Reseller Option Kits for Servers"
+msgstr "Kits de opciones de revendedores para servidores"
+
+#: 290
+#, fuzzy
+msgid ""
+"The Reseller Option Kit (ROK) is a software distribution option that enables "
+"you to order tuned and certified Microsoft server software separately from "
+"OEM servers."
+msgstr ""
+"El kit de opciones de revendedores (ROK) es una opción de distribución de "
+"software que permite solicitar software de servidores de Microsoft puesto a "
+"punto y certificado por separado de los servidores OEM."
+
+#: 291
+#, fuzzy
+msgctxt "291"
+msgid ""
+"The Reseller Option Kit (ROK) is a software distribution option that enables "
+"you to order tuned and certified Microsoft server software separately from "
+"OEM servers so that you have more flexibility to deliver customized server "
+"solutions."
+msgstr ""
+"El kit de opciones de revendedores (ROK) es una opción de distribución de "
+"software que permite solicitar software de servidores de Microsoft puesto a "
+"punto y certificado por separado de los servidores OEM, para que el "
+"revendedor disponga de mayor flexibilidad para proporcionar soluciones de "
+"servidor personalizadas."
+
+#: 292
+msgctxt "292"
+msgid ""
+msgstr ""
+
+#: 293
+#, fuzzy
+msgid ""
+"Each ROK is another server option—like memory or hard drives—that you "
+"specify when you order servers."
+msgstr ""
+"Cada ROK es otra opción de servidor (como la memoria o las unidades de disco "
+"duro) que se especifica al solicitar los servidores."
+
+#: 294
+msgctxt "294"
+msgid ""
+msgstr ""
+
+#: 295
+#, fuzzy
+msgid ""
+"You can install the appropriate ROK on your customer’s preferred server "
+"model to address any combination of hardware and software."
+msgstr ""
+"Puede instalar el ROK apropiado en el modelo de servidor preferido del "
+"cliente, a fin de satisfacer cualquier combinación de hardware y software."
+
+#: 296
+#, fuzzy
+msgid ""
+"Your customers still enjoy the same great performance of OEM-tuned drivers "
+"for Microsoft software, because each ROK is carefully matched to a specific "
+"server brand.​​​​​​​​​​​​"
+msgstr ""
+"Los clientes continuarán disfrutando del mismo rendimiento excelente de los "
+"controladores puestos a punto por el OEM para el software de Microsoft, "
+"porque cada ROK está cuidadosamente adaptado a una marca de servidor "
+"concreta.​​​​​​​​​​​​"
+
+#: 297
+#, fuzzy
+msgctxt "297"
+msgid ""
+"The Reseller Option Kit (ROK) is a software distribution option that enables "
+"you to order tuned and certified Microsoft server software separately from "
+"OEM servers so that you have more flexibility to deliver customized server "
+"solutions."
+msgstr ""
+"El kit de opciones de revendedores (ROK) es una opción de distribución de "
+"software que permite solicitar software de servidores de Microsoft puesto a "
+"punto y certificado por separado de los servidores OEM, para que el "
+"revendedor disponga de mayor flexibilidad para proporcionar soluciones de "
+"servidor personalizadas."
+
+#: 298
+#, fuzzy
+msgctxt "298"
+msgid "Styles"
+msgstr "Estilos"
+
+#: 299
+msgctxt "299"
+msgid ""
+msgstr ""

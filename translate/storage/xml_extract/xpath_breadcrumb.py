@@ -59,7 +59,7 @@ class XPathBreadcrumb(object):
         self._xpath = []
         self._tagtally = [{}]
 
-    @accepts(Self(), unicode)
+    @accepts(Self(), str)
     def start_tag(self, tag):
         tally_dict = self._tagtally[-1]
         tally = tally_dict.get(tag, -1) + 1
@@ -75,7 +75,7 @@ class XPathBreadcrumb(object):
 
         def str_component(component):
             tag, pos = component
-            return u"%s[%d]" % (tag, pos)
-        return u"/".join(str_component(component) for component in self._xpath)
+            return "%s[%d]" % (tag, pos)
+        return "/".join(str_component(component) for component in self._xpath)
 
     xpath = property(_get_xpath)

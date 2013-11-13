@@ -8,7 +8,8 @@ __all__ = ['accepts', 'returns', 'yields', 'TypeCheckError', 'Length', 'Empty'
 import inspect
 import types
 
-from types import GeneratorType, FunctionType, MethodType, ClassType, TypeType
+#from types import GeneratorType, FunctionType, MethodType, ClassType, TypeType
+import collections
 
 # Controls whether typechecking is on (True) or off (False)
 enable_checking = True
@@ -61,8 +62,8 @@ class _TC_NestedError(_TC_Exception):
         try:
             return ", " + self.inner.error_message()
         except:
-            print "'%s'" % self.inner.message
-            raw_input()
+            print("'%s'" % self.inner.message)
+            input()
             raise
 
 class _TC_IndexError(_TC_NestedError):
@@ -264,7 +265,7 @@ _registered_types = set()
 _registered_hooks = dict([(_h, set()) for _h in _hooks])
 
 def _manage_registration(add_remove, reg_type):
-    if not isinstance(reg_type, (types.ClassType, types.TypeType)):
+    if not isinstance(reg_type, type):
         raise ValueError("registered types must be classes or types")
     
     valid = False
@@ -337,7 +338,7 @@ def calculate_type(obj):
         key_types = set()
         val_types = set()
         
-        for (k,v) in obj.items():
+        for (k,v) in list(obj.items()):
             key_types.add( calculate_type(k) )
             val_types.add( calculate_type(v) )
             
@@ -411,7 +412,7 @@ class Single(CheckType):
     name = "Single"
 
     def __init__(self, type):
-        if not isinstance(type, (types.ClassType, types.TypeType)):
+        if not isinstance(type, type):
             raise TypeError("Cannot type-check a %s" % type(type))
         else:
             self.type = type
@@ -437,7 +438,7 @@ class Single(CheckType):
         
     @classmethod
     def __typesig__(cls, obj):
-        if isinstance(obj, (types.ClassType, types.TypeType)):
+        if isinstance(obj, type):
             return Single(obj)
 
 ### Provide a way to enforce the empty-ness of iterators    
@@ -470,20 +471,20 @@ class Dict(CheckType):
         self._types = [key, val]
         
     def __typecheck__(self, func, to_check):
-        if not isinstance(to_check, types.DictType):
+        if not isinstance(to_check, dict):
             raise _TC_TypeError(to_check, self.type)
         
-        for (k, v) in to_check.items():
+        for (k, v) in list(to_check.items()):
             # Check the key
             try:
                 check_type(self.__check_key, func, k)
-            except _TC_Exception, inner:
+            except _TC_Exception as inner:
                 raise _TC_KeyError(k, inner)
 
             # Check the value
             try:
                 check_type(self.__check_val, func, v)
-            except _TC_Exception, inner:
+            except _TC_Exception as inner:
                 raise _TC_KeyValError(k, v, inner)
         
     def __eq__(self, other):
@@ -506,7 +507,7 @@ class Dict(CheckType):
         if isinstance(obj, dict):
             if len(obj) == 0:
                 return Empty(dict)
-            return Dict(obj.keys()[0], obj.values()[0])
+            return Dict(list(obj.keys())[0], list(obj.values())[0])
 
 ### Provide typechecking for the built-in list() type
 class List(CheckType):
@@ -539,7 +540,7 @@ class List(CheckType):
         for (i, val, type) in type_tuples:
             try:
                 check_type(type, func, val)
-            except _TC_Exception, e:
+            except _TC_Exception as e:
                 raise _TC_IndexError(i, e)
         
     def __eq__(self, other):
@@ -579,13 +580,13 @@ class Tuple(List):
     def __typecheck__(self, func, to_check):
         # Note that tuples of varying length (e.g., (int, int) and (int, int, int))
         # are separate types, not merely differences in length like lists
-        if not isinstance(to_check, types.TupleType) or len(to_check) != len(self._types):
+        if not isinstance(to_check, tuple) or len(to_check) != len(self._types):
             raise _TC_TypeError(to_check, self.type)
 
         for (i, (val, type)) in enumerate(zip(to_check, self._types)):
             try:
                 check_type(type, func, val)
-            except _TC_Exception, inner:
+            except _TC_Exception as inner:
                 raise _TC_IndexError(i, inner)
         
     @classmethod
@@ -616,9 +617,9 @@ class TypeVariables(CheckType):
     __repr__ = __str__
 
     def __hash__(self):
-        return hash(''.join([str(o) for o in self.__class__
+        return hash(''.join([str(o) for o in (self.__class__
                                            , hash(type(self.type))
-                                           , hash(self.type)]))
+                                           , hash(self.type))]))
 
     def __eq__(self, other):
         if self.__class__ is not other.__class__:
@@ -645,7 +646,7 @@ class TypeVariables(CheckType):
 
     @classmethod
     def __typesig__(cls, obj):
-        if isinstance(obj, basestring):
+        if isinstance(obj, str):
             return cls(obj)
 
     @classmethod
@@ -692,7 +693,7 @@ class Function(CheckType):
             return cls(obj)
             
         # Snag callable class instances (that aren't types or classes)
-        if type(obj) not in (types.ClassType, type) and callable(obj):
+        if type(obj) not in (type, type) and isinstance(obj, collections.Callable):
             return cls(obj)
             
     def __typecheck__(self, func, to_check):
@@ -789,7 +790,7 @@ class And(_Boolean):
         for type in self._types:
             try:
                 check_type(type, func, to_check)
-            except _TC_Exception, e:
+            except _TC_Exception as e:
                 raise _TC_TypeError(to_check, self)
 
 class Not(Or):
@@ -847,7 +848,7 @@ class IsCallable(CheckType):
         return self.__class__ is other.__class__
     
     def __typecheck__(self, func, to_check):
-        if not callable(to_check):
+        if not isinstance(to_check, collections.Callable):
             raise _TC_TypeError(to_check, 'a callable')
             
 class HasAttr(CheckType):
@@ -863,17 +864,17 @@ class HasAttr(CheckType):
                         
         self._attr_types = dict.fromkeys(attr_sets[list], Any())
         
-        for (attr, typ) in attr_sets[dict].items():
+        for (attr, typ) in list(attr_sets[dict].items()):
             self._attr_types[attr] = Type(typ)
         
     def __typecheck__(self, func, to_check):
-        for (attr, typ) in self._attr_types.items():
+        for (attr, typ) in list(self._attr_types.items()):
             if not hasattr(to_check, attr):
                 raise _TC_MissingAttrError(attr)
                 
             try:
                 check_type(typ, func, getattr(to_check, attr))
-            except _TC_Exception, e:
+            except _TC_Exception as e:
                 raise _TC_AttrError(attr, e)
                 
     def __eq__(self, other):
@@ -890,7 +891,7 @@ class HasAttr(CheckType):
         
         any = Any()
         
-        for (attr, typ) in self._attr_types.items():
+        for (attr, typ) in list(self._attr_types.items()):
             if typ == any:
                 any_type.append(attr)
             else:
@@ -920,7 +921,7 @@ class IsIterable(CheckType):
     __repr__ = __str__
         
     def __typecheck__(self, func, to_check):
-        if not (hasattr(to_check, '__iter__') and callable(to_check.__iter__)):
+        if not (hasattr(to_check, '__iter__') and isinstance(to_check.__iter__, collections.Callable)):
             raise _TC_TypeError(to_check, "an iterable")
             
 class YieldSeq(CheckType):
@@ -1115,8 +1116,8 @@ class Typeclass(CheckType):
         for instance in self._instances:
             inst_attrs = []
         
-            for attr, obj in instance.__dict__.items():
-                if callable(obj) and attr not in bad_members:
+            for attr, obj in list(instance.__dict__.items()):
+                if isinstance(obj, collections.Callable) and attr not in bad_members:
                     inst_attrs.append(attr)
             
             if len(self._interface) == 0:
@@ -1133,7 +1134,7 @@ class Typeclass(CheckType):
                 raise _TC_MissingAttrError(method)
 
             attr = getattr(to_check, method)
-            if not callable(attr):
+            if not isinstance(attr, collections.Callable):
                 raise _TC_AttrError(method, _TC_TypeError(attr, IsCallable()))
                 
         self._cache.add(to_check.__class__)
@@ -1212,7 +1213,8 @@ def _rec_tuple_str(obj):
 
     return '(' + ', '.join(_rec_tuple_str(o) for o in obj) + ')'
 
-def _gen_arg_to_param(func, (posargs, varargs, varkw, defaults)):
+def _gen_arg_to_param(func, xxx_todo_changeme):
+    (posargs, varargs, varkw, defaults) = xxx_todo_changeme
     sig_args = list()
     dic_args = list()
     
@@ -1235,20 +1237,20 @@ def _gen_arg_to_param(func, (posargs, varargs, varkw, defaults)):
         dic_args.append(('"%s"' % varkw, varkw))
         sig_args.append('**' + varkw)
 
-    func_name = func.func_name + '_'
+    func_name = func.__name__ + '_'
     while func_name in dic_args:
         func_name += '_'
 
-    func_def = 'def %s(' % func.func_name
+    func_def = 'def %s(' % func.__name__
     func_return = func_code \
                 + '\n\treturn {' \
                 + ', '.join('%s: %s' % kv for kv in dic_args) \
                 + '}'
     
     locals = {}
-    exec func_def + ','.join(sig_args) + '):' + func_return in locals
-    func = locals[func.func_name]
-    func.func_defaults = defaults
+    exec(func_def + ','.join(sig_args) + '):' + func_return, locals)
+    func = locals[func.__name__]
+    func.__defaults__ = defaults
     return func
 
 def _validate_tuple(ref, obj):
@@ -1266,7 +1268,8 @@ def _validate_tuple(ref, obj):
     except _TS_TupleError:
         raise _TS_TupleError(ref, obj)
 
-def _param_to_type((params, varg_name, kwarg_name), vargs, kwargs):
+def _param_to_type(xxx_todo_changeme1, vargs, kwargs):
+    (params, varg_name, kwarg_name) = xxx_todo_changeme1
     vargs = list(vargs)
     kwargs = dict(kwargs)
     
@@ -1302,10 +1305,10 @@ def _param_to_type((params, varg_name, kwarg_name), vargs, kwargs):
         # All parameter slots have been filled, but there are still keyword
         # args remaining with no **kwargs parameter present
         if len(params) == 0 and no_double_star:
-            raise _TS_ExtraKeywordError(kwargs.keys()[0])
+            raise _TS_ExtraKeywordError(list(kwargs.keys())[0])
         
         # Match up remaining keyword args with open parameter slots
-        for p, a in kwargs.items():
+        for p, a in list(kwargs.items()):
             if p in param_value:
                 raise _TS_TwiceTypedError(p, a, param_value[p])
             if p not in params and no_double_star:
@@ -1383,7 +1386,7 @@ def typecheck_args(*v_sig, **kw_sig):
 
         try:        
             param_types = _param_to_type((param_list, varg_name, kwarg_name), v_sig, kw_sig)
-        except _TS_Exception, e:
+        except _TS_Exception as e:
             raise TypeSignatureError(e)
         
         ### We need to fix-up the types of the *vargs and **kwargs parameters
@@ -1401,7 +1404,7 @@ def typecheck_args(*v_sig, **kw_sig):
         
         # Convert the signatures to types now, rather than rebuild them in every function call
         check_param_types = dict()
-        for k, v in param_types.items():
+        for k, v in list(param_types.items()):
             check_param_types[k] = Type(v)
 
         def __check_args(__vargs, __kwargs):
@@ -1412,9 +1415,9 @@ def typecheck_args(*v_sig, **kw_sig):
 
                 # Type-check the keyword arguments
                 try:
-                    for name, val in arg_dict.items():
+                    for name, val in list(arg_dict.items()):
                         check_type(check_param_types[name], wrapped_func, val)
-                except _TC_Exception, e:
+                except _TC_Exception as e:
                     str_name = _rec_tuple_str(name)
                     raise TypeCheckError("Argument %s: " % str_name, val, e)
 
@@ -1464,7 +1467,7 @@ def typecheck_return(*signature):
         if enable_checking:
             try:
                 check_type(sig_types, func, return_vals)
-            except _TC_Exception, e:
+            except _TC_Exception as e:
                 stop_checking(func)
                 raise TypeCheckError("Return value: ", return_vals, e)
 
@@ -1485,13 +1488,13 @@ class Fake_generator(object):
         self.__sig_types = Type(signature)
         self.__needs_stopping = True
 
-    def next(self):
+    def __next__(self):
         gen = self.__real_gen
     
         self.__yield_no += 1
 
         try:
-            return_vals = gen.next()
+            return_vals = next(gen)
         except StopIteration:
             if self.__needs_stopping:
                 stop_checking(gen)
@@ -1501,7 +1504,7 @@ class Fake_generator(object):
         if enable_checking:
             try:
                 check_type(self.__sig_types, gen, return_vals)
-            except _TC_Exception, e:
+            except _TC_Exception as e:
                 # Insert this error into the chain so we can know
                 # which yield the error occurred at
                 middle_exc = _TC_GeneratorError(self.__yield_no, e)

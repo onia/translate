@@ -21,11 +21,12 @@
 """Base classes for storage interfaces."""
 
 import logging
+import collections
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
-from exceptions import NotImplementedError
+#from exceptions import NotImplementedError
 
 import translate.i18n
 from translate.misc.multistring import multistring
@@ -38,11 +39,11 @@ from translate.storage.workflow import StateEnum as states
 def force_override(method, baseclass):
     """Forces derived classes to override method."""
 
-    if type(method.im_self) == type(baseclass):
+    if type(method.__self__) == type(baseclass):
         # then this is a classmethod and im_self is the actual class
-        actualclass = method.im_self
+        actualclass = method.__self__
     else:
-        actualclass = method.im_class
+        actualclass = method.__self__.__class__
     if actualclass != baseclass:
         raise NotImplementedError(
             "%s does not reimplement %s as required by %s" % \
@@ -162,7 +163,7 @@ class TranslationUnit(object):
            >>> TranslationUnit.rich_to_multistring(rich)
            multistring(u'foo bar')
         """
-        return multistring([unicode(elem) for elem in elem_list])
+        return multistring([str(elem) for elem in elem_list])
 
     def multistring_to_rich(self, mulstring):
         """Convert a multistring to a list of "rich" string trees:
@@ -336,7 +337,7 @@ class TranslationUnit(object):
 
     def removenotes(self):
         """Remove all the translator's notes."""
-        self.notes = u''
+        self.notes = ''
 
     def adderror(self, errorname, errortext):
         """Adds an error message to this unit.
@@ -444,7 +445,7 @@ class TranslationUnit(object):
     def buildfromunit(cls, unit):
         """Build a native unit from a foreign unit, preserving as much
         information as possible."""
-        if type(unit) == cls and hasattr(unit, "copy") and callable(unit.copy):
+        if type(unit) == cls and hasattr(unit, "copy") and isinstance(unit.copy, collections.Callable):
             return unit.copy()
         newunit = cls(unit.source)
         newunit.target = unit.target
@@ -463,7 +464,7 @@ class TranslationUnit(object):
     def get_state_id(self, n=None):
         if n is None:
             n = self.get_state_n()
-        for state_id, state_range in self.STATE.iteritems():
+        for state_id, state_range in self.STATE.items():
             if state_range[0] <= n < state_range[1]:
                 return state_id
         if self.STATE:
@@ -682,7 +683,7 @@ class TranslationStore(object):
     def getids(self, filename=None):
         """return a list of unit ids"""
         self.require_index()
-        return self.id_index.keys()
+        return list(self.id_index.keys())
 
     def __getstate__(self):
         odict = self.__dict__.copy()
@@ -766,7 +767,7 @@ class TranslationStore(object):
 
         for encoding in encodings:
             try:
-                r_text = unicode(text, encoding)
+                r_text = str(text, encoding)
                 r_encoding = encoding
                 break
             except UnicodeDecodeError:
@@ -783,7 +784,7 @@ class TranslationStore(object):
     def savefile(self, storefile):
         """Write the string representation to the given file (or filename)."""
         storestring = str(self)
-        if isinstance(storefile, basestring):
+        if isinstance(storefile, str):
             mode = 'w'
             if self._binary:
                 mode = 'wb'
@@ -820,7 +821,7 @@ class TranslationStore(object):
         mode = 'r'
         if cls._binary:
             mode = 'rb'
-        if isinstance(storefile, basestring):
+        if isinstance(storefile, str):
             storefile = open(storefile, mode)
         mode = getattr(storefile, "mode", mode)
         #For some reason GzipFile returns 1, so we have to test for that here

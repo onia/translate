@@ -59,7 +59,7 @@ class reoo:
     def makeindex(self):
         """makes an index of the oo keys that are used in the source file"""
         self.index = {}
-        for ookey, theoo in self.o.ookeys.iteritems():
+        for ookey, theoo in self.o.ookeys.items():
             sourcekey = oo.makekey(ookey, self.long_keys)
             self.index[sourcekey] = theoo
 
@@ -93,7 +93,7 @@ class reoo:
                                key, len(self.index))
                 try:
                     sourceunitlines = str(unit)
-                    if isinstance(sourceunitlines, unicode):
+                    if isinstance(sourceunitlines, str):
                         sourceunitlines = sourceunitlines.encode("utf-8")
                     logger.warning(sourceunitlines)
                 except:
@@ -123,7 +123,7 @@ class reoo:
         # If there is no translation, we don't want to add a line
         if len(unquotedstr.strip()) == 0:
             return
-        if isinstance(unquotedstr, unicode):
+        if isinstance(unquotedstr, str):
             unquotedstr = unquotedstr.encode("UTF-8")
         # finally set the new definition in the oo, but not if its empty
         if len(unquotedstr) > 0:
@@ -162,7 +162,7 @@ class oocheckfilter(pofilter.pocheckfilter):
         filterresult = self.filterunit(unit)
         if filterresult:
             if filterresult != autocorrect:
-                for filtername, filtermessage in filterresult.iteritems():
+                for filtername, filtermessage in filterresult.items():
                     location = unit.getlocations()[0]
                     if filtername in self.options.error:
                         logger.error("Error at %s::%s: %s",

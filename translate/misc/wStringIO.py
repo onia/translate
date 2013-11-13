@@ -21,18 +21,18 @@
 """A wrapper for cStringIO that provides more of the functions of
 StringIO at the speed of cStringIO"""
 
-import cStringIO
+import io
 
 
 class StringIO:
 
     def __init__(self, buf=''):
-        if not isinstance(buf, (str, unicode)):
+        if not isinstance(buf, str):
             buf = str(buf)
-        if isinstance(buf, unicode):
-            buf = buf.encode('utf-8')
+        #if isinstance(buf, str):
+        #    buf = buf.encode('utf-8')
         self.len = len(buf)
-        self.buf = cStringIO.StringIO()
+        self.buf = io.StringIO()
         self.buf.write(buf)
         self.buf.seek(0)
         self.pos = 0
@@ -41,7 +41,7 @@ class StringIO:
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         if self.closed:
             raise StopIteration
         r = self.readline()

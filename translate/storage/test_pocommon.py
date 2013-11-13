@@ -11,6 +11,6 @@ def test_roundtrip_quote_plus():
         assert quote == quoted
         unquote = pocommon.unquote_plus(quoted)
         assert unquote == text
-    roundtrip_quote_plus(u"abc", u"abc")
-    roundtrip_quote_plus(u"key space", u"key+space")
-    roundtrip_quote_plus(u"key ḓey", u"key+%E1%B8%93ey")
+    roundtrip_quote_plus("abc", "abc")
+    roundtrip_quote_plus("key space", "key+space")
+    roundtrip_quote_plus("key ḓey", "key+%E1%B8%93ey")

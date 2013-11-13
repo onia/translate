@@ -37,19 +37,19 @@ class cidict(dict):
             self.update(fromdict)
 
     def __getitem__(self, key):
-        if type(key) != str and type(key) != unicode:
+        if type(key) != str and type(key) != str:
             raise TypeError("cidict can only have str or unicode as key (got %r)" %
                             type(key))
-        for akey in self.iterkeys():
+        for akey in self.keys():
             if akey.lower() == key.lower():
                 return dict.__getitem__(self, akey)
         raise IndexError
 
     def __setitem__(self, key, value):
-        if type(key) != str and type(key) != unicode:
+        if type(key) != str and type(key) != str:
             raise TypeError("cidict can only have str or unicode as key (got %r)" %
                             type(key))
-        for akey in self.iterkeys():
+        for akey in self.keys():
             if akey.lower() == key.lower():
                 return dict.__setitem__(self, akey, value)
         return dict.__setitem__(self, key, value)
@@ -57,23 +57,23 @@ class cidict(dict):
     def update(self, updatedict):
         """D.update(E) -> None.
            Update D from E: for k in E.keys(): D[k] = E[k]"""
-        for key, value in updatedict.iteritems():
+        for key, value in updatedict.items():
             self[key] = value
 
     def __delitem__(self, key):
-        if type(key) != str and type(key) != unicode:
+        if type(key) != str and type(key) != str:
             raise TypeError("cidict can only have str or unicode as key (got %r)" %
                             type(key))
-        for akey in self.iterkeys():
+        for akey in self.keys():
             if akey.lower() == key.lower():
                 return dict.__delitem__(self, akey)
         raise IndexError
 
     def __contains__(self, key):
-        if type(key) != str and type(key) != unicode:
+        if type(key) != str and type(key) != str:
             raise TypeError("cidict can only have str or unicode as key (got %r)" %
                             type(key))
-        for akey in self.iterkeys():
+        for akey in self.keys():
             if akey.lower() == key.lower():
                 return 1
         return 0
@@ -101,9 +101,9 @@ class ordereddict(dict):
                             len(args))
         else:
             initarg = args[0]
-            apply(super(ordereddict, self).__init__, args)
+            super(ordereddict, self).__init__(*args)
             if hasattr(initarg, "keys"):
-                self.order = initarg.keys()
+                self.order = list(initarg.keys())
             else:
                 # danger: could have duplicate keys...
                 self.order = []
@@ -123,7 +123,7 @@ class ordereddict(dict):
     def update(self, updatedict):
         """D.update(E) -> None.
         Update D from E: for k in E.keys(): D[k] = E[k]"""
-        for key, value in updatedict.iteritems():
+        for key, value in updatedict.items():
             self[key] = value
 
     def __delitem__(self, key):

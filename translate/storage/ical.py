@@ -53,7 +53,7 @@ Future Format Support
     this format to understand those if needed.
 """
 import re
-from StringIO import StringIO
+from io import StringIO
 
 import vobject
 
@@ -121,9 +121,9 @@ class icalfile(base.TranslationStore):
             input = inisrc
         if isinstance(input, str):
             input = StringIO(input)
-            self._icalfile = vobject.readComponents(input).next()
+            self._icalfile = next(vobject.readComponents(input))
         else:
-            self._icalfile = vobject.readComponents(open(input)).next()
+            self._icalfile = next(vobject.readComponents(open(input)))
         for component in self._icalfile.components():
             if component.name == "VEVENT":
                 for property in component.getChildren():

@@ -25,7 +25,7 @@ See: http://docs.translatehouse.org/projects/translate-toolkit/en/latest/command
 for examples and usage instructions.
 """
 
-import cStringIO
+import io
 import zipfile
 
 import lxml.etree as etree
@@ -38,14 +38,14 @@ from translate.storage import odf_shared, odf_io
 
 
 def first_child(unit_node):
-    return unit_node.children.values()[0]
+    return list(unit_node.children.values())[0]
 
 
 def translate_odf(template, input_file):
 
     def load_dom_trees(template):
         odf_data = odf_io.open_odf(template)
-        return dict((filename, etree.parse(cStringIO.StringIO(data))) for filename, data in odf_data.iteritems())
+        return dict((filename, etree.parse(io.StringIO(data))) for filename, data in odf_data.items())
 
     def load_unit_tree(input_file, dom_trees):
         store = factory.getobject(input_file)
@@ -67,7 +67,7 @@ def translate_odf(template, input_file):
 
     def translate_dom_trees(unit_trees, dom_trees):
         make_parse_state = lambda: extract.ParseState(odf_shared.no_translate_content_elements, odf_shared.inline_elements)
-        for filename, dom_tree in dom_trees.iteritems():
+        for filename, dom_tree in dom_trees.items():
             file_unit_tree = unit_trees[filename]
             generate.apply_translations(dom_tree.getroot(), file_unit_tree, generate.replace_dom_text(make_parse_state))
         return dom_trees
@@ -85,7 +85,7 @@ def translate_odf(template, input_file):
 def write_odf(xlf_data, template, output_file, dom_trees):
 
     def write_content_to_odf(output_zip, dom_trees):
-        for filename, dom_tree in dom_trees.iteritems():
+        for filename, dom_tree in dom_trees.items():
             output_zip.writestr(filename, etree.tostring(dom_tree, encoding='UTF-8', xml_declaration=True))
 
     # Since the convertoptionsparser will give us an open file, we risk that
@@ -102,14 +102,14 @@ def write_odf(xlf_data, template, output_file, dom_trees):
     # file once.
 #    output_zip = odf_io.copy_odf(template_zip, output_zip, dom_trees.keys() + ['META-INF/manifest.xml'])
 #    output_zip = odf_io.add_file(output_zip, template_zip.read('META-INF/manifest.xml'), 'translation.xlf', xlf_data)
-    output_zip = odf_io.copy_odf(template_zip, output_zip, dom_trees.keys())
+    output_zip = odf_io.copy_odf(template_zip, output_zip, list(dom_trees.keys()))
     write_content_to_odf(output_zip, dom_trees)
 
 
 def convertxliff(input_file, output_file, template):
     """reads in stdin using fromfileclass, converts using convertorclass, writes to stdout"""
     xlf_data = input_file.read()
-    dom_trees = translate_odf(template, cStringIO.StringIO(xlf_data))
+    dom_trees = translate_odf(template, io.StringIO(xlf_data))
     write_odf(xlf_data, template, output_file, dom_trees)
     output_file.close()
     return True
