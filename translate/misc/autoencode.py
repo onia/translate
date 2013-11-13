@@ -23,17 +23,19 @@ and uses this when converting to a string."""
 
 
 class autoencode(str):
-
+        
     def __new__(newtype, string="", encoding=None, errors=None):
         if isinstance(string, str):
             if errors is None:
                 newstring = str.__new__(newtype, string)
             else:
                 newstring = str.__new__(newtype, string, errors=errors)
-            if encoding is None and isinstance(string, autoencode):
+            '''if encoding is None and isinstance(string, autoencode):
                 newstring.encoding = string.encoding
             else:
                 newstring.encoding = encoding
+            '''
+            newstring.encoding = encoding
         else:
             if errors is None and encoding is None:
                 newstring = str.__new__(newtype, string)
@@ -56,4 +58,4 @@ class autoencode(str):
         if self.encoding is None:
             return super(autoencode, self).__str__()
         else:
-            return self.encode(self.encoding)
+            return self#.decode(self.encoding)

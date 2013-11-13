@@ -68,9 +68,9 @@ def filteraccelerators(accelmarker):
         accelmarkerlen = len(accelmarker)
 
     def filtermarkedaccelerators(str1, acceptlist=None):
-	"""Modifies the accelerators in *str1* marked with the given
-        *accelmarker*, using a given *acceptlist* filter.
-        """
+	#"""Modifies the accelerators in *str1* marked with the given
+        #*accelmarker*, using a given *acceptlist* filter.
+        #"""
         acclocs, badlocs = decoration.findaccelerators(str1, accelmarker, acceptlist)
         fstr1, pos = "", 0
         for accelstart, accelerator in acclocs:
@@ -134,8 +134,8 @@ def filtervariables(startmarker, endmarker, varfilter):
         endmarkerlen = len(endmarker)
 
     def filtermarkedvariables(str1):
-	"""Modifies the variables in *str1* marked with a given *\*marker*,
-        using a given filter."""
+	#"""Modifies the variables in *str1* marked with a given *\*marker*,
+        #using a given filter."""
         varlocs = decoration.findmarkedvariables(str1, startmarker, endmarker)
         fstr1, pos = "", 0
         for varstart, variable in varlocs:
@@ -175,7 +175,7 @@ def filterwordswithpunctuation(str1):
         newstr1 = ""
         for pos, word, replacement in occurrences:
             newstr1 += str1[lastpos:pos]
-            newstr1 += replacement
+            newstr1.join(replacement)
             lastpos = pos + len(word)
         newstr1 += str1[lastpos:]
         return newstr1

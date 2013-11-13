@@ -34,3 +34,10 @@ class TestAutoencode:
     def test_bad_encoding(self):
         """tests that we throw an exception if we don't know the encoding"""
         assert pytest.raises(ValueError, self.type2test, 'text', 'some-encoding')
+
+        
+if __name__ == '__main__':
+    TestAutoencode_object=TestAutoencode()
+    TestAutoencode_object.test_default_encoding()
+    TestAutoencode_object.test_uniqueness()
+    TestAutoencode_object.test_bad_encoding()

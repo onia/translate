@@ -414,7 +414,7 @@ class xliffunit(lisa.LISAunit):
     def getid(self):
         uid = ""
         try:
-            filename = self.xmlelement.iterancestors(self.namespaced('file')).next().get('original')
+            filename = next(self.xmlelement.iterancestors(self.namespaced('file'))).get('original')
             if filename:
                 uid = filename + ID_SEPARATOR
         except StopIteration:

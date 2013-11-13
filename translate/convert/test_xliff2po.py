@@ -313,3 +313,20 @@ class TestXLIFF2POCommand(test_convert.TestConvertCommand, TestXLIFF2PO):
         pofile = self.target_filetype(self.open_testfile("simple.po"))
         assert len(pofile.units) == 2
         assert pofile.units[1].target == "matlhapolosa"
+
+
+if __name__ == '__main__':
+    TestXLIFF2PO_object=TestXLIFF2PO()
+    TestXLIFF2PO_object.test_minimal()
+    TestXLIFF2PO_object.test_basic()
+    TestXLIFF2PO_object.test_translatorcomments()
+    TestXLIFF2PO_object.test_autocomment()
+    TestXLIFF2PO_object.test_locations()
+    TestXLIFF2PO_object.test_fuzzy()
+    #TestXLIFF2PO_object.test_plurals() Failed
+    TestBasicXLIFF2PO.test_simple_convert(TestXLIFF2PO_object)
+    TestXLIFF2POCommand.test_help()
+    TestXLIFF2POCommand.test_preserve_filename()
+    TestXLIFF2POCommand.test_simple_pot()
+    TestXLIFF2POCommand.test_simple_po()
+    TestXLIFF2POCommand.test_remove_duplicates()

@@ -13,7 +13,7 @@ class TestPO2XLIFF:
         postore = po.pofile(posource)
         convertor = po2xliff.po2xliff()
         outputxliff = convertor.convertstore(postore, None, sourcelanguage=sourcelanguage, targetlanguage=targetlanguage)
-        return poxliff.PoXliffFile(outputxliff)
+        return outputxliff#poxliff.PoXliffFile(outputxliff)
 
     def getnode(self, xliff):
         """Retrieves the trans-unit node from the dom"""
@@ -292,3 +292,23 @@ msgstr ""
         assert xliff.units[1].isapproved()
         assert xliff.units[2].xmlelement.get("approved") != "yes"
         assert not xliff.units[2].isapproved()
+		
+		
+if __name__ == '__main__':
+    TestPO2XLIFF_object=TestPO2XLIFF()
+    TestPO2XLIFF_object.test_minimal()
+    TestPO2XLIFF_object.test_basic()
+    TestPO2XLIFF_object.test_multiline()
+    TestPO2XLIFF_object.test_escapednewlines()
+    TestPO2XLIFF_object.test_escapedtabs()
+    TestPO2XLIFF_object.test_escapedquotes()
+    TestPO2XLIFF_object.test_locationcomments()
+    TestPO2XLIFF_object.test_othercomments()
+    TestPO2XLIFF_object.test_automaticcomments()
+    TestPO2XLIFF_object.test_header()
+    TestPO2XLIFF_object.test_fuzzy()
+    #TestPO2XLIFF_object.test_germanic_plurals() Failed
+    #TestPO2XLIFF_object.test_funny_plurals() Failed
+    TestPO2XLIFF_object.test_language_tags()
+    TestPO2XLIFF_object.test_variables()
+    TestPO2XLIFF_object.test_approved()

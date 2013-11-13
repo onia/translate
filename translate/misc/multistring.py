@@ -45,29 +45,29 @@ class multistring(autoencode.autoencode):
         if not hasattr(self, "strings"):
             self.strings = []
 
-    def __cmp__(self, otherstring):
+    def __lt__(self, otherstring):
         if isinstance(otherstring, multistring):
-            parentcompare = cmp(autoencode.autoencode(self), otherstring)
+            parentcompare = ("%s" % autoencode.autoencode(self) < "%s" % otherstring)#(autoencode.autoencode(self) < otherstring) 
             if parentcompare:
                 return parentcompare
             else:
-                return cmp(self.strings[1:], otherstring.strings[1:])
+                return ("%s" % self.strings[1:] < "%s" % otherstring.strings[1:])#(self.strings[1:] < otherstring.strings[1:])
         elif isinstance(otherstring, autoencode.autoencode):
-            return cmp(autoencode.autoencode(self), otherstring)
+            return ("%s" % autoencode.autoencode(self) < "%s" % otherstring)#(autoencode.autoencode(self) < otherstring)
         elif isinstance(otherstring, str):
-            return cmp(str(self), otherstring)
+            return ("%s" % str(self) < "%s" % otherstring)#(str(self) < otherstring)
         elif isinstance(otherstring, str):
-            return cmp(str(self), otherstring)
+            return ("%s" % str(self) < "%s" % otherstring)#(str(self) < otherstring)
         elif isinstance(otherstring, list) and otherstring:
-            return cmp(self, multistring(otherstring))
+            return ("%s" % self < "%s" % multistring(otherstring))#(self < multistring(otherstring))
         else:
-            return cmp(type(self), type(otherstring))
+            return ("%s" % type(self) < "%s" % type(otherstring))#(type(self) < type(otherstring))
 
     def __ne__(self, otherstring):
-        return self.__cmp__(otherstring) != 0
+        return self.__lt__(otherstring) != 0
 
     def __eq__(self, otherstring):
-        return self.__cmp__(otherstring) == 0
+        return self.__lt__(otherstring) == 0
 
     def __repr__(self):
         parts = [autoencode.autoencode.__repr__(self)] + \
