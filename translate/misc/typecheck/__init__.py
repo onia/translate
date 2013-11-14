@@ -411,11 +411,11 @@ class CheckType(object):
 class Single(CheckType):
     name = "Single"
 
-    def __init__(self, type):
-        if not isinstance(type, type):
-            raise TypeError("Cannot type-check a %s" % type(type))
+    def __init__(self, itype):
+        if not isinstance(itype, type):
+            raise TypeError("Cannot type-check a %s" % type(itype))
         else:
-            self.type = type
+            self.type = itype
             
         self._types = [self.type]
 
