@@ -43,7 +43,12 @@ class ZIPFile(directory.Directory):
     def unit_iter(self):
         """Iterator over all the units in all the files in this zip file."""
         for dirname, filename in self.file_iter():
-            strfile = wStringIO.StringIO(self.archive.read(os.path.join(dirname, filename)))
+            # TODO: Here os.path.join(dirname, filename) doesn't work.....
+            if dirname=='':
+                filepath=os.path.join(dirname, filename)
+            else:
+                filepath=dirname+'/'+filename
+            strfile = wStringIO.StringIO(self.archive.read(filepath))
             strfile.filename = filename
             store = factory.getobject(strfile)
             #TODO: don't regenerate all the storage objects

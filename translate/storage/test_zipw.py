@@ -70,7 +70,7 @@ class TestZIPFile(object):
         """Tests basic functionality."""
         files = ["a.po", "b.po", "c.po"]
         posource = '''msgid "bla"\nmsgstr "blabla"\n'''
-        self.touchfiles(None, files, posource, last=True)
+        self.touchfiles(self.testzip, files, posource, last=True)
 
         d = zipw.ZIPFile(self.testzip)
         for unit in d.getunits():
