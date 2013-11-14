@@ -73,7 +73,7 @@ def fails_serious(filterfunction, str1, str2, message=None):
 
 def check_xlz_units():
     """Tests basic functionality."""
-    d = zipw.ZIPFile("zh-cn.xlz")
+    d = zipw.ZIPFile("Oringinal_ES_TW.xlz.xlz")
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='zh_ui'))
     for unit in d.getunits():
         if fails(stdchecker.endpunc, unit.source, unit.target):

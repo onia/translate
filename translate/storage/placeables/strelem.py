@@ -164,7 +164,13 @@ class StringElem(object):
     def __str__(self):
         if not self.isvisible:
             return ''
-        return ''.join([str(elem).encode('utf-8') for elem in self.sub])
+        elemlist=[]
+        for elem in self.sub:
+            if isinstance(elem, bytes):
+                elem=elem.decode('utf-8')
+            elem=str(elem)
+            elemlist.append(elem)
+        return ''.join(elemlist)
 
     def __unicode__(self):
         if isinstance(self.renderer, collections.Callable):
@@ -384,18 +390,18 @@ class StringElem(object):
         self.prune()
         return removed, None, None
 
-    def depth_first(self, filter=None):
+    def depth_first(self, ifilter=None):
         """Returns a list of the nodes in the tree in depth-first order."""
-        if filter is None or not isinstance(filter, collections.Callable):
-            filter = lambda e: True
+        if ifilter is None or not isinstance(ifilter, collections.Callable):
+            ifilter = lambda e: True
         elems = []
-        if list(filter(self)):
+        if ifilter(self):
             elems.append(self)
 
         for sub in self.sub:
             if not isinstance(sub, StringElem):
                 continue
-            if sub.isleaf() and list(filter(sub)):
+            if sub.isleaf() and ifilter(sub):
                 elems.append(sub)
             else:
                 elems.extend(sub.depth_first())
@@ -464,12 +470,12 @@ class StringElem(object):
         """Find all elements in the current sub-tree containing ``x``."""
         return [elem for elem in self.flatten() if x in str(elem)]
 
-    def flatten(self, filter=None):
+    def flatten(self, ifilter=None):
         """Flatten the tree by returning a depth-first search over the
         tree's leaves."""
-        if filter is None or not isinstance(filter, collections.Callable):
-            filter = lambda e: True
-        return [elem for elem in self.iter_depth_first(lambda e: e.isleaf() and list(filter(e)))]
+        if ifilter is None or not isinstance(ifilter, collections.Callable):
+            ifilter = lambda e: True
+        return [elem for elem in self.iter_depth_first(lambda e: e.isleaf() and ifilter(e))]
 
     def get_ancestor_where(self, child, criteria):
         parent = self.get_parent_elem(child)
@@ -762,31 +768,31 @@ class StringElem(object):
                 return False
         return True
 
-    def iter_depth_first(self, filter=None):
+    def iter_depth_first(self, ifilter=None):
         """Iterate through the nodes in the tree in dept-first order."""
-        if filter is None or not isinstance(filter, collections.Callable):
-            filter = lambda e: True
-        if list(filter(self)):
+        if ifilter is None or not isinstance(ifilter, collections.Callable):
+            ifilter = lambda e: True
+        if ifilter(self):
             yield self
         for sub in self.sub:
             if not isinstance(sub, StringElem):
                 continue
-            if sub.isleaf() and list(filter(sub)):
+            if sub.isleaf() and ifilter(sub):
                 yield sub
             else:
-                for node in sub.iter_depth_first(filter):
+                for node in sub.iter_depth_first(ifilter):
                     yield node
 
-    def map(self, f, filter=None):
+    def map(self, f, ifilter=None):
         """Apply ``f`` to all nodes for which ``filter`` returned ``True``
         (optional)."""
-        if filter is not None and not isinstance(filter, collections.Callable):
+        if ifilter is not None and not isinstance(ifilter, collections.Callable):
             raise ValueError('filter is not callable or None')
-        if filter is None:
-            filter = lambda e: True
+        if ifilter is None:
+            ifilter = lambda e: True
 
         for elem in self.depth_first():
-            if list(filter(elem)):
+            if ifilter(elem):
                 f(elem)
 
     @classmethod

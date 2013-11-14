@@ -269,6 +269,8 @@ class TestXLIFFfile(test_base.TestTranslationStore):
         # test that the source node is before the target node:
         alt = unit.getalttrans()[0]
         altformat = etree.tostring(alt.xmlelement)
+        if isinstance(altformat, bytes):
+            altformat=altformat.decode('utf-8')
         print(altformat)
         assert altformat.find("<source") < altformat.find("<target")
 
@@ -379,3 +381,24 @@ class TestXLIFFfile(test_base.TestTranslationStore):
                </trans-unit>'''
         xlifffile = xliff.xlifffile.parsestring(xlfsource)
         assert xlifffile.units[0].istranslatable()
+
+
+if __name__=='__main__':
+    #TestXLIFFUnit_object=TestXLIFFUnit()
+    #TestXLIFFUnit_object.test_markreview()
+    #TestXLIFFUnit_object.test_errors()
+    TestXLIFFfile_object=TestXLIFFfile()
+    TestXLIFFfile_object.test_basic()
+    TestXLIFFfile_object.test_namespace()
+    TestXLIFFfile_object.test_rich_source()
+    TestXLIFFfile_object.test_rich_target()
+    TestXLIFFfile_object.test_source()
+    TestXLIFFfile_object.test_target()
+    TestXLIFFfile_object.test_sourcelanguage()
+    TestXLIFFfile_object.test_targetlanguage()
+    TestXLIFFfile_object.test_notes()
+    TestXLIFFfile_object.test_alttrans()
+    TestXLIFFfile_object.test_fuzzy()
+    TestXLIFFfile_object.test_xml_space()
+    TestXLIFFfile_object.test_parsing()
+
