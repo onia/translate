@@ -1559,4 +1559,3 @@ def enable_typechecking():
 import os
 if "PYTHONTYPECHECK" in os.environ:
     enable_typechecking()
-

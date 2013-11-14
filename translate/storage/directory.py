@@ -25,16 +25,15 @@
 
 #TODO: consider also providing directories as we currently provide files
 
-from os import path
-
+import os
 from translate.storage import factory
 
 
 class Directory:
     """This class represents a directory."""
 
-    def __init__(self, dir=None):
-        self.dir = dir
+    def __init__(self, subdir=None):
+        self.dir = subdir
         self.filedata = []
 
     def file_iter(self):
@@ -52,7 +51,7 @@ class Directory:
     def unit_iter(self):
         """Iterator over all the units in all the files in this directory."""
         for dirname, filename in self.file_iter():
-            store = factory.getobject(path.join(dirname, filename))
+            store = factory.getobject(os.path.join(dirname, filename))
             #TODO: don't regenerate all the storage objects
             for unit in store.unit_iter():
                 yield unit
@@ -64,10 +63,14 @@ class Directory:
     def scanfiles(self):
         """Populate the internal file data."""
         self.filedata = []
-
+        '''
         def addfile(arg, dirname, fnames):
             for fname in fnames:
-                if path.isfile(path.join(dirname, fname)):
+                if os.path.isfile(os.path.join(dirname, fname)):
                     self.filedata.append((dirname, fname))
 
-        path.walk(self.dir, addfile, None)
+        os.walk(self.dir, addfile, None)
+        '''
+        for dirname, subdirs, files in os.walk(self.dir):
+            for fname in files:
+                self.filedata.append((dirname, fname))

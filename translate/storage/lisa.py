@@ -345,7 +345,9 @@ class LISAfile(base.TranslationStore):
             parser = etree.XMLParser(strip_cdata=False)
         else:
             parser = etree.XMLParser()
-        self.document = etree.fromstring(xml.encode('utf-8'), parser).getroottree()
+        if isinstance(xml, str):
+            xml=xml.encode('utf-8')
+        self.document = etree.fromstring(xml, parser).getroottree()
         self._encoding = self.document.docinfo.encoding
         self.initbody()
         assert self.document.getroot().tag == self.namespaced(self.rootNode)

@@ -26,7 +26,7 @@ for examples and usage instructions.
 """
 
 from translate.storage import po
-from translate.storage import html
+from translate.storage import htmlps
 
 
 class html2po:
@@ -35,7 +35,7 @@ class html2po:
                     duplicatestyle="msgctxt", keepcomments=False):
         """converts a html file to .po format"""
         thetargetfile = po.pofile()
-        htmlparser = html.htmlfile(includeuntaggeddata=includeuntagged,
+        htmlparser = htmlps.htmlfile(includeuntaggeddata=includeuntagged,
                                    inputfile=inputfile)
         for htmlunit in htmlparser.units:
             thepo = thetargetfile.addsourceunit(htmlunit.source)

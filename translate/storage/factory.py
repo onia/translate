@@ -68,12 +68,14 @@ def _examine_txt(storefile):
     except AttributeError:
         raise ValueError("Need to read object to determine type")
     # Some encoding magic for Wordfast
+    print(start)
     from translate.storage import wordfast
     if wordfast.TAB_UTF16 in start.split("\n")[0]:
         encoding = 'utf-16'
     else:
         encoding = 'iso-8859-1'
-    start = start.decode(encoding).encode('utf-8')
+    if isinstance(start, bytes):
+        start = start.decode(encoding).encode('utf-8')
     if '%Wordfast TM' in start:
         pseudo_extension = '_wftm'
     elif '<RTF Preamble>' in start:
@@ -118,10 +120,12 @@ def _getname(storefile):
     if storefile is None:
         raise ValueError("This method cannot magically produce a filename when given None as input.")
     if not isinstance(storefile, str):
-        if not hasattr(storefile, "name"):
-            storefilename = _getdummyname(storefile)
-        else:
+        if hasattr(storefile, "name"):
             storefilename = storefile.name
+        elif hasattr(storefile, "filename"):
+            storefilename = storefile.filename
+        else:
+            storefilename = _getdummyname(storefile)
     else:
         storefilename = storefile
     return storefilename
@@ -170,7 +174,6 @@ def getobject(storefile, ignore=None, classes=None, classes_str=classes_str, hid
 
     Specify ignore to ignore some part at the back of the name (like .gz).
     """
-
     if isinstance(storefile, str):
         if os.path.isdir(storefile) or storefile.endswith(os.path.sep):
             from translate.storage import directory

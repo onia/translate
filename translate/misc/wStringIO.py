@@ -27,6 +27,8 @@ import io
 class StringIO:
 
     def __init__(self, buf=''):
+        if isinstance(buf, bytes):
+            buf = buf.decode('utf-8')
         if not isinstance(buf, str):
             buf = str(buf)
         #if isinstance(buf, str):

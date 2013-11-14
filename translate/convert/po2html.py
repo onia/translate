@@ -25,12 +25,12 @@ for examples and usage instructions.
 """
 
 from translate.convert import convert
-from translate.storage import html
+from translate.storage import htmlps
 from translate.storage import po
 
 
 class po2html:
-    """po2html can take a po file and generate html. best to give it a
+    """po2html can take a po file and generate htmlps. best to give it a
     template file otherwise will just concat msgstrs"""
 
     def lookup(self, string):
@@ -48,7 +48,7 @@ class po2html:
         self.inputstore = inputstore
         self.inputstore.makeindex()
         self.includefuzzy = includefuzzy
-        output_store = html.htmlfile(inputfile=templatetext, callback=self.lookup)
+        output_store = htmlps.htmlfile(inputfile=templatetext, callback=self.lookup)
         return output_store.filesrc
 
 

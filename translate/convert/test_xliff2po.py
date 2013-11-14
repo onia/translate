@@ -324,11 +324,9 @@ if __name__ == '__main__':
     TestXLIFF2PO_object.test_locations()
     TestXLIFF2PO_object.test_fuzzy()
     #TestXLIFF2PO_object.test_plurals() Failed
-    TestBasicXLIFF2PO_object=TestBasicXLIFF2PO()
-    #TestBasicXLIFF2PO_object.test_simple_convert() unable to test
-    TestXLIFF2POCommand_object=TestXLIFF2POCommand()
-    TestXLIFF2POCommand_object.test_help()
-    TestXLIFF2POCommand_object.test_preserve_filename()
-    TestXLIFF2POCommand_object.test_simple_pot()
-    TestXLIFF2POCommand_object.test_simple_po()
-    TestXLIFF2POCommand_object.test_remove_duplicates()
+    TestBasicXLIFF2PO.test_simple_convert(TestXLIFF2PO_object)
+    TestXLIFF2POCommand.test_help()
+    TestXLIFF2POCommand.test_preserve_filename()
+    TestXLIFF2POCommand.test_simple_pot()
+    TestXLIFF2POCommand.test_simple_po()
+    TestXLIFF2POCommand.test_remove_duplicates()

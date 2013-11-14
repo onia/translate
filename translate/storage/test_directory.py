@@ -33,16 +33,16 @@ class TestDirectory(object):
             os.rmdir(dirname)
         assert not os.path.exists(dirname)
 
-    def touchfiles(self, dir, filenames, content=None):
+    def touchfiles(self, subdir, filenames, content=None):
         for filename in filenames:
-            f = open(os.path.join(dir, filename), "w")
+            f = open(os.path.join(subdir, filename), "w")
             if content:
                 f.write(content)
             f.close()
 
-    def mkdir(self, dir):
+    def mkdir(self, subdir):
         """Makes a directory inside self.testdir."""
-        os.mkdir(os.path.join(self.testdir, dir))
+        os.mkdir(os.path.join(self.testdir, subdir))
 
     def test_created(self):
         """test that the directory actually exists"""
@@ -56,7 +56,7 @@ class TestDirectory(object):
         self.touchfiles(self.testdir, files)
 
         d = directory.Directory(self.testdir)
-        filenames = [name for dir, name in d.getfiles()]
+        filenames = [name for subdir, name in d.getfiles()]
         filenames.sort()
         assert filenames == files
 
@@ -84,3 +84,17 @@ class TestDirectory(object):
         for unit in d.getunits():
             assert unit.target == "blabla"
         assert len(d.getunits()) == 3
+
+
+if __name__=='__main__':
+    TestDirectory_object=TestDirectory()
+    TestDirectory_object.setup_method('test')
+    TestDirectory_object.test_created()
+    TestDirectory_object.test_basic()
+    TestDirectory_object.setup_method('test')
+    TestDirectory_object.test_created()    
+    TestDirectory_object.test_structure()
+    TestDirectory_object.setup_method('test')
+    TestDirectory_object.test_created()     
+    TestDirectory_object.test_getunits()
+    

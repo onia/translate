@@ -102,7 +102,7 @@ class BaseTestFactory:
         """Test that we can open a gzip file correctly."""
         filename = os.path.join(self.testdir, self.filename + '.gz')
         gzfile = GzipFile(filename, mode="wb")
-        gzfile.write(self.file_content)
+        gzfile.write(self.file_content.encode('utf-8'))
         gzfile.close()
         store = factory.getobject(filename)
         assert isinstance(store, self.expected_instance)
@@ -113,7 +113,7 @@ class BaseTestFactory:
             return
         filename = os.path.join(self.testdir, self.filename + '.bz2')
         bz2file = BZ2File(filename, mode="wb")
-        bz2file.write(self.file_content)
+        bz2file.write(self.file_content.encode('utf-8'))
         bz2file.close()
         store = factory.getobject(filename)
         assert isinstance(store, self.expected_instance)
@@ -172,3 +172,35 @@ class TestWordfastFactory(BaseTestFactory):
     filename = 'dummy.txt'
     file_content = '''%20070801~103212	%User ID,S,S SMURRAY,SMS Samuel Murray-Smit,SM Samuel Murray-Smit,MW Mary White,DS Deepak Shota,MT! Machine translation (15),AL! Alignment (10),SM Samuel Murray,	%TU=00000075	%AF-ZA	%Wordfast TM v.5.51r/00	%EN-ZA	%---80597535	Subject (5),EL,EL Electronics,AC Accounting,LE Legal,ME Mechanics,MD Medical,LT Literary,AG Agriculture,CO Commercial	Client (5),LS,LS LionSoft Corp,ST SuperTron Inc,CA CompArt Ltd			
 20070801~103248	SM	0	AF-ZA	Langeraad en duimpie	EN-ZA	Big Ben and Little John	EL	LS'''
+
+
+if __name__=='__main__':
+    BaseTestFactory_object=BaseTestFactory()
+    BaseTestFactory_object.setup_method('test')
+    BaseTestFactory_object.test_getclass()
+    #BaseTestFactory_object.test_getobject()
+    #BaseTestFactory_object.test_get_noname_object()
+    #BaseTestFactory_object.test_gzfile()
+    #BaseTestFactory_object.test_bz2file()
+    #BaseTestFactory_object.test_directory()
+    TestPOFactory_object=TestPOFactory()
+    TestPOFactory_object.test_getobject()
+    TestPOFactory_object.test_get_noname_object()
+    TestPOFactory_object.setup_method('test')
+    TestPOFactory_object.test_gzfile()
+    TestPOFactory_object.test_bz2file()
+    TestPOFactory_object.test_directory()
+    TestXliffFactory_object=TestXliffFactory()
+    TestXliffFactory_object.test_getobject()
+    TestXliffFactory_object.test_get_noname_object()
+    TestXliffFactory_object.setup_method('test')
+    TestXliffFactory_object.test_gzfile()
+    TestXliffFactory_object.test_bz2file()
+    TestXliffFactory_object.test_directory()
+    TestWordfastFactory_object=TestWordfastFactory()
+    TestWordfastFactory_object.test_getobject()
+    TestWordfastFactory_object.test_get_noname_object()
+    TestWordfastFactory_object.setup_method('test')
+    TestWordfastFactory_object.test_gzfile()
+    TestWordfastFactory_object.test_bz2file()
+    TestWordfastFactory_object.test_directory()

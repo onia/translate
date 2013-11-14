@@ -765,8 +765,13 @@ class pofile(pocommon.pofile):
 #        try:
             if hasattr(inputfile, 'name'):
                 self.filename = inputfile.name
-            elif not getattr(self, 'filename', ''):
+            elif hasattr(inputfile, 'filename'):
+                self.filename = inputfile.filename
+            else:
                 self.filename = ''
+            # TODO: only a turnaround fix
+            if isinstance(inputfile, bytes):
+                inputfile=inputfile.decode('utf-8')
             if isinstance(inputfile, str):
                 inputfile = io.StringIO(inputfile)
             # clear units to get rid of automatically generated headers before parsing
