@@ -147,6 +147,7 @@ class TranslationUnit(object):
     def __str__(self):
         """Converts to a string representation that can be parsed back using
         :meth:`~.TranslationStore.parsestring`."""
+        # TODO: don't use str <> obj, need to use loads() and dumps() instead
         # no point in pickling store object, so let's hide it for a while.
         store = getattr(self, "_store", None)
         self._store = None
@@ -165,7 +166,7 @@ class TranslationUnit(object):
         """
         return multistring([str(elem) for elem in elem_list])
 
-    def multistring_to_rich(self, mulstring):
+    def multistring_to_rich(self, mstring):
         """Convert a multistring to a list of "rich" string trees:
 
            >>> target = multistring([u'foo', u'bar', u'baz'])
@@ -174,9 +175,9 @@ class TranslationUnit(object):
             <StringElem([<StringElem([u'bar'])>])>,
             <StringElem([<StringElem([u'baz'])>])>]
         """
-        if isinstance(mulstring, multistring):
-            return [rich_parse(s, self.rich_parsers) for s in mulstring.strings]
-        return [rich_parse(mulstring, self.rich_parsers)]
+        if isinstance(mstring, multistring):
+            return [rich_parse(s, self.rich_parsers) for s in mstring.strings]
+        return [rich_parse(mstring, self.rich_parsers)]
 
     def setsource(self, source):
         """Set the source string to the given value."""

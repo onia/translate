@@ -91,7 +91,7 @@ class TestTranslationUnit:
 
     def test_eq(self):
         """tests equality comparison"""
-        unit1 = self.unit
+        unit1 = self.UnitClass("Test String")
         unit2 = self.UnitClass("Test String")
         unit3 = self.UnitClass("Test String")
         unit4 = self.UnitClass("Blessed String")
@@ -173,9 +173,8 @@ class TestTranslationUnit:
         target_mstr = multistring(['tėst', '<b>string</b>'])
         unit = self.UnitClass(multistring(['a', 'b']))
         unit.rich_parsers = general.parsers
-        unit.target = target_mstr
+        unit.target=target_mstr
         elems = unit.rich_target
-
         if unit.hasplural():
             assert len(elems) == 2
             assert len(elems[0].sub) == 1
@@ -214,7 +213,7 @@ class TestTranslationStore(object):
 
     def setup_method(self, method):
         """Allocates a unique self.filename for the method, making sure it doesn't exist"""
-        self.filename = "%s_%s.test" % (self.__class__.__name__, method.__name__)
+        self.filename = "%s_%s.test" % (self.__class__.__name__, method)
         if os.path.exists(self.filename):
             os.remove(self.filename)
         warnings.resetwarnings()
@@ -360,3 +359,31 @@ class TestTranslationStore(object):
             assert ext in self.StoreClass.Mimetypes
         for ext in self.StoreClass.Mimetypes:
             assert ext in detail[1]
+
+
+if __name__=='__main__':
+    test_force_override()
+    TestTranslationUnit_object=TestTranslationUnit()
+    TestTranslationUnit_object.setup_method('test')
+    TestTranslationUnit_object.test_isfuzzy()
+    TestTranslationUnit_object.test_create()
+    TestTranslationUnit_object.test_eq()
+    TestTranslationUnit_object.test_target()
+    TestTranslationUnit_object.test_escapes()
+    TestTranslationUnit_object.test_difficult_escapes()
+    TestTranslationUnit_object.test_note_sanity()
+    TestTranslationUnit_object.test_rich_get()
+    TestTranslationUnit_object.test_rich_set()
+    
+    TestTranslationStore_object=TestTranslationStore()
+    TestTranslationStore_object.setup_method('test')
+    TestTranslationStore_object.test_create_blank()
+    #TestTranslationStore_object.test_add() Failed due to __str__
+    TestTranslationStore_object.test_find()
+    TestTranslationStore_object.test_translate()
+    #TestTranslationStore_object.test_parse() Failed due to __str__
+    #TestTranslationStore_object.test_save() Failed due to __str__
+    TestTranslationStore_object.test_markup()
+    #TestTranslationStore_object.test_nonascii() Failed due to __str__
+    TestTranslationStore_object.test_extensions()
+    TestTranslationStore_object.test_mimetypes()

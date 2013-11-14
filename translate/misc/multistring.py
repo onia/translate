@@ -26,17 +26,15 @@ from translate.misc import autoencode
 
 class multistring(autoencode.autoencode):
 
-    def __new__(newtype, string="", encoding=None, errors=None):
+    def __new__(newtype, string=None, encoding=None, errors=None):
         if isinstance(string, list):
             if not string:
                 raise ValueError("multistring must contain at least one string")
             mainstring = string[0]
-            newstring = multistring.__new__(newtype, string[0],
-                                            encoding, errors)
+            newstring = autoencode.autoencode.__new__(newtype, string[0], encoding, errors)
             newstring.strings = [newstring] + [autoencode.autoencode.__new__(autoencode.autoencode, altstring, encoding, errors) for altstring in string[1:]]
         else:
-            newstring = autoencode.autoencode.__new__(newtype, string,
-                                                      encoding, errors)
+            newstring = autoencode.autoencode.__new__(newtype, string, encoding, errors)
             newstring.strings = [newstring]
         return newstring
 
