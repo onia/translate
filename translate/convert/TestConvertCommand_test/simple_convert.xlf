@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+  <file original="filename.po" source-language="en-US" datatype="po">
+    <body>
+        <trans-unit xml:space="preserve" id="1" approved="yes">
+                               <source>One</source>
+                               <target state="translated">Een</target>
+                             </trans-unit>
+    </body>
+  </file>
+</xliff>

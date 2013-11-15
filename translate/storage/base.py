@@ -144,17 +144,19 @@ class TranslationUnit(object):
         """
         return self.source == other.source and self.target == other.target
 
+    '''
     def __str__(self):
         """Converts to a string representation that can be parsed back using
         :meth:`~.TranslationStore.parsestring`."""
-        # TODO: don't use str <> obj, need to use loads() and dumps() instead
+        # TODO: don't use str <> obj, need to use bytes <> obj instead
         # no point in pickling store object, so let's hide it for a while.
         store = getattr(self, "_store", None)
         self._store = None
         dump = pickle.dumps(self)
         self._store = store
         return dump
-
+    '''
+    
     @classmethod
     def rich_to_multistring(cls, elem_list):
         """Convert a "rich" string tree to a ``multistring``:
@@ -695,7 +697,7 @@ class TranslationStore(object):
         self.__dict__.update(dict)
         if getattr(self, "filename", False):
             self.fileobj = open(self.filename)
-
+    '''
     def __str__(self):
         """Converts to a string representation that can be parsed back using
         :meth:`~.TranslationStore.parsestring`."""
@@ -705,7 +707,8 @@ class TranslationStore(object):
         dump = pickle.dumps(self)
         self.fileobj = fileobj
         return dump
-
+    '''
+    
     def isempty(self):
         """Return True if the object doesn't contain any translation units."""
         if len(self.units) == 0:
@@ -785,6 +788,7 @@ class TranslationStore(object):
     def savefile(self, storefile):
         """Write the string representation to the given file (or filename)."""
         storestring = str(self)
+        #print(storestring)
         if isinstance(storefile, str):
             mode = 'w'
             if self._binary:
@@ -805,14 +809,19 @@ class TranslationStore(object):
         if not fileobj:
             filename = getattr(self, "filename", None)
             if filename:
-                fileobj = file(filename, mode)
+                fileobj = open(filename, mode)
         else:
             fileobj.close()
             filename = getattr(fileobj, "name",
                                getattr(fileobj, "filename", None))
             if not filename:
                 raise ValueError("No file or filename to save to")
-            fileobj = fileobj.__class__(filename, mode)
+            #fileobj = fileobj.__class__(filename, mode)
+            # TODO: how to patch this issue?
+            if self._binary:
+                fileobj = open(filename, mode)
+            else:
+                fileobj = open(filename, mode, encoding='utf-8')
         self.savefile(fileobj)
 
     @classmethod

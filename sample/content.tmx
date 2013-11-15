@@ -7,7 +7,7 @@
       <tuv xml:lang="en">
         <seg>La Zona de aprendizaje para OEM es la ubicación central en la que encontrará cursos sobre productos y material para impulsar las ventas creados específicamente para los partners OEM de Microsoft.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>La Zona de aprendizaje para OEM es la ubicación central en la que encontrará cursos sobre productos y material para impulsar las ventas creados específicamente para los partners OEM de Microsoft.</seg>
       </tuv>
     </tu>
@@ -15,7 +15,7 @@
       <tuv xml:lang="en">
         <seg>Learn, Sell, and Grow with the OEM Training Zone</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Aprenda, venda y obtenga mejores resultados con la Zona de aprendizaje para OEM</seg>
       </tuv>
     </tu>
@@ -23,7 +23,7 @@
       <tuv xml:lang="en">
         <seg>If you are a reseller and want to improve your product knowledge and sales skills, you can find materials in the OEM Training Zone to help you identify solutions and expand sales opportunities for these products:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Si es un revendedor y desea ampliar sus conocimientos sobre los productos y mejorar sus habilidades de venta, encontrará material en la Zona de aprendizaje para OEM que le ayudará a identificar soluciones y a ampliar las oportunidades de venta de estos productos:</seg>
       </tuv>
     </tu>
@@ -31,7 +31,7 @@
       <tuv xml:lang="en">
         <seg>Windows 7</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows 7</seg>
       </tuv>
     </tu>
@@ -39,7 +39,7 @@
       <tuv xml:lang="en">
         <seg>Microsoft Office 2010</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Microsoft Office 2010</seg>
       </tuv>
     </tu>
@@ -47,7 +47,7 @@
       <tuv xml:lang="en">
         <seg>Windows Small Business Server 2011</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Small Business Server 2011</seg>
       </tuv>
     </tu>
@@ -55,7 +55,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 R2</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2008 R2</seg>
       </tuv>
     </tu>
@@ -63,7 +63,7 @@
       <tuv xml:lang="en">
         <seg>You can also find useful information about programs to grow your business:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -71,7 +71,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="/oem/en/community/mpn/Pages/oem_competency.aspx"&gt;OEM competency&lt;/a&gt; - Earning the OEM competency can help partners take advantage of significant market opportunities for Windows 7 and Windows Server 2008 R2 operating systems.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -79,7 +79,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage.aspx" target="_blank"&gt;Windows Embedded&lt;/a&gt; – This content helps you communicate the business and technical value of the Windows Embedded operating systems to a broad spectrum of customers.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a href="http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage.aspx" target="_blank"&gt;Windows Embedded&lt;/a&gt;: este contenido le ayudará a transmitir el valor empresarial y técnico de los sistemas operativos Windows Embedded a un amplio abanico de clientes.</seg>
       </tuv>
     </tu>
@@ -87,7 +87,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="http://www.oemtrainingzone.com/" target="_blank"&gt;Distributor Training Zone&lt;/a&gt; – This central location provides SMSP and OEM distributor readiness materials and courses and also includes Channel Incentives programs and the latest news.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a href="http://www.oemtrainingzone.com/" target="_blank"&gt;Zona de aprendizaje para distribuidores&lt;/a&gt;: esta ubicación central contiene cursos y materiales para impulsar las ventas destinados a los distribuidores SMSP y OEM. Incluye también los programas de incentivos de canal y las últimas noticias.</seg>
       </tuv>
     </tu>
@@ -95,7 +95,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -103,7 +103,7 @@
       <tuv xml:lang="en">
         <seg>OEM Training Zone Meets a Variety of Needs</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>La Zona de aprendizaje para OEM da respuesta a un gran número de necesidades</seg>
       </tuv>
     </tu>
@@ -111,7 +111,7 @@
       <tuv xml:lang="en">
         <seg>The OEM Training Zone offers many different resources to meet your business goals:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>La Zona de aprendizaje para OEM ofrece una gran variedad de recursos que le permitirán alcanzar sus objetivos empresariales:</seg>
       </tuv>
     </tu>
@@ -119,7 +119,7 @@
       <tuv xml:lang="en">
         <seg>Goal</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Objetivo</seg>
       </tuv>
     </tu>
@@ -127,7 +127,7 @@
       <tuv xml:lang="en">
         <seg>OEM Training Zone Resources</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Recursos de la Zona de aprendizaje para OEM</seg>
       </tuv>
     </tu>
@@ -135,7 +135,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Learn&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;strong&gt;Aprenda&lt;/strong&gt;</seg>
       </tuv>
     </tu>
@@ -143,7 +143,7 @@
       <tuv xml:lang="en">
         <seg>Take short courses with assessments, watch videos, and view presentation decks to understand product value propositions, engage customers, and ignite sales.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Realice pequeños cursos con evaluaciones, consulte vídeos y vea presentaciones para conocer las propuestas de valor de los productos, captar clientes y ampliar las ventas.</seg>
       </tuv>
     </tu>
@@ -151,7 +151,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Sell&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;strong&gt;Venda&lt;/strong&gt;</seg>
       </tuv>
     </tu>
@@ -159,7 +159,7 @@
       <tuv xml:lang="en">
         <seg>Understand how to position Microsoft products and solutions against the competition and get the strategic speaking points you need to help you close sales.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Conozca cómo situar los productos y soluciones de Microsoft respecto a los de la competencia y descubra los puntos de referencia estratégicos que necesita para cerrar las ventas.</seg>
       </tuv>
     </tu>
@@ -167,7 +167,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Grow&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;strong&gt;Obtenga mejores resultados&lt;/strong&gt;</seg>
       </tuv>
     </tu>
@@ -175,7 +175,7 @@
       <tuv xml:lang="en">
         <seg>Better identify opportunities to drive incremental sales and establish preference for your hardware and Microsoft software.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Identifique mejor las oportunidades para incrementar las ventas y establezca preferencias en su hardware y el software de Microsoft.</seg>
       </tuv>
     </tu>
@@ -183,7 +183,7 @@
       <tuv xml:lang="en">
         <seg>Many training and readiness resources are available in the OEM Training Zone, including:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Muchos de los recursos de aprendizaje y preparación están disponibles en la Zona de aprendizaje para OEM, por ejemplo:</seg>
       </tuv>
     </tu>
@@ -191,7 +191,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -199,7 +199,7 @@
       <tuv xml:lang="en">
         <seg>How to Demo Office 2010 For Your Customers</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Cómo mostrar Office 2010 a sus clientes</seg>
       </tuv>
     </tu>
@@ -207,7 +207,7 @@
       <tuv xml:lang="en">
         <seg>Why Sell Windows 7</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Por qué vender Windows 7</seg>
       </tuv>
     </tu>
@@ -215,7 +215,7 @@
       <tuv xml:lang="en">
         <seg>Cloud Services</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Servicios en la nube</seg>
       </tuv>
     </tu>
@@ -223,7 +223,7 @@
       <tuv xml:lang="en">
         <seg>Windows SBS 2011 Technical Training</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Curso técnico de Windows SBS 2011</seg>
       </tuv>
     </tu>
@@ -231,7 +231,7 @@
       <tuv xml:lang="en">
         <seg>Tips and Tricks for Windows 7 and Office 2010</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Sugerencias y trucos de Windows 7 y Office 2010</seg>
       </tuv>
     </tu>
@@ -239,7 +239,7 @@
       <tuv xml:lang="en">
         <seg>Selling Office 2010 with New PCs</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Vender Office 2010 con equipos nuevos</seg>
       </tuv>
     </tu>
@@ -247,7 +247,7 @@
       <tuv xml:lang="en">
         <seg>Videos that highlight individual features of Office 2010</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -255,7 +255,7 @@
       <tuv xml:lang="en">
         <seg>Visit the &lt;a href="http://www.oemtrainingzone.com/" target="_blank"&gt;OEM Training Zone&lt;/a&gt;.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -263,7 +263,7 @@
       <tuv xml:lang="en">
         <seg>OEM Training Zone</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -271,7 +271,7 @@
       <tuv xml:lang="en">
         <seg>The OEM Training Zone is the central destination for product training and readiness materials created specifically for Microsoft OEM partners.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -279,7 +279,7 @@
       <tuv xml:lang="en">
         <seg>The OEM Training Zone is the central destination for product training and readiness materials that have been created specifically for Microsoft OEM partners.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -287,7 +287,7 @@
       <tuv xml:lang="en">
         <seg>Styles</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Estilos</seg>
       </tuv>
     </tu>
@@ -295,7 +295,7 @@
       <tuv xml:lang="en">
         <seg>Mantenga actualizado el contenido de marketing de su sitio web con los servicios de redifusión de marketing digital de Microsoft.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Mantenga actualizado el contenido de marketing de su sitio web con los servicios de redifusión de marketing digital de Microsoft.</seg>
       </tuv>
     </tu>
@@ -303,7 +303,7 @@
       <tuv xml:lang="en">
         <seg>Use Microsoft marketing syndication to place compelling marketing and product information tied to Microsoft’s global campaigns on your website.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -311,7 +311,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -319,7 +319,7 @@
       <tuv xml:lang="en">
         <seg>The content is dynamically served, localized, and updated in real time across participating partner sites.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -327,7 +327,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -335,7 +335,7 @@
       <tuv xml:lang="en">
         <seg>Syndication is an &lt;strong&gt;easy&lt;/strong&gt; and &lt;strong&gt;cost effective&lt;/strong&gt; way for you to &lt;strong&gt;generate leads and drive demand and sales&lt;/strong&gt;, while ensuring that you always have the latest content on your website.Once you’ve subscribed, changes made to the content are automatically updated on your site, saving you time and effort.In addition, &lt;strong&gt;robust partner specific reporting&lt;/strong&gt; is available to help you measure how the content is being consumed by your customers.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -343,7 +343,7 @@
       <tuv xml:lang="en">
         <seg>This year we are adding &lt;strong&gt;Device Marketing&lt;/strong&gt; content to Microsoft Digital Commerce and Campaign Network (DCCN) to help you drive demand for the Windows 8 devices you sell.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -351,7 +351,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -359,7 +359,7 @@
       <tuv xml:lang="en">
         <seg>Content is now available in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming soon.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -367,7 +367,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Partner Opportunity&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -375,7 +375,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Reach and engage customers &lt;/strong&gt;with rich marketing content delivered directly to your website with minimal ongoing maintenance</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -383,7 +383,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Reach and engage customers &lt;/strong&gt;with rich marketing content delivered directly to your website with minimal ongoing maintenance</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -391,7 +391,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Educate customers &lt;/strong&gt;by providing comprehensive Microsoft product and solution information</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -399,7 +399,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Accelerate your sales&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -407,7 +407,7 @@
       <tuv xml:lang="en">
         <seg>Partners who have participated in marketing syndication have shown &lt;strong&gt;34 percent more revenue&lt;/strong&gt; (on average) and grew &lt;strong&gt;five times faster&lt;/strong&gt; than partners who did not participate.&lt;sup&gt;1&lt;/sup&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -415,7 +415,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -423,7 +423,7 @@
       <tuv xml:lang="en">
         <seg>Worldwide partners can find ready-to-use banners and microsites through the &lt;a href="http://www.msdccn.com/" target="_blank"&gt;Digital Commerce and Campaign Network&lt;/a&gt; (DCCN), along with the latest co-brandable marketing materials to download.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los partners de todo el mundo pueden encontrar sitios con banners y micrositios listos para usar a través del servicio de redifusión de marketing &lt;a href="http://www.msdccn.com/" target="_blank"&gt;Red de difusión de contenidos y campañas online&lt;/a&gt; (DCCN), así como descargar el último material de marketing de marca compartida.</seg>
       </tuv>
     </tu>
@@ -431,7 +431,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -439,7 +439,7 @@
       <tuv xml:lang="en">
         <seg>U.S. partners can access marketing content, web banners, and other resources at the &lt;a href="http://www.oemsalescenter.com/" target="_blank"&gt;OEM Sales Center&lt;/a&gt;.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -447,7 +447,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -455,7 +455,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Register for &lt;a href="http://www.msdccn.com/" target="_blank"&gt;Microsoft DCCN&lt;/a&gt; today&lt;/strong&gt; and join the community of worldwide partners who are using Microsoft DCCN to increase awareness and demand.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -463,7 +463,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -471,7 +471,7 @@
       <tuv xml:lang="en">
         <seg>New Content Available on Microsoft DCCN</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -479,7 +479,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -487,7 +487,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Device Marketing &lt;/strong&gt;– Device selling is easy with Microsoft DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -495,7 +495,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -503,7 +503,7 @@
       <tuv xml:lang="en">
         <seg>Leverage the new Device Marketing content on Microsoft DCCN to drive demand for the devices you sell.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -511,7 +511,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -519,7 +519,7 @@
       <tuv xml:lang="en">
         <seg>Go to DCCN, create a custom rotation for the devices you sell, and syndicate this content on your website.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -527,7 +527,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -535,7 +535,7 @@
       <tuv xml:lang="en">
         <seg>Content is available now in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming in the next few months.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -543,7 +543,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Get2Modern &lt;/strong&gt;- The Get2Modern campaign is now available on DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -551,7 +551,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -559,7 +559,7 @@
       <tuv xml:lang="en">
         <seg>Syndicate this content to encourage customers to switch to Windows 8 Pro and the new Office.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -567,7 +567,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -575,7 +575,7 @@
       <tuv xml:lang="en">
         <seg>Innovation in both Windows 8 Pro PCs and the new Office can help customers with enhanced security, mobility, productivity, and flexibility for their business - great reasons to get modern.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -583,7 +583,7 @@
       <tuv xml:lang="en">
         <seg>Microsoft DCCN 2.0</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -591,7 +591,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -599,7 +599,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img class="screenshot" alt="DCCN landing page screenshot" src="/oem/PublishingImages/DCCN_Landing_Page_550x241.jpg" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -607,7 +607,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -615,7 +615,7 @@
       <tuv xml:lang="en">
         <seg>Microsoft DCCN includes the features you need:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -623,7 +623,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -631,7 +631,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Easy process&lt;/strong&gt; to begin syndicating – select the campaigns you want, pick up the HTML code, and place it on your website.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -639,7 +639,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -647,7 +647,7 @@
       <tuv xml:lang="en">
         <seg>It’s that easy!</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -655,7 +655,7 @@
       <tuv xml:lang="en">
         <seg>Many campaigns have Contact Us or Download Now buttons to &lt;strong&gt;generate leads&lt;/strong&gt; or &lt;strong&gt;drive active selling&lt;/strong&gt; on your website</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -663,7 +663,7 @@
       <tuv xml:lang="en">
         <seg>Create your own &lt;strong&gt;custom rotation&lt;/strong&gt; of banners to drive your business results</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -671,7 +671,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Saved web campaigns&lt;/strong&gt; enables you to easily update the campaign content on your website with a single click (no need to engage the IT department)</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -679,7 +679,7 @@
       <tuv xml:lang="en">
         <seg>Customize the &lt;strong&gt;downloadable marketing materials&lt;/strong&gt; to use in your marketing efforts</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -687,7 +687,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Robust web-based reporting&lt;/strong&gt; so that you can measure impact and ROI</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -695,7 +695,7 @@
       <tuv xml:lang="en">
         <seg>To begin using Microsoft DCCN, visit &lt;a href="http://www.msdccn.com/" target="_blank"&gt;www.msdccn.com&lt;/a&gt; and register today.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -703,7 +703,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -711,7 +711,7 @@
       <tuv xml:lang="en">
         <seg>Microsoft DCCN resources</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Recursos de Microsoft DCCN</seg>
       </tuv>
     </tu>
@@ -719,7 +719,7 @@
       <tuv xml:lang="en">
         <seg>Watch the new Microsoft Digital Commerce and Campaign Network videos to learn how easy it is to get started with Microsoft DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Vea los nuevos vídeos de la Red de difusión de contenido y campañas online (DCCN) y descubra lo sencillo que es empezar a trabajar con Microsoft DCCN.</seg>
       </tuv>
     </tu>
@@ -727,7 +727,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -735,7 +735,7 @@
       <tuv xml:lang="en">
         <seg>Video</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Vídeo</seg>
       </tuv>
     </tu>
@@ -743,7 +743,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -751,7 +751,7 @@
       <tuv xml:lang="en">
         <seg>Description</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Descripción</seg>
       </tuv>
     </tu>
@@ -759,7 +759,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -767,7 +767,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Microsoft DCCN Overview - .wmv 8.98 MB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Video.wmv" target="_blank"&gt;Microsoft DCCN Overview</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a title="Microsoft DCCN Overview - .wmv 8,98 MB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Video.wmv" target="_blank"&gt;Microsoft DCCN Overview</seg>
       </tuv>
     </tu>
@@ -775,7 +775,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -783,7 +783,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/Microsoft_DCCN_2.0_Overview_Video.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -791,7 +791,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -799,7 +799,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.wmv 8.98 MB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;span class="fileinfo"&gt;.wmv 8,98 MB&lt;/span&gt;</seg>
       </tuv>
     </tu>
@@ -807,7 +807,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -815,7 +815,7 @@
       <tuv xml:lang="en">
         <seg>Watch this video to understand what Microsoft DCCN is and how you can use it to educate customers and accelerate your sales.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Vea este vídeo para conocer Microsoft DCCN y cómo se puede usar para informar a los clientes y acelerar las ventas.</seg>
       </tuv>
     </tu>
@@ -823,7 +823,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -831,7 +831,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Implementing Microsoft DCCN on Your Website - .wmv 7.67 MB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How_to_Implement_Syndication_Video.wmv" target="_blank"&gt;Implementing Microsoft DCCN on Your Website</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a title="Implementing Microsoft DCCN on Your Website - .wmv 7,67 MB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How_to_Implement_Syndication_Video.wmv" target="_blank"&gt;Implementing Microsoft DCCN on Your Website</seg>
       </tuv>
     </tu>
@@ -839,7 +839,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -847,7 +847,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/DCCN_2.0_How_to_Implement_Syndication_Video.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -855,7 +855,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -863,7 +863,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.wmv 7.67 MB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;span class="fileinfo"&gt;.wmv 7,67 MB&lt;/span&gt;</seg>
       </tuv>
     </tu>
@@ -871,7 +871,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -879,7 +879,7 @@
       <tuv xml:lang="en">
         <seg>Watch this video to learn how to select campaigns on Microsoft DCCN, choose a banner size, generate the HTML code, and make the campaigns live on your website.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Vea este vídeo para obtener información sobre cómo seleccionar campañas en Microsoft DCCN, elegir el tamaño del banner, generar el código HTML y dar vida a las campañas en su sitio web.</seg>
       </tuv>
     </tu>
@@ -887,7 +887,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -895,7 +895,7 @@
       <tuv xml:lang="en">
         <seg>Use these resources to learn about Microsoft DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>use estos recursos para obtener información sobre Microsoft DCCN.</seg>
       </tuv>
     </tu>
@@ -903,7 +903,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -911,7 +911,7 @@
       <tuv xml:lang="en">
         <seg>Resource</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Recurso</seg>
       </tuv>
     </tu>
@@ -919,7 +919,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -927,7 +927,7 @@
       <tuv xml:lang="en">
         <seg>Description</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Descripción</seg>
       </tuv>
     </tu>
@@ -935,7 +935,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -943,7 +943,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Microsoft DCCN 1 Pager - .pdf 553 KB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf" target="_blank"&gt;Microsoft DCCN 1 Pager</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a title="Microsoft DCCN 1 Pager - .pdf 553 KB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf" target="_blank"&gt;Microsoft DCCN 1 Pager</seg>
       </tuv>
     </tu>
@@ -951,7 +951,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -959,7 +959,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/DCCN_2.0_Syndication_1_Pager.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -967,7 +967,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -975,7 +975,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.pdf 553 KB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;span class="fileinfo"&gt;.pdf 553 KB&lt;/span&gt;</seg>
       </tuv>
     </tu>
@@ -983,7 +983,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -991,7 +991,7 @@
       <tuv xml:lang="en">
         <seg>View this one-page summary for an overview of what marketing syndication is and the partner opportunity with Microsoft DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -999,7 +999,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1007,7 +1007,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Microsoft DCCN Overview and Opportunity - .pptx 5.45 MB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_Partner_Ready_Deck.pptx" target="_blank"&gt;Microsoft DCCN Overview and Opportunity</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1015,7 +1015,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1023,7 +1023,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/DCCN_2.0_Syndication_Partner_Ready_Deck.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1031,7 +1031,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1039,7 +1039,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.pptx 5.45 MB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1047,7 +1047,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1055,7 +1055,7 @@
       <tuv xml:lang="en">
         <seg>View this PowerPoint presentation for details on what marketing syndication is and how you can use Microsoft DCCN to educate customers, increase demand, and accelerate your sales.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1063,7 +1063,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1071,7 +1071,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Microsoft DCCN Technical FAQs - .docx 35.8 KB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.docx" target="_blank"&gt;Microsoft DCCN Technical FAQs</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1079,7 +1079,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1087,7 +1087,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1095,7 +1095,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1103,7 +1103,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.docx 35.8 KB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;span class="fileinfo"&gt;.docx 35,8 KB&lt;/span&gt;</seg>
       </tuv>
     </tu>
@@ -1111,7 +1111,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1119,7 +1119,7 @@
       <tuv xml:lang="en">
         <seg>Read this document for more detailed information on Microsoft DCCN.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Lea este documento para obtener información más detallada sobre Microsoft DCCN.</seg>
       </tuv>
     </tu>
@@ -1127,7 +1127,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1135,7 +1135,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a title="Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Quick_Start_Guide.pdf" target="_blank"&gt;Microsoft DCCN 2.0 Quick Start Guide</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a title="Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Quick_Start_Guide.pdf" target="_blank"&gt;Microsoft DCCN 2.0 Quick Start Guide</seg>
       </tuv>
     </tu>
@@ -1143,7 +1143,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1151,7 +1151,7 @@
       <tuv xml:lang="en">
         <seg>&lt;img src="/oem/PublishingImages/Microsoft_DCCN_2.0_Quick_Start_Guide.jpg" alt="" /&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1159,7 +1159,7 @@
       <tuv xml:lang="en">
         <seg>&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1167,7 +1167,7 @@
       <tuv xml:lang="en">
         <seg>&lt;span class="fileinfo"&gt;.pdf 560 KB&lt;/span&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;span class="fileinfo"&gt;.pdf 560 KB&lt;/span&gt;</seg>
       </tuv>
     </tu>
@@ -1175,7 +1175,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1183,7 +1183,7 @@
       <tuv xml:lang="en">
         <seg>Read this document for a quick overview on how to use Microsoft DCCN 2.0.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Lea este documento para ver una introducción rápida sobre el uso de Microsoft DCCN 2.0.</seg>
       </tuv>
     </tu>
@@ -1191,7 +1191,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1199,7 +1199,7 @@
       <tuv xml:lang="en">
         <seg>Technical Support</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Soporte técnico</seg>
       </tuv>
     </tu>
@@ -1207,7 +1207,7 @@
       <tuv xml:lang="en">
         <seg>For general questions about the Microsoft DCCN program, please contact &lt;a href="mailto:DCCNHelp@Microsoft.com"&gt;DCCNHelp@Microsoft.com&lt;/a&gt;.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Para resolver preguntas generales sobre el programa DCCN, póngase en contacto con &lt;a href="mailto:DCCNHelp@Microsoft.com"&gt;DCCNHelp@Microsoft.com&lt;/a&gt;.</seg>
       </tuv>
     </tu>
@@ -1215,7 +1215,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1223,7 +1223,7 @@
       <tuv xml:lang="en">
         <seg>If you have technical questions or need help implementing Microsoft DCCN, please contact Customer Support at:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Si tiene dudas técnicas o necesita ayuda para implementar Microsoft DCCN, póngase en contacto con el Servicio de soporte técnico en:</seg>
       </tuv>
     </tu>
@@ -1231,7 +1231,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1239,7 +1239,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Americas/Asia Pacific&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;strong&gt;America/Asia-Pacífico&lt;/strong&gt;</seg>
       </tuv>
     </tu>
@@ -1247,7 +1247,7 @@
       <tuv xml:lang="en">
         <seg>Phone:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Teléfono:</seg>
       </tuv>
     </tu>
@@ -1255,7 +1255,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1263,7 +1263,7 @@
       <tuv xml:lang="en">
         <seg>+1.949.399.8788</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1271,7 +1271,7 @@
       <tuv xml:lang="en">
         <seg>Email:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Correo electrónico:</seg>
       </tuv>
     </tu>
@@ -1279,7 +1279,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1287,7 +1287,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="mailto:CCSsupport@CBSi.com"&gt;CCSsupport@CBSi.com&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a href="mailto:CCSsupport@CBSi.com"&gt;CCSsupport@CBSi.com&lt;/a&gt;</seg>
       </tuv>
     </tu>
@@ -1295,7 +1295,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1303,7 +1303,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Europe&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;strong&gt;Europa&lt;/strong&gt;</seg>
       </tuv>
     </tu>
@@ -1311,7 +1311,7 @@
       <tuv xml:lang="en">
         <seg>Phone:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Teléfono:</seg>
       </tuv>
     </tu>
@@ -1319,7 +1319,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1327,7 +1327,7 @@
       <tuv xml:lang="en">
         <seg>+41.21.943.03.78</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1335,7 +1335,7 @@
       <tuv xml:lang="en">
         <seg>Email:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Correo electrónico:</seg>
       </tuv>
     </tu>
@@ -1343,7 +1343,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1351,7 +1351,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="mailto:CCSsupportEU@CBSi.com"&gt;CCSsupportEU@CBSi.com&lt;/a&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a href="mailto:CCSsupportEU@CBSi.com"&gt;CCSsupportEU@CBSi.com&lt;/a&gt;</seg>
       </tuv>
     </tu>
@@ -1359,7 +1359,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1367,7 +1367,7 @@
       <tuv xml:lang="en">
         <seg>&lt;sup&gt;1&lt;/sup&gt;Source:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;sup&gt;1&lt;/sup&gt;Fuente:</seg>
       </tuv>
     </tu>
@@ -1375,7 +1375,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1383,7 +1383,7 @@
       <tuv xml:lang="en">
         <seg>Crimson Analysts—Crimson Consulting Group, Los Altos, California.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Crimson Analysts—Crimson Consulting Group, Los Altos, California.</seg>
       </tuv>
     </tu>
@@ -1391,7 +1391,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1399,7 +1399,7 @@
       <tuv xml:lang="en">
         <seg>Syndication Resources from Microsoft</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Recursos de redifusión de Microsoft</seg>
       </tuv>
     </tu>
@@ -1407,7 +1407,7 @@
       <tuv xml:lang="en">
         <seg>OEM partners:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Partners OEM:</seg>
       </tuv>
     </tu>
@@ -1415,7 +1415,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1423,7 +1423,7 @@
       <tuv xml:lang="en">
         <seg>Keep marketing content up to date on your website by using automated syndication services from Microsoft.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Mantenga actualizado el contenido de marketing de su sitio web con los servicios automatizados de redifusión de Microsoft.</seg>
       </tuv>
     </tu>
@@ -1431,7 +1431,7 @@
       <tuv xml:lang="en">
         <seg>Syndication banner</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Banner de retransmisión</seg>
       </tuv>
     </tu>
@@ -1439,7 +1439,7 @@
       <tuv xml:lang="en">
         <seg>Styles</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Estilos</seg>
       </tuv>
     </tu>
@@ -1447,7 +1447,7 @@
       <tuv xml:lang="en">
         <seg>If you have experienced any one of the following, you may be eligible to receive replacement media:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Si ha sufrido alguna de las situaciones siguientes, puede tener derecho a recibir medios de sustitución:</seg>
       </tuv>
     </tu>
@@ -1455,7 +1455,7 @@
       <tuv xml:lang="en">
         <seg>CD(s) received will not properly install</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los CD-ROM recibidos no se instalan correctamente.</seg>
       </tuv>
     </tu>
@@ -1463,7 +1463,7 @@
       <tuv xml:lang="en">
         <seg>CD(s) noticeably damaged on receipt</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los CD-ROM están dañados visiblemente al recibirlos.</seg>
       </tuv>
     </tu>
@@ -1471,7 +1471,7 @@
       <tuv xml:lang="en">
         <seg>CD(s) damaged during preinstallation process</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los CD-ROM se han dañado durante el proceso de preinstalación.</seg>
       </tuv>
     </tu>
@@ -1479,7 +1479,7 @@
       <tuv xml:lang="en">
         <seg>Based on your feedback, this program has been designed to:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>En función de los comentarios que ustedes nos han aportado, este programa se ha diseñado para:</seg>
       </tuv>
     </tu>
@@ -1487,7 +1487,7 @@
       <tuv xml:lang="en">
         <seg>Eliminate the need for system builders to contact distributors for replacement media, and instead enable fulfillment directly from Microsoft.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Eliminar la necesidad de que los ensambladores de equipos se pongan en contacto con los distribuidores para obtener medios de sustitución y, en cambio, puedan realizar el pedido directamente a Microsoft.</seg>
       </tuv>
     </tu>
@@ -1495,7 +1495,7 @@
       <tuv xml:lang="en">
         <seg>Simplify and streamline the replacement process and eliminate the cost to system builders.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Simplificar y racionalizar el proceso de sustitución y eliminar el coste para los ensambladores de equipos.</seg>
       </tuv>
     </tu>
@@ -1503,7 +1503,7 @@
       <tuv xml:lang="en">
         <seg>Media replacement is available to system builders in all countries worldwide, with the exception of China.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>La sustitución de medios está a disposición de los ensambladores de equipos de todos los países del mundo, excepto China.</seg>
       </tuv>
     </tu>
@@ -1511,7 +1511,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1519,7 +1519,7 @@
       <tuv xml:lang="en">
         <seg>The following OEM software versions are supported for replacement under this program:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Las siguientes versiones de software para OEM se admiten para sustitución al amparo de este programa:</seg>
       </tuv>
     </tu>
@@ -1527,7 +1527,7 @@
       <tuv xml:lang="en">
         <seg>Windows 8 Pro</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows 8 Pro</seg>
       </tuv>
     </tu>
@@ -1535,7 +1535,7 @@
       <tuv xml:lang="en">
         <seg>Windows 8 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows 8 Standard</seg>
       </tuv>
     </tu>
@@ -1543,7 +1543,7 @@
       <tuv xml:lang="en">
         <seg>Windows 7 - Professional, Home Basic, Home Premium, Ultimate</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1551,7 +1551,7 @@
       <tuv xml:lang="en">
         <seg>Windows Home Server</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1559,7 +1559,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 - Standard, Enterprise, Datacenter</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1567,7 +1567,7 @@
       <tuv xml:lang="en">
         <seg>Windows Small Business Server 2011 Essentials</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Small Business Server 2011 Essentials</seg>
       </tuv>
     </tu>
@@ -1575,7 +1575,7 @@
       <tuv xml:lang="en">
         <seg>Windows Small Business Server 2011 Premium Add On</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Small Business Server 2011 Premium Add On</seg>
       </tuv>
     </tu>
@@ -1583,7 +1583,7 @@
       <tuv xml:lang="en">
         <seg>Windows Small Business Server 2008 - Standard and Premium</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1591,7 +1591,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server for Windows Essential Server 2008</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1599,7 +1599,7 @@
       <tuv xml:lang="en">
         <seg>Windows HPC Server 2008</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1607,7 +1607,7 @@
       <tuv xml:lang="en">
         <seg>HPC Pack 2008</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1615,7 +1615,7 @@
       <tuv xml:lang="en">
         <seg>Windows SQL Server 2008 for Small Business</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1623,7 +1623,7 @@
       <tuv xml:lang="en">
         <seg>System Center Data Protection Manager Server 2007 - Standard and Enterprise</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1631,7 +1631,7 @@
       <tuv xml:lang="en">
         <seg>Windows 8 SL (Single language)</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1639,7 +1639,7 @@
       <tuv xml:lang="en">
         <seg>Windows PRO GGK for Win 7 and 8</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1647,7 +1647,7 @@
       <tuv xml:lang="en">
         <seg>&lt;strong&gt;Media Replacement Ordering Instructions&lt;/strong&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1655,7 +1655,7 @@
       <tuv xml:lang="en">
         <seg>If you are a system builder and would like to request replacement media listed above, please click on and complete the Media Replacement Form below.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1663,7 +1663,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1671,7 +1671,7 @@
       <tuv xml:lang="en">
         <seg>Once you have provided the required information, including Certificate of Authenticity (COA) details, a submission confirmation message will be sent to you via email.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Cuando haya proporcionado la información necesaria, incluidos los detalles del Certificado de autenticidad (COA), se le enviará por correo electrónico un mensaje de confirmación del envío.</seg>
       </tuv>
     </tu>
@@ -1679,7 +1679,7 @@
       <tuv xml:lang="en">
         <seg>Please click here to access the &lt;a class="lock" href="/oem/en/pages/dmt.aspx?dmt=mr"&gt;Media Replacement Form&lt;/a&gt;.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Haga clic aquí para tener acceso al &lt;a class="lock" href="/oem/en/pages/dmt.aspx?dmt=mr"&gt;formulario de sustitución de medios&lt;/a&gt;.</seg>
       </tuv>
     </tu>
@@ -1687,7 +1687,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1695,7 +1695,7 @@
       <tuv xml:lang="en">
         <seg>OEM System Builder Media Replacement</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Sustitución de medios para ensambladores de equipos OEM</seg>
       </tuv>
     </tu>
@@ -1703,7 +1703,7 @@
       <tuv xml:lang="en">
         <seg>System builders:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Ensambladores de equipos:</seg>
       </tuv>
     </tu>
@@ -1711,7 +1711,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1719,7 +1719,7 @@
       <tuv xml:lang="en">
         <seg>Media fulfillment for the 2007 Microsoft Office OPK is no longer available.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Ya no hay medios de sustitución disponibles para el OPK de 2007 Microsoft Office System.</seg>
       </tuv>
     </tu>
@@ -1727,7 +1727,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1735,7 +1735,7 @@
       <tuv xml:lang="en">
         <seg>Learn which OEM software versions are supported for replacement.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Infórmese de qué versiones de software para OEM se admiten para sustitución.</seg>
       </tuv>
     </tu>
@@ -1743,7 +1743,7 @@
       <tuv xml:lang="en">
         <seg>Have you received damaged Microsoft OEM System Builder software media?</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>¿Ha recibido algún medio de software para ensambladores de equipos OEM de Microsoft deteriorado?</seg>
       </tuv>
     </tu>
@@ -1751,7 +1751,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1759,7 +1759,7 @@
       <tuv xml:lang="en">
         <seg>Or, have you damaged your media during preinstallation?</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>O bien, ¿se ha dañado el medio durante la preinstalación?</seg>
       </tuv>
     </tu>
@@ -1767,7 +1767,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1775,7 +1775,7 @@
       <tuv xml:lang="en">
         <seg>If you have, you may request replacement media online, provided you have a valid Certificate of Authenticity (COA).</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>En caso afirmativo, puede solicitar medios de sustitución en línea, siempre y cuando disponga de un Certificado de autenticidad (COA) válido.</seg>
       </tuv>
     </tu>
@@ -1783,7 +1783,7 @@
       <tuv xml:lang="en">
         <seg>System builders:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Ensambladores de equipos:</seg>
       </tuv>
     </tu>
@@ -1791,7 +1791,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1799,7 +1799,7 @@
       <tuv xml:lang="en">
         <seg>Learn how to download or order the 2007 Microsoft Office OPK Master Kit, either from Microsoft or from an authorized distributor.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>obtenga información sobre cómo descargar o solicitar el kit maestro del OPK de 2007 Microsoft Office, ya sea a través de Microsoft o de un distribuidor autorizado.</seg>
       </tuv>
     </tu>
@@ -1807,7 +1807,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1815,7 +1815,7 @@
       <tuv xml:lang="en">
         <seg>Also find out how to place an online order for replacements for damaged OEM System Builder software media.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Descubra también cómo realizar un pedido en línea a fin de obtener medios de sustitución de software para ensambladores de equipos OEM.</seg>
       </tuv>
     </tu>
@@ -1823,7 +1823,7 @@
       <tuv xml:lang="en">
         <seg>Styles</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Estilos</seg>
       </tuv>
     </tu>
@@ -1831,7 +1831,7 @@
       <tuv xml:lang="en">
         <seg>Explore Your Options</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Explore sus opciones</seg>
       </tuv>
     </tu>
@@ -1839,7 +1839,7 @@
       <tuv xml:lang="en">
         <seg>With the ROK software distribution model, you get convenience and flexibility.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Con el modelo de distribución de software de ROK, consigue comodidad y flexibilidad.</seg>
       </tuv>
     </tu>
@@ -1847,7 +1847,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1855,7 +1855,7 @@
       <tuv xml:lang="en">
         <seg>&lt;b&gt;Purchasing Convenience and Flexibility&lt;/b&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;b&gt;Comodidad y flexibilidad de compra&lt;/b&gt;</seg>
       </tuv>
     </tu>
@@ -1863,7 +1863,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1871,7 +1871,7 @@
       <tuv xml:lang="en">
         <seg>ROK is a fast and easy way to purchase server products—like RAM, hard drives, or processors—from your OEM distributor.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>ROK es una manera rápida y sencilla de comprar productos de servidores (como memoria RAM, unidades de disco duro o procesadores) a su distribuidor OEM.</seg>
       </tuv>
     </tu>
@@ -1879,7 +1879,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1887,7 +1887,7 @@
       <tuv xml:lang="en">
         <seg>You buy the installation-ready software kit as another server option using one price list.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El kit de software listo para instalación se adquiere como una opción de servidor más mediante una sola lista de precios.</seg>
       </tuv>
     </tu>
@@ -1895,7 +1895,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1903,7 +1903,7 @@
       <tuv xml:lang="en">
         <seg>&lt;b&gt;Fast and Easy Deployment&lt;/b&gt;</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;b&gt;Implementación rápida y sencilla&lt;/b&gt;</seg>
       </tuv>
     </tu>
@@ -1911,7 +1911,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1919,7 +1919,7 @@
       <tuv xml:lang="en">
         <seg>You get software that is tested, tuned, and certified with OEM-branded hardware, and is packaged with the latest drivers and customized installation tools for fast and easy deployment.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Conseguirá software probado, puesto a punto y certificado con hardware de la marca del OEM; además, el paquete incluye los controladores más recientes y herramientas de instalación personalizadas para realizar una implementación rápida y sencilla.</seg>
       </tuv>
     </tu>
@@ -1927,7 +1927,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1935,7 +1935,7 @@
       <tuv xml:lang="en">
         <seg>How Are ROKs Sold?</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>¿Cómo se venden los ROK?</seg>
       </tuv>
     </tu>
@@ -1943,7 +1943,7 @@
       <tuv xml:lang="en">
         <seg>Resellers purchase the OEM-branded server and Microsoft Windows Server ROK software through an authorized distributor.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los revendedores adquieren el servidor de la marca del OEM y el software del ROK de Microsoft Windows Server a través de un distribuidor autorizado.</seg>
       </tuv>
     </tu>
@@ -1951,7 +1951,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1959,7 +1959,7 @@
       <tuv xml:lang="en">
         <seg>The reseller has the flexibility to purchase the server hardware and software together or separately.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El revendedor cuenta con flexibilidad para adquirir el hardware y el software de servidor juntos o por separado.</seg>
       </tuv>
     </tu>
@@ -1967,7 +1967,7 @@
       <tuv xml:lang="en">
         <seg>The distributor ships the ROK in the box with the server or separately (the distributor may also preinstall the software for a fee).</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El distribuidor envía el ROK en el embalaje del servidor o por separado (además, el distribuidor puede preinstalar el software cobrando la tarifa correspondiente).</seg>
       </tuv>
     </tu>
@@ -1975,7 +1975,7 @@
       <tuv xml:lang="en">
         <seg>The reseller installs the operating system and the Windows COA before delivering the new server to the end user.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El revendedor instala el sistema operativo y el COA de Windows antes de entregar el servidor nuevo al usuario final.</seg>
       </tuv>
     </tu>
@@ -1983,7 +1983,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1991,7 +1991,7 @@
       <tuv xml:lang="en">
         <seg>Reseller Option Kits are available for:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -1999,7 +1999,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2007,7 +2007,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 R2 Datacenter</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2015,7 +2015,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2023,7 +2023,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 R2 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2031,7 +2031,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2039,7 +2039,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 R2 Essentials</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2047,7 +2047,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2055,7 +2055,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 R2 Foundation</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2063,7 +2063,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2071,7 +2071,7 @@
       <tuv xml:lang="en">
         <seg>Windows Storage Server 2012 R2 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2079,7 +2079,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2087,7 +2087,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 Datacenter</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2095,7 +2095,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2103,7 +2103,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 Essentials</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2111,7 +2111,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2119,7 +2119,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 Foundation (available only through direct OEM partners)</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2012 Foundation (disponible únicamente a través de partners OEM directos)</seg>
       </tuv>
     </tu>
@@ -2127,7 +2127,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2135,7 +2135,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2012 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2012 Standard</seg>
       </tuv>
     </tu>
@@ -2143,7 +2143,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2151,7 +2151,7 @@
       <tuv xml:lang="en">
         <seg>Windows Storage Server 2012 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Storage Server 2012 Standard</seg>
       </tuv>
     </tu>
@@ -2159,7 +2159,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2167,7 +2167,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 R2 Datacenter</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2008 R2 Datacenter</seg>
       </tuv>
     </tu>
@@ -2175,7 +2175,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2183,7 +2183,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 R2 Enterprise</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2008 R2 Enterprise</seg>
       </tuv>
     </tu>
@@ -2191,7 +2191,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2199,7 +2199,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 R2 Foundation (available only through direct OEM partners)</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Windows Server 2008 R2 Foundation (disponible únicamente a través de partners OEM directos)</seg>
       </tuv>
     </tu>
@@ -2207,7 +2207,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2215,7 +2215,7 @@
       <tuv xml:lang="en">
         <seg>Windows Server 2008 R2 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2223,7 +2223,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2231,7 +2231,7 @@
       <tuv xml:lang="en">
         <seg>Windows Small Business Server 2011 Standard</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2239,7 +2239,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2247,7 +2247,7 @@
       <tuv xml:lang="en">
         <seg>Microsoft Windows HPC Server 2008 R2</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2255,7 +2255,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2263,7 +2263,7 @@
       <tuv xml:lang="en">
         <seg>Contact your authorized &lt;a href="/oem/en/Pages/distributors.aspx"&gt;Microsoft Distributor&lt;/a&gt; for details.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2271,7 +2271,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2279,7 +2279,7 @@
       <tuv xml:lang="en">
         <seg>Contact a direct OEM partner:</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Póngase en contacto con un partner OEM directo:</seg>
       </tuv>
     </tu>
@@ -2287,7 +2287,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2295,7 +2295,7 @@
       <tuv xml:lang="en">
         <seg>&lt;a href="http://www.acer.com/" target="_blank"&gt;Acer&lt;/a&gt;, &lt;a href="http://www.dell.com/WindowsServer2012" target="_blank"&gt;Dell&lt;/a&gt;, &lt;a href="http://www.fujitsu.com/" target="_blank"&gt;Fujitsu&lt;/a&gt;, &lt;a href="http://www.hds.com/go/microsoft" target="_blank"&gt;Hitachi&lt;/a&gt;, &lt;a href="http://www.hp.com/learn/ws2012" target="_blank"&gt;HP&lt;/a&gt;, &lt;a href="http://www-03.ibm.com/systems/in/x/how_to_buy.html" target="_blank"&gt;IBM&lt;/a&gt;, &lt;a href="http://www.nec.com/" target="_blank"&gt;NEC&lt;/a&gt; for Windows Server Foundation.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>&lt;a href="http://www.acer.com/" target="_blank"&gt;Acer&lt;/a&gt;, &lt;a href="http://www.dell.com/WindowsServer2012" target="_blank"&gt;Dell&lt;/a&gt;, &lt;a href="http://www.fujitsu.com/" target="_blank"&gt;Fujitsu&lt;/a&gt;, &lt;a href="http://www.hds.com/go/microsoft" target="_blank"&gt;Hitachi&lt;/a&gt;, &lt;a href="http://www.hp.com/learn/ws2012" target="_blank"&gt;HP&lt;/a&gt;, &lt;a href="http://www-03.ibm.com/systems/in/x/how_to_buy.html" target="_blank"&gt;IBM&lt;/a&gt;, &lt;a href="http://www.nec.com/" target="_blank"&gt;NEC&lt;/a&gt; para Windows Server Foundation.</seg>
       </tuv>
     </tu>
@@ -2303,7 +2303,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2311,7 +2311,7 @@
       <tuv xml:lang="en">
         <seg>Reseller Option Kits for Servers</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Kits de opciones de revendedores para servidores</seg>
       </tuv>
     </tu>
@@ -2319,7 +2319,7 @@
       <tuv xml:lang="en">
         <seg>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM.</seg>
       </tuv>
     </tu>
@@ -2327,7 +2327,7 @@
       <tuv xml:lang="en">
         <seg>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM, para que el revendedor disponga de mayor flexibilidad para proporcionar soluciones de servidor personalizadas.</seg>
       </tuv>
     </tu>
@@ -2335,7 +2335,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2343,7 +2343,7 @@
       <tuv xml:lang="en">
         <seg>Each ROK is another server option—like memory or hard drives—that you specify when you order servers.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Cada ROK es otra opción de servidor (como la memoria o las unidades de disco duro) que se especifica al solicitar los servidores.</seg>
       </tuv>
     </tu>
@@ -2351,7 +2351,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>
@@ -2359,7 +2359,7 @@
       <tuv xml:lang="en">
         <seg>You can install the appropriate ROK on your customer’s preferred server model to address any combination of hardware and software.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Puede instalar el ROK apropiado en el modelo de servidor preferido del cliente, a fin de satisfacer cualquier combinación de hardware y software.</seg>
       </tuv>
     </tu>
@@ -2367,7 +2367,7 @@
       <tuv xml:lang="en">
         <seg>Your customers still enjoy the same great performance of OEM-tuned drivers for Microsoft software, because each ROK is carefully matched to a specific server brand.​​​​​​​​​​​​</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Los clientes continuarán disfrutando del mismo rendimiento excelente de los controladores puestos a punto por el OEM para el software de Microsoft, porque cada ROK está cuidadosamente adaptado a una marca de servidor concreta.​​​​​​​​​​​​</seg>
       </tuv>
     </tu>
@@ -2375,7 +2375,7 @@
       <tuv xml:lang="en">
         <seg>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions.</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM, para que el revendedor disponga de mayor flexibilidad para proporcionar soluciones de servidor personalizadas.</seg>
       </tuv>
     </tu>
@@ -2383,7 +2383,7 @@
       <tuv xml:lang="en">
         <seg>Styles</seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg>Estilos</seg>
       </tuv>
     </tu>
@@ -2391,7 +2391,7 @@
       <tuv xml:lang="en">
         <seg></seg>
       </tuv>
-      <tuv xml:lang="es-ES">
+      <tuv xml:lang=":es">
         <seg></seg>
       </tuv>
     </tu>

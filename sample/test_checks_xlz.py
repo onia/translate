@@ -73,11 +73,17 @@ def fails_serious(filterfunction, str1, str2, message=None):
 
 def check_xlz_units():
     """Tests basic functionality."""
-    d = zipw.ZIPFile("Oringinal_ES_TW.xlz")
+    d = zipw.ZIPFile(os.path.join(os.getcwd(),"tasks_Syncplicity_Oct_UI_drop6__Android_iOS__30729_de_DE_desktopWorkbench.xlz"))
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='zh_ui'))
-    for unit in d.getunits():
-        if fails(stdchecker.endpunc, unit.source, unit.target):
-            print(unit.getlocations(), unit.source, unit.target, unit.get_state_n(), unit.getid())
+    #for unit in d.getunits():
+        #if not unit.source or not unit.target: continue
+        #if fails(stdchecker.endpunc, unit.source, unit.target):
+        #print(unit.getlocations(), unit.source, unit.target, unit.get_state_n(), unit.getid())
+        #print(unit.source)
+    #    unit.target=''
+    #for subdir, file in d.getfiles():
+    #    print(type(file))
+    d.savefiles()
 
 
 if __name__=='__main__':

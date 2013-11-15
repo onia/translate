@@ -35,6 +35,9 @@ class Directory:
     def __init__(self, subdir=None):
         self.dir = subdir
         self.filedata = []
+        self.storedata = []
+        self.scanfiles()
+        self.scanstores()
 
     def file_iter(self):
         """Iterator over (dir, filename) for all files in this directory."""
@@ -48,10 +51,24 @@ class Directory:
         this directory."""
         return [filetuple for filetuple in self.file_iter()]
 
+    def savefiles(self):
+        """Try to save all files in this directory."""
+        for store in self.storedata:
+            store.save()
+            
+    def clearfiles(self):
+        """Try to remove all temp files in this directory."""
+        for dirname, filename in self.filedata:
+            try:
+                os.remove(os.path.join(dirname, filename))
+            except:
+                raise ValueError("Cannot remove temp files.")
+            
     def unit_iter(self):
         """Iterator over all the units in all the files in this directory."""
         for dirname, filename in self.file_iter():
             store = factory.getobject(os.path.join(dirname, filename))
+            self.storedata.append(store)
             #TODO: don't regenerate all the storage objects
             for unit in store.unit_iter():
                 yield unit
@@ -59,7 +76,13 @@ class Directory:
     def getunits(self):
         """List of all the units in all the files in this directory."""
         return [unit for unit in self.unit_iter()]
-
+    
+    def scanstores(self):
+        """Populate the internal store data."""
+        for dirname, filename in self.file_iter():
+            store = factory.getobject(os.path.join(dirname, filename))
+            self.storedata.append(store)
+            
     def scanfiles(self):
         """Populate the internal file data."""
         self.filedata = []

@@ -228,22 +228,31 @@ class TestBasicXLIFF2PO(test_convert.TestConvertCommand, TestXLIFF2PO):
     </body>
   </file>
 </xliff>'''
-
+    
     def test_simple_convert(self):
-        self.create_testfile("simple_convert.xlf", self.xliffskeleton % """
-                             <trans-unit xml:space="preserve" id="1" approved="yes">
+        testconvertcmd=test_convert.TestConvertCommand()
+        testconvertcmd.setup_method('test')
+        testconvertcmd.convertmodule=xliff2po
+        xliffcontents='''<?xml version="1.0" ?>
+<xliff version="1.1">
+  <file original="filename.po" source-language="en-US" datatype="po">
+    <body>
+        <trans-unit xml:space="preserve" id="1" approved="yes">
                                <source>One</source>
                                <target state="translated">Een</target>
                              </trans-unit>
-                             """)
-        self.run_command(i="simple_convert.xlf", o="simple_convert.po")
-        assert 'msgstr "Een"' in self.read_testfile("simple_convert.po")
+    </body>
+  </file>
+</xliff>'''
+        print(xliffcontents)
+        testconvertcmd.create_testfile("simple_convert.xlf", xliffcontents)
+        testconvertcmd.run_command(i="simple_convert.xlf", o="simple_convert.po")
+        assert 'msgstr "Een"' in testconvertcmd.read_testfile("simple_convert.po")
 
 
 class TestXLIFF2POCommand(test_convert.TestConvertCommand, TestXLIFF2PO):
     """Tests running actual xliff2po commands on files"""
     convertmodule = xliff2po
-
     def singleelement(self, pofile):
         """checks that the pofile contains a single non-header element, and returns it"""
         if isinstance(pofile, poheader):
@@ -325,8 +334,11 @@ if __name__ == '__main__':
     TestXLIFF2PO_object.test_fuzzy()
     #TestXLIFF2PO_object.test_plurals() Failed
     TestBasicXLIFF2PO.test_simple_convert(TestXLIFF2PO_object)
-    TestXLIFF2POCommand.test_help()
-    TestXLIFF2POCommand.test_preserve_filename()
-    TestXLIFF2POCommand.test_simple_pot()
-    TestXLIFF2POCommand.test_simple_po()
-    TestXLIFF2POCommand.test_remove_duplicates()
+    TestXLIFF2POCommand_object=TestXLIFF2POCommand()
+    TestXLIFF2POCommand_object.singleelement()
+    TestXLIFF2POCommand_object.setup_method('test')
+    TestXLIFF2POCommand_object.test_help()
+    TestXLIFF2POCommand_object.test_preserve_filename()
+    TestXLIFF2POCommand_object.test_simple_pot()
+    TestXLIFF2POCommand_object.test_simple_po()
+    TestXLIFF2POCommand_object.test_remove_duplicates()

@@ -26,7 +26,7 @@
 #TODO: consider also providing directories as we currently provide files
 
 import os
-from zipfile import ZipFile
+import zipfile
 
 from translate.storage import factory
 from translate.storage import directory
@@ -39,6 +39,9 @@ class ZIPFile(directory.Directory):
     def __init__(self, filename=None):
         self.filename = filename
         self.filedata = []
+        self.storedata = []
+        self.scanfiles()
+        self.scanstores()
 
     def unit_iter(self):
         """Iterator over all the units in all the files in this zip file."""
@@ -51,14 +54,46 @@ class ZIPFile(directory.Directory):
             strfile = wStringIO.StringIO(self.archive.read(filepath))
             strfile.filename = filename
             store = factory.getobject(strfile)
+            self.storedata.append(store)
             #TODO: don't regenerate all the storage objects
             for unit in store.unit_iter():
                 yield unit
-
+                
+    def savefiles(self):
+        """Try to save all files in this directory."""
+        # TODO: need to make more robust
+        super(ZIPFile, self).savefiles()
+        newzipfile=zipfile.ZipFile(self.filename+"~temp",'w',zipfile.ZIP_DEFLATED)
+        for dirname, filename in self.file_iter():
+            newzipfile.write(os.path.join(dirname, filename))
+        newzipfile.close()
+        super(ZIPFile, self).clearfiles()
+        self.archive.close()
+        try:
+            if os.path.isfile(self.filename+".bak"):
+                os.remove(self.filename+".bak")
+            os.rename(self.filename, self.filename+".bak")
+            os.rename(self.filename+"~temp", self.filename)
+        except:
+            raise ValueError("Cannot rename orignal file %s." % self.filename)
+        
+    def scanstores(self):
+        """Populate the internal store data."""
+        for dirname, filename in self.file_iter():
+            # TODO: Here os.path.join(dirname, filename) doesn't work.....
+            if dirname=='':
+                filepath=os.path.join(dirname, filename)
+            else:
+                filepath=dirname+'/'+filename
+            strfile = wStringIO.StringIO(self.archive.read(filepath))
+            strfile.filename = filename
+            store = factory.getobject(strfile)
+            self.storedata.append(store)
+            
     def scanfiles(self):
         """Populate the internal file data."""
         self.filedata = []
-        self.archive = ZipFile(self.filename)
+        self.archive = zipfile.ZipFile(self.filename)
         for completename in self.archive.namelist():
             subdir, name = os.path.split(completename)
             self.filedata.append((subdir, name))
