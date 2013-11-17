@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?><!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd"><xliff version="1.1" xmlns:logoport="urn:logoport:xliffeditor:xliff-extras:1.0">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff xmlns:logoport="urn:logoport:xliffeditor:xliff-extras:1.0" version="1.1">
 	<file datatype="xml" date="2013-10-14" logoport:revision-tracking="off" original="C:\OPC\Release#51\1_Prep\1_prepped\es\cspecm_oem_es_salesmarketing_Pages.xml.rtf" source-language="en-us" target-language="es-es">
 		<header>
 			<skl>
@@ -13,31 +15,31 @@
 		<body>
 			<trans-unit id="1" translate="no">
 				<source>La Zona de aprendizaje para OEM es la ubicación central en la que encontrará cursos sobre productos y material para impulsar las ventas creados específicamente para los partners OEM de Microsoft.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">La Zona de aprendizaje para OEM es la ubicación central en la que encontrará cursos sobre productos y material para impulsar las ventas creados específicamente para los partners OEM de Microsoft.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="2" translate="no">
 				<source>Learn, Sell, and Grow with the OEM Training Zone</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Aprenda, venda y obtenga mejores resultados con la Zona de aprendizaje para OEM</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="3" translate="no">
 				<source>If you are a reseller and want to improve your product knowledge and sales skills, you can find materials in the OEM Training Zone to help you identify solutions and expand sales opportunities for these products:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Si es un revendedor y desea ampliar sus conocimientos sobre los productos y mejorar sus habilidades de venta, encontrará material en la Zona de aprendizaje para OEM que le ayudará a identificar soluciones y a ampliar las oportunidades de venta de estos productos:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="4" translate="no">
 				<source>Windows 7</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows 7</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="5" translate="no">
 				<source>Microsoft Office 2010</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Microsoft Office 2010</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="6" translate="no">
 				<source>Windows Small Business Server 2011</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Small Business Server 2011</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="7" translate="no">
 				<source>Windows Server 2008 R2</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2008 R2</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="8" translate="yes">
 				<source>You can also find useful information about programs to grow your business:</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="9" translate="yes">
 				<source><bpt id="1">&lt;a href="/oem/en/community/mpn/Pages/oem_competency.aspx"&gt;</bpt>OEM competency<ept id="1">&lt;/a&gt;</ept> - Earning the OEM competency can help partners take advantage of significant market opportunities for Windows 7 and Windows Server 2008 R2 operating systems.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="10" translate="no">
 				<source><bpt id="1">&lt;a href="http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage.aspx" target="_blank"&gt;</bpt>Windows Embedded<ept id="1">&lt;/a&gt;</ept> – This content helps you communicate the business and technical value of the Windows Embedded operating systems to a broad spectrum of customers.</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage.aspx" target="_blank"&gt;</bpt>Windows Embedded<ept id="1">&lt;/a&gt;</ept>: este contenido le ayudará a transmitir el valor empresarial y técnico de los sistemas operativos Windows Embedded a un amplio abanico de clientes.</target></trans-unit>
@@ -46,870 +48,870 @@
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="http://www.oemtrainingzone.com/" target="_blank"&gt;</bpt>Zona de aprendizaje para distribuidores<ept id="1">&lt;/a&gt;</ept>: esta ubicación central contiene cursos y materiales para impulsar las ventas destinados a los distribuidores SMSP y OEM. Incluye también los programas de incentivos de canal y las últimas noticias.</target></trans-unit>
 			<trans-unit id="12" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="13" translate="no">
 				<source>OEM Training Zone Meets a Variety of Needs</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">La Zona de aprendizaje para OEM da respuesta a un gran número de necesidades</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="14" translate="no">
 				<source>The OEM Training Zone offers many different resources to meet your business goals:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">La Zona de aprendizaje para OEM ofrece una gran variedad de recursos que le permitirán alcanzar sus objetivos empresariales:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="15" translate="no">
 				<source>Goal</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Objetivo</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="16" translate="no">
 				<source>OEM Training Zone Resources</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Recursos de la Zona de aprendizaje para OEM</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="17" translate="no">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Learn<ept id="1">&lt;/strong&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;strong&gt;</bpt>Aprenda<ept id="1">&lt;/strong&gt;</ept></target></trans-unit>
 			<trans-unit id="18" translate="no">
 				<source>Take short courses with assessments, watch videos, and view presentation decks to understand product value propositions, engage customers, and ignite sales.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Realice pequeños cursos con evaluaciones, consulte vídeos y vea presentaciones para conocer las propuestas de valor de los productos, captar clientes y ampliar las ventas.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="19" translate="no">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Sell<ept id="1">&lt;/strong&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;strong&gt;</bpt>Venda<ept id="1">&lt;/strong&gt;</ept></target></trans-unit>
 			<trans-unit id="20" translate="no">
 				<source>Understand how to position Microsoft products and solutions against the competition and get the strategic speaking points you need to help you close sales.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Conozca cómo situar los productos y soluciones de Microsoft respecto a los de la competencia y descubra los puntos de referencia estratégicos que necesita para cerrar las ventas.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="21" translate="no">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Grow<ept id="1">&lt;/strong&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;strong&gt;</bpt>Obtenga mejores resultados<ept id="1">&lt;/strong&gt;</ept></target></trans-unit>
 			<trans-unit id="22" translate="no">
 				<source>Better identify opportunities to drive incremental sales and establish preference for your hardware and Microsoft software.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Identifique mejor las oportunidades para incrementar las ventas y establezca preferencias en su hardware y el software de Microsoft.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="23" translate="no">
 				<source>Many training and readiness resources are available in the OEM Training Zone, including:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Muchos de los recursos de aprendizaje y preparación están disponibles en la Zona de aprendizaje para OEM, por ejemplo:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="24" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="25" translate="no">
 				<source>How to Demo Office 2010 For Your Customers</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Cómo mostrar Office 2010 a sus clientes</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="26" translate="no">
 				<source>Why Sell Windows 7</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Por qué vender Windows 7</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="27" translate="no">
 				<source>Cloud Services</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Servicios en la nube</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="28" translate="no">
 				<source>Windows SBS 2011 Technical Training</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Curso técnico de Windows SBS 2011</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="29" translate="no">
 				<source>Tips and Tricks for Windows 7 and Office 2010</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Sugerencias y trucos de Windows 7 y Office 2010</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="30" translate="no">
 				<source>Selling Office 2010 with New PCs</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Vender Office 2010 con equipos nuevos</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="31" translate="yes">
 				<source>Videos that highlight individual features of Office 2010</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="32" translate="yes">
 				<source>Visit the <bpt id="1">&lt;a href="http://www.oemtrainingzone.com/" target="_blank"&gt;</bpt>OEM Training Zone<ept id="1">&lt;/a&gt;</ept>.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="33" translate="yes">
 				<source>OEM Training Zone</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="34" translate="yes">
 				<source>The OEM Training Zone is the central destination for product training and readiness materials created specifically for Microsoft OEM partners.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="35" translate="yes">
 				<source>The OEM Training Zone is the central destination for product training and readiness materials that have been created specifically for Microsoft OEM partners.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="36" translate="no">
 				<source>Styles</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Estilos</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="37" translate="no">
 				<source>Mantenga actualizado el contenido de marketing de su sitio web con los servicios de redifusión de marketing digital de Microsoft.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Mantenga actualizado el contenido de marketing de su sitio web con los servicios de redifusión de marketing digital de Microsoft.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="38" translate="yes">
 				<source>Use Microsoft marketing syndication to place compelling marketing and product information tied to Microsoft’s global campaigns on your website.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="39" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="40" translate="yes">
 				<source>The content is dynamically served, localized, and updated in real time across participating partner sites.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="41" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="42" translate="yes">
 				<source>Syndication is an <bpt id="1">&lt;strong&gt;</bpt>easy<ept id="1">&lt;/strong&gt;</ept> and <bpt id="2">&lt;strong&gt;</bpt>cost effective<ept id="2">&lt;/strong&gt;</ept> way for you to <bpt id="3">&lt;strong&gt;</bpt>generate leads and drive demand and sales<ept id="3">&lt;/strong&gt;</ept>, while ensuring that you always have the latest content on your website.Once you’ve subscribed, changes made to the content are automatically updated on your site, saving you time and effort.In addition, <bpt id="4">&lt;strong&gt;</bpt>robust partner specific reporting<ept id="4">&lt;/strong&gt;</ept> is available to help you measure how the content is being consumed by your customers.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="43" translate="yes">
 				<source>This year we are adding <bpt id="1">&lt;strong&gt;</bpt>Device Marketing<ept id="1">&lt;/strong&gt;</ept> content to Microsoft Digital Commerce and Campaign Network (DCCN) to help you drive demand for the Windows 8 devices you sell.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="44" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="45" translate="yes">
 				<source>Content is now available in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming soon.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="46" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Partner Opportunity<ept id="1">&lt;/strong&gt;</ept></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="47" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Reach and engage customers <ept id="1">&lt;/strong&gt;</ept>with rich marketing content delivered directly to your website with minimal ongoing maintenance</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="48" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Reach and engage customers <ept id="1">&lt;/strong&gt;</ept>with rich marketing content delivered directly to your website with minimal ongoing maintenance</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="49" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Educate customers <ept id="1">&lt;/strong&gt;</ept>by providing comprehensive Microsoft product and solution information</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="50" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Accelerate your sales<ept id="1">&lt;/strong&gt;</ept></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="51" translate="yes">
 				<source>Partners who have participated in marketing syndication have shown <bpt id="1">&lt;strong&gt;</bpt>34 percent more revenue<ept id="1">&lt;/strong&gt;</ept> (on average) and grew <bpt id="2">&lt;strong&gt;</bpt>five times faster<ept id="2">&lt;/strong&gt;</ept> than partners who did not participate.<bpt id="3">&lt;sup&gt;</bpt>1<ept id="3">&lt;/sup&gt;</ept></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="52" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="53" translate="no">
 				<source>Worldwide partners can find ready-to-use banners and microsites through the <bpt id="1">&lt;a href="http://www.msdccn.com/" target="_blank"&gt;</bpt>Digital Commerce and Campaign Network<ept id="1">&lt;/a&gt;</ept> (DCCN), along with the latest co-brandable marketing materials to download.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los partners de todo el mundo pueden encontrar sitios con banners y micrositios listos para usar a través del servicio de redifusión de marketing <bpt id="1">&lt;a href="http://www.msdccn.com/" target="_blank"&gt;</bpt>Red de difusión de contenidos y campañas online<ept id="1">&lt;/a&gt;</ept> (DCCN), así como descargar el último material de marketing de marca compartida.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="http://www.msdccn.com/" target="_blank"&gt;</bpt>Red de difusión de contenidos y campañas online<ept id="1">&lt;/a&gt;</ept> (DCCN), así como descargar el último material de marketing de marca compartida.</target></trans-unit>
 			<trans-unit id="54" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="55" translate="yes">
 				<source>U.S. partners can access marketing content, web banners, and other resources at the <bpt id="1">&lt;a href="http://www.oemsalescenter.com/" target="_blank"&gt;</bpt>OEM Sales Center<ept id="1">&lt;/a&gt;</ept>.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="56" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="57" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Register for <bpt id="2">&lt;a href="http://www.msdccn.com/" target="_blank"&gt;</bpt>Microsoft DCCN<ept id="2">&lt;/a&gt;</ept> today<ept id="1">&lt;/strong&gt;</ept> and join the community of worldwide partners who are using Microsoft DCCN to increase awareness and demand.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="58" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="59" translate="yes">
 				<source>New Content Available on Microsoft DCCN</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="60" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="61" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Device Marketing <ept id="1">&lt;/strong&gt;</ept>– Device selling is easy with Microsoft DCCN.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="62" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="63" translate="yes">
 				<source>Leverage the new Device Marketing content on Microsoft DCCN to drive demand for the devices you sell.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="64" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="65" translate="yes">
 				<source>Go to DCCN, create a custom rotation for the devices you sell, and syndicate this content on your website.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="66" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="67" translate="yes">
 				<source>Content is available now in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming in the next few months.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="68" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Get2Modern <ept id="1">&lt;/strong&gt;</ept>- The Get2Modern campaign is now available on DCCN.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="69" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="70" translate="yes">
 				<source>Syndicate this content to encourage customers to switch to Windows 8 Pro and the new Office.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="71" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="72" translate="yes">
 				<source>Innovation in both Windows 8 Pro PCs and the new Office can help customers with enhanced security, mobility, productivity, and flexibility for their business - great reasons to get modern.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="73" translate="yes">
 				<source>Microsoft DCCN 2.0</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="74" translate="no">
 				<source>
 </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="75" translate="yes">
 				<source><ph id="1">&lt;img class="screenshot" alt="</ph>DCCN landing page screenshot<ph id="2">" src="/oem/PublishingImages/DCCN_Landing_Page_550x241.jpg" /&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="76" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="77" translate="yes">
 				<source>Microsoft DCCN includes the features you need:</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="78" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="79" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Easy process<ept id="1">&lt;/strong&gt;</ept> to begin syndicating – select the campaigns you want, pick up the HTML code, and place it on your website.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="80" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="81" translate="yes">
 				<source>It’s that easy!</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="82" translate="yes">
 				<source>Many campaigns have Contact Us or Download Now buttons to <bpt id="1">&lt;strong&gt;</bpt>generate leads<ept id="1">&lt;/strong&gt;</ept> or <bpt id="2">&lt;strong&gt;</bpt>drive active selling<ept id="2">&lt;/strong&gt;</ept> on your website</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="83" translate="yes">
 				<source>Create your own <bpt id="1">&lt;strong&gt;</bpt>custom rotation<ept id="1">&lt;/strong&gt;</ept> of banners to drive your business results</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="84" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Saved web campaigns<ept id="1">&lt;/strong&gt;</ept> enables you to easily update the campaign content on your website with a single click (no need to engage the IT department)</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="85" translate="yes">
 				<source>Customize the <bpt id="1">&lt;strong&gt;</bpt>downloadable marketing materials<ept id="1">&lt;/strong&gt;</ept> to use in your marketing efforts</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="86" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Robust web-based reporting<ept id="1">&lt;/strong&gt;</ept> so that you can measure impact and ROI</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="87" translate="yes">
 				<source>To begin using Microsoft DCCN, visit <bpt id="1">&lt;a href="http://www.msdccn.com/" target="_blank"&gt;</bpt>www.msdccn.com<ept id="1">&lt;/a&gt;</ept> and register today.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="88" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="89" translate="no">
 				<source>Microsoft DCCN resources</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Recursos de Microsoft DCCN</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="90" translate="no">
 				<source>Watch the new Microsoft Digital Commerce and Campaign Network videos to learn how easy it is to get started with Microsoft DCCN.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Vea los nuevos vídeos de la Red de difusión de contenido y campañas online (DCCN) y descubra lo sencillo que es empezar a trabajar con Microsoft DCCN.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="91" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="92" translate="no">
 				<source>Video</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Vídeo</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="93" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="94" translate="no">
 				<source>Description</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Descripción</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="95" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="96" translate="no">
 				<source><ph id="1">&lt;a title="</ph>Microsoft DCCN Overview - .wmv 8.98 MB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Video.wmv" target="_blank"&gt;</ph>Microsoft DCCN Overview</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><ph id="1">&lt;a title="</ph>Microsoft DCCN Overview - .wmv 8,98 MB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Video.wmv" target="_blank"&gt;</ph>Microsoft DCCN Overview</target></trans-unit>
 			<trans-unit id="97" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="98" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/Microsoft_DCCN_2.0_Overview_Video.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="99" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="100" translate="no">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.wmv 8.98 MB<ept id="1">&lt;/span&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.wmv 8,98 MB<ept id="1">&lt;/span&gt;</ept></target></trans-unit>
 			<trans-unit id="101" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="102" translate="no">
 				<source>Watch this video to understand what Microsoft DCCN is and how you can use it to educate customers and accelerate your sales.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Vea este vídeo para conocer Microsoft DCCN y cómo se puede usar para informar a los clientes y acelerar las ventas.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="103" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="104" translate="no">
 				<source><ph id="1">&lt;a title="</ph>Implementing Microsoft DCCN on Your Website - .wmv 7.67 MB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How_to_Implement_Syndication_Video.wmv" target="_blank"&gt;</ph>Implementing Microsoft DCCN on Your Website</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><ph id="1">&lt;a title="</ph>Implementing Microsoft DCCN on Your Website - .wmv 7,67 MB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How_to_Implement_Syndication_Video.wmv" target="_blank"&gt;</ph>Implementing Microsoft DCCN on Your Website</target></trans-unit>
 			<trans-unit id="105" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="106" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/DCCN_2.0_How_to_Implement_Syndication_Video.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="107" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="108" translate="no">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.wmv 7.67 MB<ept id="1">&lt;/span&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.wmv 7,67 MB<ept id="1">&lt;/span&gt;</ept></target></trans-unit>
 			<trans-unit id="109" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="110" translate="no">
 				<source>Watch this video to learn how to select campaigns on Microsoft DCCN, choose a banner size, generate the HTML code, and make the campaigns live on your website.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Vea este vídeo para obtener información sobre cómo seleccionar campañas en Microsoft DCCN, elegir el tamaño del banner, generar el código HTML y dar vida a las campañas en su sitio web.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="111" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="112" translate="no">
 				<source>Use these resources to learn about Microsoft DCCN.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">use estos recursos para obtener información sobre Microsoft DCCN.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="113" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="114" translate="no">
 				<source>Resource</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Recurso</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="115" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="116" translate="no">
 				<source>Description</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Descripción</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="117" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="118" translate="no">
 				<source><ph id="1">&lt;a title="</ph>Microsoft DCCN 1 Pager - .pdf 553 KB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf" target="_blank"&gt;</ph>Microsoft DCCN 1 Pager</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><ph id="1">&lt;a title="</ph>Microsoft DCCN 1 Pager - .pdf 553 KB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf" target="_blank"&gt;</ph>Microsoft DCCN 1 Pager</target></trans-unit>
 			<trans-unit id="119" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="120" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/DCCN_2.0_Syndication_1_Pager.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="121" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="122" translate="no">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.pdf 553 KB<ept id="1">&lt;/span&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.pdf 553 KB<ept id="1">&lt;/span&gt;</ept></target></trans-unit>
 			<trans-unit id="123" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="124" translate="yes">
 				<source>View this one-page summary for an overview of what marketing syndication is and the partner opportunity with Microsoft DCCN.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="125" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="126" translate="yes">
 				<source><ph id="1">&lt;a title="</ph>Microsoft DCCN Overview and Opportunity - .pptx 5.45 MB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_Partner_Ready_Deck.pptx" target="_blank"&gt;</ph>Microsoft DCCN Overview and Opportunity</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="127" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="128" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/DCCN_2.0_Syndication_Partner_Ready_Deck.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="129" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="130" translate="yes">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.pptx 5.45 MB<ept id="1">&lt;/span&gt;</ept></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="131" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="132" translate="yes">
 				<source>View this PowerPoint presentation for details on what marketing syndication is and how you can use Microsoft DCCN to educate customers, increase demand, and accelerate your sales.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="133" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="134" translate="yes">
 				<source><ph id="1">&lt;a title="</ph>Microsoft DCCN Technical FAQs - .docx 35.8 KB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.docx" target="_blank"&gt;</ph>Microsoft DCCN Technical FAQs</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="135" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="136" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="137" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="138" translate="no">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.docx 35.8 KB<ept id="1">&lt;/span&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.docx 35,8 KB<ept id="1">&lt;/span&gt;</ept></target></trans-unit>
 			<trans-unit id="139" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="140" translate="no">
 				<source>Read this document for more detailed information on Microsoft DCCN.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Lea este documento para obtener información más detallada sobre Microsoft DCCN.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="141" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="142" translate="no">
 				<source><ph id="1">&lt;a title="</ph>Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Quick_Start_Guide.pdf" target="_blank"&gt;</ph>Microsoft DCCN 2.0 Quick Start Guide</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><ph id="1">&lt;a title="</ph>Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB<ph id="2">" href="http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Quick_Start_Guide.pdf" target="_blank"&gt;</ph>Microsoft DCCN 2.0 Quick Start Guide</target></trans-unit>
 			<trans-unit id="143" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="144" translate="no">
 				<source><ph id="1">&lt;img src="/oem/PublishingImages/Microsoft_DCCN_2.0_Quick_Start_Guide.jpg" alt="" /&gt;</ph> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="145" translate="no">
 				<source><ph id="1">&lt;/a&gt;</ph></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="146" translate="no">
 				<source><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.pdf 560 KB<ept id="1">&lt;/span&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;span class="fileinfo"&gt;</bpt>.pdf 560 KB<ept id="1">&lt;/span&gt;</ept></target></trans-unit>
 			<trans-unit id="147" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="148" translate="no">
 				<source>Read this document for a quick overview on how to use Microsoft DCCN 2.0.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Lea este documento para ver una introducción rápida sobre el uso de Microsoft DCCN 2.0.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="149" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="150" translate="no">
 				<source>Technical Support</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Soporte técnico</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="151" translate="no">
 				<source>For general questions about the Microsoft DCCN program, please contact <bpt id="1">&lt;a href="mailto:DCCNHelp@Microsoft.com"&gt;</bpt>DCCNHelp@Microsoft.com<ept id="1">&lt;/a&gt;</ept>.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Para resolver preguntas generales sobre el programa DCCN, póngase en contacto con <bpt id="1">&lt;a href="mailto:DCCNHelp@Microsoft.com"&gt;</bpt>DCCNHelp@Microsoft.com<ept id="1">&lt;/a&gt;</ept>.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="mailto:DCCNHelp@Microsoft.com"&gt;</bpt>DCCNHelp@Microsoft.com<ept id="1">&lt;/a&gt;</ept>.</target></trans-unit>
 			<trans-unit id="152" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="153" translate="no">
 				<source>If you have technical questions or need help implementing Microsoft DCCN, please contact Customer Support at:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Si tiene dudas técnicas o necesita ayuda para implementar Microsoft DCCN, póngase en contacto con el Servicio de soporte técnico en:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="154" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="155" translate="no">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Americas/Asia Pacific<ept id="1">&lt;/strong&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;strong&gt;</bpt>America/Asia-Pacífico<ept id="1">&lt;/strong&gt;</ept></target></trans-unit>
 			<trans-unit id="156" translate="no">
 				<source>Phone:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Teléfono:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="157" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="158" translate="no">
 				<source>+1.949.399.8788</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="159" translate="no">
 				<source>Email:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Correo electrónico:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="160" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="161" translate="no">
 				<source><bpt id="1">&lt;a href="mailto:CCSsupport@CBSi.com"&gt;</bpt>CCSsupport@CBSi.com<ept id="1">&lt;/a&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="mailto:CCSsupport@CBSi.com"&gt;</bpt>CCSsupport@CBSi.com<ept id="1">&lt;/a&gt;</ept></target></trans-unit>
 			<trans-unit id="162" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="163" translate="no">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Europe<ept id="1">&lt;/strong&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;strong&gt;</bpt>Europa<ept id="1">&lt;/strong&gt;</ept></target></trans-unit>
 			<trans-unit id="164" translate="no">
 				<source>Phone:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Teléfono:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="165" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="166" translate="no">
 				<source>+41.21.943.03.78</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="167" translate="no">
 				<source>Email:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Correo electrónico:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="168" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="169" translate="no">
 				<source><bpt id="1">&lt;a href="mailto:CCSsupportEU@CBSi.com"&gt;</bpt>CCSsupportEU@CBSi.com<ept id="1">&lt;/a&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="mailto:CCSsupportEU@CBSi.com"&gt;</bpt>CCSsupportEU@CBSi.com<ept id="1">&lt;/a&gt;</ept></target></trans-unit>
 			<trans-unit id="170" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="171" translate="no">
 				<source><bpt id="1">&lt;sup&gt;</bpt>1<ept id="1">&lt;/sup&gt;</ept>Source:</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;sup&gt;</bpt>1<ept id="1">&lt;/sup&gt;</ept>Fuente:</target></trans-unit>
 			<trans-unit id="172" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="173" translate="no">
 				<source>Crimson Analysts—Crimson Consulting Group, Los Altos, California.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Crimson Analysts—Crimson Consulting Group, Los Altos, California.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="174" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="175" translate="no">
 				<source>Syndication Resources from Microsoft</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Recursos de redifusión de Microsoft</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="176" translate="no">
 				<source>OEM partners:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Partners OEM:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="177" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="178" translate="no">
 				<source>Keep marketing content up to date on your website by using automated syndication services from Microsoft.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Mantenga actualizado el contenido de marketing de su sitio web con los servicios automatizados de redifusión de Microsoft.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="179" translate="no">
 				<source>Syndication banner</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Banner de retransmisión</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="180" translate="no">
 				<source>Styles</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Estilos</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="181" translate="no">
 				<source>If you have experienced any one of the following, you may be eligible to receive replacement media:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Si ha sufrido alguna de las situaciones siguientes, puede tener derecho a recibir medios de sustitución:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="182" translate="no">
 				<source>CD(s) received will not properly install</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los CD-ROM recibidos no se instalan correctamente.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="183" translate="no">
 				<source>CD(s) noticeably damaged on receipt</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los CD-ROM están dañados visiblemente al recibirlos.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="184" translate="no">
 				<source>CD(s) damaged during preinstallation process</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los CD-ROM se han dañado durante el proceso de preinstalación.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="185" translate="no">
 				<source>Based on your feedback, this program has been designed to:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">En función de los comentarios que ustedes nos han aportado, este programa se ha diseñado para:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="186" translate="no">
 				<source>Eliminate the need for system builders to contact distributors for replacement media, and instead enable fulfillment directly from Microsoft.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Eliminar la necesidad de que los ensambladores de equipos se pongan en contacto con los distribuidores para obtener medios de sustitución y, en cambio, puedan realizar el pedido directamente a Microsoft.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="187" translate="no">
 				<source>Simplify and streamline the replacement process and eliminate the cost to system builders.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Simplificar y racionalizar el proceso de sustitución y eliminar el coste para los ensambladores de equipos.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="188" translate="no">
 				<source>Media replacement is available to system builders in all countries worldwide, with the exception of China.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">La sustitución de medios está a disposición de los ensambladores de equipos de todos los países del mundo, excepto China.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="189" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="190" translate="no">
 				<source>The following OEM software versions are supported for replacement under this program:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Las siguientes versiones de software para OEM se admiten para sustitución al amparo de este programa:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="191" translate="no">
 				<source>Windows 8 Pro</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows 8 Pro</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="192" translate="no">
 				<source>Windows 8 Standard</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows 8 Standard</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="193" translate="yes">
 				<source>Windows 7 - Professional, Home Basic, Home Premium, Ultimate</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="194" translate="yes">
 				<source>Windows Home Server</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="195" translate="yes">
 				<source>Windows Server 2008 - Standard, Enterprise, Datacenter</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="196" translate="no">
 				<source>Windows Small Business Server 2011 Essentials</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Small Business Server 2011 Essentials</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="197" translate="no">
 				<source>Windows Small Business Server 2011 Premium Add On</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Small Business Server 2011 Premium Add On</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="198" translate="yes">
 				<source>Windows Small Business Server 2008 - Standard and Premium</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="199" translate="yes">
 				<source>Windows Server for Windows Essential Server 2008</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="200" translate="yes">
 				<source>Windows HPC Server 2008</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="201" translate="yes">
 				<source>HPC Pack 2008</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="202" translate="yes">
 				<source>Windows SQL Server 2008 for Small Business</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="203" translate="yes">
 				<source>System Center Data Protection Manager Server 2007 - Standard and Enterprise</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="204" translate="yes">
 				<source>Windows 8 SL (Single language)</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="205" translate="yes">
 				<source>Windows PRO GGK for Win 7 and 8</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="206" translate="yes">
 				<source><bpt id="1">&lt;strong&gt;</bpt>Media Replacement Ordering Instructions<ept id="1">&lt;/strong&gt;</ept></source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="207" translate="yes">
 				<source>If you are a system builder and would like to request replacement media listed above, please click on and complete the Media Replacement Form below.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="208" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="209" translate="no">
 				<source>Once you have provided the required information, including Certificate of Authenticity (COA) details, a submission confirmation message will be sent to you via email.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Cuando haya proporcionado la información necesaria, incluidos los detalles del Certificado de autenticidad (COA), se le enviará por correo electrónico un mensaje de confirmación del envío.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="210" translate="no">
 				<source>Please click here to access the <bpt id="1">&lt;a class="lock" href="/oem/en/pages/dmt.aspx?dmt=mr"&gt;</bpt>Media Replacement Form<ept id="1">&lt;/a&gt;</ept>.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Haga clic aquí para tener acceso al <bpt id="1">&lt;a class="lock" href="/oem/en/pages/dmt.aspx?dmt=mr"&gt;</bpt>formulario de sustitución de medios<ept id="1">&lt;/a&gt;</ept>.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a class="lock" href="/oem/en/pages/dmt.aspx?dmt=mr"&gt;</bpt>formulario de sustitución de medios<ept id="1">&lt;/a&gt;</ept>.</target></trans-unit>
 			<trans-unit id="211" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="212" translate="no">
 				<source>OEM System Builder Media Replacement</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Sustitución de medios para ensambladores de equipos OEM</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="213" translate="no">
 				<source>System builders:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Ensambladores de equipos:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="214" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="215" translate="no">
 				<source>Media fulfillment for the 2007 Microsoft Office OPK is no longer available.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Ya no hay medios de sustitución disponibles para el OPK de 2007 Microsoft Office System.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="216" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="217" translate="no">
 				<source>Learn which OEM software versions are supported for replacement.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Infórmese de qué versiones de software para OEM se admiten para sustitución.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="218" translate="no">
 				<source>Have you received damaged Microsoft OEM System Builder software media?</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">¿Ha recibido algún medio de software para ensambladores de equipos OEM de Microsoft deteriorado?</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="219" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="220" translate="no">
 				<source>Or, have you damaged your media during preinstallation?</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">O bien, ¿se ha dañado el medio durante la preinstalación?</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="221" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="222" translate="no">
 				<source>If you have, you may request replacement media online, provided you have a valid Certificate of Authenticity (COA).</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">En caso afirmativo, puede solicitar medios de sustitución en línea, siempre y cuando disponga de un Certificado de autenticidad (COA) válido.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="223" translate="no">
 				<source>System builders:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Ensambladores de equipos:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="224" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="225" translate="no">
 				<source>Learn how to download or order the 2007 Microsoft Office OPK Master Kit, either from Microsoft or from an authorized distributor.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">obtenga información sobre cómo descargar o solicitar el kit maestro del OPK de 2007 Microsoft Office, ya sea a través de Microsoft o de un distribuidor autorizado.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="226" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="227" translate="no">
 				<source>Also find out how to place an online order for replacements for damaged OEM System Builder software media.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Descubra también cómo realizar un pedido en línea a fin de obtener medios de sustitución de software para ensambladores de equipos OEM.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="228" translate="no">
 				<source>Styles</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Estilos</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="229" translate="no">
 				<source>Explore Your Options</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Explore sus opciones</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="230" translate="no">
 				<source>With the ROK software distribution model, you get convenience and flexibility.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Con el modelo de distribución de software de ROK, consigue comodidad y flexibilidad.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="231" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="232" translate="no">
 				<source><bpt id="1">&lt;b&gt;</bpt>Purchasing Convenience and Flexibility<ept id="1">&lt;/b&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;b&gt;</bpt>Comodidad y flexibilidad de compra<ept id="1">&lt;/b&gt;</ept></target></trans-unit>
 			<trans-unit id="233" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="234" translate="no">
 				<source>ROK is a fast and easy way to purchase server products—like RAM, hard drives, or processors—from your OEM distributor.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">ROK es una manera rápida y sencilla de comprar productos de servidores (como memoria RAM, unidades de disco duro o procesadores) a su distribuidor OEM.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="235" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="236" translate="no">
 				<source>You buy the installation-ready software kit as another server option using one price list.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El kit de software listo para instalación se adquiere como una opción de servidor más mediante una sola lista de precios.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="237" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="238" translate="no">
 				<source><bpt id="1">&lt;b&gt;</bpt>Fast and Easy Deployment<ept id="1">&lt;/b&gt;</ept></source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;b&gt;</bpt>Implementación rápida y sencilla<ept id="1">&lt;/b&gt;</ept></target></trans-unit>
 			<trans-unit id="239" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="240" translate="no">
 				<source>You get software that is tested, tuned, and certified with OEM-branded hardware, and is packaged with the latest drivers and customized installation tools for fast and easy deployment.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Conseguirá software probado, puesto a punto y certificado con hardware de la marca del OEM; además, el paquete incluye los controladores más recientes y herramientas de instalación personalizadas para realizar una implementación rápida y sencilla.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="241" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="242" translate="no">
 				<source>How Are ROKs Sold?</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">¿Cómo se venden los ROK?</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="243" translate="no">
 				<source>Resellers purchase the OEM-branded server and Microsoft Windows Server ROK software through an authorized distributor.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los revendedores adquieren el servidor de la marca del OEM y el software del ROK de Microsoft Windows Server a través de un distribuidor autorizado.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="244" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="245" translate="no">
 				<source>The reseller has the flexibility to purchase the server hardware and software together or separately.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El revendedor cuenta con flexibilidad para adquirir el hardware y el software de servidor juntos o por separado.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="246" translate="no">
 				<source>The distributor ships the ROK in the box with the server or separately (the distributor may also preinstall the software for a fee).</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El distribuidor envía el ROK en el embalaje del servidor o por separado (además, el distribuidor puede preinstalar el software cobrando la tarifa correspondiente).</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="247" translate="no">
 				<source>The reseller installs the operating system and the Windows COA before delivering the new server to the end user.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El revendedor instala el sistema operativo y el COA de Windows antes de entregar el servidor nuevo al usuario final.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="248" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="249" translate="yes">
 				<source>Reseller Option Kits are available for:</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="250" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="251" translate="yes">
 				<source>Windows Server 2012 R2 Datacenter</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="252" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="253" translate="yes">
 				<source>Windows Server 2012 R2 Standard</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="254" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="255" translate="yes">
 				<source>Windows Server 2012 R2 Essentials</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="256" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="257" translate="yes">
 				<source>Windows Server 2012 R2 Foundation</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="258" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="259" translate="yes">
 				<source>Windows Storage Server 2012 R2 Standard</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="260" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="261" translate="yes">
 				<source>Windows Server 2012 Datacenter</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="262" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="263" translate="yes">
 				<source>Windows Server 2012 Essentials</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="264" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="265" translate="no">
 				<source>Windows Server 2012 Foundation (available only through direct OEM partners)</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2012 Foundation (disponible únicamente a través de partners OEM directos)</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="266" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="267" translate="no">
 				<source>Windows Server 2012 Standard</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2012 Standard</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="268" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="269" translate="no">
 				<source>Windows Storage Server 2012 Standard</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Storage Server 2012 Standard</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="270" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="271" translate="no">
 				<source>Windows Server 2008 R2 Datacenter</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2008 R2 Datacenter</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="272" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="273" translate="no">
 				<source>Windows Server 2008 R2 Enterprise</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2008 R2 Enterprise</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="274" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="275" translate="no">
 				<source>Windows Server 2008 R2 Foundation (available only through direct OEM partners)</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Windows Server 2008 R2 Foundation (disponible únicamente a través de partners OEM directos)</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="276" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="277" translate="yes">
 				<source>Windows Server 2008 R2 Standard</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="278" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="279" translate="yes">
 				<source>Windows Small Business Server 2011 Standard</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="280" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="281" translate="yes">
 				<source>Microsoft Windows HPC Server 2008 R2</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="282" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="283" translate="yes">
 				<source>Contact your authorized <bpt id="1">&lt;a href="/oem/en/Pages/distributors.aspx"&gt;</bpt>Microsoft Distributor<ept id="1">&lt;/a&gt;</ept> for details.</source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="284" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="285" translate="no">
 				<source>Contact a direct OEM partner:</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Póngase en contacto con un partner OEM directo:</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="286" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="287" translate="no">
 				<source><bpt id="1">&lt;a href="http://www.acer.com/" target="_blank"&gt;</bpt>Acer<ept id="1">&lt;/a&gt;</ept>, <bpt id="2">&lt;a href="http://www.dell.com/WindowsServer2012" target="_blank"&gt;</bpt>Dell<ept id="2">&lt;/a&gt;</ept>, <bpt id="3">&lt;a href="http://www.fujitsu.com/" target="_blank"&gt;</bpt>Fujitsu<ept id="3">&lt;/a&gt;</ept>, <bpt id="4">&lt;a href="http://www.hds.com/go/microsoft" target="_blank"&gt;</bpt>Hitachi<ept id="4">&lt;/a&gt;</ept>, <bpt id="5">&lt;a href="http://www.hp.com/learn/ws2012" target="_blank"&gt;</bpt>HP<ept id="5">&lt;/a&gt;</ept>, <bpt id="6">&lt;a href="http://www-03.ibm.com/systems/in/x/how_to_buy.html" target="_blank"&gt;</bpt>IBM<ept id="6">&lt;/a&gt;</ept>, <bpt id="7">&lt;a href="http://www.nec.com/" target="_blank"&gt;</bpt>NEC<ept id="7">&lt;/a&gt;</ept> for Windows Server Foundation.</source>
 			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"><bpt id="1">&lt;a href="http://www.acer.com/" target="_blank"&gt;</bpt>Acer<ept id="1">&lt;/a&gt;</ept>, <bpt id="2">&lt;a href="http://www.dell.com/WindowsServer2012" target="_blank"&gt;</bpt>Dell<ept id="2">&lt;/a&gt;</ept>, <bpt id="3">&lt;a href="http://www.fujitsu.com/" target="_blank"&gt;</bpt>Fujitsu<ept id="3">&lt;/a&gt;</ept>, <bpt id="4">&lt;a href="http://www.hds.com/go/microsoft" target="_blank"&gt;</bpt>Hitachi<ept id="4">&lt;/a&gt;</ept>, <bpt id="5">&lt;a href="http://www.hp.com/learn/ws2012" target="_blank"&gt;</bpt>HP<ept id="5">&lt;/a&gt;</ept>, <bpt id="6">&lt;a href="http://www-03.ibm.com/systems/in/x/how_to_buy.html" target="_blank"&gt;</bpt>IBM<ept id="6">&lt;/a&gt;</ept>, <bpt id="7">&lt;a href="http://www.nec.com/" target="_blank"&gt;</bpt>NEC<ept id="7">&lt;/a&gt;</ept> para Windows Server Foundation.</target></trans-unit>
 			<trans-unit id="288" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="289" translate="no">
 				<source>Reseller Option Kits for Servers</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Kits de opciones de revendedores para servidores</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="290" translate="no">
 				<source>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="291" translate="no">
 				<source>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM, para que el revendedor disponga de mayor flexibilidad para proporcionar soluciones de servidor personalizadas.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="292" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="293" translate="no">
 				<source>Each ROK is another server option—like memory or hard drives—that you specify when you order servers.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Cada ROK es otra opción de servidor (como la memoria o las unidades de disco duro) que se especifica al solicitar los servidores.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="294" translate="no">
 				<source> </source>
-			</trans-unit>
+			<target/></trans-unit>
 			<trans-unit id="295" translate="no">
 				<source>You can install the appropriate ROK on your customer’s preferred server model to address any combination of hardware and software.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Puede instalar el ROK apropiado en el modelo de servidor preferido del cliente, a fin de satisfacer cualquier combinación de hardware y software.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="296" translate="no">
 				<source>Your customers still enjoy the same great performance of OEM-tuned drivers for Microsoft software, because each ROK is carefully matched to a specific server brand.​​​​​​​​​​​​</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Los clientes continuarán disfrutando del mismo rendimiento excelente de los controladores puestos a punto por el OEM para el software de Microsoft, porque cada ROK está cuidadosamente adaptado a una marca de servidor concreta.​​​​​​​​​​​​</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="297" translate="no">
 				<source>The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions.</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">El kit de opciones de revendedores (ROK) es una opción de distribución de software que permite solicitar software de servidores de Microsoft puesto a punto y certificado por separado de los servidores OEM, para que el revendedor disponga de mayor flexibilidad para proporcionar soluciones de servidor personalizadas.</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="298" translate="no">
 				<source>Styles</source>
-			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm">Estilos</target></trans-unit>
+			<target logoport:matchpercent="101" state="translated" state-qualifier="leveraged-tm"/></trans-unit>
 			<trans-unit id="299" translate="no">
 				<source>
 </source>
-			</trans-unit>
+			<target/></trans-unit>
 		</body>
 	</file>
 </xliff>

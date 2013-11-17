@@ -4,6 +4,7 @@
 
 import os
 from zipfile import ZipFile
+from collections import OrderedDict
 
 from translate.storage import directory
 from translate.storage import zipw
@@ -73,14 +74,41 @@ def fails_serious(filterfunction, str1, str2, message=None):
 
 def check_xlz_units():
     """Tests basic functionality."""
-    d = zipw.ZIPFile(os.path.join(os.getcwd(),"tasks_Syncplicity_Oct_UI_drop6__Android_iOS__30729_de_DE_desktopWorkbench.xlz"))
+    testdata=[]
+    d = zipw.ZIPFile(os.path.join(os.getcwd(),"iws.xlz"))
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='zh_ui'))
-    #for unit in d.getunits():
+    count=-1
+    prevUnitLocation=None
+    currentUnitLocation=None
+    for unit in d.getunits():
         #if not unit.source or not unit.target: continue
         #if fails(stdchecker.endpunc, unit.source, unit.target):
-        #print(unit.getlocations(), unit.source, unit.target, unit.get_state_n(), unit.getid())
+        #print(unit.getlocations(), unit.source.encode('utf-8'), unit.target.encode('utf-8'), unit.get_state_n(), unit.getid())
         #print(unit.source)
-    #    unit.target=''
+        #if unit.target:
+           #print(unit.source.encode('utf-8'))
+        unit.setmetadata(translation_status='pending')
+        #print(unit.source)
+        if str(unit.source).count('Failed to load'):
+            print(unit.source)
+            unit.target='Failed to load {70}'
+        #if count>100:
+        #    break
+        #print(unit.getmarkupdata())
+        currentUnitLocation=unit.getid()
+        if prevUnitLocation!=currentUnitLocation:
+            count+=1
+            testdata.append({})
+        testdata[count][str(unit.getunitid())]=unit.source
+        testdata[count].update(unit.getmarkupdata())
+        prevUnitLocation=currentUnitLocation
+
+    testdata=[OrderedDict(sorted(dic.items(), key=lambda t: t[0])) for dic in testdata]
+    f=open('test.txt','w', encoding='utf-8')
+    for dic in testdata:
+        for ky in dic:
+            f.write(dic[ky].replace('\n',''))
+    f.close()
     #for subdir, file in d.getfiles():
     #    print(type(file))
     d.savefiles()

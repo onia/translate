@@ -49,6 +49,8 @@ classes_str = {
            "ts": ("ts2", "tsfile"),
            "xliff": ("xliff", "xlifffile"), "xlf": ("xliff", "xlifffile"),
            "sdlxliff": ("xliff", "xlifffile"),
+           "xliffiws": ("xliffiws", "xlifffileiws"),
+           "xlifftw": ("xliff", "xlifffile"),
 }
 ###  XXX:  if you add anything here, you must also add it to translate.storage.
 
@@ -91,8 +93,13 @@ hiddenclasses = {"txt": _examine_txt}
 def _guessextention(storefile):
     """Guesses the type of a file object by looking at the first few characters.
     The return value is a file extention ."""
+    # try to return the real format for files, not just extention
     start = storefile.read(300).strip()
-    if '<xliff ' in start:
+    if 'xmlns:iws' in start: # or <iws 
+        extention = 'xliffiws'
+    elif 'xmlns:logoport' in start: # or <logoport
+        extention = 'xlifftw'
+    elif '<xliff ' in start:
         extention = 'xlf'
     elif 'msgid "' in start:
         extention = 'po'
@@ -139,6 +146,8 @@ def getclass(storefile, ignore=None, classes=None, classes_str=classes_str, hidd
         storefilename = storefilename[:-len(ignore)]
     root, ext = os.path.splitext(storefilename)
     ext = ext[len(os.path.extsep):].lower()
+    # Here try to use guess extention, testing results
+    ext = _guessextention(storefile)
     decomp = None
     if ext in decompressclass:
         decomp = ext
@@ -197,7 +206,7 @@ def getobject(storefile, ignore=None, classes=None, classes_str=classes_str, hid
 
 supported = [
         ('Gettext PO file', ['po', 'pot'], ["text/x-gettext-catalog", "text/x-gettext-translation", "text/x-po", "text/x-pot"]),
-        ('XLIFF Translation File', ['xlf', 'xliff', 'sdlxliff'], ["application/x-xliff", "application/x-xliff+xml"]),
+        ('XLIFF Translation File', ['xlf', 'xliff', 'sdlxliff', 'xliffiws'], ["application/x-xliff", "application/x-xliff+xml"]),
         ('Gettext MO file', ['mo', 'gmo'], ["application/x-gettext-catalog", "application/x-mo"]),
         ('Qt .qm file', ['qm'], ["application/x-qm"]),
         ('TBX Glossary', ['tbx'], ['application/x-tbx']),

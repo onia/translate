@@ -1469,62 +1469,62 @@
          assert len(tmx.units) == 0
  
 @@ -141,8 +141,8 @@
- msgstr "B¨¦zier-kurwe"
+ msgstr "BÂ¨Â¦zier-kurwe"
  '''
          tmx = self.po2tmx(minipo)
 -        print str(tmx)
--        assert tmx.translate(u"B¨¦zier curve") == u"B¨¦zier-kurwe"
+-        assert tmx.translate(u"BÂ¨Â¦zier curve") == u"BÂ¨Â¦zier-kurwe"
 +        print(str(tmx))
-+        assert tmx.translate("B¨¦zier curve") == "B¨¦zier-kurwe"
++        assert tmx.translate("BÂ¨Â¦zier curve") == "BÂ¨Â¦zier-kurwe"
  
      def test_nonecomments(self):
          """Tests that none comments are imported."""
 @@ -151,8 +151,8 @@
- msgstr "B¨¦zier-kurwe"
+ msgstr "BÂ¨Â¦zier-kurwe"
  '''
          tmx = self.po2tmx(minipo)
 -        print str(tmx)
--        unit = tmx.findunits(u"B¨¦zier curve")
+-        unit = tmx.findunits(u"BÂ¨Â¦zier curve")
 +        print(str(tmx))
-+        unit = tmx.findunits("B¨¦zier curve")
++        unit = tmx.findunits("BÂ¨Â¦zier curve")
          assert len(unit[0].getnotes()) == 0
  
      def test_otherscomments(self):
 @@ -162,9 +162,9 @@
- msgstr "B¨¦zier-kurwe"
+ msgstr "BÂ¨Â¦zier-kurwe"
  '''
          tmx = self.po2tmx(minipo, comment='others')
 -        print str(tmx)
--        unit = tmx.findunits(u"B¨¦zier curve")
+-        unit = tmx.findunits(u"BÂ¨Â¦zier curve")
 -        assert unit[0].getnotes() == u"My comment rules"
 +        print(str(tmx))
-+        unit = tmx.findunits("B¨¦zier curve")
++        unit = tmx.findunits("BÂ¨Â¦zier curve")
 +        assert unit[0].getnotes() == "My comment rules"
  
      def test_sourcecomments(self):
          """Tests that source comments are imported."""
 @@ -173,9 +173,9 @@
- msgstr "B¨¦zier-kurwe"
+ msgstr "BÂ¨Â¦zier-kurwe"
  '''
          tmx = self.po2tmx(minipo, comment='source')
 -        print str(tmx)
--        unit = tmx.findunits(u"B¨¦zier curve")
+-        unit = tmx.findunits(u"BÂ¨Â¦zier curve")
 -        assert unit[0].getnotes() == u": ../PuzzleFourSided.h:45"
 +        print(str(tmx))
-+        unit = tmx.findunits("B¨¦zier curve")
++        unit = tmx.findunits("BÂ¨Â¦zier curve")
 +        assert unit[0].getnotes() == ": ../PuzzleFourSided.h:45"
  
      def test_typecomments(self):
          """Tests that others comments are imported."""
 @@ -184,9 +184,9 @@
- msgstr "B¨¦zier-kurwe"
+ msgstr "BÂ¨Â¦zier-kurwe"
  '''
          tmx = self.po2tmx(minipo, comment='type')
 -        print str(tmx)
--        unit = tmx.findunits(u"B¨¦zier curve")
+-        unit = tmx.findunits(u"BÂ¨Â¦zier curve")
 -        assert unit[0].getnotes() == u", csharp-format"
 +        print(str(tmx))
-+        unit = tmx.findunits("B¨¦zier curve")
++        unit = tmx.findunits("BÂ¨Â¦zier curve")
 +        assert unit[0].getnotes() == ", csharp-format"
  
  class TestPO2TMXCommand(test_convert.TestConvertCommand, TestPO2TMX):
@@ -2316,14 +2316,14 @@
      old_target = target
      if target == "":
          return None
--    if u"¡­" in source and "..." in target:
--        target = target.replace("...", u"¡­")
--    elif "..." in source and u"¡­" in target:
--        target = target.replace(u"¡­", "...")
-+    if "¡­" in source and "..." in target:
-+        target = target.replace("...", "¡­")
-+    elif "..." in source and "¡­" in target:
-+        target = target.replace("¡­", "...")
+-    if u"Â¡Â­" in source and "..." in target:
+-        target = target.replace("...", u"Â¡Â­")
+-    elif "..." in source and u"Â¡Â­" in target:
+-        target = target.replace(u"Â¡Â­", "...")
++    if "Â¡Â­" in source and "..." in target:
++        target = target.replace("...", "Â¡Â­")
++    elif "..." in source and "Â¡Â­" in target:
++        target = target.replace("Â¡Â­", "...")
      if decoration.spacestart(source) != decoration.spacestart(target) or decoration.spaceend(source) != decoration.spaceend(target):
          target = decoration.spacestart(source) + target.strip() + decoration.spaceend(source)
      punctuation = (".", ":", ". ", ": ", "?")
@@ -2766,11 +2766,11 @@
 +        self.correct("String...", "", None)
  
      def test_correct_ellipsis(self):
-         """test that we convert single ¡­ or ... to match source and target"""
--        self.correct(u"String...", u"Translated¡­", u"Translated...")
--        self.correct(u"String¡­", u"Translated...", u"Translated¡­")
-+        self.correct("String...", "Translated¡­", "Translated...")
-+        self.correct("String¡­", "Translated...", "Translated¡­")
+         """test that we convert single Â¡Â­ or ... to match source and target"""
+-        self.correct(u"String...", u"TranslatedÂ¡Â­", u"Translated...")
+-        self.correct(u"StringÂ¡Â­", u"Translated...", u"TranslatedÂ¡Â­")
++        self.correct("String...", "TranslatedÂ¡Â­", "Translated...")
++        self.correct("StringÂ¡Â­", "Translated...", "TranslatedÂ¡Â­")
  
      def test_correct_spacestart_spaceend(self):
          """test that we can correct leading and trailing space errors"""
@@ -2916,10 +2916,10 @@
      def test_unicode(self):
          """tests that we can handle UTF-8 encoded characters when there is no
          known header specified encoding"""
--        self.unit.source = u'B¨¦zier curve'
--        self.unit.target = u'B¨¦zier-kurwe'
-+        self.unit.source = 'B¨¦zier curve'
-+        self.unit.target = 'B¨¦zier-kurwe'
+-        self.unit.source = u'BÂ¨Â¦zier curve'
+-        self.unit.target = u'BÂ¨Â¦zier-kurwe'
++        self.unit.source = 'BÂ¨Â¦zier curve'
++        self.unit.target = 'BÂ¨Â¦zier-kurwe'
          filter_result = self.filter(self.translationstore)
          assert headerless_len(filter_result.units) == 0
  
@@ -2950,8 +2950,8 @@
 -    punctuation = u"".join([common.Common.commonpunc, common.Common.quotes,
 +    punctuation = "".join([common.Common.commonpunc, common.Common.quotes,
                              common.Common.miscpunc])
--    sentenceend = u".!?¡­"
-+    sentenceend = ".!?¡­"
+-    sentenceend = u".!?Â¡Â­"
++    sentenceend = ".!?Â¡Â­"
      sentencere = re.compile(r"""
          (?s)        # make . also match newlines
          .*?         # anything, but match non-greedy
@@ -2971,10 +2971,10 @@
  
  def reverse_quotes(text):
      def convertquotation(match):
--        return u"¡±%s¡°" % match.group(1)
--    return re.sub(u'¡°([^¡±]+)¡±', convertquotation, text)
-+        return "¡±%s¡°" % match.group(1)
-+    return re.sub('¡°([^¡±]+)¡±', convertquotation, text)
+-        return u"Â¡Â±%sÂ¡Â°" % match.group(1)
+-    return re.sub(u'Â¡Â°([^Â¡Â±]+)Â¡Â±', convertquotation, text)
++        return "Â¡Â±%sÂ¡Â°" % match.group(1)
++    return re.sub('Â¡Â°([^Â¡Â±]+)Â¡Â±', convertquotation, text)
  
  
  class ar(common.Common):
@@ -3193,8 +3193,8 @@
      """This class represents Greek."""
  
      # Greek uses ; as question mark and the middot instead
--    sentenceend = u".!;¡­"
-+    sentenceend = ".!;¡­"
+-    sentenceend = u".!;Â¡Â­"
++    sentenceend = ".!;Â¡Â­"
  
 -    sentencere = re.compile(ur"""
 +    sentencere = re.compile(r"""
@@ -3206,9 +3206,9 @@
  
      puncdict = {
 -        u"?": u";",
--        u";": u"¡¤",
+-        u";": u"Â¡Â¤",
 +        "?": ";",
-+        ";": "¡¤",
++        ";": "Â¡Â¤",
      }
  
      # Valid latin characters for use as accelerators
@@ -3307,11 +3307,11 @@
  class ja(common.Common):
      """This class represents Japanese."""
  
--    listseperator = u"¡¢"
-+    listseperator = "¡¢"
+-    listseperator = u"Â¡Â¢"
++    listseperator = "Â¡Â¢"
  
--    sentenceend = u"¡££¡£¿!?¡­"
-+    sentenceend = "¡££¡£¿!?¡­"
+-    sentenceend = u"Â¡Â£Â£Â¡Â£Â¿!?Â¡Â­"
++    sentenceend = "Â¡Â£Â£Â¡Â£Â¿!?Â¡Â­"
  
      # Compared to common.py, we make the space after the sentence ending
      # optional and don't demand an uppercase letter to follow.
@@ -3319,14 +3319,14 @@
                              """ % sentenceend, re.VERBOSE)
  
      puncdict = {
--        u". ": u"¡£",
--        u", ": u"¡¢",
--        u".\n": u"¡£\n",
--        u",\n": u"¡¢\n",
-+        ". ": "¡£",
-+        ", ": "¡¢",
-+        ".\n": "¡£\n",
-+        ",\n": "¡¢\n",
+-        u". ": u"Â¡Â£",
+-        u", ": u"Â¡Â¢",
+-        u".\n": u"Â¡Â£\n",
+-        u",\n": u"Â¡Â¢\n",
++        ". ": "Â¡Â£",
++        ", ": "Â¡Â¢",
++        ".\n": "Â¡Â£\n",
++        ",\n": "Â¡Â¢\n",
      }
  
      ignoretests = ["startcaps", "simplecaps"]
@@ -3417,10 +3417,10 @@
  
  def reverse_quotes(text):
      def convertquotation(match):
--        return u"¡±%s¡°" % match.group(1)
--    return re.sub(u'¡°([^¡±]+)¡±', convertquotation, text)
-+        return "¡±%s¡°" % match.group(1)
-+    return re.sub('¡°([^¡±]+)¡±', convertquotation, text)
+-        return u"Â¡Â±%sÂ¡Â°" % match.group(1)
+-    return re.sub(u'Â¡Â°([^Â¡Â±]+)Â¡Â±', convertquotation, text)
++        return "Â¡Â±%sÂ¡Â°" % match.group(1)
++    return re.sub('Â¡Â°([^Â¡Â±]+)Â¡Â±', convertquotation, text)
  
  
  class nqo(common.Common):
@@ -3483,14 +3483,14 @@
 -    assert sentences == [u"Wat?", "'n Fout?"]
 -    sentences = language.sentences(u"Dit sal a.g.v. 'n fout gebeur.")
 -    assert sentences == [u"Dit sal a.g.v. 'n fout gebeur."]
--    sentences = language.sentences(u"Weet nie hoe om l¨ºer '%s' te open nie.\nMiskien is dit 'n tipe beeld wat nog nie ondersteun word nie.\n\nKies liewer 'n ander prent.")
+-    sentences = language.sentences(u"Weet nie hoe om lÂ¨Âºer '%s' te open nie.\nMiskien is dit 'n tipe beeld wat nog nie ondersteun word nie.\n\nKies liewer 'n ander prent.")
 +    sentences = language.sentences("Normal case. Nothing interesting.")
 +    assert sentences == ["Normal case.", "Nothing interesting."]
 +    sentences = language.sentences("Wat? 'n Fout?")
 +    assert sentences == ["Wat?", "'n Fout?"]
 +    sentences = language.sentences("Dit sal a.g.v. 'n fout gebeur.")
 +    assert sentences == ["Dit sal a.g.v. 'n fout gebeur."]
-+    sentences = language.sentences("Weet nie hoe om l¨ºer '%s' te open nie.\nMiskien is dit 'n tipe beeld wat nog nie ondersteun word nie.\n\nKies liewer 'n ander prent.")
++    sentences = language.sentences("Weet nie hoe om lÂ¨Âºer '%s' te open nie.\nMiskien is dit 'n tipe beeld wat nog nie ondersteun word nie.\n\nKies liewer 'n ander prent.")
      assert len(sentences) == 3
  
  
@@ -3504,8 +3504,8 @@
 -        print ("Trans: %s" % trans).encode("utf-8")
 +        print(("Trans: %s" % trans).encode("utf-8"))
          return trans
--    assert trans(u"§¢§à§â§Ú§ã §¯§Ú§Ü§à§İ§Ñ§Ö§Ó§Ú§é §¦§İ§î§è§Ú§ß") == u"Boris Nikolajewitj Jeltsin"
-+    assert trans("§¢§à§â§Ú§ã §¯§Ú§Ü§à§İ§Ñ§Ö§Ó§Ú§é §¦§İ§î§è§Ú§ß") == "Boris Nikolajewitj Jeltsin"
+-    assert trans(u"Â§Â¢Â§Ã Â§Ã¢Â§ÃšÂ§Ã£ Â§Â¯Â§ÃšÂ§ÃœÂ§Ã Â§ÃÂ§Ã‘Â§Ã–Â§Ã“Â§ÃšÂ§Ã© Â§Â¦Â§ÃÂ§Ã®Â§Ã¨Â§ÃšÂ§ÃŸ") == u"Boris Nikolajewitj Jeltsin"
++    assert trans("Â§Â¢Â§Ã Â§Ã¢Â§ÃšÂ§Ã£ Â§Â¯Â§ÃšÂ§ÃœÂ§Ã Â§ÃÂ§Ã‘Â§Ã–Â§Ã“Â§ÃšÂ§Ã© Â§Â¦Â§ÃÂ§Ã®Â§Ã¨Â§ÃšÂ§ÃŸ") == "Boris Nikolajewitj Jeltsin"
 --- .\lang\test_am.py	(original)
 +++ .\lang\test_am.py	(refactored)
 @@ -7,20 +7,20 @@
@@ -3562,10 +3562,10 @@
 +    words = language.words("Don't send e-mail!")
 +    assert words == ["Don't", "send", "e-mail"]
  
--    words = language.words(u"Don¡¯t send e-mail!")
--    assert words == [u"Don¡¯t", u"send", u"e-mail"]
-+    words = language.words("Don¡¯t send e-mail!")
-+    assert words == ["Don¡¯t", "send", "e-mail"]
+-    words = language.words(u"DonÂ¡Â¯t send e-mail!")
+-    assert words == [u"DonÂ¡Â¯t", u"send", u"e-mail"]
++    words = language.words("DonÂ¡Â¯t send e-mail!")
++    assert words == ["DonÂ¡Â¯t", "send", "e-mail"]
  
  
  @mark.xfail("sys.version_info >= (2, 6)",
@@ -3588,12 +3588,12 @@
 -    assert language.punctranslate(u"") == u""
 -    assert language.punctranslate(u"abc efg") == u"abc efg"
 -    assert language.punctranslate(u"abc efg. hij.") == u"abc efg. hij."
--    assert language.punctranslate(u"abc efg;") == u"abc efg¡¤"
+-    assert language.punctranslate(u"abc efg;") == u"abc efgÂ¡Â¤"
 -    assert language.punctranslate(u"abc efg? hij!") == u"abc efg; hij!"
 +    assert language.punctranslate("") == ""
 +    assert language.punctranslate("abc efg") == "abc efg"
 +    assert language.punctranslate("abc efg. hij.") == "abc efg. hij."
-+    assert language.punctranslate("abc efg;") == "abc efg¡¤"
++    assert language.punctranslate("abc efg;") == "abc efgÂ¡Â¤"
 +    assert language.punctranslate("abc efg? hij!") == "abc efg; hij!"
  
  
@@ -3780,10 +3780,10 @@
 -    sentences = language.sentences(u"")
 +    sentences = language.sentences("")
      assert sentences == []
--    sentences = language.sentences(u"§¦§İ. §á§à§ê§ä§Ñ")
--    assert sentences == [u"§¦§İ. §á§à§ê§ä§Ñ"]
-+    sentences = language.sentences("§¦§İ. §á§à§ê§ä§Ñ")
-+    assert sentences == ["§¦§İ. §á§à§ê§ä§Ñ"]
+-    sentences = language.sentences(u"Â§Â¦Â§Ã. Â§Ã¡Â§Ã Â§ÃªÂ§Ã¤Â§Ã‘")
+-    assert sentences == [u"Â§Â¦Â§Ã. Â§Ã¡Â§Ã Â§ÃªÂ§Ã¤Â§Ã‘"]
++    sentences = language.sentences("Â§Â¦Â§Ã. Â§Ã¡Â§Ã Â§ÃªÂ§Ã¤Â§Ã‘")
++    assert sentences == ["Â§Â¦Â§Ã. Â§Ã¡Â§Ã Â§ÃªÂ§Ã¤Â§Ã‘"]
 --- .\lang\test_vi.py	(original)
 +++ .\lang\test_vi.py	(refactored)
 @@ -7,26 +7,26 @@
@@ -3804,17 +3804,17 @@
      language = factory.getlanguage('zh')
 -    assert language.punctranslate(u"") == u""
 -    assert language.punctranslate(u"abc efg") == u"abc efg"
--    assert language.punctranslate(u"abc efg.") == u"abc efg¡£"
--    assert language.punctranslate(u"(abc efg).") == u"(abc efg)¡£"
--    assert language.punctranslate(u"(abc efg). hijk") == u"(abc efg)¡£hijk"
--    assert language.punctranslate(u".") == u"¡£"
+-    assert language.punctranslate(u"abc efg.") == u"abc efgÂ¡Â£"
+-    assert language.punctranslate(u"(abc efg).") == u"(abc efg)Â¡Â£"
+-    assert language.punctranslate(u"(abc efg). hijk") == u"(abc efg)Â¡Â£hijk"
+-    assert language.punctranslate(u".") == u"Â¡Â£"
 -    assert language.punctranslate(u"abc efg...") == u"abc efg..."
 +    assert language.punctranslate("") == ""
 +    assert language.punctranslate("abc efg") == "abc efg"
-+    assert language.punctranslate("abc efg.") == "abc efg¡£"
-+    assert language.punctranslate("(abc efg).") == "(abc efg)¡£"
-+    assert language.punctranslate("(abc efg). hijk") == "(abc efg)¡£hijk"
-+    assert language.punctranslate(".") == "¡£"
++    assert language.punctranslate("abc efg.") == "abc efgÂ¡Â£"
++    assert language.punctranslate("(abc efg).") == "(abc efg)Â¡Â£"
++    assert language.punctranslate("(abc efg). hijk") == "(abc efg)Â¡Â£hijk"
++    assert language.punctranslate(".") == "Â¡Â£"
 +    assert language.punctranslate("abc efg...") == "abc efg..."
  
  
@@ -3825,10 +3825,10 @@
 +    sentences = language.sentences("")
      assert sentences == []
  
--    sentences = language.sentences(u"ß@‚€ÓÃ‘ôÃû·QÒÑ½›´æÔÚ¡£¬FÔÚ•ş¼ÄÒ»·âĞÅ½oÒÑµÇÓ›µÄëŠà]µØÖ·¡£\n")
--    assert sentences == [u"ß@‚€ÓÃ‘ôÃû·QÒÑ½›´æÔÚ¡£", u"¬FÔÚ•ş¼ÄÒ»·âĞÅ½oÒÑµÇÓ›µÄëŠà]µØÖ·¡£"]
-+    sentences = language.sentences("ß@‚€ÓÃ‘ôÃû·QÒÑ½›´æÔÚ¡£¬FÔÚ•ş¼ÄÒ»·âĞÅ½oÒÑµÇÓ›µÄëŠà]µØÖ·¡£\n")
-+    assert sentences == ["ß@‚€ÓÃ‘ôÃû·QÒÑ½›´æÔÚ¡£", "¬FÔÚ•ş¼ÄÒ»·âĞÅ½oÒÑµÇÓ›µÄëŠà]µØÖ·¡£"]
+-    sentences = language.sentences(u"ÃŸ@â€šâ‚¬Ã“Ãƒâ€˜Ã´ÃƒÃ»Â·QÃ’Ã‘Â½â€ºÂ´Ã¦Ã”ÃšÂ¡Â£Â¬FÃ”Ãšâ€¢Ã¾Â¼Ã„Ã’Â»Â·Ã¢ÃÃ…Â½oÃ’Ã‘ÂµÃ‡Ã“â€ºÂµÃ„Ã«Å Ã ]ÂµÃ˜Ã–Â·Â¡Â£\n")
+-    assert sentences == [u"ÃŸ@â€šâ‚¬Ã“Ãƒâ€˜Ã´ÃƒÃ»Â·QÃ’Ã‘Â½â€ºÂ´Ã¦Ã”ÃšÂ¡Â£", u"Â¬FÃ”Ãšâ€¢Ã¾Â¼Ã„Ã’Â»Â·Ã¢ÃÃ…Â½oÃ’Ã‘ÂµÃ‡Ã“â€ºÂµÃ„Ã«Å Ã ]ÂµÃ˜Ã–Â·Â¡Â£"]
++    sentences = language.sentences("ÃŸ@â€šâ‚¬Ã“Ãƒâ€˜Ã´ÃƒÃ»Â·QÃ’Ã‘Â½â€ºÂ´Ã¦Ã”ÃšÂ¡Â£Â¬FÃ”Ãšâ€¢Ã¾Â¼Ã„Ã’Â»Â·Ã¢ÃÃ…Â½oÃ’Ã‘ÂµÃ‡Ã“â€ºÂµÃ„Ã«Å Ã ]ÂµÃ˜Ã–Â·Â¡Â£\n")
++    assert sentences == ["ÃŸ@â€šâ‚¬Ã“Ãƒâ€˜Ã´ÃƒÃ»Â·QÃ’Ã‘Â½â€ºÂ´Ã¦Ã”ÃšÂ¡Â£", "Â¬FÃ”Ãšâ€¢Ã¾Â¼Ã„Ã’Â»Â·Ã¢ÃÃ…Â½oÃ’Ã‘ÂµÃ‡Ã“â€ºÂµÃ„Ã«Å Ã ]ÂµÃ˜Ã–Â·Â¡Â£"]
 --- .\lang\th.py	(original)
 +++ .\lang\th.py	(refactored)
 @@ -30,7 +30,7 @@
@@ -3885,39 +3885,39 @@
  class zh(common.Common):
      """This class represents Chinese."""
  
--    listseperator = u"¡¢"
-+    listseperator = "¡¢"
+-    listseperator = u"Â¡Â¢"
++    listseperator = "Â¡Â¢"
  
--    sentenceend = u"¡££¡£¿¡­"
-+    sentenceend = "¡££¡£¿¡­"
+-    sentenceend = u"Â¡Â£Â£Â¡Â£Â¿Â¡Â­"
++    sentenceend = "Â¡Â£Â£Â¡Â£Â¿Â¡Â­"
  
      # Compared to common.py, we make the space after the sentence ending
      # optional and don't demand an uppercase letter to follow.
 @@ -50,17 +50,17 @@
-     # fullwidth comma ("£¬"). If comma is used as seperation of list items
-     # like "apple, orange, grape, .....", "¡¢" is used.
+     # fullwidth comma ("Â£Â¬"). If comma is used as seperation of list items
+     # like "apple, orange, grape, .....", "Â¡Â¢" is used.
      puncdict = {
--        u". ": u"¡£",
--        u"; ": u"£»",
--        u": ": u"£º",
--        u"! ": u"£¡",
--        u"? ": u"£¿",
--        u".\n": u"¡£\n",
--        u";\n": u"£»\n",
--        u":\n": u"£º\n",
--        u"!\n": u"£¡\n",
--        u"?\n": u"£¿",
+-        u". ": u"Â¡Â£",
+-        u"; ": u"Â£Â»",
+-        u": ": u"Â£Âº",
+-        u"! ": u"Â£Â¡",
+-        u"? ": u"Â£Â¿",
+-        u".\n": u"Â¡Â£\n",
+-        u";\n": u"Â£Â»\n",
+-        u":\n": u"Â£Âº\n",
+-        u"!\n": u"Â£Â¡\n",
+-        u"?\n": u"Â£Â¿",
 -        u"% ": u"%",
-+        ". ": "¡£",
-+        "; ": "£»",
-+        ": ": "£º",
-+        "! ": "£¡",
-+        "? ": "£¿",
-+        ".\n": "¡£\n",
-+        ";\n": "£»\n",
-+        ":\n": "£º\n",
-+        "!\n": "£¡\n",
-+        "?\n": "£¿",
++        ". ": "Â¡Â£",
++        "; ": "Â£Â»",
++        ": ": "Â£Âº",
++        "! ": "Â£Â¡",
++        "? ": "Â£Â¿",
++        ".\n": "Â¡Â£\n",
++        ";\n": "Â£Â»\n",
++        ":\n": "Â£Âº\n",
++        "!\n": "Â£Â¡\n",
++        "?\n": "Â£Â¿",
 +        "% ": "%",
      }
  
@@ -9027,13 +9027,13 @@
  
      def test_latin1(self):
          """checks that we handle non-escaped latin1 text"""
--        prop_source = u"key=val¨²".encode('latin1')
-+        prop_source = "key=val¨²".encode('latin1')
+-        prop_source = u"key=valÂ¨Â²".encode('latin1')
++        prop_source = "key=valÂ¨Â²".encode('latin1')
          prop_store = self.propparse(prop_source)
          assert len(prop_store.units) == 1
          unit = prop_store.units[0]
--        assert unit.source == u"val¨²"
-+        assert unit.source == "val¨²"
+-        assert unit.source == u"valÂ¨Â²"
++        assert unit.source == "valÂ¨Â²"
  
      def test_fullspec_delimiters(self):
          """test the full definiation as found in Java docs"""
@@ -9110,18 +9110,18 @@
  
      def test_mac_strings_unicode(self):
          """Ensure we can handle Unicode"""
--        propsource = ur'''"I am a ¡°key¡±" = "I am a ¡°value¡±";'''.encode('utf-16')
+-        propsource = ur'''"I am a Â¡Â°keyÂ¡Â±" = "I am a Â¡Â°valueÂ¡Â±";'''.encode('utf-16')
 -        propfile = self.propparse(propsource, personality="strings")
 -        assert len(propfile.units) == 1
 -        propunit = propfile.units[0]
--        assert propunit.name == ur'I am a ¡°key¡±'
--        assert propfile.personality.encode(propunit.source) == u'I am a ¡°value¡±'
-+        propsource = r'''"I am a ¡°key¡±" = "I am a ¡°value¡±";'''.encode('utf-16')
+-        assert propunit.name == ur'I am a Â¡Â°keyÂ¡Â±'
+-        assert propfile.personality.encode(propunit.source) == u'I am a Â¡Â°valueÂ¡Â±'
++        propsource = r'''"I am a Â¡Â°keyÂ¡Â±" = "I am a Â¡Â°valueÂ¡Â±";'''.encode('utf-16')
 +        propfile = self.propparse(propsource, personality="strings")
 +        assert len(propfile.units) == 1
 +        propunit = propfile.units[0]
-+        assert propunit.name == r'I am a ¡°key¡±'
-+        assert propfile.personality.encode(propunit.source) == 'I am a ¡°value¡±'
++        assert propunit.name == r'I am a Â¡Â°keyÂ¡Â±'
++        assert propfile.personality.encode(propunit.source) == 'I am a Â¡Â°valueÂ¡Â±'
  
      def test_mac_strings_newlines(self):
          """test newlines \n within a strings files"""
@@ -9538,17 +9538,17 @@
  def test_unescape():
      # NBSP
 -    assert trados.unescape(ur"Ordre du jour\~:") == u"Ordre du jour\u00a0:"
--    assert trados.unescape(ur"Association for Road Safety \endash  Conference") == u"Association for Road Safety ¨C  Conference"
+-    assert trados.unescape(ur"Association for Road Safety \endash  Conference") == u"Association for Road Safety Â¨C  Conference"
 +    assert trados.unescape(r"Ordre du jour\~:") == "Ordre du jour\u00a0:"
-+    assert trados.unescape(r"Association for Road Safety \endash  Conference") == "Association for Road Safety ¨C  Conference"
++    assert trados.unescape(r"Association for Road Safety \endash  Conference") == "Association for Road Safety Â¨C  Conference"
  
  
  def test_escape():
      # NBSP
 -    assert trados.escape(u"Ordre du jour\u00a0:") == ur"Ordre du jour\~:"
--    assert trados.escape(u"Association for Road Safety ¨C  Conference") == ur"Association for Road Safety \endash  Conference"
+-    assert trados.escape(u"Association for Road Safety Â¨C  Conference") == ur"Association for Road Safety \endash  Conference"
 +    assert trados.escape("Ordre du jour\u00a0:") == r"Ordre du jour\~:"
-+    assert trados.escape("Association for Road Safety ¨C  Conference") == r"Association for Road Safety \endash  Conference"
++    assert trados.escape("Association for Road Safety Â¨C  Conference") == r"Association for Road Safety \endash  Conference"
  
  #@mark.xfail(reason="Lots to implement")
  #class TestTradosTxtTmUnit(test_base.TestTranslationUnit):
@@ -9584,14 +9584,14 @@
          """Test basic plurals"""
          tsfile = ts.tsfile()
          tsunit = tsfile.addsourceunit("File(s)")
--        tsunit.target = [u"Le¨ºr", u"Le¨ºrs"]
-+        tsunit.target = ["Le¨ºr", "Le¨ºrs"]
+-        tsunit.target = [u"LeÂ¨Âºr", u"LeÂ¨Âºrs"]
++        tsunit.target = ["LeÂ¨Âºr", "LeÂ¨Âºrs"]
          newfile = ts.tsfile.parsestring(str(tsfile))
 -        print str(tsfile)
 +        print(str(tsfile))
          checkunit = newfile.findunit("File(s)")
--        assert checkunit.target == [u"Le¨ºr", u"Le¨ºrs"]
-+        assert checkunit.target == ["Le¨ºr", "Le¨ºrs"]
+-        assert checkunit.target == [u"LeÂ¨Âºr", u"LeÂ¨Âºrs"]
++        assert checkunit.target == ["LeÂ¨Âºr", "LeÂ¨Âºrs"]
          assert checkunit.hasplural()
  
      def test_language(self):
@@ -9961,10 +9961,10 @@
  """Time format used by Trados .txt"""
  
  RTF_ESCAPES = {
--ur"\emdash": u"¡ª",
--ur"\endash": u"¨C",
-+r"\emdash": "¡ª",
-+r"\endash": "¨C",
+-ur"\emdash": u"Â¡Âª",
+-ur"\endash": u"Â¨C",
++r"\emdash": "Â¡Âª",
++r"\endash": "Â¨C",
  # Nonbreaking space equal to width of character "m" in current font.
 -ur"\emspace": u"\u2003",
 +r"\emspace": "\u2003",
@@ -11031,9 +11031,9 @@
  
  def test_placeable_punctuation():
 -    assert general.PunctuationPlaceable.parse(u'These, are not. Special: punctuation; marks! Or are "they"?') is None
--    assert general.PunctuationPlaceable.parse(u'Downloading¡­')[1] == general.PunctuationPlaceable([u'¡­'])
+-    assert general.PunctuationPlaceable.parse(u'DownloadingÂ¡Â­')[1] == general.PunctuationPlaceable([u'Â¡Â­'])
 +    assert general.PunctuationPlaceable.parse('These, are not. Special: punctuation; marks! Or are "they"?') is None
-+    assert general.PunctuationPlaceable.parse('Downloading¡­')[1] == general.PunctuationPlaceable(['¡­'])
++    assert general.PunctuationPlaceable.parse('DownloadingÂ¡Â­')[1] == general.PunctuationPlaceable(['Â¡Â­'])
  
  
  def test_placeable_xml_entity():
@@ -11061,12 +11061,12 @@
 -    assert general.XMLTagPlaceable.parse(u'<img ="koei.jpg" />') is None
 -    assert general.XMLTagPlaceable.parse(u'<img "koei.jpg" />') is None
 -    assert general.XMLTagPlaceable.parse(u'<span xml:space="preserve">')[0] == general.XMLTagPlaceable([u'<span xml:space="preserve">'])
--    assert general.XMLTagPlaceable.parse(u'<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met l¨ºernaam-pseudovertaling" style="border: 1px dotted grey;" />')[0] == general.XMLTagPlaceable([u'<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met l¨ºernaam-pseudovertaling" style="border: 1px dotted grey;" />'])
+-    assert general.XMLTagPlaceable.parse(u'<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met lÂ¨Âºernaam-pseudovertaling" style="border: 1px dotted grey;" />')[0] == general.XMLTagPlaceable([u'<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met lÂ¨Âºernaam-pseudovertaling" style="border: 1px dotted grey;" />'])
 +    assert general.XMLTagPlaceable.parse('<important word>') is None
 +    assert general.XMLTagPlaceable.parse('<img ="koei.jpg" />') is None
 +    assert general.XMLTagPlaceable.parse('<img "koei.jpg" />') is None
 +    assert general.XMLTagPlaceable.parse('<span xml:space="preserve">')[0] == general.XMLTagPlaceable(['<span xml:space="preserve">'])
-+    assert general.XMLTagPlaceable.parse('<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met l¨ºernaam-pseudovertaling" style="border: 1px dotted grey;" />')[0] == general.XMLTagPlaceable(['<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met l¨ºernaam-pseudovertaling" style="border: 1px dotted grey;" />'])
++    assert general.XMLTagPlaceable.parse('<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met lÂ¨Âºernaam-pseudovertaling" style="border: 1px dotted grey;" />')[0] == general.XMLTagPlaceable(['<img src="http://translate.org.za/blogs/friedel/sites/translate.org.za.blogs.friedel/files/virtaal-7f_help.png" alt="Virtaal met lÂ¨Âºernaam-pseudovertaling" style="border: 1px dotted grey;" />'])
      # Bug 933
 -    assert general.XMLTagPlaceable.parse(u'This entry expires in %days% days. Would you like to <a href="%href%?PHPSESSID=5d59c559cf4eb9f1d278918271fbe68a" title="Renew this Entry Now">Renew this Entry Now</a> ?')[1] == general.XMLTagPlaceable([u'<a href="%href%?PHPSESSID=5d59c559cf4eb9f1d278918271fbe68a" title="Renew this Entry Now">'])
 -    assert general.XMLTagPlaceable.parse(u'''<span weight='bold' size='larger'>Your Google Account is locked</span>''')[0] == general.XMLTagPlaceable([u'''<span weight='bold' size='larger'>'''])
@@ -11163,17 +11163,17 @@
 -    assert elem.sub == [StringElem(u'a'), X(id=u'foo[1]/bar[1]/baz[1]')]
 +    assert elem.sub == [StringElem('a'), X(id='foo[1]/bar[1]/baz[1]')]
  
--    source = etree.fromstring(u'<source>a<x id="foo[1]/bar[1]/baz[1]"/>¨¦</source>')
-+    source = etree.fromstring('<source>a<x id="foo[1]/bar[1]/baz[1]"/>¨¦</source>')
+-    source = etree.fromstring(u'<source>a<x id="foo[1]/bar[1]/baz[1]"/>Â¨Â¦</source>')
++    source = etree.fromstring('<source>a<x id="foo[1]/bar[1]/baz[1]"/>Â¨Â¦</source>')
      elem = lisa.xml_to_strelem(source)
--    assert elem.sub == [StringElem(u'a'), X(id=u'foo[1]/bar[1]/baz[1]'), StringElem(u'¨¦')]
-+    assert elem.sub == [StringElem('a'), X(id='foo[1]/bar[1]/baz[1]'), StringElem('¨¦')]
+-    assert elem.sub == [StringElem(u'a'), X(id=u'foo[1]/bar[1]/baz[1]'), StringElem(u'Â¨Â¦')]
++    assert elem.sub == [StringElem('a'), X(id='foo[1]/bar[1]/baz[1]'), StringElem('Â¨Â¦')]
  
--    source = etree.fromstring(u'<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>¨¦</source>')
-+    source = etree.fromstring('<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>¨¦</source>')
+-    source = etree.fromstring(u'<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>Â¨Â¦</source>')
++    source = etree.fromstring('<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>Â¨Â¦</source>')
      elem = lisa.xml_to_strelem(source)
--    assert elem.sub == [StringElem(u'a'), G(id=u'foo[2]/bar[2]/baz[2]', sub=[StringElem(u'b'), X(id=u'foo[1]/bar[1]/baz[1]'), StringElem(u'c')]), StringElem(u'¨¦')]
-+    assert elem.sub == [StringElem('a'), G(id='foo[2]/bar[2]/baz[2]', sub=[StringElem('b'), X(id='foo[1]/bar[1]/baz[1]'), StringElem('c')]), StringElem('¨¦')]
+-    assert elem.sub == [StringElem(u'a'), G(id=u'foo[2]/bar[2]/baz[2]', sub=[StringElem(u'b'), X(id=u'foo[1]/bar[1]/baz[1]'), StringElem(u'c')]), StringElem(u'Â¨Â¦')]
++    assert elem.sub == [StringElem('a'), G(id='foo[2]/bar[2]/baz[2]', sub=[StringElem('b'), X(id='foo[1]/bar[1]/baz[1]'), StringElem('c')]), StringElem('Â¨Â¦')]
  
  
  def test_xml_space():
@@ -11187,10 +11187,10 @@
  
  
  def test_chunk_list():
--    left = StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'¨¦'])
--    right = StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'¨¦'])
-+    left = StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), '¨¦'])
-+    right = StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), '¨¦'])
+-    left = StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'Â¨Â¦'])
+-    right = StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'Â¨Â¦'])
++    left = StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), 'Â¨Â¦'])
++    right = StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), 'Â¨Â¦'])
      assert left == right
  
  
@@ -11202,10 +11202,10 @@
      assert etree.tostring(source, encoding='UTF-8') == '<source>a</source>'
  
 -    source = etree.Element(u'source')
--    lisa.strelem_to_xml(source, StringElem([u'a', u'¨¦']))
+-    lisa.strelem_to_xml(source, StringElem([u'a', u'Â¨Â¦']))
 +    source = etree.Element('source')
-+    lisa.strelem_to_xml(source, StringElem(['a', '¨¦']))
-     assert etree.tostring(source, encoding='UTF-8') == '<source>a¨¦</source>'
++    lisa.strelem_to_xml(source, StringElem(['a', 'Â¨Â¦']))
+     assert etree.tostring(source, encoding='UTF-8') == '<source>aÂ¨Â¦</source>'
  
 -    source = etree.Element(u'source')
 +    source = etree.Element('source')
@@ -11219,16 +11219,16 @@
      assert etree.tostring(source, encoding='UTF-8') == '<source>a<x id="foo[1]/bar[1]/baz[1]"/></source>'
  
 -    source = etree.Element(u'source')
--    lisa.strelem_to_xml(source, StringElem([u'a', X(id='foo[1]/bar[1]/baz[1]'), u'¨¦']))
+-    lisa.strelem_to_xml(source, StringElem([u'a', X(id='foo[1]/bar[1]/baz[1]'), u'Â¨Â¦']))
 +    source = etree.Element('source')
-+    lisa.strelem_to_xml(source, StringElem(['a', X(id='foo[1]/bar[1]/baz[1]'), '¨¦']))
-     assert etree.tostring(source, encoding='UTF-8') == '<source>a<x id="foo[1]/bar[1]/baz[1]"/>¨¦</source>'
++    lisa.strelem_to_xml(source, StringElem(['a', X(id='foo[1]/bar[1]/baz[1]'), 'Â¨Â¦']))
+     assert etree.tostring(source, encoding='UTF-8') == '<source>a<x id="foo[1]/bar[1]/baz[1]"/>Â¨Â¦</source>'
  
 -    source = etree.Element(u'source')
--    lisa.strelem_to_xml(source, StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'¨¦']))
+-    lisa.strelem_to_xml(source, StringElem([u'a', G(id='foo[2]/bar[2]/baz[2]', sub=[u'b', X(id='foo[1]/bar[1]/baz[1]'), u'c']), u'Â¨Â¦']))
 +    source = etree.Element('source')
-+    lisa.strelem_to_xml(source, StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), '¨¦']))
-     assert etree.tostring(source, encoding='UTF-8') == '<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>¨¦</source>'
++    lisa.strelem_to_xml(source, StringElem(['a', G(id='foo[2]/bar[2]/baz[2]', sub=['b', X(id='foo[1]/bar[1]/baz[1]'), 'c']), 'Â¨Â¦']))
+     assert etree.tostring(source, encoding='UTF-8') == '<source>a<g id="foo[2]/bar[2]/baz[2]">b<x id="foo[1]/bar[1]/baz[1]"/>c</g>Â¨Â¦</source>'
  
  
  def test_unknown_xml_placeable():
@@ -11308,8 +11308,8 @@
      def setup_method(self, method):
          self.term_po = pofile(StringIO(self.TERMINOLOGY))
          self.matcher = terminologymatcher(self.term_po)
--        self.test_string = u'<b>Inp¨¹t</b> file name thingy.'
-+        self.test_string = '<b>Inp¨¹t</b> file name thingy.'
+-        self.test_string = u'<b>InpÂ¨Â¹t</b> file name thingy.'
++        self.test_string = '<b>InpÂ¨Â¹t</b> file name thingy.'
  
      def test_simple_terminology(self):
          TerminologyPlaceable.matchers = [self.matcher]
@@ -12410,7 +12410,7 @@
          """check that we normlise unicode strings before comparing"""
 -        source_template = u'# comment\n#: test.c\nmsgid "test"\nmsgstr "t%sst"\n'
 +        source_template = '# comment\n#: test.c\nmsgid "test"\nmsgstr "t%sst"\n'
-         # ¨¦, e + '
+         # Â¨Â¦, e + '
 --- .\tools\test_pomerge.py	(original)
 +++ .\tools\test_pomerge.py	(refactored)
 @@ -62,8 +62,8 @@

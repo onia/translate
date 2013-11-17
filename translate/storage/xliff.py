@@ -550,10 +550,10 @@ class xlifffile(lisa.LISAfile):
             if ns and ns.startswith(self.unversioned_namespace):
                 self.namespace = ns
                 break
-        else:
-            # handle crappy xliff docs without proper namespace declaration
-            # by simply using the xmlns default namespace
-            self.namespace = self.document.getroot().nsmap.get(None, None)
+            else:
+                # handle crappy xliff docs without proper namespace declaration
+                # by simply using the xmlns default namespace
+                self.namespace = self.document.getroot().nsmap.get(None, None)
 
         if self._filename:
             filenode = self.getfilenode(self._filename, createifmissing=True)
