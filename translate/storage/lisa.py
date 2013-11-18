@@ -156,6 +156,7 @@ class LISAunit(base.TranslationUnit):
                 languageNode = self.createlanguageNode(lang, text, "target")
                 self.set_target_dom(languageNode, append)
             else:
+                '''
                 if self.textNode:
                     terms = languageNode.iter(self.namespaced(self.textNode))
                     try:
@@ -163,6 +164,13 @@ class LISAunit(base.TranslationUnit):
                     except StopIteration as e:
                         pass
                 languageNode.text = text
+                '''
+                # try to update all content including tags in targt node, 
+                # but here only suits/tested for iws files, so need more checks.
+                # later could need to use a more better method to update target node.
+                self.xmlelement.remove(languageNode)
+                languageNode = self.createlanguageNode(lang, text, "target")
+                self.set_target_dom(languageNode, append)               
         else:
             self.set_target_dom(None, False)
 

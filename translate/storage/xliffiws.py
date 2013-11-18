@@ -113,6 +113,7 @@ class xliffunitiws(xliff.xliffunit):
         #"""get unit id."""
         unitid = self.xmlelement.get('id')
         return unitid
+
     ''' Suggestion: the following two overide functions only for display or export data with tags,
     #    Or special checking related to tags
     def getText(self, languageNode, xml_space):
@@ -145,6 +146,7 @@ class xliffunitiws(xliff.xliffunit):
         else:
             return self.getText(languageNode, xml_space)
     '''
+
     def getmetadataNode(self):
         #"""get metadata nodes."""
         metadataNode = None
@@ -161,6 +163,8 @@ class xliffunitiws(xliff.xliffunit):
         self.metadata['tm_score'] = metadataNode.get('tm_score')
         self.metadata['tm_origin'] = statusNode.get('tm_origin')
         self.metadata['translation_status'] = statusNode.get('translation_status')
+        self.metadata['translation_type'] = statusNode.get('translation_type')
+        self.metadata['lock_status'] = statusNode.get('lock_status')
         self.metadata['match-quality'] = statusNode.get('match-quality')
         return self.metadata
 
@@ -174,11 +178,33 @@ class xliffunitiws(xliff.xliffunit):
             self.markupdata[sequence] = item.text#.encode('utf-8')
         return self.markupdata
 
-    def setmetadata(self, translation_status=None):
+    def setmetadata(self, translation_status=None, lock_status=None, match_quality=None, translation_type=None):
         #"""get metadata nodes."""
         metadataNode = self.getmetadataNode()
         statusNode = metadataNode.find(self.namespacediws("status"))
-        if translation_status: statusNode.set('translation_status', translation_status)
+        if translation_status: 
+            statusNode.set('translation_status', translation_status)
+            if translation_status != 'finished':
+                try:
+                    del statusNode.attrib["match-quality"]
+                except:
+                    pass
+        if lock_status: statusNode.set('lock_status', lock_status)
+        if match_quality:
+            statusNode.set('match-quality', match_quality)
+            if match_quality == 'guaranteed':
+                statusNode.set('translation_status', 'finished')
+                try:
+                    del statusNode.attrib["translation_type"]
+                except:
+                    pass
+        if translation_type:
+            statusNode.set('translation_type', translation_type)# machine_translation or manual_translation
+            try:
+                del statusNode.attrib["match-quality"]
+            except:
+                pass
+
 
 class xlifffileiws(xliff.xlifffile):
     """Class representing a XLIFF file store."""

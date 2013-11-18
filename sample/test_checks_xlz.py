@@ -81,20 +81,28 @@ def check_xlz_units():
     prevUnitLocation=None
     currentUnitLocation=None
     for unit in d.getunits():
+        #print(unit.source)
+        unit.target=unit.source
+        #testdata.append(unit.target)
+        unit.unlockunit()
         #if not unit.source or not unit.target: continue
         #if fails(stdchecker.endpunc, unit.source, unit.target):
         #print(unit.getlocations(), unit.source.encode('utf-8'), unit.target.encode('utf-8'), unit.get_state_n(), unit.getid())
         #print(unit.source)
         #if unit.target:
            #print(unit.source.encode('utf-8'))
-        unit.setmetadata(translation_status='pending')
+        #unit.setmetadata(translation_status='finished')
+        #if unit.getmetadata()['match-quality']=='guaranteed':
+        #   unit.setmetadata(lock_status='locked')
         #print(unit.source)
-        if str(unit.source).count('Failed to load'):
-            print(unit.source)
-            unit.target='Failed to load {70}'
+        #if str(unit.source).count('Failed to load {46}'):
+        #    print(unit.source)
+        #    unit.target='Failed to load {46}'
+        #    unit.setmetadata(translation_type='manual_translation')
         #if count>100:
         #    break
         #print(unit.getmarkupdata())
+        '''
         currentUnitLocation=unit.getid()
         if prevUnitLocation!=currentUnitLocation:
             count+=1
@@ -102,12 +110,15 @@ def check_xlz_units():
         testdata[count][str(unit.getunitid())]=unit.source
         testdata[count].update(unit.getmarkupdata())
         prevUnitLocation=currentUnitLocation
+        '''
 
-    testdata=[OrderedDict(sorted(dic.items(), key=lambda t: t[0])) for dic in testdata]
+    #testdata=[OrderedDict(sorted(dic.items(), key=lambda t: t[0])) for dic in testdata]
     f=open('test.txt','w', encoding='utf-8')
-    for dic in testdata:
+    '''for dic in testdata:
         for ky in dic:
             f.write(dic[ky].replace('\n',''))
+    '''
+    f.write(str(testdata))
     f.close()
     #for subdir, file in d.getfiles():
     #    print(type(file))

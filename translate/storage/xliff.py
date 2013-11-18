@@ -517,7 +517,14 @@ class xliffunit(lisa.LISAunit):
         return multistring([str(elem) for elem in elem_list])
     rich_to_multistring = classmethod(rich_to_multistring)
 
+    def lockunit(self):
+        #"""lock unit."""
+        self.xmlelement.set('translate', 'no')
 
+    def unlockunit(self):
+        #"""unlock unit."""
+        self.xmlelement.set('translate', 'yes')
+        
 class xlifffile(lisa.LISAfile):
     """Class representing a XLIFF file store."""
     UnitClass = xliffunit

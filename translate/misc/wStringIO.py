@@ -22,7 +22,8 @@
 StringIO at the speed of cStringIO"""
 
 import io
-
+import shutil
+import os
 
 class StringIO:
 
@@ -139,6 +140,17 @@ class StringIO:
         if self.closed:
             raise ValueError("I/O operation on closed file")
         return self.buf.getvalue()
+
+    def save(self):
+        if self.closed:
+            raise ValueError("I/O operation on closed file")
+        self.buf.seek(0)
+        dirs = os.path.dirname(self.filename)
+        if dirs and not os.path.exists(dirs):
+            os.makedirs(dirs)
+        tempfile = open (self.filename, 'w', encoding='utf-8')
+        shutil.copyfileobj(self.buf, tempfile)
+        tempfile.close()
 
 
 class CatchStringOutput(StringIO, object):

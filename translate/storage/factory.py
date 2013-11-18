@@ -101,6 +101,8 @@ def _guessextention(storefile):
         extention = 'xlifftw'
     elif '<xliff ' in start:
         extention = 'xlf'
+    elif '<tt-xliff-skl' in start:
+        extention = 'skl'
     elif 'msgid "' in start:
         extention = 'po'
     elif '%Wordfast TM' in start:

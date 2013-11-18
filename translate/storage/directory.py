@@ -24,8 +24,8 @@
 # way (examples: *.po, base.xlf, pootle-terminology.tbx)
 
 #TODO: consider also providing directories as we currently provide files
-
 import os
+import shutil
 from translate.storage import factory
 
 
@@ -54,19 +54,31 @@ class Directory:
     def savefiles(self):
         """Try to save all files in this directory."""
         for store in self.storedata:
+            print(type(store))
             store.save()
             
     def clearfiles(self):
         """Try to remove all temp files in this directory."""
+        for store in self.storedata:
+            store.close()
         for dirname, filename in self.filedata:
-            try:
-                os.remove(os.path.join(dirname, filename))
-            except:
-                raise ValueError("Cannot remove temp files.")
-            
+            if os.path.exists(dirname):
+                try:
+                    shutil.rmtree(dirname)
+                except:
+                    raise ValueError("Cannot remove temp files.")
+            if os.path.exists(os.path.join(dirname, filename)):
+                try:
+                    os.remove(os.path.join(dirname, filename))
+                except:
+                    raise ValueError("Cannot remove temp files.")
+
     def unit_iter(self):
         """Iterator over all the units in all the files in this directory."""
         for dirname, filename in self.file_iter():
+            # let skip the other filetypes            
+            root, ext = os.path.splitext(filename)
+            if ext[1:] not in factory.classes_str: continue
             store = factory.getobject(os.path.join(dirname, filename))
             self.storedata.append(store)
             #TODO: don't regenerate all the storage objects
@@ -80,6 +92,9 @@ class Directory:
     def scanstores(self):
         """Populate the internal store data."""
         for dirname, filename in self.file_iter():
+            # let skip the other filetypes            
+            root, ext = os.path.splitext(filename)
+            if ext[1:] not in factory.classes_str: continue
             store = factory.getobject(os.path.join(dirname, filename))
             self.storedata.append(store)
             

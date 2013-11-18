@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tt-xliff-skl PUBLIC "-//SUN-TRANSTECH//DTD XLIFF SKELETON//EN" "http://www.ireland/~timf/tt-xliff-skl.dtd">
+<tt-xliff-skl version="1.0">
+	<file datatype="xml" source-language="en-us" original="C:\OPC\Release#51\1_Prep\1_prepped\es\cspecm_oem_es_salesmarketing_Pages.xml.rtf">
+		<body>
+			<formatting>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;xliff version=&quot;1.2&quot; xmlns=&quot;urn:oasis:names:tc:xliff:document:1.2&quot;&gt;&lt;file product-version=&quot;1.4&quot; original=&quot;http://cspecm/oem/es/salesmarketing&quot; source-language=&quot;default&quot; target-language=&quot;default&quot; datatype=&quot;plaintext&quot; category=&quot;page_content&quot;&gt;&lt;header&gt;&lt;note from=&quot;listID&quot;&gt;f1e1c4fd-089c-47e5-9170-19c9e014ebfd&lt;/note&gt;&lt;note from=&quot;listUrl&quot;&gt;http://cspecm/oem/es/salesmarketing/Pages/Forms/AllItems.aspx&lt;/note&gt;&lt;note from=&quot;options&quot;&gt;UseTranslatableColumnSettings=True;TargetLocale=;DefaultExportTargetContent=&lt;/note&gt;&lt;note from=&quot;datasource&quot;&gt;Pages&lt;/note&gt;&lt;note from=&quot;datasourceType&quot;&gt;Library&lt;/note&gt;&lt;note from=&quot;exportedOn&quot;&gt;2013-10-11T05:19:47Z&lt;/note&gt;&lt;note from=&quot;exportedBy&quot;&gt;FAREAST\v-vivliu&lt;/note&gt;&lt;note from=&quot;exportUrl&quot;&gt;http://cspecm/oem/es/salesmarketing/_layouts/MSCOMLocalization/ContentDownload.aspx?libraryOrListNames=f1e1c4fd-089c-47e5-9170-19c9e014ebfd&amp;amp;transcol=true&amp;amp;language=&amp;amp;deftgt=&lt;/note&gt;&lt;note from=&quot;siteTitle&quot;&gt;Ventas y marketing&lt;/note&gt;&lt;/header&gt;&lt;body /&gt;&lt;/file&gt;&lt;file original=&quot;82a9f759-2118-4dfe-b515-43f09af44180&quot; source-language=&quot;default&quot; datatype=&quot;plaintext&quot;&gt;&lt;header&gt;&lt;note from=&quot;url&quot;&gt;http://cspecm/oem/es/salesmarketing/Pages/oem-training-zone.aspx&lt;/note&gt;&lt;/header&gt;&lt;body&gt;&lt;trans-unit id=&quot;page_description&quot; datatype=&quot;x-System.String&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[La Zona de aprendizaje para OEM es la ubicaci&#243;n central en la que encontrar&#225; cursos sobre productos y material para impulsar las ventas creados espec&#237;ficamente para los partners OEM de Microsoft.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="1"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;f55c4d88-1f2e-4ad9-aaa8-819af4ee7ee8&quot; datatype=&quot;x-System.String&quot; resname=&quot;PublishingPageContent&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;h2 class=&quot;subheader&quot;&gt;Learn, Sell, and Grow with the OEM Training Zone&lt;/h2&gt;
+&lt;p class=&quot;no-top-margin&quot;&gt;If you are a reseller and want to improve your product knowledge and sales skills, you can find materials in the OEM Training Zone to help you identify solutions and expand sales opportunities for these products:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Windows 7&lt;/li&gt;
+&lt;li&gt;Microsoft Office 2010&lt;/li&gt;
+&lt;li&gt;Windows Small Business Server 2011&lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;You can also find useful information about programs to grow your business:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/oem/en/community/mpn/Pages/oem_competency.aspx&quot;&gt;OEM competency&lt;/a&gt; - Earning the OEM competency can help partners take advantage of significant market opportunities for Windows 7 and Windows Server 2008 R2 operating systems.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.oemtrainingzone.com/WindowsEmbedded/Pages/WELandingPage.aspx&quot; target=&quot;_blank&quot;&gt;Windows Embedded&lt;/a&gt; &#8211; This content helps you communicate the business and technical value of the Windows Embedded operating systems to a broad spectrum of customers.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.oemtrainingzone.com/&quot; target=&quot;_blank&quot;&gt;Distributor Training Zone&lt;/a&gt; &#8211; This central location provides SMSP and OEM distributor readiness materials and courses and also includes Channel Incentives programs and the latest news. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;h2 class=&quot;subheader&quot;&gt;OEM Training Zone Meets a Variety of Needs&lt;/h2&gt;
+&lt;p class=&quot;no-top-margin&quot;&gt;The OEM Training Zone offers many different resources to meet your business goals:&lt;/p&gt;
+&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th style=&quot;width:70px&quot;&gt;Goal&lt;/th&gt;
+&lt;th&gt;OEM Training Zone Resources&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Learn&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Take short courses with assessments, watch videos, and view presentation decks to understand product value propositions, engage customers, and ignite sales.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Sell&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Understand how to position Microsoft products and solutions against the competition and get the strategic speaking points you need to help you close sales.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Grow&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Better identify opportunities to drive incremental sales and establish preference for your hardware and Microsoft software.&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;Many training and readiness resources are available in the OEM Training Zone, including: &lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;How to Demo Office 2010 For Your Customers&lt;/li&gt;
+&lt;li&gt;Why Sell Windows 7&lt;/li&gt;
+&lt;li&gt;Cloud Services&lt;/li&gt;
+&lt;li&gt;Windows SBS 2011 Technical Training&lt;/li&gt;
+&lt;li&gt;Tips and Tricks for Windows 7 and Office 2010&lt;/li&gt;
+&lt;li&gt;Selling Office 2010 with New PCs&lt;/li&gt;
+&lt;li&gt;Videos that highlight individual features of Office 2010&lt;/li&gt;&lt;/ul&gt;
+&lt;p class=&quot;featured_dl&quot;&gt;Visit the &lt;a href=&quot;http://www.oemtrainingzone.com/&quot; target=&quot;_blank&quot;&gt;OEM Training Zone&lt;/a&gt;.&lt;/p&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="2"/>
+			<formatting>&lt;/h2&gt;&lt;p class=&quot;no-top-margin&quot;&gt;</formatting>
+			<tu-placeholder id="3"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="4"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="5"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="6"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="7"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="8"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="9"/>
+			<formatting>&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="10"/>
+			<formatting>&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="11"/>
+			<tu-placeholder id="12"/>
+			<formatting>&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="13"/>
+			<formatting>&lt;/h2&gt;&lt;p class=&quot;no-top-margin&quot;&gt;</formatting>
+			<tu-placeholder id="14"/>
+			<formatting>&lt;/p&gt;&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th style=&quot;width:70px&quot;&gt;</formatting>
+			<tu-placeholder id="15"/>
+			<formatting>&lt;/th&gt;&lt;th&gt;</formatting>
+			<tu-placeholder id="16"/>
+			<formatting>&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="17"/>
+			<formatting>&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="18"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="19"/>
+			<formatting>&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="20"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="21"/>
+			<formatting>&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="22"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="23"/>
+			<tu-placeholder id="24"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="25"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="26"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="27"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="28"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="29"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="30"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="31"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;featured_dl&quot;&gt;</formatting>
+			<tu-placeholder id="32"/>
+			<formatting>&lt;/p&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3c88bc05-7373-4f64-9879-dd6b1f53934b&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageTitle&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[OEM Training Zone]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="33"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;6ab108c2-1b41-4f95-89a6-fbec5745f9d1&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageDescription&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[The OEM Training Zone is the central destination for product training and readiness materials created specifically for Microsoft OEM partners.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="34"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3e98bbf3-cb45-444e-a3af-6cea6c3b9b46&quot; datatype=&quot;x-System.String&quot; resname=&quot;Page_x0020_Overview&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[The OEM Training Zone is the central destination for product training and readiness materials that have been created specifically for Microsoft OEM partners.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="35"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;g_b47938b6_2840_4756_b75e_59ccb832d75f&quot; datatype=&quot;x-Microsoft.SharePoint.WebPartPages.ContentEditorWebPart&quot; resname=&quot;Styles&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;Styles&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;
+.no-top-margin {
+	MARGIN-TOP: 0px
+}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;</formatting>
+			<tu-placeholder id="36"/>
+			<formatting>&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;.no-top-margin {	MARGIN-TOP: 0px}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;/body&gt;&lt;/file&gt;&lt;file original=&quot;b66be17f-6b4a-4ef6-8a1f-bddb63be72b3&quot; source-language=&quot;default&quot; datatype=&quot;plaintext&quot;&gt;&lt;header&gt;&lt;note from=&quot;url&quot;&gt;http://cspecm/oem/es/salesmarketing/Pages/syndication.aspx&lt;/note&gt;&lt;/header&gt;&lt;body&gt;&lt;trans-unit id=&quot;page_description&quot; datatype=&quot;x-System.String&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[Mantenga actualizado el contenido de marketing de su sitio web con los servicios de redifusi&#243;n de marketing digital de Microsoft.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="37"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;f55c4d88-1f2e-4ad9-aaa8-819af4ee7ee8&quot; datatype=&quot;x-System.String&quot; resname=&quot;PublishingPageContent&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;p&gt;Use Microsoft marketing syndication to place compelling marketing and product information tied to Microsoft&#8217;s global campaigns on your website. The content is dynamically served, localized, and updated in real time across participating partner sites. Syndication is an &lt;strong&gt;easy&lt;/strong&gt; and &lt;strong&gt;cost effective&lt;/strong&gt; way for you to &lt;strong&gt;generate leads and drive demand and sales&lt;/strong&gt;, while ensuring that you always have the latest content on your website.Once you&#8217;ve subscribed, changes made to the content are automatically updated on your site, saving you time and effort.In addition, &lt;strong&gt;robust partner specific reporting&lt;/strong&gt; is available to help you measure how the content is being consumed by your customers.&lt;/p&gt;
+&lt;p&gt;This year we are adding &lt;strong&gt;Device Marketing&lt;/strong&gt; content to Microsoft Digital Commerce and Campaign Network (DCCN) to help you drive demand for the Windows 8 devices you sell. Content is now available in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming soon.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Partner Opportunity&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;list&quot;&gt;&lt;li&gt;&lt;strong&gt;Reach and engage customers &lt;/strong&gt;with rich marketing content delivered directly to your website with minimal ongoing maintenance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reach and engage customers &lt;/strong&gt;with rich marketing content delivered directly to your website with minimal ongoing maintenance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Educate customers &lt;/strong&gt;by providing comprehensive Microsoft product and solution information&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accelerate your sales&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Partners who have participated in marketing syndication have shown &lt;strong&gt;34 percent more revenue&lt;/strong&gt; (on average) and grew &lt;strong&gt;five times faster&lt;/strong&gt; than partners who did not participate.&lt;sup&gt;1&lt;/sup&gt; &lt;/p&gt;
+&lt;div class=&quot;oneCol_list&quot;&gt;&lt;ul&gt;&lt;li&gt;Worldwide partners can find ready-to-use banners and microsites through the &lt;a href=&quot;http://www.msdccn.com/&quot; target=&quot;_blank&quot;&gt;Digital Commerce and Campaign Network&lt;/a&gt; (DCCN), along with the latest co-brandable marketing materials to download. &lt;/li&gt;
+&lt;li&gt;U.S. partners can access marketing content, web banners, and other resources at the &lt;a href=&quot;http://www.oemsalescenter.com/&quot; target=&quot;_blank&quot;&gt;OEM Sales Center&lt;/a&gt;. &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Register for &lt;a href=&quot;http://www.msdccn.com/&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN&lt;/a&gt; today&lt;/strong&gt; and join the community of worldwide partners who are using Microsoft DCCN to increase awareness and demand. &lt;/p&gt;
+&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;New Content Available on Microsoft DCCN &lt;/h2&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Device Marketing &lt;/strong&gt;&#8211; Device selling is easy with Microsoft DCCN. Leverage the new Device Marketing content on Microsoft DCCN to drive demand for the devices you sell. Go to DCCN, create a custom rotation for the devices you sell, and syndicate this content on your website. Content is available now in English for Acer, ASUS, Dell, HP, Lenovo, Panasonic, Sony, Samsung, and Toshiba devices, with more coming in the next few months.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Get2Modern &lt;/strong&gt;- The Get2Modern campaign is now available on DCCN. Syndicate this content to encourage customers to switch to Windows 8 Pro and the new Office. Innovation in both Windows 8 Pro PCs and the new Office can help customers with enhanced security, mobility, productivity, and flexibility for their business - great reasons to get modern.&lt;/p&gt;
+&lt;div class=&quot;sectionbar&quot; id=&quot;v2&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;Microsoft DCCN 2.0&lt;/h2&gt;&lt;/div&gt;
+&lt;img class=&quot;screenshot&quot; alt=&quot;DCCN landing page screenshot&quot; src=&quot;/oem/PublishingImages/DCCN_Landing_Page_550x241.jpg&quot; /&gt; &lt;p&gt;Microsoft DCCN includes the features you need: &lt;/p&gt;
+&lt;ul class=&quot;list&quot;&gt;&lt;li&gt;&lt;strong&gt;Easy process&lt;/strong&gt; to begin syndicating &#8211; select the campaigns you want, pick up the HTML code, and place it on your website. It&#8217;s that easy!&lt;/li&gt;
+&lt;li&gt;Many campaigns have Contact Us or Download Now buttons to &lt;strong&gt;generate leads&lt;/strong&gt; or &lt;strong&gt;drive active selling&lt;/strong&gt; on your website&lt;/li&gt;
+&lt;li&gt;Create your own &lt;strong&gt;custom rotation&lt;/strong&gt; of banners to drive your business results&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Saved web campaigns&lt;/strong&gt; enables you to easily update the campaign content on your website with a single click (no need to engage the IT department)&lt;/li&gt;
+&lt;li&gt;Customize the &lt;strong&gt;downloadable marketing materials&lt;/strong&gt; to use in your marketing efforts&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Robust web-based reporting&lt;/strong&gt; so that you can measure impact and ROI&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;To begin using Microsoft DCCN, visit &lt;a href=&quot;http://www.msdccn.com/&quot; target=&quot;_blank&quot;&gt;www.msdccn.com&lt;/a&gt; and register today. &lt;/p&gt;
+&lt;div class=&quot;sectionbar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;Microsoft DCCN resources&lt;/h2&gt;&lt;/div&gt;
+&lt;p&gt;Watch the new Microsoft Digital Commerce and Campaign Network videos to learn how easy it is to get started with Microsoft DCCN. &lt;/p&gt;
+&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class=&quot;first&quot;&gt;Video &lt;/th&gt;
+&lt;th&gt;Description &lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Microsoft DCCN Overview - .wmv 8.98 MB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Overview_Video.wmv&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN Overview &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/Microsoft_DCCN_2.0_Overview_Video.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.wmv 8.98 MB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;Watch this video to understand what Microsoft DCCN is and how you can use it to educate customers and accelerate your sales. &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Implementing Microsoft DCCN on Your Website - .wmv 7.67 MB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_How_to_Implement_Syndication_Video.wmv&quot; target=&quot;_blank&quot;&gt;Implementing Microsoft DCCN on Your Website &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/DCCN_2.0_How_to_Implement_Syndication_Video.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.wmv 7.67 MB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;Watch this video to learn how to select campaigns on Microsoft DCCN, choose a banner size, generate the HTML code, and make the campaigns live on your website. &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;Use these resources to learn about Microsoft DCCN. &lt;/p&gt;
+&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class=&quot;first&quot;&gt;Resource &lt;/th&gt;
+&lt;th&gt;Description &lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Microsoft DCCN 1 Pager - .pdf 553 KB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_1_Pager.pdf&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN 1 Pager &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/DCCN_2.0_Syndication_1_Pager.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.pdf 553 KB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;View this one-page summary for an overview of what marketing syndication is and the partner opportunity with Microsoft DCCN. &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Microsoft DCCN Overview and Opportunity - .pptx 5.45 MB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/DCCN_2.0_Syndication_Partner_Ready_Deck.pptx&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN Overview and Opportunity &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/DCCN_2.0_Syndication_Partner_Ready_Deck.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.pptx 5.45 MB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;View this PowerPoint presentation for details on what marketing syndication is and how you can use Microsoft DCCN to educate customers, increase demand, and accelerate your sales. &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Microsoft DCCN Technical FAQs - .docx 35.8 KB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.docx&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN Technical FAQs &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/Microsoft_DCCN_Technical_Partner_FAQs_March_2013.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.docx 35.8 KB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;Read this document for more detailed information on Microsoft DCCN. &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;&lt;a title=&quot;Microsoft DCCN 2.0 Quick Start Guide - .pdf 560 KB&quot; href=&quot;http://oem.microsoft.com/downloads/public/worldwide/syndication/Microsoft_DCCN_2.0_Quick_Start_Guide.pdf&quot; target=&quot;_blank&quot;&gt;Microsoft DCCN 2.0 Quick Start Guide &lt;div class=&quot;nail&quot;&gt;&lt;img src=&quot;/oem/PublishingImages/Microsoft_DCCN_2.0_Quick_Start_Guide.jpg&quot; alt=&quot;&quot; /&gt; &lt;/div&gt;&lt;/a&gt;&lt;br /&gt;&lt;span class=&quot;fileinfo&quot;&gt;.pdf 560 KB&lt;/span&gt; &lt;/div&gt;&lt;/td&gt;
+&lt;td&gt;Read this document for a quick overview on how to use Microsoft DCCN 2.0. &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;div class=&quot;sectionbar&quot; id=&quot;technical_support&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;Technical Support&lt;/h2&gt;&lt;/div&gt;
+&lt;p&gt;For general questions about the Microsoft DCCN program, please contact &lt;a href=&quot;mailto:DCCNHelp@Microsoft.com&quot;&gt;DCCNHelp@Microsoft.com&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If you have technical questions or need help implementing Microsoft DCCN, please contact Customer Support at: &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Americas/Asia Pacific&lt;/strong&gt;&lt;br /&gt;Phone: +1.949.399.8788&lt;br /&gt;Email: &lt;a href=&quot;mailto:CCSsupport@CBSi.com&quot;&gt;CCSsupport@CBSi.com&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Europe&lt;/strong&gt;&lt;br /&gt;Phone: +41.21.943.03.78&lt;br /&gt;Email: &lt;a href=&quot;mailto:CCSsupportEU@CBSi.com&quot;&gt;CCSsupportEU@CBSi.com&lt;/a&gt; &lt;/p&gt;
+&lt;p class=&quot;footnote&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;Source: Crimson Analysts&#8212;Crimson Consulting Group, Los Altos, California. &lt;/p&gt;
+&lt;ul&gt;&lt;/ul&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;p&gt;</formatting>
+			<tu-placeholder id="38"/>
+			<tu-placeholder id="39"/>
+			<tu-placeholder id="40"/>
+			<tu-placeholder id="41"/>
+			<tu-placeholder id="42"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="43"/>
+			<tu-placeholder id="44"/>
+			<tu-placeholder id="45"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="46"/>
+			<formatting>&lt;/p&gt;&lt;ul class=&quot;list&quot;&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="47"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="48"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="49"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="50"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="51"/>
+			<tu-placeholder id="52"/>
+			<formatting>&lt;/p&gt;&lt;div class=&quot;oneCol_list&quot;&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="53"/>
+			<tu-placeholder id="54"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="55"/>
+			<tu-placeholder id="56"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="57"/>
+			<tu-placeholder id="58"/>
+			<formatting>&lt;/p&gt;&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="59"/>
+			<tu-placeholder id="60"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="61"/>
+			<tu-placeholder id="62"/>
+			<tu-placeholder id="63"/>
+			<tu-placeholder id="64"/>
+			<tu-placeholder id="65"/>
+			<tu-placeholder id="66"/>
+			<tu-placeholder id="67"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="68"/>
+			<tu-placeholder id="69"/>
+			<tu-placeholder id="70"/>
+			<tu-placeholder id="71"/>
+			<tu-placeholder id="72"/>
+			<formatting>&lt;/p&gt;&lt;div class=&quot;sectionbar&quot; id=&quot;v2&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="73"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;</formatting>
+			<tu-placeholder id="74"/>
+			<tu-placeholder id="75"/>
+			<tu-placeholder id="76"/>
+			<formatting>&lt;p&gt;</formatting>
+			<tu-placeholder id="77"/>
+			<tu-placeholder id="78"/>
+			<formatting>&lt;/p&gt;&lt;ul class=&quot;list&quot;&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="79"/>
+			<tu-placeholder id="80"/>
+			<tu-placeholder id="81"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="82"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="83"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="84"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="85"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="86"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="87"/>
+			<tu-placeholder id="88"/>
+			<formatting>&lt;/p&gt;&lt;div class=&quot;sectionbar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="89"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="90"/>
+			<tu-placeholder id="91"/>
+			<formatting>&lt;/p&gt;&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class=&quot;first&quot;&gt;</formatting>
+			<tu-placeholder id="92"/>
+			<tu-placeholder id="93"/>
+			<formatting>&lt;/th&gt;&lt;th&gt;</formatting>
+			<tu-placeholder id="94"/>
+			<tu-placeholder id="95"/>
+			<formatting>&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="96"/>
+			<tu-placeholder id="97"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="98"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="99"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="100"/>
+			<tu-placeholder id="101"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="102"/>
+			<tu-placeholder id="103"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="104"/>
+			<tu-placeholder id="105"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="106"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="107"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="108"/>
+			<tu-placeholder id="109"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="110"/>
+			<tu-placeholder id="111"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="112"/>
+			<tu-placeholder id="113"/>
+			<formatting>&lt;/p&gt;&lt;table class=&quot;borders&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class=&quot;first&quot;&gt;</formatting>
+			<tu-placeholder id="114"/>
+			<tu-placeholder id="115"/>
+			<formatting>&lt;/th&gt;&lt;th&gt;</formatting>
+			<tu-placeholder id="116"/>
+			<tu-placeholder id="117"/>
+			<formatting>&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="118"/>
+			<tu-placeholder id="119"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="120"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="121"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="122"/>
+			<tu-placeholder id="123"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="124"/>
+			<tu-placeholder id="125"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="126"/>
+			<tu-placeholder id="127"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="128"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="129"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="130"/>
+			<tu-placeholder id="131"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="132"/>
+			<tu-placeholder id="133"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="134"/>
+			<tu-placeholder id="135"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="136"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="137"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="138"/>
+			<tu-placeholder id="139"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="140"/>
+			<tu-placeholder id="141"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;thumb&quot;&gt;</formatting>
+			<tu-placeholder id="142"/>
+			<tu-placeholder id="143"/>
+			<formatting>&lt;div class=&quot;nail&quot;&gt;</formatting>
+			<tu-placeholder id="144"/>
+			<formatting>&lt;/div&gt;</formatting>
+			<tu-placeholder id="145"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="146"/>
+			<tu-placeholder id="147"/>
+			<formatting>&lt;/div&gt;&lt;/td&gt;&lt;td&gt;</formatting>
+			<tu-placeholder id="148"/>
+			<tu-placeholder id="149"/>
+			<formatting>&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;div class=&quot;sectionbar&quot; id=&quot;technical_support&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="150"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="151"/>
+			<tu-placeholder id="152"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="153"/>
+			<tu-placeholder id="154"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="155"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="156"/>
+			<tu-placeholder id="157"/>
+			<tu-placeholder id="158"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="159"/>
+			<tu-placeholder id="160"/>
+			<tu-placeholder id="161"/>
+			<tu-placeholder id="162"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="163"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="164"/>
+			<tu-placeholder id="165"/>
+			<tu-placeholder id="166"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="167"/>
+			<tu-placeholder id="168"/>
+			<tu-placeholder id="169"/>
+			<tu-placeholder id="170"/>
+			<formatting>&lt;/p&gt;&lt;p class=&quot;footnote&quot;&gt;</formatting>
+			<tu-placeholder id="171"/>
+			<tu-placeholder id="172"/>
+			<tu-placeholder id="173"/>
+			<tu-placeholder id="174"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;/ul&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3c88bc05-7373-4f64-9879-dd6b1f53934b&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageTitle&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[Syndication Resources from Microsoft]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="175"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;6ab108c2-1b41-4f95-89a6-fbec5745f9d1&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageDescription&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[OEM partners: Keep marketing content up to date on your website by using automated syndication services from Microsoft.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="176"/>
+			<tu-placeholder id="177"/>
+			<tu-placeholder id="178"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;bb65c7ca-f21d-492c-bed3-1ffb08698d10&quot; datatype=&quot;x-Microsoft.SharePoint.Publishing.Fields.ImageFieldValue&quot; resname=&quot;Page_x0020_Masthead_x0020_Image&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[Syndication banner]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="179"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;g_3e2029a9_c706_48e5_9f74_0d8940250c08&quot; datatype=&quot;x-Microsoft.SharePoint.WebPartPages.ContentEditorWebPart&quot; resname=&quot;Styles&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;Styles&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;
+.screenshot {
+	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid
+}
+.no-top-margin {
+	MARGIN-TOP: 0px
+}
+.no-bottom-margin {
+	MARGIN-BOTTOM: 0px
+}
+TABLE.borders TR TH.first {
+	WIDTH: 30%
+}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;</formatting>
+			<tu-placeholder id="180"/>
+			<formatting>&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;.screenshot {	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid}.no-top-margin {	MARGIN-TOP: 0px}.no-bottom-margin {	MARGIN-BOTTOM: 0px}TABLE.borders TR TH.first {	WIDTH: 30%}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;/body&gt;&lt;/file&gt;&lt;file original=&quot;43cdbb99-4b48-4809-8aa6-f7b47816b293&quot; source-language=&quot;default&quot; datatype=&quot;plaintext&quot;&gt;&lt;header&gt;&lt;note from=&quot;url&quot;&gt;http://cspecm/oem/es/salesmarketing/Pages/media-replacement.aspx&lt;/note&gt;&lt;/header&gt;&lt;body&gt;&lt;trans-unit id=&quot;f55c4d88-1f2e-4ad9-aaa8-819af4ee7ee8&quot; datatype=&quot;x-System.String&quot; resname=&quot;PublishingPageContent&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;p&gt;If you have experienced any one of the following, you may be eligible to receive replacement media:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;CD(s) received will not properly install&lt;/li&gt;
+&lt;li&gt;CD(s) noticeably damaged on receipt&lt;/li&gt;
+&lt;li&gt;CD(s) damaged during preinstallation process&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Based on your feedback, this program has been designed to:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Eliminate the need for system builders to contact distributors for replacement media, and instead enable fulfillment directly from Microsoft.&lt;/li&gt;
+&lt;li&gt;Simplify and streamline the replacement process and eliminate the cost to system builders.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Media replacement is available to system builders in all countries worldwide, with the exception of China. The following OEM software versions are supported for replacement under this program:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Windows 8 Pro&lt;/li&gt;
+&lt;li&gt;Windows 8 Standard&lt;/li&gt;
+&lt;li&gt;Windows 7 - Professional, Home Basic, Home Premium, Ultimate&lt;/li&gt;
+&lt;li&gt;Windows Home Server&lt;/li&gt;
+&lt;li&gt;Windows Server 2008 - Standard, Enterprise, Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Small Business Server 2011 Essentials&lt;/li&gt;
+&lt;li&gt;Windows Small Business Server 2011 Premium Add On&lt;/li&gt;
+&lt;li&gt;Windows Small Business Server 2008 - Standard and Premium&lt;/li&gt;
+&lt;li&gt;Windows Server for Windows Essential Server 2008&lt;/li&gt;
+&lt;li&gt;Windows HPC Server 2008&lt;/li&gt;
+&lt;li&gt;HPC Pack 2008&lt;/li&gt;
+&lt;li&gt;Windows SQL Server 2008 for Small Business&lt;/li&gt;
+&lt;li&gt;System Center Data Protection Manager Server 2007 - Standard and Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 8 SL (Single language)&lt;/li&gt;
+&lt;li&gt;Windows PRO GGK for Win 7 and 8&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Media Replacement Ordering Instructions&lt;/strong&gt;&lt;br /&gt;If you are a system builder and would like to request replacement media listed above, please click on and complete the Media Replacement Form below. Once you have provided the required information, including Certificate of Authenticity (COA) details, a submission confirmation message will be sent to you via email.&lt;/p&gt;
+&lt;p&gt;Please click here to access the &lt;a class=&quot;lock&quot; href=&quot;/oem/en/pages/dmt.aspx?dmt=mr&quot;&gt;Media Replacement Form&lt;/a&gt;. &lt;/p&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;p&gt;</formatting>
+			<tu-placeholder id="181"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="182"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="183"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="184"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="185"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="186"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="187"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="188"/>
+			<tu-placeholder id="189"/>
+			<tu-placeholder id="190"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="191"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="192"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="193"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="194"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="195"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="196"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="197"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="198"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="199"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="200"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="201"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="202"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="203"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="204"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="205"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="206"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="207"/>
+			<tu-placeholder id="208"/>
+			<tu-placeholder id="209"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="210"/>
+			<tu-placeholder id="211"/>
+			<formatting>&lt;/p&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3c88bc05-7373-4f64-9879-dd6b1f53934b&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageTitle&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[OEM System Builder Media Replacement]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="212"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;6ab108c2-1b41-4f95-89a6-fbec5745f9d1&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageDescription&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[System builders: Media fulfillment for the 2007 Microsoft Office OPK is no longer available. Learn which OEM software versions are supported for replacement.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="213"/>
+			<tu-placeholder id="214"/>
+			<tu-placeholder id="215"/>
+			<tu-placeholder id="216"/>
+			<tu-placeholder id="217"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3e98bbf3-cb45-444e-a3af-6cea6c3b9b46&quot; datatype=&quot;x-System.String&quot; resname=&quot;Page_x0020_Overview&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[Have you received damaged Microsoft OEM System Builder software media? Or, have you damaged your media during preinstallation? If you have, you may request replacement media online, provided you have a valid Certificate of Authenticity (COA).]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="218"/>
+			<tu-placeholder id="219"/>
+			<tu-placeholder id="220"/>
+			<tu-placeholder id="221"/>
+			<tu-placeholder id="222"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;34a72e09-3ca6-4931-b2e3-f81c40bb87bd&quot; datatype=&quot;x-System.String&quot; resname=&quot;RoutingRuleDescription&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[System builders: Learn how to download or order the 2007 Microsoft Office OPK Master Kit, either from Microsoft or from an authorized distributor. Also find out how to place an online order for replacements for damaged OEM System Builder software media.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="223"/>
+			<tu-placeholder id="224"/>
+			<tu-placeholder id="225"/>
+			<tu-placeholder id="226"/>
+			<tu-placeholder id="227"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;g_fdb53795_e3d4_49a9_b4e7_7dd25b707c5d&quot; datatype=&quot;x-Microsoft.SharePoint.WebPartPages.ContentEditorWebPart&quot; resname=&quot;Styles&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;Styles&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;
+#intro_box {
+	MARGIN-TOP: 10px; WIDTH: 100%; MARGIN-BOTTOM: 10px; FLOAT: left; HEIGHT: 70px; CLEAR: both
+}
+#intro_img {
+	WIDTH: 70px; FLOAT: left
+}
+#intro_blurb {
+	PADDING-LEFT: 10px; WIDTH: 510px; FLOAT: left; PADDING-TOP: 10px
+}
+.no-top-margin {
+	MARGIN-TOP: 0px
+}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;</formatting>
+			<tu-placeholder id="228"/>
+			<formatting>&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;#intro_box {	MARGIN-TOP: 10px; WIDTH: 100%; MARGIN-BOTTOM: 10px; FLOAT: left; HEIGHT: 70px; CLEAR: both}#intro_img {	WIDTH: 70px; FLOAT: left}#intro_blurb {	PADDING-LEFT: 10px; WIDTH: 510px; FLOAT: left; PADDING-TOP: 10px}.no-top-margin {	MARGIN-TOP: 0px}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;/body&gt;&lt;/file&gt;&lt;file original=&quot;69733bc4-07db-432a-894f-aa8cde97faf1&quot; source-language=&quot;default&quot; datatype=&quot;plaintext&quot;&gt;&lt;header&gt;&lt;note from=&quot;url&quot;&gt;http://cspecm/oem/es/salesmarketing/Pages/reseller-option-kit.aspx&lt;/note&gt;&lt;/header&gt;&lt;body&gt;&lt;trans-unit id=&quot;f55c4d88-1f2e-4ad9-aaa8-819af4ee7ee8&quot; datatype=&quot;x-System.String&quot; resname=&quot;PublishingPageContent&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;Explore Your Options&lt;/h2&gt;&lt;/div&gt;
+&lt;p&gt;With the ROK software distribution model, you get convenience and flexibility. &lt;/p&gt;
+&lt;ul class=&quot;spaced&quot;&gt;&lt;li&gt;&lt;b&gt;Purchasing Convenience and Flexibility&lt;/b&gt; &lt;br /&gt;ROK is a fast and easy way to purchase server products&#8212;like RAM, hard drives, or processors&#8212;from your OEM distributor. You buy the installation-ready software kit as another server option using one price list. &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Fast and Easy Deployment&lt;/b&gt; &lt;br /&gt;You get software that is tested, tuned, and certified with OEM-branded hardware, and is packaged with the latest drivers and customized installation tools for fast and easy deployment. &lt;/li&gt;&lt;/ul&gt;
+&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;How Are ROKs Sold?&lt;/h2&gt;&lt;/div&gt;
+&lt;ul class=&quot;spaced&quot;&gt;&lt;li&gt;Resellers purchase the OEM-branded server and Microsoft Windows Server ROK software through an authorized distributor. The reseller has the flexibility to purchase the server hardware and software together or separately.&lt;/li&gt;
+&lt;li&gt;The distributor ships the ROK in the box with the server or separately (the distributor may also preinstall the software for a fee).&lt;/li&gt;
+&lt;li&gt;The reseller installs the operating system and the Windows COA before delivering the new server to the end user. &lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Reseller Option Kits are available for: &lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Windows Server 2012 R2 Datacenter &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 R2 Standard &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 R2 Essentials &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 R2 Foundation &lt;/li&gt;
+&lt;li&gt;Windows Storage Server 2012 R2 Standard &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 Datacenter &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 Essentials &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 Foundation (available only through direct OEM partners) &lt;/li&gt;
+&lt;li&gt;Windows Server 2012 Standard &lt;/li&gt;
+&lt;li&gt;Windows Storage Server 2012 Standard &lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 Datacenter &lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 Enterprise &lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 Foundation (available only through direct OEM partners) &lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 Standard &lt;/li&gt;
+&lt;li&gt;Windows Small Business Server 2011 Standard &lt;/li&gt;
+&lt;li&gt;Microsoft Windows HPC Server 2008 R2 &lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Contact your authorized &lt;a href=&quot;/oem/en/Pages/distributors.aspx&quot;&gt;Microsoft Distributor&lt;/a&gt; for details. &lt;/p&gt;
+&lt;p&gt;Contact a direct OEM partner: &lt;a href=&quot;http://www.acer.com/&quot; target=&quot;_blank&quot;&gt;Acer&lt;/a&gt;, &lt;a href=&quot;http://www.dell.com/WindowsServer2012&quot; target=&quot;_blank&quot;&gt;Dell&lt;/a&gt;, &lt;a href=&quot;http://www.fujitsu.com/&quot; target=&quot;_blank&quot;&gt;Fujitsu&lt;/a&gt;, &lt;a href=&quot;http://www.hds.com/go/microsoft&quot; target=&quot;_blank&quot;&gt;Hitachi&lt;/a&gt;, &lt;a href=&quot;http://www.hp.com/learn/ws2012&quot; target=&quot;_blank&quot;&gt;HP&lt;/a&gt;, &lt;a href=&quot;http://www-03.ibm.com/systems/in/x/how_to_buy.html&quot; target=&quot;_blank&quot;&gt;IBM&lt;/a&gt;, &lt;a href=&quot;http://www.nec.com/&quot; target=&quot;_blank&quot;&gt;NEC&lt;/a&gt; for Windows Server Foundation. &lt;/p&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="229"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="230"/>
+			<tu-placeholder id="231"/>
+			<formatting>&lt;/p&gt;&lt;ul class=&quot;spaced&quot;&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="232"/>
+			<tu-placeholder id="233"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="234"/>
+			<tu-placeholder id="235"/>
+			<tu-placeholder id="236"/>
+			<tu-placeholder id="237"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="238"/>
+			<tu-placeholder id="239"/>
+			<formatting>&lt;br /&gt;</formatting>
+			<tu-placeholder id="240"/>
+			<tu-placeholder id="241"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;sectionBar&quot;&gt;&lt;h2 class=&quot;subheader&quot;&gt;</formatting>
+			<tu-placeholder id="242"/>
+			<formatting>&lt;/h2&gt;&lt;/div&gt;&lt;ul class=&quot;spaced&quot;&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="243"/>
+			<tu-placeholder id="244"/>
+			<tu-placeholder id="245"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="246"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="247"/>
+			<tu-placeholder id="248"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="249"/>
+			<tu-placeholder id="250"/>
+			<formatting>&lt;/p&gt;&lt;ul&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="251"/>
+			<tu-placeholder id="252"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="253"/>
+			<tu-placeholder id="254"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="255"/>
+			<tu-placeholder id="256"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="257"/>
+			<tu-placeholder id="258"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="259"/>
+			<tu-placeholder id="260"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="261"/>
+			<tu-placeholder id="262"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="263"/>
+			<tu-placeholder id="264"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="265"/>
+			<tu-placeholder id="266"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="267"/>
+			<tu-placeholder id="268"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="269"/>
+			<tu-placeholder id="270"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="271"/>
+			<tu-placeholder id="272"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="273"/>
+			<tu-placeholder id="274"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="275"/>
+			<tu-placeholder id="276"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="277"/>
+			<tu-placeholder id="278"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="279"/>
+			<tu-placeholder id="280"/>
+			<formatting>&lt;/li&gt;&lt;li&gt;</formatting>
+			<tu-placeholder id="281"/>
+			<tu-placeholder id="282"/>
+			<formatting>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="283"/>
+			<tu-placeholder id="284"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="285"/>
+			<tu-placeholder id="286"/>
+			<tu-placeholder id="287"/>
+			<tu-placeholder id="288"/>
+			<formatting>&lt;/p&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3c88bc05-7373-4f64-9879-dd6b1f53934b&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageTitle&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[Reseller Option Kits for Servers]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="289"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;6ab108c2-1b41-4f95-89a6-fbec5745f9d1&quot; datatype=&quot;x-System.String&quot; resname=&quot;PageDescription&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="290"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;3e98bbf3-cb45-444e-a3af-6cea6c3b9b46&quot; datatype=&quot;x-System.String&quot; resname=&quot;Page_x0020_Overview&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;p&gt;The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions. &lt;/p&gt;
+&lt;p&gt;Each ROK is another server option&#8212;like memory or hard drives&#8212;that you specify when you order servers. You can install the appropriate ROK on your customer&#8217;s preferred server model to address any combination of hardware and software.&lt;/p&gt;
+&lt;p&gt;Your customers still enjoy the same great performance of OEM-tuned drivers for Microsoft software, because each ROK is carefully matched to a specific server brand.&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&lt;/p&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;p&gt;</formatting>
+			<tu-placeholder id="291"/>
+			<tu-placeholder id="292"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="293"/>
+			<tu-placeholder id="294"/>
+			<tu-placeholder id="295"/>
+			<formatting>&lt;/p&gt;&lt;p&gt;</formatting>
+			<tu-placeholder id="296"/>
+			<formatting>&lt;/p&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;34a72e09-3ca6-4931-b2e3-f81c40bb87bd&quot; datatype=&quot;x-System.String&quot; resname=&quot;RoutingRuleDescription&quot; maxwidth=&quot;255&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[The Reseller Option Kit (ROK) is a software distribution option that enables you to order tuned and certified Microsoft server software separately from OEM servers so that you have more flexibility to deliver customized server solutions.]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[</formatting>
+			<tu-placeholder id="297"/>
+			<formatting>]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;trans-unit id=&quot;g_2e8ea7e3_d47f_4e30_a25b_2daca4c4e4dd&quot; datatype=&quot;x-Microsoft.SharePoint.WebPartPages.ContentEditorWebPart&quot; resname=&quot;Styles&quot; maxwidth=&quot;0&quot; minwidth=&quot;0&quot;&gt;&lt;source&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;Styles&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;
+UL.spaced LI {
+	MARGIN-BOTTOM: 10px
+}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/source&gt;&lt;target&gt;&lt;![CDATA[&lt;ContentEditorWebPart&gt;&lt;Title&gt;</formatting>
+			<tu-placeholder id="298"/>
+			<formatting>&lt;/Title&gt;&lt;Content&gt;&lt;style type=&quot;text/css&quot;&gt;UL.spaced LI {	MARGIN-BOTTOM: 10px}&lt;/style&gt;&lt;/Content&gt;&lt;/ContentEditorWebPart&gt;]]&gt;&lt;/target&gt;&lt;/trans-unit&gt;&lt;/body&gt;&lt;/file&gt;&lt;/xliff&gt;</formatting>
+			<tu-placeholder id="299"/>
+		</body>
+	</file>
+</tt-xliff-skl>

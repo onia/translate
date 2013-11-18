@@ -47,6 +47,9 @@ class ZIPFile(directory.Directory):
         """Iterator over all the units in all the files in this zip file."""
         for dirname, filename in self.file_iter():
             # TODO: Here os.path.join(dirname, filename) doesn't work.....
+            # let skip the other filetypes            
+            root, ext = os.path.splitext(filename)
+            if ext[1:] not in factory.classes_str: continue
             if dirname=='':
                 filepath=os.path.join(dirname, filename)
             else:
@@ -67,8 +70,8 @@ class ZIPFile(directory.Directory):
         for dirname, filename in self.file_iter():
             newzipfile.write(os.path.join(dirname, filename))
         newzipfile.close()
-        super(ZIPFile, self).clearfiles()
         self.archive.close()
+        super(ZIPFile, self).clearfiles()        
         try:
             if os.path.isfile(self.filename+".bak"):
                 os.remove(self.filename+".bak")
@@ -81,15 +84,22 @@ class ZIPFile(directory.Directory):
         """Populate the internal store data."""
         for dirname, filename in self.file_iter():
             # TODO: Here os.path.join(dirname, filename) doesn't work.....
+            if filename == '':continue
             if dirname=='':
                 filepath=os.path.join(dirname, filename)
             else:
                 filepath=dirname+'/'+filename
             strfile = wStringIO.StringIO(self.archive.read(filepath))
-            strfile.filename = filename
-            store = factory.getobject(strfile)
-            self.storedata.append(store)
-            
+            # let skip the other filetypes            
+            root, ext = os.path.splitext(filename)
+            if ext[1:] not in factory.classes_str: 
+                strfile.filename = os.path.join(dirname, filename)
+                self.storedata.append(strfile)
+            else:
+                strfile.filename = filename
+                store = factory.getobject(strfile)
+                self.storedata.append(store)
+
     def scanfiles(self):
         """Populate the internal file data."""
         self.filedata = []
