@@ -27,11 +27,11 @@ files (pofile).
 import copy
 import io
 import re
+import textwrap
 
 from translate.lang import data
 from translate.misc.multistring import multistring
 from translate.misc import quote
-from translate.misc import textwrap
 from translate.storage import pocommon, base, poparser
 from translate.storage.pocommon import encodingToUse
 
@@ -68,20 +68,24 @@ def unescapehandler(escape):
     return po_unescape_map.get(escape, escape)
 
 
-def wrapline(line):
-    """Wrap text for po files."""
-    wrappedlines = textwrap.wrap(line, 77, replace_whitespace=False, expand_tabs=False, drop_whitespace=False)
+try:
+    wrapper = textwrap.TextWrapper(
+            width=77,
+            replace_whitespace=False,
+            expand_tabs=False,
+            drop_whitespace=False
+    )
+except TypeError:
+    # Python < 2.6 didn't support drop_whitespace
+    from translate.misc import textwrap
+    wrapper = textwrap.TextWrapper(width=77)
 
-    # Lines should not start with a space...
-    if len(wrappedlines) > 1:
-        for index, line in enumerate(wrappedlines[1:]):
-            if line.startswith(' '):
-                # Remove the space at the beginning of the line:
-                wrappedlines[index+1] = line[1:]
-
-                # Append a space to the previous line:
-                wrappedlines[index] += ' '
-    return wrappedlines
+wrapper.wordsep_re = re.compile(
+    r'(\s+|'                                  # any whitespace
+    r'[\w\!"\'\&\.\,\?]+\s+|'                 # space should go with a word
+    r'[^\s\w]*\w+[a-zA-Z]-(?=\w+[a-zA-Z])|'   # hyphenated words
+    r'(?<=[\w\!\"\'\&\.\,\?])-{2,}(?=\w))')   # em-dash
+wrapper.wordsep_re_uni = re.compile(wrapper.wordsep_re.pattern, re.UNICODE)
 
 
 def quoteforpo(text):
@@ -96,19 +100,12 @@ def quoteforpo(text):
 
     polines = []
     len_lines = len(lines)
-    if len_lines > 1 or (len_lines == 1 and len(lines[0]) > 71):
-        if len_lines != 2 or lines[1]:
-            polines.append(u'""')
-        for line in lines[:-1]:
-            lns = wrapline(line)
-            if lns:
-                for ln in lns[:-1]:
-                    polines.append(u'"%s"' % ln)
-                polines.append(u'"%s"' % lns[-1])
-            else:
-                polines.append(u'""')
-    if lines[-1]:
-        polines.extend([u'"%s"' % line for line in wrapline(lines[-1])])
+    if len_lines > 2 or (len_lines == 2 and lines[1]) or len(lines[0]) > 71:
+        polines.append(u'""')
+    for line in lines:
+        lns = wrapper.wrap(line)
+        for ln in lns:
+            polines.append(u'"%s"' % ln)
     return polines
 
 
