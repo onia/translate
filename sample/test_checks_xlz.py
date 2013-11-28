@@ -75,16 +75,16 @@ def fails_serious(filterfunction, str1, str2, message=None):
 def check_xlz_units():
     """Tests basic functionality."""
     testdata=[]
-    d = zipw.ZIPFile(os.path.join(os.getcwd(),"iws.xlz"))
+    d = zipw.ZIPFile(os.path.join(os.getcwd(),"iws.xlz"), 'xlf')
     stdchecker = checks.StandardChecker(checks.CheckerConfig(targetlanguage='zh_ui'))
     count=-1
     prevUnitLocation=None
     currentUnitLocation=None
     for unit in d.getunits():
         #print(unit.source)
-        unit.target=unit.source
+        #unit.target=unit.source
         #testdata.append(unit.target)
-        unit.unlockunit()
+        unit.setmetadata(translation_status='finished')
         #if not unit.source or not unit.target: continue
         #if fails(stdchecker.endpunc, unit.source, unit.target):
         #print(unit.getlocations(), unit.source.encode('utf-8'), unit.target.encode('utf-8'), unit.get_state_n(), unit.getid())

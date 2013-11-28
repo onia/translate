@@ -149,7 +149,10 @@ def getclass(storefile, ignore=None, classes=None, classes_str=classes_str, hidd
     root, ext = os.path.splitext(storefilename)
     ext = ext[len(os.path.extsep):].lower()
     # Here try to use guess extention, testing results
-    ext = _guessextention(storefile)
+    try:
+        ext = _guessextention(storefile)
+    except:
+        pass
     decomp = None
     if ext in decompressclass:
         decomp = ext

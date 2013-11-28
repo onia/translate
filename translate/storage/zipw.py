@@ -36,8 +36,9 @@ from translate.misc import wStringIO
 class ZIPFile(directory.Directory):
     """This class represents a ZIP file like a directory."""
 
-    def __init__(self, filename=None):
+    def __init__(self, filename=None, specifyext=None):
         self.filename = filename
+        self.specifyext = specifyext              
         self.filedata = []
         self.storedata = []
         self.scanfiles()
@@ -50,6 +51,7 @@ class ZIPFile(directory.Directory):
             # let skip the other filetypes            
             root, ext = os.path.splitext(filename)
             if ext[1:] not in factory.classes_str: continue
+            if self.specifyext and ext[1:].lower() != self.specifyext.lower(): continue
             if dirname=='':
                 filepath=os.path.join(dirname, filename)
             else:
@@ -70,8 +72,8 @@ class ZIPFile(directory.Directory):
         for dirname, filename in self.file_iter():
             newzipfile.write(os.path.join(dirname, filename))
         newzipfile.close()
+        super(ZIPFile, self).clearfiles()
         self.archive.close()
-        super(ZIPFile, self).clearfiles()        
         try:
             if os.path.isfile(self.filename+".bak"):
                 os.remove(self.filename+".bak")
@@ -92,13 +94,22 @@ class ZIPFile(directory.Directory):
             strfile = wStringIO.StringIO(self.archive.read(filepath))
             # let skip the other filetypes            
             root, ext = os.path.splitext(filename)
-            if ext[1:] not in factory.classes_str: 
-                strfile.filename = os.path.join(dirname, filename)
-                self.storedata.append(strfile)
+            if self.specifyext:
+                if ext[1:].lower() != self.specifyext.lower(): 
+                    strfile.filename = os.path.join(dirname, filename)
+                    self.storedata.append(strfile)
+                else:
+                    strfile.filename = filename
+                    store = factory.getobject(strfile)
+                    self.storedata.append(store)
             else:
-                strfile.filename = filename
-                store = factory.getobject(strfile)
-                self.storedata.append(store)
+                if ext[1:] not in factory.classes_str: 
+                    strfile.filename = os.path.join(dirname, filename)
+                    self.storedata.append(strfile)
+                else:
+                    strfile.filename = filename
+                    store = factory.getobject(strfile)
+                    self.storedata.append(store)
 
     def scanfiles(self):
         """Populate the internal file data."""

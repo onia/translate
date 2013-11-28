@@ -54,13 +54,10 @@ class Directory:
     def savefiles(self):
         """Try to save all files in this directory."""
         for store in self.storedata:
-            print(type(store))
             store.save()
             
     def clearfiles(self):
         """Try to remove all temp files in this directory."""
-        for store in self.storedata:
-            store.close()
         for dirname, filename in self.filedata:
             if os.path.exists(dirname):
                 try:

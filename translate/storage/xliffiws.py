@@ -182,15 +182,15 @@ class xliffunitiws(xliff.xliffunit):
         #"""get metadata nodes."""
         metadataNode = self.getmetadataNode()
         statusNode = metadataNode.find(self.namespacediws("status"))
-        if translation_status: 
+        if translation_status!=None: 
             statusNode.set('translation_status', translation_status)
             if translation_status != 'finished':
                 try:
                     del statusNode.attrib["match-quality"]
                 except:
                     pass
-        if lock_status: statusNode.set('lock_status', lock_status)
-        if match_quality:
+        if lock_status!=None: statusNode.set('lock_status', lock_status)
+        if match_quality!=None:
             statusNode.set('match-quality', match_quality)
             if match_quality == 'guaranteed':
                 statusNode.set('translation_status', 'finished')
@@ -198,7 +198,7 @@ class xliffunitiws(xliff.xliffunit):
                     del statusNode.attrib["translation_type"]
                 except:
                     pass
-        if translation_type:
+        if translation_type!=None:
             statusNode.set('translation_type', translation_type)# machine_translation or manual_translation
             try:
                 del statusNode.attrib["match-quality"]
