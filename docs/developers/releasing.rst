@@ -52,9 +52,14 @@ The release notes will be used in these places:
 We create our release notes in reStructured Text, since we use that elsewhere
 and since it can be rendered well in some of our key sites.
 
-First we need to create a log of changes in the Toolkit::
+First we need to create a log of changes in the Translate Toolkit, which is
+done generically like this::
 
-    git diff N-1 HEAD > docs/releases/$version.rst
+    git log $version-1..HEAD > docs/release/$version.rst
+
+Or a more specific example::
+
+    git log 1.10.0..HEAD > docs/releases/1.10.0.rst
 
 Edit this file.  You can use the commits as a guide to build up the release
 notes.  You should remove all log messages before the release.
@@ -75,6 +80,10 @@ Read for grammar and spelling errors.
    #. We speak in familiar terms e.g. "I know you've been waiting for this
       release" instead of formal.
 
+We create a list of contributors using this command::
+
+   git log 1.10.0..HEAD --format='%aN, ' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i;}}' | sort -rn | cut -d\  -f2-
+
 
 Up version numbers
 ------------------
@@ -90,7 +99,7 @@ Pootle, to regenerate the stats and checks.
 
 For ``conf.py`` change ``version`` and ``release``
 
-.. note:: FIXME - We might want to automate the version and release info so
+.. note:: FIXME - We might want to consolidate the version and release info so
    that we can update it in one place.
 
 The version string should follow the pattern::
@@ -192,8 +201,8 @@ You will need:
 #. Create a new folder in the `Translate Toolkit
    <https://sourceforge.net/projects/translate/files/Translate%20Toolkit/>`_
    release folder using the 'Add Folder' button.  The folder must have the same
-   as the release name e.g.  ``1.10.0-rc1``.  Mark this as being for staging
-   for the moment.
+   name as the release version e.g.  ``1.10.0-rc1``.  Mark this as being for
+   staging for the moment.
 #. ``make publish-sourceforge`` will give you the command to upload your
    tarball and ``README.rst``.
 

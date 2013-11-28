@@ -17,7 +17,8 @@ behaviour if required.
 - Dropped support for Python 2.5 since it is no longer supported by the Python
   Foundation. Also sticking to it was preventing us from using features that
   are not supported on Python 2.5 but they are on later versions.
-- PHP format: Added support nested arrays and several other improvements.
+- Properties will no longer drop entries where source and translation are
+  identical.
 
 .. _changelog#1.10:
 
@@ -151,10 +152,10 @@ Valid accelerators
 The :doc:`/commands/pofilter` accelerator test is now able to make use of a
 list of valid accelerators.  This allows translators to control the behaviour
 of the test for their language and add or remove characters that can be used as
-accelerators.  Please define :wiki:`l10n/valid_accelerators` for your language
-and these will then be included in future releases of the toolkit.  By default
-the old process if followed so if you take no action then this check will
-continue to work as expected.
+accelerators.  Please define the :ref:`valid accelerators
+<guide:valid-accelerators>` for your language and these will then be included
+in future releases of the toolkit.  By default the old process is followed so
+that if you take no action then this check will continue to work as expected.
 
 .. _changelog#branches:
 
@@ -662,8 +663,3 @@ use Unicode in UTF-8 encoding for these files.  Thus in 0.9 of the Toolkit we
 now output UTF-8 encoded properties files. :bug:`Bug 114 <114>` tracks the
 status of this and we hope to add a feature to prop2po to restore the correct
 Java convention as an option.
-
-.. _changelog#0.8:
-
-0.8
-===
