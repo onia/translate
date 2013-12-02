@@ -32,9 +32,9 @@ b : a string
 
 import re
 from io import StringIO
-
 from translate.misc.ini import INIConfig
 from translate.storage import base
+
 
 _dialects = {}
 
@@ -112,7 +112,7 @@ class inifile(base.TranslationStore):
             return ""
 
     def parse(self, input):
-        """parse the given file or file source string"""
+        """Parse the given file or file source string."""
         if hasattr(input, 'name'):
             self.filename = input.name
         elif not getattr(self, 'filename', ''):
@@ -121,12 +121,15 @@ class inifile(base.TranslationStore):
             inisrc = input.read()
             input.close()
             input = inisrc
+
         if isinstance(input, str):
             input = StringIO(input)
             self._inifile = INIConfig(input, optionxformvalue=None)
         else:
             self._inifile = INIConfig(file(input), optionxformvalue=None)
+
         for section in self._inifile:
             for entry in self._inifile[section]:
-                newunit = self.addsourceunit(self._dialect.unescape(self._inifile[section][entry]))
+                source = self._dialect.unescape(self._inifile[section][entry])
+                newunit = self.addsourceunit(source)
                 newunit.addlocation("[%s]%s" % (section, entry))
